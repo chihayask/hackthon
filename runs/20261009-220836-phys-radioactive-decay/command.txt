@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-radioactive-decay --formula "y" --params N0*exp(-(t/tau))

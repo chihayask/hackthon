@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-stefan-boltzmann --formula "A*T**4" --params 5.67

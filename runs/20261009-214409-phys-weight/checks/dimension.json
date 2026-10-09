@@ -1,0 +1,6 @@
+{
+  "name": "dimension",
+  "passed": false,
+  "reason": "表达式不可用: 公式语法错误: invalid syntax (<unknown>, line 1)",
+  "metrics": {}
+}

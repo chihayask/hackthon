@@ -1,0 +1,22 @@
+{
+  "task_id": "phys-weight",
+  "formula": "y = m * g",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 公式语法错误: invalid syntax (<unknown>, line 1)",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 公式语法错误: invalid syntax (<unknown>, line 1)",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": []
+}

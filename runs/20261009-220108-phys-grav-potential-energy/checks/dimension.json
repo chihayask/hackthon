@@ -1,0 +1,6 @@
+{
+  "name": "dimension",
+  "passed": false,
+  "reason": "量纲不成立（结构性错误）: 加减法两侧量纲不同: 1 vs L^-1·M^2",
+  "metrics": {}
+}

@@ -13,44 +13,40 @@
 |---|---|---|---|
 | 金标准自检（标准答案必须被接受） | 22 | 22 | 100.0% |
 | 判别力（结构错误的候选必须被拒绝） | 22 | 22 | 100.0% |
-| 智能体发现（与标准答案一致，仅计 hypothesis_source=agh-llm） | 0 | 0 | n/a |
+| 智能体发现（与标准答案一致，仅计 hypothesis_source=agh-llm） | 22 | 16 | 72.7% |
 | （参考）人工提供的候选式，不计入上行 | 1 | - | - |
 
 ## 二、按难度分层
 
 | 层级 | 任务数 | 金标准通过 | 错误式拒绝 | 智能体命中 |
 |---|---|---|---|---|
-| base | 13 | 13 | 13 | 0/0 |
-| challenge | 9 | 9 | 9 | 0/0 |
+| base | 13 | 13 | 13 | 10/13 |
+| challenge | 9 | 9 | 9 | 6/9 |
 
 ## 三、逐任务对照
 
 | 任务 | 层级 | 标准公式 | 智能体公式 | 留出集 | 外推区 | 量纲 | 与答案一致 |
 |---|---|---|---|---|---|---|---|
-| phys-buoyancy | base | `rho*V*g` | - |  |  | n/a | - |
-| phys-coulomb | base | `k*q1*q2/r**2` | - |  |  | n/a | - |
-| phys-cyclotron | challenge | `q*B/m` | - |  |  | n/a | - |
-| phys-elastic-pe | challenge | `c*x**2/2` | - |  |  | n/a | - |
-| phys-energy-shift | challenge | `(A-B)/h` | - |  |  | n/a | - |
-| phys-grav-potential-energy | base | `-G*m1*m2/r` | - |  |  | n/a | - |
-| phys-gravitation | base | `G*m1*m2/r**2` | - |  |  | n/a | - |
-| phys-hydrogen-level | challenge | `-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)` | - |  |  | n/a | - |
-| phys-ideal-gas | base | `n*R*T/V` | - |  |  | n/a | - |
-| phys-index-vacuum | challenge | `1/sqrt(eps*mu)` | - |  |  | n/a | - |
-| phys-joule-heating | base | `I**2*R` | - |  |  | n/a | - |
-| phys-kinetic-energy | base | `m*v**2/2` | - |  |  | n/a | - |
-| phys-ohm | base | `I*R` | - |  |  | n/a | - |
-| phys-pendulum-exact | challenge | `2*pi*sqrt(L/g)*(1 + theta0**2/16)` | - |  |  | n/a | - |
-| phys-pendulum-period | base | `2*pi*sqrt(L/g)` | - |  |  | n/a | - |
-| phys-radioactive-decay | challenge | `N0*exp(-t/tau)` | - |  |  | n/a | - |
-| phys-snells-law | challenge | `d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)` | - |  |  | n/a | - |
-| phys-spring-energy | base | `k*x**2/2` | - |  |  | n/a | - |
-| phys-stefan-boltzmann | base | `sigma*A*T**4` | - |  |  | n/a | - |
-| phys-surface-gravity | base | `G*M/R**2` | - |  |  | n/a | - |
-| phys-transit-depth | challenge | `A*(Rp/Rs)**2` | - |  |  | n/a | - |
-| phys-weight | base | `m*g` | - |  |  | n/a | - |
-
-## 四、如实说明（不掩盖空缺）
-
-- 有 1 个任务存在候选式运行，但其 hypothesis_source 不是 agh-llm（现为人工提供或命令行给出），因此**不计入**「智能体发现」层。对照表第 3 层为空，不能据此声称发现能力。
+| phys-buoyancy | base | `rho*V*g` | `rho*V*g` | 0.0086714 | 0.00848339 | pass | 结构相同 |
+| phys-coulomb | base | `k*q1*q2/r**2` | `k*q1*q2/r**2` | 0.00598585 | 0.0053982 | pass | 结构相同 |
+| phys-cyclotron | challenge | `q*B/m` | `q*B/m` | 0.00507573 | 0.00236068 | pass | 结构相同 |
+| phys-elastic-pe | challenge | `c*x**2/2` | `0.5*c*x**2` | 0.00589003 | 0.00354736 | pass | 数值等价 |
+| phys-energy-shift | challenge | `(A-B)/h` | `(A-B)/h` | 0.0641222 | 0.0309727 | pass | 结构相同 |
+| phys-grav-potential-energy | base | `-G*m1*m2/r` | `G*m1*m2/r` | 0.00664254 | 0.00484022 | pass | 不一致 (偏差 0.000124) |
+| phys-gravitation | base | `G*m1*m2/r**2` | `G*m1*m2/r**2` | 0.00688375 | 0.00619655 | pass | 结构相同 |
+| phys-hydrogen-level | challenge | `-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)` | - |  |  | fail | 不可判定 |
+| phys-ideal-gas | base | `n*R*T/V` | `R * n * T / V` | 0.00606509 | 0.00805481 | pass | 不一致 (偏差 0.000608) |
+| phys-index-vacuum | challenge | `1/sqrt(eps*mu)` | `1/sqrt(eps*mu)` | 0.0212973 | 0.0185376 | pass | 结构相同 |
+| phys-joule-heating | base | `I**2*R` | `I*I*R` | 0.00528938 | 0.00530535 | pass | 数值等价 |
+| phys-kinetic-energy | base | `m*v**2/2` | `0.5*m*v*v` | 0.00508397 | 0.0052265 | pass | 数值等价 |
+| phys-ohm | base | `I*R` | `I*R` | 0.00736598 | 0.00621277 | pass | 结构相同 |
+| phys-pendulum-exact | challenge | `2*pi*sqrt(L/g)*(1 + theta0**2/16)` | `2*pi*sqrt(L/g)*(1+theta0*theta0/16+11*theta0*theta0*theta0*theta0/3072+173*theta0*theta0*theta0*theta0*theta0*theta0/737280)` | 0.00790674 | 0.00451454 | pass | 不一致 (偏差 0.00551) |
+| phys-pendulum-period | base | `2*pi*sqrt(L/g)` | `2*3.141592653589793*sqrt(L/g)` | 0.0118581 | 0.00998851 | pass | 数值等价 |
+| phys-radioactive-decay | challenge | `N0*exp(-t/tau)` | `N0*exp(-(t/tau))` | 0.00476177 | 0.00313099 | pass | 数值等价 |
+| phys-snells-law | challenge | `d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)` | `d*sin(asin(n*sin(theta2)))` |  |  | fail | 不可判定 |
+| phys-spring-energy | base | `k*x**2/2` | `0.5*k*x**2` | 0.0057766 | 0.00579946 | pass | 数值等价 |
+| phys-stefan-boltzmann | base | `sigma*A*T**4` | `sigma*A*T**4` |  |  | fail | 结构相同 |
+| phys-surface-gravity | base | `G*M/R**2` | `G*M/R/R` | 0.00527124 | 0.00500282 | pass | 不一致 (偏差 0.000391) |
+| phys-transit-depth | challenge | `A*(Rp/Rs)**2` | `A*(Rp/Rs)**2` | 0.00564293 | 0.00466753 | pass | 结构相同 |
+| phys-weight | base | `m*g` | `m*g` | 0.00869578 | 0.00575099 | pass | 结构相同 |
 

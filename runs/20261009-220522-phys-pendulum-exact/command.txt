@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-pendulum-exact --formula "2*pi*sqrt(L/g)*(1+theta02/16+11*theta04/3072+173*theta06/737280)"

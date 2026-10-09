@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-ideal-gas --formula "y" --params R*n*T/V

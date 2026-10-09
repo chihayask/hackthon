@@ -15,25 +15,25 @@
     "wrong_variant_checked": 22,
     "wrong_variant_rejected": 22,
     "wrong_variant_rate": 1.0,
-    "agent_candidates": 0,
+    "agent_candidates": 22,
     "agent_fixture_tasks": 1,
-    "agent_accepted": 0,
-    "agent_matches_reference": 0,
-    "agent_match_rate": null,
+    "agent_accepted": 19,
+    "agent_matches_reference": 16,
+    "agent_match_rate": 0.7272727272727273,
     "by_layer": {
       "base": {
         "tasks": 13,
         "gold_ok": 13,
         "wrong_ok": 13,
-        "agent_match": 0,
-        "agent_total": 0
+        "agent_match": 10,
+        "agent_total": 13
       },
       "challenge": {
         "tasks": 9,
         "gold_ok": 9,
         "wrong_ok": 9,
-        "agent_match": 0,
-        "agent_total": 0
+        "agent_match": 6,
+        "agent_total": 9
       }
     }
   },
@@ -74,7 +74,29 @@
           "scale-scaling-g"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-214719-phys-buoyancy",
+        "formula": "rho*V*g",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.008671396589577836,
+        "extrapolation": 0.008483393925120573,
+        "dimension": true,
+        "candidates_tried": 1,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -112,7 +134,31 @@
           "scale-scaling-r"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-214756-phys-coulomb",
+        "formula": "k*q1*q2/r**2",
+        "verdict": "accepted",
+        "parameters": {
+          "k": 8991354465.113548
+        },
+        "holdout": 0.005985851904999008,
+        "extrapolation": 0.005398204038464149,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.00042310441168268533,
+          "max_relative_deviation": 0.000423104411682976,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -152,7 +198,29 @@
           "scale-scaling-m"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-214822-phys-cyclotron",
+        "formula": "q*B/m",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.005075732149556152,
+        "extrapolation": 0.0023606789697872515,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 2,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -191,7 +259,29 @@
           "scale-scaling-x-parity"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-214935-phys-elastic-pe",
+        "formula": "0.5*c*x**2",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.005890034469045681,
+        "extrapolation": 0.003547364537926764,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -226,7 +316,31 @@
           "fit"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-215018-phys-energy-shift",
+        "formula": "(A-B)/h",
+        "verdict": "accepted",
+        "parameters": {
+          "h": 6.632011680055611e-34
+        },
+        "holdout": 0.06412224239464638,
+        "extrapolation": 0.030972704602809625,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0008958865487947501,
+          "max_relative_deviation": 0.0008958865487948593,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -264,7 +378,31 @@
           "scale-scaling-r"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220200-phys-grav-potential-energy",
+        "formula": "G*m1*m2/r",
+        "verdict": "accepted",
+        "parameters": {
+          "G": -6.673174775302424e-11
+        },
+        "holdout": 0.006642541742536534,
+        "extrapolation": 0.004840220621283571,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.00012364769217509762,
+          "max_relative_deviation": 0.00012364769217531053,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -302,7 +440,31 @@
           "scale-scaling-r"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220218-phys-gravitation",
+        "formula": "G*m1*m2/r**2",
+        "verdict": "accepted",
+        "parameters": {
+          "G": 6.661867289890134e-11
+        },
+        "holdout": 0.006883748573222686,
+        "extrapolation": 0.006196546264998129,
+        "dimension": true,
+        "candidates_tried": 1,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0018179068189789942,
+          "max_relative_deviation": 0.001817906818979223,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": true
+      },
       "agent_fixture": {
         "run_id": "phys-gravitation-cand01",
         "formula": "G*m1*m2/r**2",
@@ -343,7 +505,24 @@
           "fit"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-221447-phys-hydrogen-level",
+        "formula": "",
+        "verdict": "rejected",
+        "parameters": {},
+        "holdout": null,
+        "extrapolation": null,
+        "dimension": false,
+        "candidates_tried": 1,
+        "candidates_accepted": 0,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": false,
+          "reason": "公式无法求值: 公式为空"
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -379,7 +558,31 @@
           "fit"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "8.314462618",
+        "formula": "R * n * T / V",
+        "verdict": "accepted",
+        "parameters": {
+          "R": 8.31952068664051
+        },
+        "holdout": 0.0060650934070402545,
+        "extrapolation": 0.008054812910389168,
+        "dimension": true,
+        "candidates_tried": 3,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0006083458273732203,
+          "max_relative_deviation": 0.0006083458273734677,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -419,7 +622,29 @@
           "scale-scaling-eps-mu"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220340-phys-index-vacuum",
+        "formula": "1/sqrt(eps*mu)",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.021297294304349547,
+        "extrapolation": 0.01853757188650882,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 2,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -457,7 +682,29 @@
           "scale-scaling-I"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220404-phys-joule-heating",
+        "formula": "I*I*R",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.005289376253386008,
+        "extrapolation": 0.0053053515146299565,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -496,7 +743,29 @@
           "scale-scaling-v-parity"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220421-phys-kinetic-energy",
+        "formula": "0.5*m*v*v",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.005083973222561136,
+        "extrapolation": 0.005226500222130988,
+        "dimension": true,
+        "candidates_tried": 1,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 6.738968776861789e-17,
+          "max_relative_deviation": 2.487840530044586e-16,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -535,7 +804,29 @@
           "scale-scaling-R"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220450-phys-ohm",
+        "formula": "I*R",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.0073659789183956,
+        "extrapolation": 0.0062127741484532695,
+        "dimension": true,
+        "candidates_tried": 1,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -572,7 +863,29 @@
           "scale-monotonic-theta0"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220530-phys-pendulum-exact",
+        "formula": "2*pi*sqrt(L/g)*(1+theta0*theta0/16+11*theta0*theta0*theta0*theta0/3072+173*theta0*theta0*theta0*theta0*theta0*theta0/737280)",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.007906743986605897,
+        "extrapolation": 0.004514539158692977,
+        "dimension": true,
+        "candidates_tried": 3,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.005513542015007958,
+          "max_relative_deviation": 0.007408289966977954,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -611,7 +924,29 @@
           "scale-scaling-g"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220633-phys-pendulum-period",
+        "formula": "2*3.141592653589793*sqrt(L/g)",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.01185806648136485,
+        "extrapolation": 0.009988505542200342,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -649,7 +984,29 @@
           "scale-sign-y"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-220841-phys-radioactive-decay",
+        "formula": "N0*exp(-(t/tau))",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.004761765574231514,
+        "extrapolation": 0.0031309941251152535,
+        "dimension": true,
+        "candidates_tried": 5,
+        "candidates_accepted": 3,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -686,7 +1043,24 @@
           "scale-limit-theta2-to-0-0"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-221042-phys-snells-law",
+        "formula": "d*sin(asin(n*sin(theta2)))",
+        "verdict": "rejected",
+        "parameters": {},
+        "holdout": null,
+        "extrapolation": null,
+        "dimension": false,
+        "candidates_tried": 8,
+        "candidates_accepted": 0,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": false,
+          "reason": "公式无法求值: 未知名称: d"
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -725,7 +1099,29 @@
           "scale-scaling-x-parity"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-221121-phys-spring-energy",
+        "formula": "0.5*k*x**2",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.005776603882169351,
+        "extrapolation": 0.005799458129892658,
+        "dimension": true,
+        "candidates_tried": 1,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -762,7 +1158,24 @@
           "scale-scaling-T"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-221200-phys-stefan-boltzmann",
+        "formula": "sigma*A*T**4",
+        "verdict": "rejected",
+        "parameters": {},
+        "holdout": null,
+        "extrapolation": null,
+        "dimension": false,
+        "candidates_tried": 14,
+        "candidates_accepted": 0,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": false,
+          "reason": "公式无法求值: 未知名称: sigma"
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -799,7 +1212,31 @@
           "scale-scaling-R"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-221314-phys-surface-gravity",
+        "formula": "G*M/R/R",
+        "verdict": "accepted",
+        "parameters": {
+          "G": 6.676610289534831e-11
+        },
+        "holdout": 0.0052712385006753034,
+        "extrapolation": 0.0050028174388884105,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": false,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.00039111320569841046,
+          "max_relative_deviation": 0.0003911132056988818,
+          "all_finite": true,
+          "equivalent": false
+        },
+        "matches_reference": false
+      },
       "agent_fixture": null
     },
     {
@@ -837,7 +1274,29 @@
           "scale-scaling-Rp"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-222014-phys-transit-depth",
+        "formula": "A*(Rp/Rs)**2",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.0056429301384736215,
+        "extrapolation": 0.004667527694951606,
+        "dimension": true,
+        "candidates_tried": 2,
+        "candidates_accepted": 1,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     },
     {
@@ -876,11 +1335,31 @@
           "scale-scaling-g"
         ]
       },
-      "agent": null,
+      "agent": {
+        "run_id": "20261009-214613-phys-weight",
+        "formula": "m*g",
+        "verdict": "accepted",
+        "parameters": {},
+        "holdout": 0.008695783009880978,
+        "extrapolation": 0.00575098552852992,
+        "dimension": true,
+        "candidates_tried": 3,
+        "candidates_accepted": 2,
+        "structural_match": true,
+        "reference_parameter_source": "reference.true_constants",
+        "numeric_equivalence": {
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.0,
+          "max_relative_deviation": 0.0,
+          "all_finite": true,
+          "equivalent": true
+        },
+        "matches_reference": true
+      },
       "agent_fixture": null
     }
   ],
-  "notes": [
-    "有 1 个任务存在候选式运行，但其 hypothesis_source 不是 agh-llm（现为人工提供或命令行给出），因此**不计入**「智能体发现」层。对照表第 3 层为空，不能据此声称发现能力。"
-  ]
+  "notes": []
 }

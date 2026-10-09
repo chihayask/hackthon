@@ -1,0 +1,131 @@
+{
+  "task_id": "phys-stefan-boltzmann",
+  "formula": "A*T**4",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "量纲不一致：公式推出 (Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(4, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 17651993.9160（阈值 0.0200）；诊断口径 p90=17732495.8986、RMSE/中位|y|=40856586.1138、RMSE/std(y)=24433916.9262、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 17651993.91601058,
+        "relative_error_p75": 17688072.810241055,
+        "relative_error_p90": 17732495.89862138,
+        "rmsre": 17647519.12221222,
+        "max_relative_error": 17828229.091106236,
+        "rmse": 486506426497.079,
+        "relative_rmse": 40856586.11381444,
+        "normalized_rmse": 24433916.926201735,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 17641781.0302（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=17733136.6662、RMSE/中位|y|=166982715.3615、RMSE/std(y)=23076669.2039",
+      "metrics": {
+        "relative_error_median": 17641781.030185044,
+        "relative_error_p75": 17691438.776703242,
+        "relative_error_p90": 17733136.666184645,
+        "rmsre": 17642886.3944895,
+        "max_relative_error": 17790378.927671846,
+        "rmse": 697866633556.5219,
+        "relative_rmse": 166982715.36149523,
+        "normalized_rmse": 23076669.203905348,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-T",
+      "passed": true,
+      "reason": "缩放 T×2 倍后 y 变为 16 倍，物理预期 16 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 16.0,
+        "expected_ratio": 16.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 4.0
+      }
+    },
+    {
+      "name": "scale-scaling-A",
+      "passed": true,
+      "reason": "缩放 A×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-sigma",
+      "passed": false,
+      "reason": "缩放 sigma×2 倍后 y 变为 1 倍，物理预期 2 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-T",
+      "passed": true,
+      "reason": "在 T ∈ [300, 1000] 上用等距网格扫描 9 点：整体相对变化 9.919e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0144468994140625,
+          0.028359741210937494,
+          0.04920627441406251,
+          0.07839333496093748,
+          0.1173277587890625,
+          0.16741638183593752,
+          0.23006604003906247,
+          0.30668356933593754
+        ],
+        "variation": 0.9919,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          300.0,
+          1000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 810000000.0,
+        "max_value": 2000000000000.0
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：dimension、holdout、extrapolation、scale-scaling-sigma。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-sigma）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "free_parameters": []
+}

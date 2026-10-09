@@ -1,0 +1,24 @@
+{
+  "task_id": "phys-radioactive-decay",
+  "formula": "y",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: y",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: y",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": [
+    "N0*exp(-(t/tau))"
+  ]
+}

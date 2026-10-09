@@ -1,0 +1,22 @@
+{
+  "task_id": "phys-elastic-pe",
+  "formula": "0.5*c*x2",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: x2",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: x2",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": []
+}

@@ -11,7 +11,19 @@ description: "从公开科学数据中发现可验证数学公式的自主闭环
 ## 每轮必须按顺序执行
 
 1. **声明假设**：一句话写出本轮要检验的函数形式，并说明依据（量纲、单调性、极限行为、上一轮的失败原因）。
-2. **调用工具**：`python -m formula_agh verify --task <任务目录> --formula "<公式>" --params <自由参数> --run-id <编号> --out runs`
+2. **调用工具**：**只允许**用下面这一条命令验证（原样照抄，路径不要加引号、不要加 `&`、不要用 `cmd /c`）：
+
+       E:\fagh\harness\run_verify.cmd <任务ID> "<公式>" "<自由参数,逗号分隔>"
+
+   三个理由，一个都不能少：
+   * 它设好 `PYTHONPATH`，并保证验证跑齐四道门；
+   * 它把这次运行**自动归档**进 `evidence/` 并更新索引（归档是纪律，由脚本保证，不靠你记得）；
+   * 它把 `hypothesis_source` 如实标成 `agh-llm`。**直连 `python -m formula_agh` 会被记成 `cli`**，
+     于是你的自主发现不计入评分表的「智能体发现」层——证据会在关键结论上说反话。
+
+   注：命令必须以盘符开头的**绝对路径**书写且不加引号，这是本部署的审批规则（AGH 的
+   `checkCommandRule` 要求 allow 规则的 argv 以绝对路径形状开头）决定的；写成
+   `harness\run_verify.cmd ...` 或 `& "..."` 会被审批门拦下。
 3. **读取结论**：输出 JSON 含 `verdict`、`checks`（每项 `passed`/`reason`/`metrics`）、`rounds_hint`。只有 `accepted` 才能进入第 5 步。
    一条命令会跑齐四道门，不需要你分别调用：`dimension`、`holdout`、`extrapolation`，
    以及若干条 `scale-*`（幂律标度 / 无量纲群 / 极限行为 / 单调性 / 符号 / 对称性）。
@@ -41,7 +53,12 @@ description: "从公开科学数据中发现可验证数学公式的自主闭环
 ## 工具接口速查
 
 ```
-验证单个公式：
+验证单个公式（AGH 里**只能**用这一条，原样照抄）：
+  E:\fagh\harness\run_verify.cmd <id> "G*m1*m2/r**2" "G"
+  E:\fagh\harness\run_verify.cmd <id> "G*m1*m2/r**2" "G" <run_id>    :: 想指定 run_id 时
+
+人在终端调试时也可以直连引擎，但要如实标注来源（否则会造成假溯源）：
+  set FORMULA_AGH_HYPOTHESIS_SOURCE=cli
   python -m formula_agh verify --task tasks/<id> --formula "G*m1*m2/r**2" --params G --run-id <run_id> --out runs
 
 批量跑候选：

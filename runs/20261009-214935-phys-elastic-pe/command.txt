@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-elastic-pe --formula "0.5*c*x**2"

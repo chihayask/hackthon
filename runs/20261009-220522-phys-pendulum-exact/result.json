@@ -1,0 +1,22 @@
+{
+  "task_id": "phys-pendulum-exact",
+  "formula": "2*pi*sqrt(L/g)*(1+theta02/16+11*theta04/3072+173*theta06/737280)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: theta06",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: theta06",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": []
+}
