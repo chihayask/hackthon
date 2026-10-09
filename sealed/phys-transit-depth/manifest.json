@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-transit-depth/extrapolation.csv",
+    "holdout": "sealed/phys-transit-depth/holdout.csv",
+    "train": "tasks/phys-transit-depth/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "e88bc4e9d698b3aaa4b3d4ae9a3e2aad45fdb16aa4053ba300d63db8a720c6dd",
+      "y_max": 0.01901457736,
+      "y_min": 7.401925917e-05
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "c5edc3495e30f27a424847f86f031b083ceff5e1362c92562896c0417e794113",
+      "y_max": 0.01670629614,
+      "y_min": 9.524578777e-05
+    },
+    "train": {
+      "n": 260,
+      "sha256": "b6b553d53b5be2c508559d9d05bc774d38009f2453737aa8f5aacd8e9471e750",
+      "y_max": 0.02048087947,
+      "y_min": 5.436605276e-05
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-transit-depth"
+}

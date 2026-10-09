@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-snells-law/extrapolation.csv",
+    "holdout": "sealed/phys-snells-law/holdout.csv",
+    "train": "tasks/phys-snells-law/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "8322b278ddac2a7d1a94a96fb0dffb9805acdd578ee7152ff7b12eac9efc8839",
+      "y_max": 0.8767055004,
+      "y_min": 0.05072897331
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "e75e18cecd853e0afcb7cb2a743406a503594be7f0d7dad43be00549981f8121",
+      "y_max": 0.7337430429,
+      "y_min": 0.1097972715
+    },
+    "train": {
+      "n": 260,
+      "sha256": "5df2f686d93fb5fbb28d2a0594127f45db66f3f68715dfdfb155c06fcd7943a1",
+      "y_max": 0.7697878532,
+      "y_min": 0.09257867319
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-snells-law"
+}

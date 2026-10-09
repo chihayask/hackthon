@@ -1,0 +1,886 @@
+{
+  "runs_root": "runs",
+  "tasks_root": "tasks",
+  "reference_root": "reference",
+  "isolation": {
+    "reference_reader": "src/scoring/compare.py（唯一读取标准答案的组件）",
+    "agent_side": "formula_agh 不持有任何指向 reference/ 的路径",
+    "probe_seed": 20261008
+  },
+  "summary": {
+    "tasks_in_scope": 22,
+    "gold_reference_checked": 22,
+    "gold_reference_accepted": 22,
+    "gold_reference_rate": 1.0,
+    "wrong_variant_checked": 22,
+    "wrong_variant_rejected": 22,
+    "wrong_variant_rate": 1.0,
+    "agent_candidates": 0,
+    "agent_fixture_tasks": 1,
+    "agent_accepted": 0,
+    "agent_matches_reference": 0,
+    "agent_match_rate": null,
+    "by_layer": {
+      "base": {
+        "tasks": 13,
+        "gold_ok": 13,
+        "wrong_ok": 13,
+        "agent_match": 0,
+        "agent_total": 0
+      },
+      "challenge": {
+        "tasks": 9,
+        "gold_ok": 9,
+        "wrong_ok": 9,
+        "agent_match": 0,
+        "agent_total": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "task_id": "phys-buoyancy",
+      "layer": "base",
+      "domain": "fluids",
+      "var_names": [
+        "rho",
+        "V",
+        "g"
+      ],
+      "reference_formula": "rho*V*g",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Buoyancy"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-buoyancy",
+        "formula": "rho*V*g",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.008671396589577836,
+        "extrapolation": 0.008483393925120573,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-buoyancy",
+        "formula": "rho*V",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-g"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-coulomb",
+      "layer": "base",
+      "domain": "electromagnetism",
+      "var_names": [
+        "q1",
+        "q2",
+        "r"
+      ],
+      "reference_formula": "k*q1*q2/r**2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Coulomb%27s_law"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-coulomb",
+        "formula": "k*q1*q2/r**2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005985851904999008,
+        "extrapolation": 0.005398204038464149,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-coulomb",
+        "formula": "k*q1*q2/r",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-r"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-cyclotron",
+      "layer": "challenge",
+      "domain": "electromagnetism",
+      "var_names": [
+        "q",
+        "B",
+        "m"
+      ],
+      "reference_formula": "q*B/m",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Cyclotron_resonance"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-cyclotron",
+        "formula": "q*B/m",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005075732149556152,
+        "extrapolation": 0.0023606789697872515,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-cyclotron",
+        "formula": "q*B*m",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-monotonic-m",
+          "scale-scaling-m"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-elastic-pe",
+      "layer": "challenge",
+      "domain": "mechanics",
+      "var_names": [
+        "c",
+        "x"
+      ],
+      "reference_formula": "c*x**2/2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Elastic_energy"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-elastic-pe",
+        "formula": "c*x**2/2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005890034469045681,
+        "extrapolation": 0.003547364537926764,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-elastic-pe",
+        "formula": "c*x/2",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-x",
+          "scale-scaling-x-parity"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-energy-shift",
+      "layer": "challenge",
+      "domain": "quantum",
+      "var_names": [
+        "A",
+        "B"
+      ],
+      "reference_formula": "(A-B)/h",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Planck_relation"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-energy-shift",
+        "formula": "(A-B)/h",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.06412224239464638,
+        "extrapolation": 0.030972704602809625,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-energy-shift",
+        "formula": "A*B/h",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "fit"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-grav-potential-energy",
+      "layer": "base",
+      "domain": "gravitation",
+      "var_names": [
+        "m1",
+        "m2",
+        "r"
+      ],
+      "reference_formula": "-G*m1*m2/r",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Gravitational_energy"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-grav-potential-energy",
+        "formula": "-G*m1*m2/r",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.006642541742530618,
+        "extrapolation": 0.004840220621286809,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-grav-potential-energy",
+        "formula": "-G*m1*m2/r**2",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-r"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-gravitation",
+      "layer": "base",
+      "domain": "gravitation",
+      "var_names": [
+        "m1",
+        "m2",
+        "r"
+      ],
+      "reference_formula": "G*m1*m2/r**2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-gravitation",
+        "formula": "G*m1*m2/r**2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.006883748573222686,
+        "extrapolation": 0.006196546264998129,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-gravitation",
+        "formula": "G*m1*m2/r",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-r"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": {
+        "run_id": "phys-gravitation-cand01",
+        "formula": "G*m1*m2/r**2",
+        "verdict": "accepted",
+        "hypothesis_source": "cli"
+      }
+    },
+    {
+      "task_id": "phys-hydrogen-level",
+      "layer": "challenge",
+      "domain": "quantum",
+      "var_names": [
+        "me",
+        "el",
+        "n"
+      ],
+      "reference_formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Bohr_model"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-hydrogen-level",
+        "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.007449185875695131,
+        "extrapolation": 0.00223512483846088,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-hydrogen-level",
+        "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "fit"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-ideal-gas",
+      "layer": "base",
+      "domain": "thermodynamics",
+      "var_names": [
+        "n",
+        "T",
+        "V"
+      ],
+      "reference_formula": "n*R*T/V",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Ideal_gas_law"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-ideal-gas",
+        "formula": "n*R*T/V",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.0060650934070402545,
+        "extrapolation": 0.008054812910389168,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-ideal-gas",
+        "formula": "R*n*T",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "fit"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-index-vacuum",
+      "layer": "challenge",
+      "domain": "optics",
+      "var_names": [
+        "eps",
+        "mu"
+      ],
+      "reference_formula": "1/sqrt(eps*mu)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Refractive_index"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-index-vacuum",
+        "formula": "1/sqrt(eps*mu)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.021297294304349547,
+        "extrapolation": 0.01853757188650882,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-index-vacuum",
+        "formula": "eps*mu",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-monotonic-eps",
+          "scale-scaling-eps",
+          "scale-scaling-eps-mu"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-joule-heating",
+      "layer": "base",
+      "domain": "circuits",
+      "var_names": [
+        "I",
+        "R"
+      ],
+      "reference_formula": "I**2*R",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Joule_heating"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-joule-heating",
+        "formula": "I**2*R",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005289376253386008,
+        "extrapolation": 0.0053053515146299565,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-joule-heating",
+        "formula": "I*R",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-I"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-kinetic-energy",
+      "layer": "base",
+      "domain": "mechanics",
+      "var_names": [
+        "m",
+        "v"
+      ],
+      "reference_formula": "m*v**2/2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Kinetic_energy"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-kinetic-energy",
+        "formula": "m*v**2/2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005083973222561154,
+        "extrapolation": 0.005226500222131034,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-kinetic-energy",
+        "formula": "m*v/2",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-v",
+          "scale-scaling-v-parity"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-ohm",
+      "layer": "base",
+      "domain": "circuits",
+      "var_names": [
+        "I",
+        "R"
+      ],
+      "reference_formula": "I*R",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Ohm%27s_law"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-ohm",
+        "formula": "I*R",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.0073659789183956,
+        "extrapolation": 0.0062127741484532695,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-ohm",
+        "formula": "I/R",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-monotonic-R",
+          "scale-scaling-R"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-pendulum-exact",
+      "layer": "challenge",
+      "domain": "oscillation",
+      "var_names": [
+        "L",
+        "g",
+        "theta0"
+      ],
+      "reference_formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Pendulum_(mechanics)"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-pendulum-exact",
+        "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.0013539281251406974,
+        "extrapolation": 0.0008716523114482197,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-pendulum-exact",
+        "formula": "2*pi*sqrt(L/g)",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "holdout",
+          "scale-monotonic-theta0"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-pendulum-period",
+      "layer": "base",
+      "domain": "oscillation",
+      "var_names": [
+        "L",
+        "g"
+      ],
+      "reference_formula": "2*pi*sqrt(L/g)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Pendulum_(mechanics)"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-pendulum-period",
+        "formula": "2*pi*sqrt(L/g)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.01185806648136485,
+        "extrapolation": 0.009988505542200342,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-pendulum-period",
+        "formula": "2*pi*L/g",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-L",
+          "scale-scaling-g"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-radioactive-decay",
+      "layer": "challenge",
+      "domain": "nuclear",
+      "var_names": [
+        "N0",
+        "t",
+        "tau"
+      ],
+      "reference_formula": "N0*exp(-t/tau)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Radioactive_decay"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-radioactive-decay",
+        "formula": "N0*exp(-t/tau)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.004761765574231514,
+        "extrapolation": 0.0031309941251152535,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-radioactive-decay",
+        "formula": "N0*(1-t/tau)",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-sign-y"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-snells-law",
+      "layer": "challenge",
+      "domain": "optics",
+      "var_names": [
+        "n",
+        "theta2"
+      ],
+      "reference_formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Snell%27s_law"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-snells-law",
+        "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.008833727072600567,
+        "extrapolation": 0.006359279659484539,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-snells-law",
+        "formula": "d*sin(theta2)*n",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-limit-theta2-to-0-0"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-spring-energy",
+      "layer": "base",
+      "domain": "mechanics",
+      "var_names": [
+        "k",
+        "x"
+      ],
+      "reference_formula": "k*x**2/2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Elastic_energy"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-spring-energy",
+        "formula": "k*x**2/2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005776603882169351,
+        "extrapolation": 0.005799458129892658,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-spring-energy",
+        "formula": "k*x/2",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-scaling-x",
+          "scale-scaling-x-parity"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-stefan-boltzmann",
+      "layer": "base",
+      "domain": "radiation",
+      "var_names": [
+        "A",
+        "T"
+      ],
+      "reference_formula": "sigma*A*T**4",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-stefan-boltzmann",
+        "formula": "sigma*A*T**4",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.00553959029493357,
+        "extrapolation": 0.005466015951956779,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-stefan-boltzmann",
+        "formula": "sigma*A*T**2",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-T"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-surface-gravity",
+      "layer": "base",
+      "domain": "gravitation",
+      "var_names": [
+        "M",
+        "R"
+      ],
+      "reference_formula": "G*M/R**2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Gravity"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-surface-gravity",
+        "formula": "G*M/R**2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.005271238500685602,
+        "extrapolation": 0.005002817438830099,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-surface-gravity",
+        "formula": "G*M/R",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-R"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-transit-depth",
+      "layer": "challenge",
+      "domain": "astronomy",
+      "var_names": [
+        "A",
+        "Rp",
+        "Rs"
+      ],
+      "reference_formula": "A*(Rp/Rs)**2",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Astronomical_transit"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-transit-depth",
+        "formula": "A*(Rp/Rs)**2",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.0056429301384736215,
+        "extrapolation": 0.004667527694951606,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-transit-depth",
+        "formula": "A*(Rp/Rs)",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "extrapolation",
+          "holdout",
+          "scale-scaling-Rp"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    },
+    {
+      "task_id": "phys-weight",
+      "layer": "base",
+      "domain": "mechanics",
+      "var_names": [
+        "m",
+        "g"
+      ],
+      "reference_formula": "m*g",
+      "reference_source": [
+        "https://en.wikipedia.org/wiki/Weight"
+      ],
+      "has_reference": true,
+      "has_task_dir": true,
+      "gold_reference": {
+        "run_id": "refcheck-phys-weight",
+        "formula": "m*g",
+        "verdict": "accepted",
+        "as_expected": true,
+        "holdout": 0.008695783009880978,
+        "extrapolation": 0.00575098552852992,
+        "dimension": true
+      },
+      "wrong_variant": {
+        "run_id": "variant-phys-weight",
+        "formula": "m/g",
+        "verdict": "rejected",
+        "as_expected": true,
+        "failed_checks": [
+          "dimension",
+          "extrapolation",
+          "holdout",
+          "scale-monotonic-g",
+          "scale-scaling-g"
+        ]
+      },
+      "agent": null,
+      "agent_fixture": null
+    }
+  ],
+  "notes": [
+    "有 1 个任务存在候选式运行，但其 hypothesis_source 不是 agh-llm（现为人工提供或命令行给出），因此**不计入**「智能体发现」层。对照表第 3 层为空，不能据此声称发现能力。"
+  ]
+}

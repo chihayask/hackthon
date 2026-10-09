@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-hydrogen-level/extrapolation.csv",
+    "holdout": "sealed/phys-hydrogen-level/holdout.csv",
+    "train": "tasks/phys-hydrogen-level/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "d99c3e53406be58f92351cd73e09c47cf222b9f7b39a7c7767497edfcfe23a43",
+      "y_max": -5.65017953e-20,
+      "y_min": -2.24602201e-18
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "39c268dd1d456e59078822b3f48c28be61c728783bb55b76423ccb14e938d8be",
+      "y_max": -6.107427017e-20,
+      "y_min": -8.8443754e-19
+    },
+    "train": {
+      "n": 260,
+      "sha256": "4cb620034fa2e8636754bd691c0e028c8ecc1aa8c78d185cc496a78ec136dab4",
+      "y_max": -6.683043652e-20,
+      "y_min": -1.147102805e-18
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-hydrogen-level"
+}

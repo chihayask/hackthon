@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-buoyancy --formula "rho*V" --run-id scale-variant-phys-buoyancy

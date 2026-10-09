@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-radioactive-decay",
+  "formula": "N0*exp(-t/tau)",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "-",
+  "source": [
+    "https://en.wikipedia.org/wiki/Radioactive_decay"
+  ]
+}

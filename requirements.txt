@@ -1,0 +1,15 @@
+# FORMULA-AGH 运行时依赖
+#
+# 设计原则：依赖越少，越不容易在比赛机器上崩。
+# 验证引擎的核心（三重验证、量纲分析、参数拟合）只需要 numpy：
+#   * 参数拟合是自己实现的 Levenberg-Marquardt（不依赖 scipy）
+#   * 单元测试用自带的 run_tests.py（不依赖 pytest）
+#
+# 实测环境：Python 3.13 + numpy 2.3.5，无 scipy / 无 pytest 也能全流程跑通。
+
+numpy>=1.26
+
+# --- 以下为可选，缺失时自动降级，不影响判定 ---
+# scipy      检测到则优先用于拟合，缺失则用自带 LM
+# pyyaml     config/agent.yaml 由 src/formula_agh/settings.py 自带的受限解析器读取
+# pytest     仅在你习惯用 pytest 跑测试时需要，仓库自带 run_tests.py 零依赖

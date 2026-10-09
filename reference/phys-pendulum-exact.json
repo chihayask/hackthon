@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-pendulum-exact",
+  "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "s",
+  "source": [
+    "https://en.wikipedia.org/wiki/Pendulum_(mechanics)"
+  ]
+}

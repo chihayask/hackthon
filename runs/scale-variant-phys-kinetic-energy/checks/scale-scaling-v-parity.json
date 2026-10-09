@@ -1,0 +1,6 @@
+{
+  "name": "scale-scaling-v-parity",
+  "passed": false,
+  "reason": "缩放后 y 变号（5 -> -5）：与物理量的正负不符",
+  "metrics": {}
+}

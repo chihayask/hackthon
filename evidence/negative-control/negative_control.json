@@ -1,0 +1,2123 @@
+{
+  "design": {
+    "seed": 20261113,
+    "noise_model": "y ~ Normal(0,1)，与全部自变量独立",
+    "criterion": "每一次尝试都必须被否决；出现 accepted 即记为一次\"编造\"",
+    "scenarios": [
+      {
+        "name": "A",
+        "title": "样本充足（400 点）下的常规函数族",
+        "datasets": 5,
+        "samples_per_dataset": 400,
+        "families": [
+          "常数",
+          "线性",
+          "线性+交互",
+          "三变量线性",
+          "幂律",
+          "双变量幂律",
+          "指数",
+          "正弦",
+          "有理",
+          "二次型",
+          "平方反比",
+          "幂律+线性"
+        ]
+      },
+      {
+        "name": "B",
+        "title": "小样本（80 点）+ 高容量函数族，逼出过拟合",
+        "datasets": 5,
+        "samples_per_dataset": 80,
+        "families": [
+          "五次多项式",
+          "七次多项式",
+          "三谐波正弦",
+          "三变量完全二次"
+        ]
+      }
+    ],
+    "attempts": 80
+  },
+  "settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "summary": {
+    "accepted": 0,
+    "rejected": 80,
+    "by_stage": {
+      "fit": 80
+    },
+    "best_fit_normalized_rms": null,
+    "note": "全部尝试都在拟合阶段被拦下：归一化残差门槛是 0.5·std(y)，而纯噪声上最好的拟合仍远高于它。这说明负对照没有走到留出集/外推区就已经被否决——本实验因此没有对后两道门构成压力，如实记录。"
+  },
+  "attempts": [
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "常数",
+      "formula": "k",
+      "free_parameters": [
+        "k"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "线性",
+      "formula": "c0 + c1*x1 + c2*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "线性+交互",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x1*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.998 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "三变量线性",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "幂律",
+      "formula": "a*x1**b",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "双变量幂律",
+      "formula": "a*x1**b*x2**c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.998 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "指数",
+      "formula": "a*exp(b*x1)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "正弦",
+      "formula": "a*sin(b*x1 + c)",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.990 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "有理",
+      "formula": "a/(x1 + b)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.994 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "二次型",
+      "formula": "a*x1**2 + b*x2**2 + c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "平方反比",
+      "formula": "a/(x1*x2)",
+      "free_parameters": [
+        "a"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "A",
+      "family": "幂律+线性",
+      "formula": "a*x1**b + c*x2",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "常数",
+      "formula": "k",
+      "free_parameters": [
+        "k"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "线性",
+      "formula": "c0 + c1*x1 + c2*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.993 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "线性+交互",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x1*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.993 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "三变量线性",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.992 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "幂律",
+      "formula": "a*x1**b",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.993 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "双变量幂律",
+      "formula": "a*x1**b*x2**c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.998 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "指数",
+      "formula": "a*exp(b*x1)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.994 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "正弦",
+      "formula": "a*sin(b*x1 + c)",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.983 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "有理",
+      "formula": "a/(x1 + b)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "二次型",
+      "formula": "a*x1**2 + b*x2**2 + c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.992 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "平方反比",
+      "formula": "a/(x1*x2)",
+      "free_parameters": [
+        "a"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "A",
+      "family": "幂律+线性",
+      "formula": "a*x1**b + c*x2",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.989 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "常数",
+      "formula": "k",
+      "free_parameters": [
+        "k"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "线性",
+      "formula": "c0 + c1*x1 + c2*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "线性+交互",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x1*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.997 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "三变量线性",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.988 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "幂律",
+      "formula": "a*x1**b",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.995 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "双变量幂律",
+      "formula": "a*x1**b*x2**c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.995 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "指数",
+      "formula": "a*exp(b*x1)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.994 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "正弦",
+      "formula": "a*sin(b*x1 + c)",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.001 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "有理",
+      "formula": "a/(x1 + b)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.995 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "二次型",
+      "formula": "a*x1**2 + b*x2**2 + c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "平方反比",
+      "formula": "a/(x1*x2)",
+      "free_parameters": [
+        "a"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "A",
+      "family": "幂律+线性",
+      "formula": "a*x1**b + c*x2",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.995 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "常数",
+      "formula": "k",
+      "free_parameters": [
+        "k"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "线性",
+      "formula": "c0 + c1*x1 + c2*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.990 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "线性+交互",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x1*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.990 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "三变量线性",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.989 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "幂律",
+      "formula": "a*x1**b",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "双变量幂律",
+      "formula": "a*x1**b*x2**c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.990 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "指数",
+      "formula": "a*exp(b*x1)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "正弦",
+      "formula": "a*sin(b*x1 + c)",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.005 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "有理",
+      "formula": "a/(x1 + b)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "二次型",
+      "formula": "a*x1**2 + b*x2**2 + c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.990 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "平方反比",
+      "formula": "a/(x1*x2)",
+      "free_parameters": [
+        "a"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.005 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "A",
+      "family": "幂律+线性",
+      "formula": "a*x1**b + c*x2",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.980 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "常数",
+      "formula": "k",
+      "free_parameters": [
+        "k"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "线性",
+      "formula": "c0 + c1*x1 + c2*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "线性+交互",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x1*x2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "三变量线性",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "幂律",
+      "formula": "a*x1**b",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "双变量幂律",
+      "formula": "a*x1**b*x2**c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.998 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "指数",
+      "formula": "a*exp(b*x1)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "正弦",
+      "formula": "a*sin(b*x1 + c)",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "有理",
+      "formula": "a/(x1 + b)",
+      "free_parameters": [
+        "a",
+        "b"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "二次型",
+      "formula": "a*x1**2 + b*x2**2 + c",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "平方反比",
+      "formula": "a/(x1*x2)",
+      "free_parameters": [
+        "a"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.998 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "A",
+      "family": "幂律+线性",
+      "formula": "a*x1**b + c*x2",
+      "free_parameters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.999 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "B",
+      "family": "五次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.922 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "B",
+      "family": "七次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5 + c6*x1**6 + c7*x1**7",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.921 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "B",
+      "family": "三谐波正弦",
+      "formula": "a*sin(b*x1) + c*sin(d*x1) + e",
+      "free_parameters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.947 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 1,
+      "scenario": "B",
+      "family": "三变量完全二次",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3 + c4*x1*x2 + c5*x1*x3 + c6*x2*x3 + c7*x1**2 + c8*x2**2 + c9*x3**2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.882 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "B",
+      "family": "五次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.944 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "B",
+      "family": "七次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5 + c6*x1**6 + c7*x1**7",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.925 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "B",
+      "family": "三谐波正弦",
+      "formula": "a*sin(b*x1) + c*sin(d*x1) + e",
+      "free_parameters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 2,
+      "scenario": "B",
+      "family": "三变量完全二次",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3 + c4*x1*x2 + c5*x1*x3 + c6*x2*x3 + c7*x1**2 + c8*x2**2 + c9*x3**2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.940 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "B",
+      "family": "五次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.927 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "B",
+      "family": "七次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5 + c6*x1**6 + c7*x1**7",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.868 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "B",
+      "family": "三谐波正弦",
+      "formula": "a*sin(b*x1) + c*sin(d*x1) + e",
+      "free_parameters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 3,
+      "scenario": "B",
+      "family": "三变量完全二次",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3 + c4*x1*x2 + c5*x1*x3 + c6*x2*x3 + c7*x1**2 + c8*x2**2 + c9*x3**2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.832 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "B",
+      "family": "五次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.966 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "B",
+      "family": "七次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5 + c6*x1**6 + c7*x1**7",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.943 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "B",
+      "family": "三谐波正弦",
+      "formula": "a*sin(b*x1) + c*sin(d*x1) + e",
+      "free_parameters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 1.000 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 4,
+      "scenario": "B",
+      "family": "三变量完全二次",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3 + c4*x1*x2 + c5*x1*x3 + c6*x2*x3 + c7*x1**2 + c8*x2**2 + c9*x3**2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.910 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "B",
+      "family": "五次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.966 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "B",
+      "family": "七次多项式",
+      "formula": "c0 + c1*x1 + c2*x1**2 + c3*x1**3 + c4*x1**4 + c5*x1**5 + c6*x1**6 + c7*x1**7",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.947 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "B",
+      "family": "三谐波正弦",
+      "formula": "a*sin(b*x1) + c*sin(d*x1) + e",
+      "free_parameters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.972 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    },
+    {
+      "dataset": 5,
+      "scenario": "B",
+      "family": "三变量完全二次",
+      "formula": "c0 + c1*x1 + c2*x2 + c3*x3 + c4*x1*x2 + c5*x1*x3 + c6*x2*x3 + c7*x1**2 + c8*x2**2 + c9*x3**2",
+      "free_parameters": [
+        "c0",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "verdict": "rejected",
+      "rejected_at": "fit",
+      "parameters": {},
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "reason": "meta.json 未提供单位信息，量纲检验不适用"
+        },
+        "fit": {
+          "passed": false,
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 0.873 > 0.500）"
+        }
+      },
+      "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。"
+    }
+  ]
+}

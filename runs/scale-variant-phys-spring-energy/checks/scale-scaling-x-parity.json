@@ -1,0 +1,6 @@
+{
+  "name": "scale-scaling-x-parity",
+  "passed": false,
+  "reason": "缩放后 y 变号（1.58114 -> -1.58114）：与物理量的正负不符",
+  "metrics": {}
+}

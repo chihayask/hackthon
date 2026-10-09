@@ -1,0 +1,13 @@
+{
+  "name": "fit",
+  "passed": true,
+  "reason": "参数拟合收敛（训练集诊断见 metrics）",
+  "metrics": {
+    "k": 8991354465.113548,
+    "train_relative_error_median": 0.0027572875822195414,
+    "train_relative_error_p90": 0.006640822086873923,
+    "train_rmsre": 0.004129231797750455,
+    "train_relative_rmse": 0.011513333696216292,
+    "train_normalized_rmse": 0.006134404267088666
+  }
+}

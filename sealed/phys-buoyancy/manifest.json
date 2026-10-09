@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-buoyancy/extrapolation.csv",
+    "holdout": "sealed/phys-buoyancy/holdout.csv",
+    "train": "tasks/phys-buoyancy/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "86d90fc40ad136d4ed7799a77a507444455a068b402f28da29b4ac442faf8ae1",
+      "y_max": 227.1641786,
+      "y_min": 10.49418307
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "cdd2dcbe925d0014990ff3da43549e40d208aff0b8385789d63647aec99d2872",
+      "y_max": 209.7594897,
+      "y_min": 9.494597167
+    },
+    "train": {
+      "n": 260,
+      "sha256": "f2add74a15c5cc371c0e5b3d02a201ae85cbbfb7f09934523a934ffc84ca5927",
+      "y_max": 213.7425325,
+      "y_min": 9.404112405
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-buoyancy"
+}

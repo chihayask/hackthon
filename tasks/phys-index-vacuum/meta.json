@@ -1,0 +1,32 @@
+{
+  "task_id": "phys-index-vacuum",
+  "var_names": [
+    "eps",
+    "mu"
+  ],
+  "units": {
+    "eps": "F/m",
+    "mu": "H/m",
+    "y": "m/s"
+  },
+  "free_parameters": [],
+  "source": [
+    "https://en.wikipedia.org/wiki/Refractive_index"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "eps": [
+      2e-11,
+      8e-11
+    ],
+    "mu": [
+      1.2e-06,
+      1.3e-06
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "challenge",
+  "domain": "optics",
+  "phenomenon": "介质折射率与介电常数、磁导率的关系"
+}

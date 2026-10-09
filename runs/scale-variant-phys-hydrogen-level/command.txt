@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-hydrogen-level --formula "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)" --params eps0=8.8541878128e-12,hbar=1.054571817e-34 --run-id scale-variant-phys-hydrogen-level

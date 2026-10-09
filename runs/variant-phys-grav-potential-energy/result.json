@@ -1,0 +1,142 @@
+{
+  "task_id": "phys-grav-potential-energy",
+  "formula": "-G*m1*m2/r**2",
+  "parameters": {
+    "G": 9.628919248163122e-11
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
+      "metrics": {}
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "G": 9.628919248163122e-11,
+        "train_relative_error_median": 0.2853254761217251,
+        "train_relative_error_p90": 0.49612010414768687,
+        "train_rmsre": 0.3211619846263886,
+        "train_relative_rmse": 0.4566193091695484,
+        "train_normalized_rmse": 0.4064249147341259
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.2586（阈值 0.0200）；诊断口径 p90=0.4640、RMSE/中位|y|=0.3981、RMSE/std(y)=0.4337、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.25862118908980725,
+        "relative_error_p75": 0.3933799318811877,
+        "relative_error_p90": 0.46403374958170274,
+        "rmsre": 0.30042081787388253,
+        "max_relative_error": 0.5149515322056281,
+        "rmse": 9.446889917242808e-11,
+        "relative_rmse": 0.3981396518648952,
+        "normalized_rmse": 0.43373705884251945,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.3298（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.4936、RMSE/中位|y|=1.5238、RMSE/std(y)=0.4418",
+      "metrics": {
+        "relative_error_median": 0.3298231954398354,
+        "relative_error_p75": 0.4517155459031833,
+        "relative_error_p90": 0.49356837604845294,
+        "rmsre": 0.3423281293380692,
+        "max_relative_error": 0.5059881506451723,
+        "rmse": 1.5730699883714202e-10,
+        "relative_rmse": 1.52375254713273,
+        "normalized_rmse": 0.44178447804047793,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-r",
+      "passed": false,
+      "reason": "缩放 r×2 倍后 y 变为 0.25 倍，物理预期 0.5 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 0.25,
+        "expected_ratio": 0.5,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-symmetry-m1-m2",
+      "passed": true,
+      "reason": "把 m1=0.88914, m2=2.81171 与两者互换后分别求值：-8.0241e-11 vs -8.0241e-11，相对差异 0.00e+00；两个同类量地位对称，符合物理",
+      "metrics": {
+        "value_ab": -8.02409937346927e-11,
+        "value_ba": -8.02409937346927e-11,
+        "rel_error": 0.0,
+        "swap": [
+          "m1",
+          "m2"
+        ],
+        "probe": [
+          0.8891397050194614,
+          2.8117066259517456
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-r",
+      "passed": true,
+      "reason": "在 r ∈ [1, 3] 上用等距网格扫描 9 点：整体相对变化 8.889e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.36000000000000004,
+          0.1955555555555555,
+          0.11791383219954647,
+          0.07653061224489796,
+          0.05246913580246914,
+          0.03753086419753087,
+          0.027768595041322314,
+          0.021120293847566564
+        ],
+        "variation": 0.8888888888888888,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "negative",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": -2.4072298120407803e-09,
+        "max_value": -2.674699791156423e-12
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation、scale-scaling-r。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-r）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "free_parameters": [
+    "G"
+  ]
+}

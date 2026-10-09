@@ -1,0 +1,111 @@
+{
+  "task_id": "phys-cyclotron",
+  "formula": "q*B*m",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-B",
+      "passed": true,
+      "reason": "缩放 B×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-m",
+      "passed": false,
+      "reason": "缩放 m×2 倍后 y 变为 2 倍，物理预期 0.5 倍（相对偏差 3.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 0.5,
+        "rel_error": 3.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-scaling-q",
+      "passed": true,
+      "reason": "缩放 q×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-B",
+      "passed": true,
+      "reason": "在 B ∈ [0.1, 2] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.02271077167244769,
+          0.033026354671608714,
+          0.048027434674012395,
+          0.06984223673191017,
+          0.10156565856213924,
+          0.1476983481894698,
+          0.2147852174320443,
+          0.3123439780663677
+        ],
+        "variation": 0.95,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.1,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-m",
+      "passed": false,
+      "reason": "在 m ∈ [1e-30, 1e-26] 上用等比网格扫描 9 点：整体相对变化 9.999e-01；有 8 个步长方向相反（极值 2.162e-04），不满足全程递减",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          0.00021622776601683792,
+          0.000683772233983162,
+          0.002162277660168379,
+          0.00683772233983162,
+          0.021622776601683796,
+          0.0683772233983162,
+          0.21622776601683794,
+          0.6837722339831621
+        ],
+        "variation": 0.9999,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": false,
+        "range": [
+          1e-30,
+          1e-26
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 1.0000000000000001e-50,
+        "max_value": 2.0000000000000002e-44
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-scaling-m、scale-monotonic-m。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

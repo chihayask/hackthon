@@ -1,0 +1,30 @@
+{
+  "task_id": "phys-surface-gravity",
+  "verdict": "rejected",
+  "formula": "G*M/R",
+  "parameters": {
+    "G": 3.596135204986923e-17
+  },
+  "free_parameters": [
+    "G"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "fixture-variant",
+  "hypothesis_source_note": "人为构造的结构错误候选式（判别力测试）",
+  "rounds_hint": "未通过项：holdout、extrapolation、scale-scaling-R。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-R）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "inputs": [
+    "D:\\fagh-restore\\hackathon-2026\\tasks\\phys-surface-gravity"
+  ],
+  "notes": "判别力：物理上合理但结构错误的候选式 \"G*M/R\"；期望 rejected",
+  "duplicate_check_names": []
+}

@@ -1,0 +1,27 @@
+# 密钥与本地环境 —— 绝不入库
+.env
+.env.local
+.venv/
+venv/
+
+# 运行时缓存
+__pycache__/
+*.pyc
+
+# 干净复现目录同样不能带密钥（reproduce.py 的 EXCLUDE_FILES 已挡住，这里是第二道）
+_clean_repro/.env
+
+# 一键复现的干净目录（可随时重建）
+_clean_repro/
+_contract_tmp/
+_isolation_tmp/
+_adversarial_tmp/
+_m3/
+
+# 注意：以下目录**故意不忽略**，它们是提交物的一部分
+#   runs/     每次运行的完整证据
+#   evidence/ 证据包（归档副本 + 索引 + 报告）
+#   sealed/   留出集与外推集封印数据
+#   recheck/  独立复算结果
+#   expected/ 复现基线指纹
+# 它们全部可由 python reproduce.py 从零重建，因此入库是安全且可核对的。

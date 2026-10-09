@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-ohm",
+  "formula": "I*R",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "V",
+  "source": [
+    "https://en.wikipedia.org/wiki/Ohm%27s_law"
+  ]
+}

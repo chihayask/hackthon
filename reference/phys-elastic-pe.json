@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-elastic-pe",
+  "formula": "c*x**2/2",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "J",
+  "source": [
+    "https://en.wikipedia.org/wiki/Elastic_energy"
+  ]
+}

@@ -1,0 +1,43 @@
+# 智能体运行配置：阈值与运行参数的唯一来源
+#
+# 纪律（对应 AGH Skill 硬约束第 6 条）：禁止为让某个公式通过而放宽本文件的阈值。
+# 修改本文件必须同时更新 docs/运行与验证.md 的"阈值变更记录"，并重跑一键复现脚本。
+#
+# 本文件由 src/formula_agh/settings.py 解析（受限 YAML 子集：嵌套映射 + 标量 + 内联列表）。
+# 校验：python -m formula_agh settings --show
+
+run:
+  max_rounds: 6                  # 单个任务最大迭代轮数
+  max_rejected_before_restart: 3 # 连续否决多少次后触发重构策略（换函数族）
+  timeout_per_tool_sec: 120      # 单次工具调用超时
+  seed: 20261008                 # 固定随机种子：决定数据划分与拟合多起点顺序
+
+verify:
+  # 判定口径：relative_error_median = median( |pred-truth| / |truth| )
+  #   逐点相对误差的中位数：无量纲、对目标量动态范围免疫、对近零尾部稳健。
+  #   演进过程与实测数据见 docs/M2_验证口径修正.md。三次口径的对比：
+  #       口径                    金标准最坏  错误式最好  分离倍数
+  #       RMSE/std(y)              0.0697     0.2255     3.23   （误杀 energy-shift）
+  #       RMSE/中位|y|             0.0876     0.1855     2.12   （cyclotron 随种子翻转）
+  #       median(相对误差)         0.0130     0.1374    10.58   <-- 当前
+  #   四个口径的数值全部写进 runs/<id>/checks/*.json 的 metrics，可换口径独立复核。
+  # 拟合收敛粗筛门槛：训练集 RMSE/std(y) 超过它就直接判"这个函数形式没戏"。
+  # 注意这条用的是**判定阶段已弃用的口径** RMSE/std(y)（见 docs/M2_验证口径修正.md）。
+  # 保留的理由：它是粗筛不是精度判定，松一点是刻意的；真正的精度判定交给留出集与外推区。
+  # 改造前它硬编码在 verify.py 里，属于"该进配置的没进"——现已移到这里。
+  max_fit_residual: 0.5
+  error_criterion: relative_error_median
+  holdout_ratio: 0.2             # 留出集比例
+  holdout_error_threshold: 0.02  # 留出集中位相对误差上限
+  extrapolation_ratio: 0.15      # 外推区占总样本比例（两端各一半）
+  extrapolation_error_threshold: 0.03
+  dimension_check: true          # 量纲检验开关（无单位信息时自动降级并如实标注）
+  scale_check: true              # 尺度/极限行为检验开关
+
+data_audit:
+  missing_ratio_warn: 0.02       # 缺失比例告警阈值
+  outlier_sigma: 4               # 异常值判定倍数
+  min_samples: 200               # 样本量下限（低于则阻断）
+
+limits:
+  max_variables: 5               # 自变量数上限

@@ -1,0 +1,99 @@
+{
+  "task_id": "phys-ohm",
+  "formula": "I*R",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-I",
+      "passed": true,
+      "reason": "缩放 I×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-R",
+      "passed": true,
+      "reason": "缩放 R×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-I",
+      "passed": true,
+      "reason": "在 I ∈ [0.05, 2] 上用等比网格扫描 9 点：整体相对变化 9.750e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.01464582937843108,
+          0.023225842105715686,
+          0.036832310931743384,
+          0.05840990059252882,
+          0.09262835811610073,
+          0.14689312325900564,
+          0.23294798806365544,
+          0.3694166475528192
+        ],
+        "variation": 0.9750000000000001,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.05,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-R",
+      "passed": true,
+      "reason": "在 R ∈ [1, 50] 上用等比网格扫描 9 点：整体相对变化 9.800e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.012613788179066191,
+          0.020569170790383694,
+          0.03354192895883048,
+          0.05469646830902912,
+          0.08919295157868418,
+          0.14544600149264564,
+          0.23717725420866453,
+          0.38676243648269615
+        ],
+        "variation": 0.98,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1.0,
+          50.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.05,
+        "max_value": 100.0
+      }
+    }
+  ],
+  "rounds_hint": "全部 5 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-buoyancy",
+  "formula": "rho*V*g",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "N",
+  "source": [
+    "https://en.wikipedia.org/wiki/Buoyancy"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "task_id": "phys-cyclotron",
+  "formula": "q*B/m",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-B",
+      "passed": true,
+      "reason": "缩放 B×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-m",
+      "passed": true,
+      "reason": "缩放 m×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-scaling-q",
+      "passed": true,
+      "reason": "缩放 q×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-B",
+      "passed": true,
+      "reason": "在 B ∈ [0.1, 2] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.022710771672447685,
+          0.033026354671608714,
+          0.048027434674012395,
+          0.06984223673191017,
+          0.10156565856213928,
+          0.14769834818946972,
+          0.21478521743204426,
+          0.31234397806636777
+        ],
+        "variation": 0.95,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.1,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-m",
+      "passed": true,
+      "reason": "在 m ∈ [1e-30, 1e-26] 上用等比网格扫描 9 点：整体相对变化 9.999e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.6837722339831621,
+          -0.21622776601683794,
+          -0.06837722339831621,
+          -0.021622776601683796,
+          -0.006837722339831621,
+          -0.0021622776601683794,
+          -0.000683772233983162,
+          -0.000216227766016838
+        ],
+        "variation": 0.9999000000000001,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1e-30,
+          1e-26
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 1000000.0,
+        "max_value": 2000000000000.0
+      }
+    }
+  ],
+  "rounds_hint": "全部 6 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-surface-gravity/extrapolation.csv",
+    "holdout": "sealed/phys-surface-gravity/holdout.csv",
+    "train": "tasks/phys-surface-gravity/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "1d288a18f771f704484cbf9a8160f1c5b474f3a925ed8eb09f231cc87ac09b1d",
+      "y_max": 494.8038835,
+      "y_min": 0.1365306743
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "fc97227029e0884b26a158261d43b89a048f553ce6b3392e66bdae445b622d4e",
+      "y_max": 276.9518443,
+      "y_min": 1.13545714
+    },
+    "train": {
+      "n": 260,
+      "sha256": "d4b1e75a3f8b89ed279c123b5922c0dfda6c0e361b64183430a2718209804e39",
+      "y_max": 456.1849334,
+      "y_min": 0.8472844915
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-surface-gravity"
+}

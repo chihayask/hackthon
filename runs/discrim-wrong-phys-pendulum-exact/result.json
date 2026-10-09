@@ -1,0 +1,236 @@
+{
+  "task_id": "phys-pendulum-exact",
+  "formula": "2*pi*sqrt(L/g)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.0276（阈值 0.0200）；诊断口径 p90=0.0668、RMSE/中位|y|=0.0414、RMSE/std(y)=0.1228、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.0275500967660534,
+        "relative_error_p75": 0.05088338438256939,
+        "relative_error_p90": 0.0667615545916161,
+        "rmsre": 0.038989208628064334,
+        "max_relative_error": 0.08040378977855545,
+        "rmse": 0.10932322535284836,
+        "relative_rmse": 0.04141401232464016,
+        "normalized_rmse": 0.12282761911354459,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0228（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0654、RMSE/中位|y|=0.0471、RMSE/std(y)=0.0749",
+      "metrics": {
+        "relative_error_median": 0.022760239186342034,
+        "relative_error_p75": 0.046967580735604586,
+        "relative_error_p90": 0.06542254972333834,
+        "rmsre": 0.037254033377371515,
+        "max_relative_error": 0.07960775545680455,
+        "rmse": 0.11978033653581716,
+        "relative_rmse": 0.04710804400065726,
+        "normalized_rmse": 0.07486710459390761,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-L",
+      "passed": true,
+      "reason": "缩放 L×4 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": 0.5
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": true,
+      "reason": "缩放 g×4 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": -0.5
+      }
+    },
+    {
+      "name": "scale-limit-theta0-to-0-0",
+      "passed": true,
+      "reason": "theta0 -> 0 时，公式与极限式 2*pi*sqrt(L/g) 的相对偏差依次为 0.00e+00、0.00e+00、0.00e+00（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+      "metrics": {
+        "rel_errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "probe_values": [
+          0.11499999999999999,
+          0.028749999999999998,
+          0.0071874999999999994
+        ],
+        "nearest_rel_error": 0.0,
+        "monotone": true,
+        "contraction": [
+          0.0,
+          0.0
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "2*pi*sqrt(L/g)",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-theta0",
+      "passed": false,
+      "reason": "在 theta0 ∈ [0.05, 1.2] 上用等比网格扫描 9 点：整体相对变化 0.000e+00；有 8 个步长方向相反（极值 0.000e+00），不满足全程递增",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "variation": 0.0,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": false,
+        "range": [
+          0.05,
+          1.2
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.8111557351947223,
+        "max_value": 7.024814731040727
+      }
+    },
+    {
+      "name": "scale-scaling-L",
+      "passed": true,
+      "reason": "缩放 L×4 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": 0.5
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": true,
+      "reason": "缩放 g×4 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": -0.5
+      }
+    },
+    {
+      "name": "scale-limit-theta0-to-0-0",
+      "passed": true,
+      "reason": "theta0 -> 0 时，公式与极限式 2*pi*sqrt(L/g) 的相对偏差依次为 0.00e+00、0.00e+00、0.00e+00（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+      "metrics": {
+        "rel_errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "probe_values": [
+          0.11499999999999999,
+          0.028749999999999998,
+          0.0071874999999999994
+        ],
+        "nearest_rel_error": 0.0,
+        "monotone": true,
+        "contraction": [
+          0.0,
+          0.0
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "2*pi*sqrt(L/g)",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-theta0",
+      "passed": false,
+      "reason": "在 theta0 ∈ [0.05, 1.2] 上用等比网格扫描 9 点：整体相对变化 0.000e+00；有 8 个步长方向相反（极值 0.000e+00），不满足全程递增",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "variation": 0.0,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": false,
+        "range": [
+          0.05,
+          1.2
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.8111557351947223,
+        "max_value": 7.024814731040727
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

@@ -1,0 +1,85 @@
+{
+  "task_id": "phys-kinetic-energy",
+  "formula": "m*v**2/2",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-v",
+      "passed": true,
+      "reason": "缩放 v×2 倍后 y 变为 4 倍，物理预期 4 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 4.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-scaling-m",
+      "passed": true,
+      "reason": "缩放 m×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-v-parity",
+      "passed": true,
+      "reason": "缩放 v×-1 倍后 y 变为 1 倍，物理预期 1 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 1.0,
+        "rel_error": 0.0,
+        "lambda": -1.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-monotonic-v",
+      "passed": true,
+      "reason": "在 v ∈ [1, 20] 上用等比网格扫描 9 点：整体相对变化 9.975e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0027868563172028207,
+          0.005893483570296126,
+          0.012463200337580454,
+          0.026356459774920613,
+          0.05573712634405641,
+          0.11786967140592258,
+          0.24926400675160906,
+          0.527129195498412
+        ],
+        "variation": 0.9974999999999999,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.25,
+        "max_value": 2000.0
+      }
+    }
+  ],
+  "rounds_hint": "全部 5 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-eps",
+  "passed": true,
+  "reason": "缩放 eps×2 倍后 y 变为 0.707107 倍，物理预期 0.707107 倍（相对偏差 1.57e-16，容差 1e-04）",
+  "metrics": {
+    "ratio": 0.7071067811865475,
+    "expected_ratio": 0.7071067811865476,
+    "rel_error": 1.570092458683775e-16,
+    "lambda": 2.0,
+    "expect_power": -0.5
+  }
+}

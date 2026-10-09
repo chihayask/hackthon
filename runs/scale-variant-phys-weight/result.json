@@ -1,0 +1,99 @@
+{
+  "task_id": "phys-weight",
+  "formula": "m/g",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-m",
+      "passed": true,
+      "reason": "缩放 m×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": false,
+      "reason": "缩放 g×2 倍后 y 变为 0.5 倍，物理预期 2 倍（相对偏差 7.50e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 2.0,
+        "rel_error": 0.75,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-m",
+      "passed": true,
+      "reason": "在 m ∈ [0.5, 20] 上用等比网格扫描 9 点：整体相对变化 9.750e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.014645829378431086,
+          0.02322584210571569,
+          0.0368323109317434,
+          0.05840990059252882,
+          0.09262835811610072,
+          0.1468931232590057,
+          0.2329479880636554,
+          0.36941664755281917
+        ],
+        "variation": 0.975,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.5,
+          20.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-g",
+      "passed": false,
+      "reason": "在 g ∈ [1.6, 12] 上用等距网格扫描 9 点：整体相对变化 8.667e-01；有 8 个步长方向相反（极值 -1.620e-02），不满足全程递增",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          -0.4482758620689655,
+          -0.1707717569786535,
+          -0.09004329004329002,
+          -0.05561497326203214,
+          -0.03776325344952793,
+          -0.027318098240084084,
+          -0.02068005567707296,
+          -0.016199376947040503
+        ],
+        "variation": 0.8666666666666666,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": false,
+        "range": [
+          1.6,
+          12.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.041666666666666664,
+        "max_value": 12.5
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-scaling-g、scale-monotonic-g。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

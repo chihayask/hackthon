@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-grav-potential-energy/extrapolation.csv",
+    "holdout": "sealed/phys-grav-potential-energy/holdout.csv",
+    "train": "tasks/phys-grav-potential-energy/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "f005b2bbf945ed98b9da857007676c917903ff7aafa37dd2af58cc0146e40a55",
+      "y_max": -1.229536142e-11,
+      "y_min": -1.379100275e-09
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "7f42ee8c93973c06fb850f3e5ef7e248546432ec8bef6b459870d12e50cbf641",
+      "y_max": -3.607388293e-11,
+      "y_min": -8.96204311e-10
+    },
+    "train": {
+      "n": 260,
+      "sha256": "056b2e8ff5c4ce50b21f317b20a4a8d639c05c242b4f0bd87e609b418f74b256",
+      "y_max": -1.878091797e-11,
+      "y_min": -1.231062153e-09
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-grav-potential-energy"
+}

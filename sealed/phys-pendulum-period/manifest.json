@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-pendulum-period/extrapolation.csv",
+    "holdout": "sealed/phys-pendulum-period/holdout.csv",
+    "train": "tasks/phys-pendulum-period/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "fdacc2f80f8b2751a72c9ad6322b488bde37d4a041611494c8e870f8dba1300f",
+      "y_max": 6.700880736,
+      "y_min": 0.881121618
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "4eef7d2a90bf41f7b0ea8f57925fdca5c0cf4bf951751e0a3a88657937eeb8d0",
+      "y_max": 4.719440497,
+      "y_min": 0.9392152175
+    },
+    "train": {
+      "n": 260,
+      "sha256": "92143505fd0403d66752a12c9daa34ac410a526f685433fde60c47bce4230dfa",
+      "y_max": 5.708480004,
+      "y_min": 0.946526712
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-pendulum-period"
+}

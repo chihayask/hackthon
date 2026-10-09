@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-coulomb/extrapolation.csv",
+    "holdout": "sealed/phys-coulomb/holdout.csv",
+    "train": "tasks/phys-coulomb/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "a2e0424452fe4662643e9763203ef4168cf5dd4664848c975df96a1f343dac66",
+      "y_max": 14972864.7,
+      "y_min": 56613.40258
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "8d3c16e59fbe353cc48ab8b7eac2d12d12d98f09e2f64c84a789070c1ef75b15",
+      "y_max": 6454408.82,
+      "y_min": 130040.364
+    },
+    "train": {
+      "n": 260,
+      "sha256": "0e3ab2dfef3660129bd65049e45491f4cff75a80b04c980b3347f73400a08a93",
+      "y_max": 9639742.452,
+      "y_min": 80818.6145
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-coulomb"
+}

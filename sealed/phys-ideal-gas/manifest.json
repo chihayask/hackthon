@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-ideal-gas/extrapolation.csv",
+    "holdout": "sealed/phys-ideal-gas/holdout.csv",
+    "train": "tasks/phys-ideal-gas/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "dfa9566735d0c4abf9e292c6cf06c5fc1a7c2a367d50c9249d3ebb6cade1ac2f",
+      "y_max": 679008.8274,
+      "y_min": 57357.18326
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "88a1855d44c813f8c34b3289bb1b66616b344b19c3975c055b351795e7400dce",
+      "y_max": 813120.415,
+      "y_min": 62692.29123
+    },
+    "train": {
+      "n": 260,
+      "sha256": "adc3557fb0a9a2345749eed8ac920ca2350c0efb3d5ea23cdd27561112ef020b",
+      "y_max": 1130152.969,
+      "y_min": 45700.5487
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-ideal-gas"
+}

@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-index-vacuum/extrapolation.csv",
+    "holdout": "sealed/phys-index-vacuum/holdout.csv",
+    "train": "tasks/phys-index-vacuum/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "be584c42384bbd7b0c2d29ee2007d7f8b79ee170df8e9e036e5c6256b5ed9876",
+      "y_max": 193612101.8,
+      "y_min": 99162341.78
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "1223de60e2ca0e5c5685a1667f526e6e5bf21e8639c206493d3fa606fa0269d6",
+      "y_max": 190197806.0,
+      "y_min": 98808716.06
+    },
+    "train": {
+      "n": 260,
+      "sha256": "f88ceaa71ed039216389c377174d9d9a372299700204d811003a93064004d2fd",
+      "y_max": 197591941.0,
+      "y_min": 99201957.21
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-index-vacuum"
+}

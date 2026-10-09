@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-pendulum-exact --formula "2*pi*sqrt(L/g)*(1 + theta0**2/16)" --run-id scale-ref-phys-pendulum-exact

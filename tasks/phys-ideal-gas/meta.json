@@ -1,0 +1,40 @@
+{
+  "task_id": "phys-ideal-gas",
+  "var_names": [
+    "n",
+    "T",
+    "V"
+  ],
+  "units": {
+    "n": "mol",
+    "T": "K",
+    "V": "m^3",
+    "y": "Pa"
+  },
+  "free_parameters": [
+    "R"
+  ],
+  "source": [
+    "https://en.wikipedia.org/wiki/Ideal_gas_law"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "n": [
+      1.0,
+      4.0
+    ],
+    "T": [
+      250.0,
+      400.0
+    ],
+    "V": [
+      0.01,
+      0.05
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "base",
+  "domain": "thermodynamics",
+  "phenomenon": "理想气体压强与物质量、温度成正比，与体积成反比"
+}

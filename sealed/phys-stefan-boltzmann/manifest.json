@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-stefan-boltzmann/extrapolation.csv",
+    "holdout": "sealed/phys-stefan-boltzmann/holdout.csv",
+    "train": "tasks/phys-stefan-boltzmann/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "1b55e855791e88b57d965b085d9d8aed0a2c091cf7681b4f990a0d61c40956c9",
+      "y_max": 99579.85477,
+      "y_min": 90.8815839
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "736b37d033b26d2067eedcf91d6743d36526460a60ce66222ea90e7ff9fd83ef",
+      "y_max": 78959.61301,
+      "y_min": 229.5410545
+    },
+    "train": {
+      "n": 260,
+      "sha256": "2bb96b4b1db6286555a3511918f6bc832f267188a93614ad180c763884500073",
+      "y_max": 84442.23029,
+      "y_min": 151.9432792
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-stefan-boltzmann"
+}

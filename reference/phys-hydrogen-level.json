@@ -1,0 +1,16 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+  "free_parameters": [
+    "eps0",
+    "hbar"
+  ],
+  "true_constants": {
+    "eps0": 8.8541878128e-12,
+    "hbar": 1.054571817e-34
+  },
+  "y_unit": "J",
+  "source": [
+    "https://en.wikipedia.org/wiki/Bohr_model"
+  ]
+}

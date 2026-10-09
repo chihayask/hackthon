@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-index-vacuum",
+  "formula": "1/sqrt(eps*mu)",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "m/s",
+  "source": [
+    "https://en.wikipedia.org/wiki/Refractive_index"
+  ]
+}

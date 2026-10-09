@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-weight",
+  "formula": "m*g",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "N",
+  "source": [
+    "https://en.wikipedia.org/wiki/Weight"
+  ]
+}

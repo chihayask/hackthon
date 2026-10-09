@@ -1,0 +1,13 @@
+{
+  "name": "negative-control",
+  "passed": true,
+  "reason": "对 10 份纯噪声数据用 16 个函数族共尝试 80 次（两个场景：常规族与大容量族），被采纳 0 次；拦截阶段分布：fit=80；最接近通过的一次归一化残差为 n/a",
+  "metrics": {
+    "accepted": 0,
+    "attempts": 80,
+    "by_stage": {
+      "fit": 80
+    },
+    "best_fit_normalized_rms": null
+  }
+}

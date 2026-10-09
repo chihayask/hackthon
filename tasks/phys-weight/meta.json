@@ -1,0 +1,32 @@
+{
+  "task_id": "phys-weight",
+  "var_names": [
+    "m",
+    "g"
+  ],
+  "units": {
+    "m": "kg",
+    "g": "m/s^2",
+    "y": "N"
+  },
+  "free_parameters": [],
+  "source": [
+    "https://en.wikipedia.org/wiki/Weight"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "m": [
+      0.5,
+      20.0
+    ],
+    "g": [
+      1.6,
+      12.0
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "base",
+  "domain": "mechanics",
+  "phenomenon": "物体所受重力等于质量与重力加速度之积"
+}

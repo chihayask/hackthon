@@ -1,0 +1,16 @@
+[
+  {
+    "formula": "G*m1*m2/r**2",
+    "parameters": [
+      "G"
+    ],
+    "expect": "accepted"
+  },
+  {
+    "formula": "G*m1*m2/r",
+    "parameters": [
+      "G"
+    ],
+    "expect": "rejected"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-cyclotron/extrapolation.csv",
+    "holdout": "sealed/phys-cyclotron/holdout.csv",
+    "train": "tasks/phys-cyclotron/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "aa9d828a6de1c4d670ffc146debf17370e450ff6f9dcc5fab29cfe3403c6803f",
+      "y_max": 28514916340.0,
+      "y_min": 2617552.613
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "5b4f2376c6f1a50418100bd6ba18d6f9979af122dddb04a2e5b3a82e2f07e6d4",
+      "y_max": 3185822199.0,
+      "y_min": 3918963.98
+    },
+    "train": {
+      "n": 260,
+      "sha256": "53a82ef7f27b1c926db477a427d7d37cdf18547c297f4532bda89ee552bf986f",
+      "y_max": 20290288900.0,
+      "y_min": 4881397.214
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-cyclotron"
+}

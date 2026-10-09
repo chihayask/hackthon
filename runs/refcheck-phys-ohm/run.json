@@ -1,0 +1,26 @@
+{
+  "task_id": "phys-ohm",
+  "verdict": "accepted",
+  "formula": "I*R",
+  "parameters": {},
+  "free_parameters": [],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "reference",
+  "hypothesis_source_note": "标准答案原样送回引擎（金标准自检）",
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "inputs": [
+    "D:\\fagh-restore\\hackathon-2026\\tasks\\phys-ohm"
+  ],
+  "notes": "金标准自检：把标准答案原样送入验证引擎；期望 accepted。参考公式来自 reference/phys-ohm.json（评分侧文件，智能体不可读）",
+  "duplicate_check_names": []
+}

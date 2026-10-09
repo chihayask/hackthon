@@ -1,0 +1,100 @@
+{
+  "task_id": "phys-pendulum-exact",
+  "formula": "2*pi*sqrt(L/g)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-L",
+      "passed": true,
+      "reason": "缩放 L×4 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": 0.5
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": true,
+      "reason": "缩放 g×4 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 4.0,
+        "expect_power": -0.5
+      }
+    },
+    {
+      "name": "scale-limit-theta0-to-0-0",
+      "passed": true,
+      "reason": "theta0 -> 0 时，公式与极限式 2*pi*sqrt(L/g) 的相对偏差依次为 0.00e+00、0.00e+00、0.00e+00（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+      "metrics": {
+        "rel_errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "probe_values": [
+          0.11499999999999999,
+          0.028749999999999998,
+          0.0071874999999999994
+        ],
+        "nearest_rel_error": 0.0,
+        "monotone": true,
+        "contraction": [
+          0.0,
+          0.0
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "2*pi*sqrt(L/g)",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-theta0",
+      "passed": false,
+      "reason": "在 theta0 ∈ [0.05, 1.2] 上用等比网格扫描 9 点：整体相对变化 0.000e+00；有 8 个步长方向相反（极值 0.000e+00），不满足全程递增",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "variation": 0.0,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": false,
+        "range": [
+          0.05,
+          1.2
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.8111557351947223,
+        "max_value": 7.024814731040727
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-monotonic-theta0。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

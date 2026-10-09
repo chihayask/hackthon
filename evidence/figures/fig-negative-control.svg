@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" font-family="Microsoft YaHei, Segoe UI, PingFang SC, sans-serif">
+<rect width="1180" height="620" fill="#ffffff"/>
+<text x="590" y="34" font-size="22" font-weight="600" fill="#222222" text-anchor="middle">负对照实验：纯噪声数据上，80 次尝试全部被否决</text>
+<rect x="96.00" y="64.00" width="1044.00" height="478.00" fill="none" stroke="#333333" stroke-width="1.2"/>
+<line x1="90.00" y1="458.87" x2="96.00" y2="458.87" stroke="#333333" stroke-width="0.8"/>
+<text x="84.00" y="463.87" font-size="15" fill="#222222" text-anchor="end">0</text>
+<line x1="90.00" y1="354.96" x2="96.00" y2="354.96" stroke="#333333" stroke-width="0.8"/>
+<text x="84.00" y="359.96" font-size="15" fill="#222222" text-anchor="end">2</text>
+<line x1="90.00" y1="251.04" x2="96.00" y2="251.04" stroke="#333333" stroke-width="0.8"/>
+<text x="84.00" y="256.04" font-size="15" fill="#222222" text-anchor="end">4</text>
+<line x1="90.00" y1="147.13" x2="96.00" y2="147.13" stroke="#333333" stroke-width="0.8"/>
+<text x="84.00" y="152.13" font-size="15" fill="#222222" text-anchor="end">6</text>
+<text x="618.00" y="594" font-size="16" fill="#222222" text-anchor="middle">函数族</text>
+<text x="26.00" y="303.00" font-size="16" fill="#222222" text-anchor="middle" transform="rotate(-90 26.00 303.00)">否决次数 / 尝试次数</text>
+<rect x="947.27" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="788.20" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="629.13" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="470.07" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="311.00" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="151.93" y="64.00" width="73.17" height="478.00" fill="#f4f4f4" fill-opacity="1.00"/>
+<rect x="167.84" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="188.51" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="188.51" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">常数</text>
+<rect x="247.37" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="268.05" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="268.05" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">线性</text>
+<rect x="326.90" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="347.58" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="347.58" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">线性+交互</text>
+<rect x="406.44" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="427.12" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="427.12" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">三变量线性</text>
+<rect x="485.97" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="506.65" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="506.65" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">幂律</text>
+<rect x="565.51" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="586.19" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="586.19" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">双变量幂律</text>
+<rect x="645.04" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="665.72" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="665.72" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">指数</text>
+<rect x="724.58" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="745.25" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="745.25" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">正弦</text>
+<rect x="804.11" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="824.79" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="824.79" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">有理</text>
+<rect x="883.64" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="904.32" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="904.32" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">二次型</text>
+<rect x="963.18" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="983.86" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="983.86" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">平方反比</text>
+<rect x="1042.71" y="199.09" width="41.36" height="259.78" fill="#2ca02c" fill-opacity="0.92"/>
+<text x="1063.39" y="190.77" font-size="13.0" fill="#2b6b2b" text-anchor="middle">5/5</text>
+<text x="1063.39" y="503.03" font-size="14.0" fill="#222222" text-anchor="middle">幂律+线性</text>
+<text x="167.84" y="100.37" font-size="14.0" fill="#555555" text-anchor="start">拦截阶段：fit 80 次</text>
+<line x1="914.00" y1="72.00" x2="940.00" y2="72.00" stroke="#2ca02c" stroke-width="2.4"/>
+<text x="1124.00" y="76.00" font-size="15" fill="#222222" text-anchor="end">被否决的尝试次数（全部 80 次）</text>
+</svg>

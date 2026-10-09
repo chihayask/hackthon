@@ -1,0 +1,14 @@
+{
+  "task_id": "phys-energy-shift",
+  "formula": "(A-B)/h",
+  "free_parameters": [
+    "h"
+  ],
+  "true_constants": {
+    "h": 6.62607015e-34
+  },
+  "y_unit": "Hz",
+  "source": [
+    "https://en.wikipedia.org/wiki/Planck_relation"
+  ]
+}

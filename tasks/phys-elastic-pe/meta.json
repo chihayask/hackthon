@@ -1,0 +1,32 @@
+{
+  "task_id": "phys-elastic-pe",
+  "var_names": [
+    "c",
+    "x"
+  ],
+  "units": {
+    "c": "N/m",
+    "x": "m",
+    "y": "J"
+  },
+  "free_parameters": [],
+  "source": [
+    "https://en.wikipedia.org/wiki/Elastic_energy"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "c": [
+      10.0,
+      200.0
+    ],
+    "x": [
+      0.01,
+      0.5
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "challenge",
+  "domain": "mechanics",
+  "phenomenon": "弹性势能随形变量与劲度系数的组合变化"
+}

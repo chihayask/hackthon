@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-joule-heating",
+  "formula": "I**2*R",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "W",
+  "source": [
+    "https://en.wikipedia.org/wiki/Joule_heating"
+  ]
+}

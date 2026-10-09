@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-coulomb --formula "k*q1*q2/r" --params k=8987551792.3 --run-id scale-variant-phys-coulomb

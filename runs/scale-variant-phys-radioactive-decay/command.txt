@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-radioactive-decay --formula "N0*(1-t/tau)" --run-id scale-variant-phys-radioactive-decay

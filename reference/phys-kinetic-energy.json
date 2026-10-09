@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-kinetic-energy",
+  "formula": "m*v**2/2",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "J",
+  "source": [
+    "https://en.wikipedia.org/wiki/Kinetic_energy"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "phys-stefan-boltzmann",
+  "formula": "sigma*A*T**4",
+  "free_parameters": [
+    "sigma"
+  ],
+  "true_constants": {
+    "sigma": 5.670374419e-08
+  },
+  "y_unit": "W",
+  "source": [
+    "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law"
+  ]
+}

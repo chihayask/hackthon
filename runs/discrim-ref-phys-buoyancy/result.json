@@ -1,0 +1,258 @@
+{
+  "task_id": "phys-buoyancy",
+  "formula": "rho*V*g",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0028（阈值 0.0200）；诊断口径 p90=0.0068、RMSE/中位|y|=0.0054、RMSE/std(y)=0.0087、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.002819752427630779,
+        "relative_error_p75": 0.004673013736050625,
+        "relative_error_p90": 0.0068024171945742186,
+        "rmsre": 0.0041281446883811536,
+        "max_relative_error": 0.01246670939861434,
+        "rmse": 0.48471135522616743,
+        "relative_rmse": 0.005360082870333749,
+        "normalized_rmse": 0.008671396589577836,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0025（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0059、RMSE/中位|y|=0.0045、RMSE/std(y)=0.0085",
+      "metrics": {
+        "relative_error_median": 0.002494478064590371,
+        "relative_error_p75": 0.004449277111064264,
+        "relative_error_p90": 0.005944620074240364,
+        "rmsre": 0.003986697143344378,
+        "max_relative_error": 0.009685678216095589,
+        "rmse": 0.5400271814557348,
+        "relative_rmse": 0.0045147416624111356,
+        "normalized_rmse": 0.008483393925120573,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-rho",
+      "passed": true,
+      "reason": "缩放 rho×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-V",
+      "passed": true,
+      "reason": "缩放 V×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": true,
+      "reason": "缩放 g×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-rho",
+      "passed": true,
+      "reason": "在 rho ∈ [800, 1200] 上用等距网格扫描 9 点：整体相对变化 3.333e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666666,
+          0.04166666666666666,
+          0.04166666666666679,
+          0.04166666666666652
+        ],
+        "variation": 0.33333333333333326,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          800.0,
+          1200.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-V",
+      "passed": true,
+      "reason": "在 V ∈ [0.001, 0.02] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.02271077167244768,
+          0.03302635467160874,
+          0.04802743467401238,
+          0.06984223673191019,
+          0.10156565856213923,
+          0.14769834818946975,
+          0.21478521743204435,
+          0.31234397806636766
+        ],
+        "variation": 0.95,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.001,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 7.2,
+        "max_value": 252.0
+      }
+    },
+    {
+      "name": "scale-scaling-rho",
+      "passed": true,
+      "reason": "缩放 rho×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-V",
+      "passed": true,
+      "reason": "缩放 V×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": true,
+      "reason": "缩放 g×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-rho",
+      "passed": true,
+      "reason": "在 rho ∈ [800, 1200] 上用等距网格扫描 9 点：整体相对变化 3.333e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666666,
+          0.04166666666666666,
+          0.04166666666666679,
+          0.04166666666666652
+        ],
+        "variation": 0.33333333333333326,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          800.0,
+          1200.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-V",
+      "passed": true,
+      "reason": "在 V ∈ [0.001, 0.02] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.02271077167244768,
+          0.03302635467160874,
+          0.04802743467401238,
+          0.06984223673191019,
+          0.10156565856213923,
+          0.14769834818946975,
+          0.21478521743204435,
+          0.31234397806636766
+        ],
+        "variation": 0.95,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.001,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 7.2,
+        "max_value": 252.0
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

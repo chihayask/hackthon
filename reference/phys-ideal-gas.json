@@ -1,0 +1,14 @@
+{
+  "task_id": "phys-ideal-gas",
+  "formula": "n*R*T/V",
+  "free_parameters": [
+    "R"
+  ],
+  "true_constants": {
+    "R": 8.314462618
+  },
+  "y_unit": "Pa",
+  "source": [
+    "https://en.wikipedia.org/wiki/Ideal_gas_law"
+  ]
+}

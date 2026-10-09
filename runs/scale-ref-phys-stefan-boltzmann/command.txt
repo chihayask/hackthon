@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-stefan-boltzmann --formula "sigma*A*T**4" --params sigma=5.670374419e-08 --run-id scale-ref-phys-stefan-boltzmann

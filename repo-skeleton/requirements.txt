@@ -1,0 +1,10 @@
+# 核心依赖（版本以实际环境为准，安装后请回填确定版本）
+numpy
+pandas
+scipy
+sympy
+matplotlib
+pyyaml
+python-dotenv
+scikit-learn
+# 说明：AGH / Agnes 模型 SDK 的依赖请按官方技术资料补充，安装方式以官方页面为准。

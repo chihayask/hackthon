@@ -1,0 +1,85 @@
+{
+  "task_id": "phys-surface-gravity",
+  "formula": "G*M/R",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: G",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: G",
+      "metrics": {}
+    },
+    {
+      "name": "scale-scaling-R",
+      "passed": false,
+      "reason": "缩放 R×2 倍后 y 变为 0.5 倍，物理预期 0.25 倍（相对偏差 1.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.25,
+        "rel_error": 1.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-scaling-M",
+      "passed": true,
+      "reason": "缩放 M×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-R",
+      "passed": true,
+      "reason": "在 R ∈ [1e+06, 1e+07] 上用等比网格扫描 9 点：整体相对变化 9.000e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.2501057906675441,
+          -0.18755288414210686,
+          -0.14064482176176685,
+          -0.1054687374117443,
+          -0.0790903954506724,
+          -0.05930942956227322,
+          -0.044475797787559876,
+          -0.033352143216332404
+        ],
+        "variation": 0.9,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1000000.0,
+          10000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 667399.9999999999,
+        "max_value": 667400000.0
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

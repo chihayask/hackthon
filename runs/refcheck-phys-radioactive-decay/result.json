@@ -1,0 +1,160 @@
+{
+  "task_id": "phys-radioactive-decay",
+  "formula": "N0*exp(-t/tau)",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0063（阈值 0.0200）；诊断口径 p90=0.0592、RMSE/中位|y|=0.0133、RMSE/std(y)=0.0048、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.006324303954217606,
+        "relative_error_p75": 0.023947889471153682,
+        "relative_error_p90": 0.05919605359278843,
+        "rmsre": 0.11461111400171967,
+        "max_relative_error": 0.8075879606414361,
+        "rmse": 7.541592342110163e+18,
+        "relative_rmse": 0.013333478948929117,
+        "normalized_rmse": 0.004761765574231514,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0130（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.3527、RMSE/中位|y|=0.0213、RMSE/std(y)=0.0031",
+      "metrics": {
+        "relative_error_median": 0.012982351512699747,
+        "relative_error_p75": 0.06725518222550683,
+        "relative_error_p90": 0.35266613275641934,
+        "rmsre": 3.760960581968721,
+        "max_relative_error": 29.038121267645337,
+        "rmse": 6.573025659284495e+18,
+        "relative_rmse": 0.021332279784681468,
+        "normalized_rmse": 0.0031309941251152535,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-N0",
+      "passed": true,
+      "reason": "缩放 N0×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-limit-t-to-0-0",
+      "passed": true,
+      "reason": "t -> 0 时，公式与极限式 N0 的相对偏差依次为 3.61e-01、1.06e-01、2.76e-02（每步探测距离缩小 4 倍）；收敛比 0.29、0.26，达到一阶收敛（每步至少缩小 2 倍），极限行为成立",
+      "metrics": {
+        "rel_errors": [
+          0.3605926808381029,
+          0.10577995511337622,
+          0.027563838862495187
+        ],
+        "probe_values": [
+          1.0,
+          0.25,
+          0.0625
+        ],
+        "nearest_rel_error": 0.027563838862495187,
+        "monotone": true,
+        "contraction": [
+          0.2933502556610925,
+          0.26057714652035857
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "N0",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-t",
+      "passed": true,
+      "reason": "在 t ∈ [0, 10] 上用等距网格扫描 9 点：整体相对变化 9.886e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.4282291583582126,
+          -0.24484894629002948,
+          -0.13999748809535492,
+          -0.08004648159601725,
+          -0.04576824415261858,
+          -0.026168947479609562,
+          -0.014962641125296095,
+          -0.008555201909394567
+        ],
+        "variation": 0.988577109006533,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          0.0,
+          10.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-tau",
+      "passed": true,
+      "reason": "在 tau ∈ [1, 5] 上用等距网格扫描 9 点：整体相对变化 9.817e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.07865632897567089,
+          0.12615819228402478,
+          0.14474928102301252,
+          0.14553767786114968,
+          0.1380219384984636,
+          0.12736172554034927,
+          0.11603853374296481,
+          0.10516068318563028
+        ],
+        "variation": 0.9816843611112658,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 4539992976248485.0,
+        "max_value": 1e+22
+      }
+    }
+  ],
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "free_parameters": []
+}

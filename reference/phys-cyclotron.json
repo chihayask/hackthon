@@ -1,0 +1,10 @@
+{
+  "task_id": "phys-cyclotron",
+  "formula": "q*B/m",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "Hz",
+  "source": [
+    "https://en.wikipedia.org/wiki/Cyclotron_resonance"
+  ]
+}

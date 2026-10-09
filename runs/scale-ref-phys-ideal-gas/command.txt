@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-ideal-gas --formula "n*R*T/V" --params R=8.314462618 --run-id scale-ref-phys-ideal-gas

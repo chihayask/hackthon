@@ -1,0 +1,38 @@
+{
+  "task_id": "phys-buoyancy",
+  "var_names": [
+    "rho",
+    "V",
+    "g"
+  ],
+  "units": {
+    "rho": "kg/m^3",
+    "V": "m^3",
+    "g": "m/s^2",
+    "y": "N"
+  },
+  "free_parameters": [],
+  "source": [
+    "https://en.wikipedia.org/wiki/Buoyancy"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "rho": [
+      800.0,
+      1200.0
+    ],
+    "V": [
+      0.001,
+      0.02
+    ],
+    "g": [
+      9.0,
+      10.5
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "base",
+  "domain": "fluids",
+  "phenomenon": "浮力等于排开液体的重量"
+}

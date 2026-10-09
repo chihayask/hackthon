@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "files": {
+    "extrapolation": "sealed/phys-joule-heating/extrapolation.csv",
+    "holdout": "sealed/phys-joule-heating/holdout.csv",
+    "train": "tasks/phys-joule-heating/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "25e92dd258d189d9a54b3566efa3735121a0d77297acd2d5c0d1a66dfc05d0bc",
+      "y_max": 170.119297,
+      "y_min": 0.1148300335
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "ab23e1f4289f76a81da7b1061ed7cad44fa71cb734d70bbe6450b3cd031ff046",
+      "y_max": 134.0995213,
+      "y_min": 0.3085685006
+    },
+    "train": {
+      "n": 260,
+      "sha256": "3a615c19401b8e9120a926c8950457a258fd11673d8fa969a49795edd3cbef64",
+      "y_max": 145.0795585,
+      "y_min": 0.1048876007
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "phys-joule-heating"
+}

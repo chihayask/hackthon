@@ -1,0 +1,38 @@
+{
+  "task_id": "phys-radioactive-decay",
+  "var_names": [
+    "N0",
+    "t",
+    "tau"
+  ],
+  "units": {
+    "N0": "-",
+    "t": "s",
+    "tau": "s",
+    "y": "-"
+  },
+  "free_parameters": [],
+  "source": [
+    "https://en.wikipedia.org/wiki/Radioactive_decay"
+  ],
+  "source_note": "公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）",
+  "sampling": {
+    "N0": [
+      1e+20,
+      1e+22
+    ],
+    "t": [
+      0.0,
+      10.0
+    ],
+    "tau": [
+      1.0,
+      5.0
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "challenge",
+  "domain": "nuclear",
+  "phenomenon": "放射性衰变中剩余原子核数量随时间指数衰减"
+}

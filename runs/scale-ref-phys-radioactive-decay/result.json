@@ -1,0 +1,114 @@
+{
+  "task_id": "phys-radioactive-decay",
+  "formula": "N0*exp(-t/tau)",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-N0",
+      "passed": true,
+      "reason": "缩放 N0×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-limit-t-to-0-0",
+      "passed": true,
+      "reason": "t -> 0 时，公式与极限式 N0 的相对偏差依次为 3.61e-01、1.06e-01、2.76e-02（每步探测距离缩小 4 倍）；收敛比 0.29、0.26，达到一阶收敛（每步至少缩小 2 倍），极限行为成立",
+      "metrics": {
+        "rel_errors": [
+          0.3605926808381029,
+          0.10577995511337622,
+          0.027563838862495187
+        ],
+        "probe_values": [
+          1.0,
+          0.25,
+          0.0625
+        ],
+        "nearest_rel_error": 0.027563838862495187,
+        "monotone": true,
+        "contraction": [
+          0.2933502556610925,
+          0.26057714652035857
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "N0",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-t",
+      "passed": true,
+      "reason": "在 t ∈ [0, 10] 上用等距网格扫描 9 点：整体相对变化 9.886e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.4282291583582126,
+          -0.24484894629002948,
+          -0.13999748809535492,
+          -0.08004648159601725,
+          -0.04576824415261858,
+          -0.026168947479609562,
+          -0.014962641125296095,
+          -0.008555201909394567
+        ],
+        "variation": 0.988577109006533,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          0.0,
+          10.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-tau",
+      "passed": true,
+      "reason": "在 tau ∈ [1, 5] 上用等距网格扫描 9 点：整体相对变化 9.817e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.07865632897567089,
+          0.12615819228402478,
+          0.14474928102301252,
+          0.14553767786114968,
+          0.1380219384984636,
+          0.12736172554034927,
+          0.11603853374296481,
+          0.10516068318563028
+        ],
+        "variation": 0.9816843611112658,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 4539992976248485.0,
+        "max_value": 1e+22
+      }
+    }
+  ],
+  "rounds_hint": "全部 5 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

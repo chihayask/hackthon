@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-joule-heating --formula "I*R" --run-id scale-variant-phys-joule-heating

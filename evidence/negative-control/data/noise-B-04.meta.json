@@ -1,0 +1,27 @@
+{
+  "task_id": "negative-control-B-04",
+  "var_names": [
+    "x1",
+    "x2",
+    "x3"
+  ],
+  "sampling": {
+    "x1": [
+      1.0,
+      10.0
+    ],
+    "x2": [
+      1.0,
+      10.0
+    ],
+    "x3": [
+      1.0,
+      10.0
+    ]
+  },
+  "sample_count": 80,
+  "generator": "examples/negative_control.py",
+  "scenario": "B",
+  "noise_model": "y ~ Normal(0, 1)，与全部自变量独立",
+  "expected_answer": "未发现稳定公式（负对照的正确结论）"
+}

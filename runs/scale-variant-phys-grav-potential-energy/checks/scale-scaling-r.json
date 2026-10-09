@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-r",
+  "passed": false,
+  "reason": "缩放 r×2 倍后 y 变为 0.25 倍，物理预期 0.5 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+  "metrics": {
+    "ratio": 0.25,
+    "expected_ratio": 0.5,
+    "rel_error": 0.5,
+    "lambda": 2.0,
+    "expect_power": -1.0
+  }
+}

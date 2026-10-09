@@ -1,0 +1,59 @@
+{
+  "contains_row_indices": false,
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "fdacc2f80f8b2751a72c9ad6322b488bde37d4a041611494c8e870f8dba1300f",
+      "y_max": 6.700880736,
+      "y_min": 0.881121618
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "4eef7d2a90bf41f7b0ea8f57925fdca5c0cf4bf951751e0a3a88657937eeb8d0",
+      "y_max": 4.719440497,
+      "y_min": 0.9392152175
+    },
+    "train": {
+      "n": 260,
+      "sha256": "92143505fd0403d66752a12c9daa34ac410a526f685433fde60c47bce4230dfa",
+      "y_max": 5.708480004,
+      "y_min": 0.946526712
+    }
+  },
+  "n_total": 400,
+  "note": "本文件不含留出集/外推集的行号，只有规则、计数、支撑域与集合指纹；留出与外推数据点同时被封印到 sealed/<task_id>/，位于 tasks/ 之外。",
+  "rule": {
+    "extrapolation": "按主自变量（极差最大者）升序排列后，取最小端与最大端各占样本量 7.5% 的点，合计 15%，严格位于训练支撑域之外",
+    "extrapolation_ratio": 0.15,
+    "holdout": "中间区域内均匀随机抽取 20%（种子固定）",
+    "holdout_ratio": 0.2,
+    "main_axis": {
+      "criterion": "取值范围极差最大的自变量",
+      "index": 1,
+      "name": "g"
+    },
+    "seed": 20261008,
+    "train": "其余点；支撑域 [support_lo, support_hi] 只由训练点决定"
+  },
+  "rule_version": "split-v1",
+  "support": {
+    "hi": [
+      1.98729573,
+      11.39882103
+    ],
+    "lo": [
+      0.2209142056,
+      2.31339354
+    ],
+    "var_names": [
+      "L",
+      "g"
+    ]
+  },
+  "task_id": "phys-pendulum-period"
+}

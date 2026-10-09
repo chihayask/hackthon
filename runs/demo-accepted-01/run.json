@@ -1,0 +1,13 @@
+{
+  "task_id": "mech-gravity",
+  "verdict": "accepted",
+  "formula": "G*m1*m2/r**2",
+  "parameters": {
+    "G": 6.643668226020546e-11
+  },
+  "rounds_hint": "三重验证全部通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "inputs": [
+    "tasks/mech-gravity"
+  ],
+  "notes": ""
+}

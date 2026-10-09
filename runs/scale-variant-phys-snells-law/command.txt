@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-snells-law --formula "d*sin(theta2)*n" --params d=1.0 --run-id scale-variant-phys-snells-law

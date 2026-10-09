@@ -1,0 +1,26 @@
+{
+  "task_id": "phys-joule-heating",
+  "verdict": "rejected",
+  "formula": "I*R",
+  "parameters": {},
+  "free_parameters": [],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "fixture-variant",
+  "hypothesis_source_note": "人为构造的结构错误候选式（判别力测试）",
+  "rounds_hint": "未通过项：dimension、holdout、extrapolation、scale-scaling-I。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-I）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "inputs": [
+    "D:\\fagh-restore\\hackathon-2026\\tasks\\phys-joule-heating"
+  ],
+  "notes": "判别力：物理上合理但结构错误的候选式 \"I*R\"；期望 rejected",
+  "duplicate_check_names": []
+}

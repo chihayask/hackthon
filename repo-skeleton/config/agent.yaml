@@ -1,0 +1,27 @@
+# 智能体运行配置（迭代上限与阈值在此集中管理，便于复现）
+run:
+  max_rounds: 6                 # 单个任务最大迭代轮数
+  max_rejected_before_restart: 3 # 连续否决多少次后触发重构策略
+  timeout_per_tool_sec: 120
+  seed: 20261008                # 固定随机种子，保证可复现
+
+verify:
+  holdout_ratio: 0.2            # 留出集比例
+  holdout_error_threshold: 0.05 # 留出集相对误差上限
+  extrapolation_ratio: 0.15     # 外推区占数据支撑域的比例
+  extrapolation_error_threshold: 0.15
+  dimension_check: true         # 量纲检验开关（无量纲信息时自动降级为尺度一致性检查）
+  scale_check: true
+
+data_audit:
+  missing_ratio_warn: 0.02      # 缺失比例告警阈值
+  outlier_sigma: 4              # 异常值判定倍数
+  min_samples: 200              # 样本量下限
+
+logging:
+  trajectory_jsonl: true
+  dump_intermediate: true       # 落盘中间结果，供评审复现与取证
+
+limits:
+  max_variables: 5              # 变量数上限（超出直接跳过并记录）
+  allowed_operators: ["+", "-", "*", "/", "pow", "exp", "log", "sin", "cos", "sqrt"]
