@@ -2,7 +2,7 @@
 # 零依赖绘图：把"预测曲线 vs 真实曲线（外推区高亮）"这类物理图直接画出来。
 #
 # 为什么自己写而不用 matplotlib：
-#   本机环境没有 scipy / matplotlib 且无法安装（见 docs/运行与验证.md）。
+#   本机环境没有 scipy / matplotlib 且无法安装（见 README.md 的环境要求一节）。
 #   比赛机器上也未必有。整条证据链不能因为缺一个绘图库就断掉。
 #   这里只依赖 Python 标准库 + Pillow（Pillow 仅用于输出 PNG；SVG 纯文本生成）。
 #

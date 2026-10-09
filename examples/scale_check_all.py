@@ -45,7 +45,7 @@ def load_references():
 
 
 # 历史运行里没有单独归档、但已被文档与单元测试记录在案的错误候选式。
-# 小角度近似是本项目最重要的一条对比（见 docs/运行与验证.md 与
+# 小角度近似是本项目最重要的一条对比（见 README.md 与
 # tests/test_verify.py::test_small_angle_law_fails_at_large_amplitude）：
 # 它在域内几乎看不出差别，却漏掉了振幅这个自变量。
 EXTRA_VARIANTS = {

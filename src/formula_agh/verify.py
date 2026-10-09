@@ -137,7 +137,7 @@ def _error_metrics(pred, truth):
     第 3 版（当前）relative_error_median = median( |pred-truth| / |truth| )
         逐点相对误差取中位数：无量纲、对动态范围免疫、对近零尾部稳健。
 
-    实测（22 个金标准 x 5 个种子，21 个错误式，见 docs/M2_验证口径修正.md）：
+    实测（22 个金标准 x 5 个种子，21 个错误式，见 docs/判据口径演进.md）：
 
         口径              金标准最坏值   错误式最好值   分离倍数
         normalized_rmse      0.0697        0.2255        3.23
@@ -365,7 +365,7 @@ def _fit_parameters(evaluate, env_mutable, y, param_names, initial=None, max_ite
     if x_best is None or not np.isfinite(cost_best):
         raise VerifyError('参数拟合失败：所有初值都未收敛')
     # 收敛门槛。注意这里用的是 RMSE/std(y) —— 正是判定阶段已经弃用的口径
-    # （它随目标量动态范围变化，见 docs/M2_验证口径修正.md）。
+    # （它随目标量动态范围变化，见 docs/判据口径演进.md）。
     # 之所以保留：这是一道"这个函数形式根本没戏"的粗筛，不是精度判定，
     # 松一点是刻意的；真正的精度判定交给留出集与外推区。
     # 但阈值不再硬编码，改由 config/agent.yaml 的 verify.max_fit_residual 提供，
