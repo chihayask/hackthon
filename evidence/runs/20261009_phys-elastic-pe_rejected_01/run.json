@@ -1,0 +1,26 @@
+{
+  "task_id": "phys-elastic-pe",
+  "verdict": "rejected",
+  "formula": "0.5*c*x2",
+  "parameters": {},
+  "free_parameters": [],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "agh-llm",
+  "hypothesis_source_note": "假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环）",
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "inputs": [
+    "tasks/phys-elastic-pe"
+  ],
+  "notes": "",
+  "duplicate_check_names": []
+}

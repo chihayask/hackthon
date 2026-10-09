@@ -1,0 +1,73 @@
+{
+  "task_id": "phys-index-vacuum",
+  "formula": "1/sqrt(eps*mu)",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-eps",
+      "passed": true,
+      "reason": "缩放 eps×2 倍后 y 变为 0.707107 倍，物理预期 0.707107 倍（相对偏差 1.57e-16，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.7071067811865475,
+        "expected_ratio": 0.7071067811865476,
+        "rel_error": 1.570092458683775e-16,
+        "lambda": 2.0,
+        "expect_power": -0.5
+      }
+    },
+    {
+      "name": "scale-scaling-eps-mu",
+      "passed": true,
+      "reason": "缩放 eps×2、mu×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-eps",
+      "passed": true,
+      "reason": "在 eps ∈ [2e-11, 8e-11] 上用等距网格扫描 9 点：整体相对变化 5.000e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.14719713457755834,
+          -0.09687391940398732,
+          -0.06993460544841905,
+          -0.05353880853635945,
+          -0.04268770741408732,
+          -0.035067628394359535,
+          -0.029474464786338847,
+          -0.02522573143889016
+        ],
+        "variation": 0.5,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          2e-11,
+          8e-11
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 98058067.56909202,
+        "max_value": 204124145.23193154
+      }
+    }
+  ],
+  "rounds_hint": "全部 4 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

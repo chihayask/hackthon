@@ -1,0 +1,27 @@
+{
+  "name": "scale-limit-theta0-to-0-0",
+  "passed": true,
+  "reason": "theta0 -> 0 时，公式与极限式 2*pi*sqrt(L/g) 的相对偏差依次为 8.27e-04、5.17e-05、3.23e-06（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+  "metrics": {
+    "rel_errors": [
+      0.0008265624999998581,
+      5.166015624983998e-05,
+      3.2287597655219798e-06
+    ],
+    "probe_values": [
+      0.11499999999999999,
+      0.028749999999999998,
+      0.0071874999999999994
+    ],
+    "nearest_rel_error": 3.2287597655219798e-06,
+    "monotone": true,
+    "contraction": [
+      0.06249999999981713,
+      0.062499999998199406
+    ],
+    "contraction_ok": true,
+    "coarse_normalization_used": false,
+    "limit_target": "2*pi*sqrt(L/g)",
+    "limit_at": 0.0
+  }
+}

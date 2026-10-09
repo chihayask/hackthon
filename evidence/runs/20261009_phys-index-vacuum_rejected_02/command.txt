@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-index-vacuum --formula "eps*mu" --run-id scale-variant-phys-index-vacuum

@@ -1,0 +1,320 @@
+{
+  "mode": "build",
+  "tasks": 22,
+  "identical": true,
+  "settings": {
+    "holdout_ratio": 0.2,
+    "extrapolation_ratio": 0.15,
+    "seed": 20261008
+  },
+  "results": [
+    {
+      "task_id": "phys-buoyancy",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-buoyancy/data_train.csv",
+        "holdout": "sealed/phys-buoyancy/holdout.csv",
+        "extrapolation": "sealed/phys-buoyancy/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-coulomb",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-coulomb/data_train.csv",
+        "holdout": "sealed/phys-coulomb/holdout.csv",
+        "extrapolation": "sealed/phys-coulomb/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-cyclotron",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-cyclotron/data_train.csv",
+        "holdout": "sealed/phys-cyclotron/holdout.csv",
+        "extrapolation": "sealed/phys-cyclotron/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-elastic-pe",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-elastic-pe/data_train.csv",
+        "holdout": "sealed/phys-elastic-pe/holdout.csv",
+        "extrapolation": "sealed/phys-elastic-pe/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-energy-shift",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-energy-shift/data_train.csv",
+        "holdout": "sealed/phys-energy-shift/holdout.csv",
+        "extrapolation": "sealed/phys-energy-shift/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-grav-potential-energy",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-grav-potential-energy/data_train.csv",
+        "holdout": "sealed/phys-grav-potential-energy/holdout.csv",
+        "extrapolation": "sealed/phys-grav-potential-energy/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-gravitation",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-gravitation/data_train.csv",
+        "holdout": "sealed/phys-gravitation/holdout.csv",
+        "extrapolation": "sealed/phys-gravitation/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-hydrogen-level",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-hydrogen-level/data_train.csv",
+        "holdout": "sealed/phys-hydrogen-level/holdout.csv",
+        "extrapolation": "sealed/phys-hydrogen-level/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-ideal-gas",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-ideal-gas/data_train.csv",
+        "holdout": "sealed/phys-ideal-gas/holdout.csv",
+        "extrapolation": "sealed/phys-ideal-gas/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-index-vacuum",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-index-vacuum/data_train.csv",
+        "holdout": "sealed/phys-index-vacuum/holdout.csv",
+        "extrapolation": "sealed/phys-index-vacuum/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-joule-heating",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-joule-heating/data_train.csv",
+        "holdout": "sealed/phys-joule-heating/holdout.csv",
+        "extrapolation": "sealed/phys-joule-heating/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-kinetic-energy",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-kinetic-energy/data_train.csv",
+        "holdout": "sealed/phys-kinetic-energy/holdout.csv",
+        "extrapolation": "sealed/phys-kinetic-energy/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-ohm",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-ohm/data_train.csv",
+        "holdout": "sealed/phys-ohm/holdout.csv",
+        "extrapolation": "sealed/phys-ohm/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-pendulum-exact",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-pendulum-exact/data_train.csv",
+        "holdout": "sealed/phys-pendulum-exact/holdout.csv",
+        "extrapolation": "sealed/phys-pendulum-exact/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-pendulum-period",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-pendulum-period/data_train.csv",
+        "holdout": "sealed/phys-pendulum-period/holdout.csv",
+        "extrapolation": "sealed/phys-pendulum-period/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-radioactive-decay",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-radioactive-decay/data_train.csv",
+        "holdout": "sealed/phys-radioactive-decay/holdout.csv",
+        "extrapolation": "sealed/phys-radioactive-decay/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-snells-law",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-snells-law/data_train.csv",
+        "holdout": "sealed/phys-snells-law/holdout.csv",
+        "extrapolation": "sealed/phys-snells-law/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-spring-energy",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-spring-energy/data_train.csv",
+        "holdout": "sealed/phys-spring-energy/holdout.csv",
+        "extrapolation": "sealed/phys-spring-energy/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-stefan-boltzmann",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-stefan-boltzmann/data_train.csv",
+        "holdout": "sealed/phys-stefan-boltzmann/holdout.csv",
+        "extrapolation": "sealed/phys-stefan-boltzmann/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-surface-gravity",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-surface-gravity/data_train.csv",
+        "holdout": "sealed/phys-surface-gravity/holdout.csv",
+        "extrapolation": "sealed/phys-surface-gravity/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-transit-depth",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-transit-depth/data_train.csv",
+        "holdout": "sealed/phys-transit-depth/holdout.csv",
+        "extrapolation": "sealed/phys-transit-depth/extrapolation.csv"
+      }
+    },
+    {
+      "task_id": "phys-weight",
+      "status": "written",
+      "counts": {
+        "train": 260,
+        "holdout": 80,
+        "extrapolation": 60
+      },
+      "files": {
+        "train": "tasks/phys-weight/data_train.csv",
+        "holdout": "sealed/phys-weight/holdout.csv",
+        "extrapolation": "sealed/phys-weight/extrapolation.csv"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-eps",
+  "passed": false,
+  "reason": "缩放 eps×2 倍后 y 变为 2 倍，物理预期 0.707107 倍（相对偏差 1.83e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+  "metrics": {
+    "ratio": 2.0,
+    "expected_ratio": 0.7071067811865476,
+    "rel_error": 1.82842712474619,
+    "lambda": 2.0,
+    "expect_power": -0.5
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "task_id": "phys-energy-shift",
+  "formula": "(A-B)/h",
+  "parameters": {
+    "h": 6.62607015e-34
+  },
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-h",
+      "passed": true,
+      "reason": "缩放 h×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-A",
+      "passed": true,
+      "reason": "在 A ∈ [5e-19, 1e-18] 上用等距网格扫描 9 点：整体相对变化 5.016e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.06269826933645396,
+          0.0626982693364538,
+          0.06269826933645388,
+          0.06269826933645396,
+          0.06269826933645388,
+          0.06269826933645371,
+          0.06269826933645388,
+          0.06269826933645405
+        ],
+        "variation": 0.5015861546916311,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          5e-19,
+          1e-18
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-B",
+      "passed": true,
+      "reason": "在 B ∈ [1e-21, 1e-20] 上用等比网格扫描 9 点：整体相对变化 1.275e-02；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.000472338520248768,
+          -0.0006298735399881545,
+          -0.0008399498651267785,
+          -0.001120091147089168,
+          -0.0014936655506199014,
+          -0.001991835024235616,
+          -0.002656154694151757,
+          -0.0035420392117928253
+        ],
+        "variation": 0.012745947553252968,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1e-21,
+          1e-20
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 739503188024654.4,
+        "max_value": 1507680989462509.8
+      }
+    }
+  ],
+  "rounds_hint": "全部 4 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

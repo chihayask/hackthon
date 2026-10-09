@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-snells-law --formula "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)" --params d=1.0 --run-id scale-ref-phys-snells-law

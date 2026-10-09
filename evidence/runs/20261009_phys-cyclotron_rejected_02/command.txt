@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-cyclotron --formula "q*B*m" --run-id scale-variant-phys-cyclotron

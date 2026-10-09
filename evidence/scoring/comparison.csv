@@ -55,7 +55,7 @@ phys-spring-energy,base,wrong-variant,k*x/2,rejected,,,,k*x**2/2,
 phys-spring-energy,base,agent-candidate,0.5*k*x**2,accepted,0.0057766,0.00579946,True,k*x**2/2,True
 phys-stefan-boltzmann,base,gold-reference,sigma*A*T**4,accepted,0.00553959,0.00546602,True,sigma*A*T**4,
 phys-stefan-boltzmann,base,wrong-variant,sigma*A*T**2,rejected,,,,sigma*A*T**4,
-phys-stefan-boltzmann,base,agent-candidate,sigma*A*T**4,rejected,,,False,sigma*A*T**4,True
+phys-stefan-boltzmann,base,agent-candidate,sigma*A*T**4,accepted,0.00553959,0.00546602,True,sigma*A*T**4,True
 phys-surface-gravity,base,gold-reference,G*M/R**2,accepted,0.00527124,0.00500282,True,G*M/R**2,
 phys-surface-gravity,base,wrong-variant,G*M/R,rejected,,,,G*M/R**2,
 phys-surface-gravity,base,agent-candidate,G*M/R/R,accepted,0.00527124,0.00500282,True,G*M/R**2,False

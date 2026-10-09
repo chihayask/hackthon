@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-snells-law --formula "d*(sin(theta2) + (n-1)*(sin(theta2)**3)/6 + 0.02*(n-1)**2*(sin(theta2)**5))" --params d

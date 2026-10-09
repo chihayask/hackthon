@@ -1,0 +1,103 @@
+{
+  "task_id": "phys-gravitation",
+  "formula": "G*m1*m2/r",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: G",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: G",
+      "metrics": {}
+    },
+    {
+      "name": "scale-scaling-r",
+      "passed": false,
+      "reason": "缩放 r×2 倍后 y 变为 0.5 倍，物理预期 0.25 倍（相对偏差 1.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.25,
+        "rel_error": 1.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-scaling-m1",
+      "passed": true,
+      "reason": "缩放 m1×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-symmetry-m1-m2",
+      "passed": true,
+      "reason": "把 m1=0.88914, m2=2.81171 与两者互换后分别求值：9.63309e-11 vs 9.63309e-11，相对差异 0.00e+00；两个同类量地位对称，符合物理",
+      "metrics": {
+        "value_ab": 9.633089241428906e-11,
+        "value_ba": 9.633089241428906e-11,
+        "rel_error": 0.0,
+        "swap": [
+          "m1",
+          "m2"
+        ],
+        "probe": [
+          0.8891397050194614,
+          2.8117066259517456
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-r",
+      "passed": true,
+      "reason": "在 r ∈ [1, 3] 上用等距网格扫描 9 点：整体相对变化 6.667e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.20000000000000004,
+          -0.13333333333333333,
+          -0.09523809523809519,
+          -0.07142857142857145,
+          -0.05555555555555552,
+          -0.044444444444444495,
+          -0.036363636363636376,
+          -0.030303030303030287
+        ],
+        "variation": 0.6666666666666667,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 5.5616666666666664e-12,
+        "max_value": 1.6685e-09
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

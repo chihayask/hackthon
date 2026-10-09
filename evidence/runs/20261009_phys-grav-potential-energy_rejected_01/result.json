@@ -1,0 +1,142 @@
+{
+  "task_id": "phys-grav-potential-energy",
+  "formula": "0-G*m1*m2/r",
+  "parameters": {
+    "G": 6.673174775302503e-11
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "量纲不成立（结构性错误）: 加减法两侧量纲不同: 1 vs L^-1·M^2",
+      "metrics": {}
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "G": 6.673174775302503e-11,
+        "train_relative_error_median": 0.002724927827651165,
+        "train_relative_error_p90": 0.006595954910906858,
+        "train_rmsre": 0.0038862331857866662,
+        "train_relative_rmse": 0.007348504155683185,
+        "train_normalized_rmse": 0.0065407115181542646
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0027（阈值 0.0200）；诊断口径 p90=0.0066、RMSE/中位|y|=0.0061、RMSE/std(y)=0.0066、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.0026501972239558746,
+        "relative_error_p75": 0.0050503975082894,
+        "relative_error_p90": 0.00660105932988052,
+        "rmsre": 0.004151366490223409,
+        "max_relative_error": 0.00977244564654316,
+        "rmse": 1.446760412399085e-12,
+        "relative_rmse": 0.006097379052476567,
+        "normalized_rmse": 0.006642541742530618,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0034（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0082、RMSE/中位|y|=0.0167、RMSE/std(y)=0.0048",
+      "metrics": {
+        "relative_error_median": 0.0033553927213125475,
+        "relative_error_p75": 0.005567259745666096,
+        "relative_error_p90": 0.008184212758235412,
+        "rmsre": 0.004817972376820511,
+        "max_relative_error": 0.012917400447505334,
+        "rmse": 1.7234661186410277e-12,
+        "relative_rmse": 0.016694335964638367,
+        "normalized_rmse": 0.004840220621286809,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-r",
+      "passed": true,
+      "reason": "缩放 r×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-symmetry-m1-m2",
+      "passed": true,
+      "reason": "把 m1=0.88914, m2=2.81171 与两者互换后分别求值：-9.6319e-11 vs -9.6319e-11，相对差异 1.34e-16；两个同类量地位对称，符合物理",
+      "metrics": {
+        "value_ab": -9.631898132175802e-11,
+        "value_ba": -9.6318981321758e-11,
+        "rel_error": 1.3418639705049941e-16,
+        "swap": [
+          "m1",
+          "m2"
+        ],
+        "probe": [
+          0.8891397050194614,
+          2.8117066259517456
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-r",
+      "passed": true,
+      "reason": "在 r ∈ [1, 3] 上用等距网格扫描 9 点：整体相对变化 6.667e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.20000000000000004,
+          0.1333333333333333,
+          0.09523809523809522,
+          0.07142857142857145,
+          0.05555555555555555,
+          0.04444444444444446,
+          0.03636363636363631,
+          0.03030303030303034
+        ],
+        "variation": 0.6666666666666666,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "negative",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": -1.6682936938256259e-09,
+        "max_value": -5.560978979418752e-12
+      }
+    }
+  ],
+  "rounds_hint": "量纲不成立，属物理荒谬公式，必须否决并更换形式，不要继续微调参数。",
+  "free_parameters": [
+    "G"
+  ]
+}

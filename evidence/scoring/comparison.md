@@ -45,7 +45,7 @@
 | phys-radioactive-decay | challenge | `N0*exp(-t/tau)` | `N0*exp(-(t/tau))` | 0.00476177 | 0.00313099 | pass | 数值等价 |
 | phys-snells-law | challenge | `d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)` | `d*sin(asin(n*sin(theta2)))` |  |  | fail | 不可判定 |
 | phys-spring-energy | base | `k*x**2/2` | `0.5*k*x**2` | 0.0057766 | 0.00579946 | pass | 数值等价 |
-| phys-stefan-boltzmann | base | `sigma*A*T**4` | `sigma*A*T**4` |  |  | fail | 结构相同 |
+| phys-stefan-boltzmann | base | `sigma*A*T**4` | `sigma*A*T**4` | 0.00553959 | 0.00546602 | pass | 结构相同 |
 | phys-surface-gravity | base | `G*M/R**2` | `G*M/R/R` | 0.00527124 | 0.00500282 | pass | 不一致 (偏差 0.000391) |
 | phys-transit-depth | challenge | `A*(Rp/Rs)**2` | `A*(Rp/Rs)**2` | 0.00564293 | 0.00466753 | pass | 结构相同 |
 | phys-weight | base | `m*g` | `m*g` | 0.00869578 | 0.00575099 | pass | 结构相同 |

@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-spring-energy --formula "0.5*k*x**2"

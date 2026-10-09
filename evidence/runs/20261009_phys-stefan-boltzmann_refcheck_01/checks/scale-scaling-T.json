@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-T",
+  "passed": true,
+  "reason": "缩放 T×2 倍后 y 变为 16 倍，物理预期 16 倍（相对偏差 0.00e+00，容差 1e-04）",
+  "metrics": {
+    "ratio": 16.0,
+    "expected_ratio": 16.0,
+    "rel_error": 0.0,
+    "lambda": 2.0,
+    "expect_power": 4.0
+  }
+}

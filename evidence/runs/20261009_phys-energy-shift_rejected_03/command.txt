@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-energy-shift --formula "A*B/h" --params h=6.62607015e-34 --run-id scale-variant-phys-energy-shift

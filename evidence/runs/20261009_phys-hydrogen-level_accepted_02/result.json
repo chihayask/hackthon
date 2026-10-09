@@ -1,0 +1,64 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+  "parameters": {
+    "eps0": 8.8541878128e-12,
+    "hbar": 1.054571817e-34
+  },
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-n",
+      "passed": true,
+      "reason": "缩放 n×2 倍后 y 变为 0.25 倍，物理预期 0.25 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.25,
+        "expected_ratio": 0.25,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-monotonic-n",
+      "passed": true,
+      "reason": "在 n ∈ [1, 6] 上用等距网格扫描 9 点：整体相对变化 9.722e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.621301775147929,
+          0.18116736065454014,
+          0.07654787743004507,
+          0.03935033370626133,
+          0.02286313974625663,
+          0.014448183675078658,
+          0.009708025150976272,
+          0.006835526711135147
+        ],
+        "variation": 0.9722222222222222,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          6.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "negative",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": -2.557171626750798e-18,
+        "max_value": -5.2404344895533433e-20
+      }
+    }
+  ],
+  "rounds_hint": "全部 3 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

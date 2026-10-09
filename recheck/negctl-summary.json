@@ -1,0 +1,18 @@
+{
+  "run_id": "negctl-summary",
+  "run_dir": "runs/negctl-summary",
+  "checked_at_utc": "2026-10-09T14:29:24+00:00",
+  "status": "unresolvable",
+  "agrees": false,
+  "task_id": "negative-control",
+  "formula": "(纯噪声，正确结论是未发现公式)",
+  "original_verdict": "accepted",
+  "manifest_ok": true,
+  "manifest_detail": {
+    "untracked": [],
+    "missing": [],
+    "mismatched": []
+  },
+  "task_resolution": "任务目录不存在（run.json.task_id=negative-control，inputs=[\"evidence/negative-control/data\"]）",
+  "detail": "任务目录不存在，本次运行无法被独立复算（历史遗留运行）"
+}

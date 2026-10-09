@@ -1,0 +1,93 @@
+{
+  "task_id": "phys-coulomb",
+  "formula": "k*q1*q2/r**2",
+  "parameters": {
+    "k": 8987551792.3
+  },
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "scale-scaling-r",
+      "passed": true,
+      "reason": "缩放 r×2 倍后 y 变为 0.25 倍，物理预期 0.25 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.25,
+        "expected_ratio": 0.25,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-scaling-q1",
+      "passed": true,
+      "reason": "缩放 q1×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-symmetry-q1-q2",
+      "passed": true,
+      "reason": "把 q1=0.00149535, q2=0.0033437 与两者互换后分别求值：898755 vs 898755，相对差异 1.30e-16；两个同类量地位对称，符合物理",
+      "metrics": {
+        "value_ab": 898755.1792299998,
+        "value_ba": 898755.1792299999,
+        "rel_error": 1.2952951428516111e-16,
+        "swap": [
+          "q1",
+          "q2"
+        ],
+        "probe": [
+          0.0014953487812212206,
+          0.00334370152488211
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-r",
+      "passed": true,
+      "reason": "在 r ∈ [0.1, 0.5] 上用等距网格扫描 9 点：整体相对变化 9.600e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.5555555555555557,
+          -0.1944444444444444,
+          -0.08999999999999998,
+          -0.048888888888888926,
+          -0.029478458049886577,
+          -0.019132653061224518,
+          -0.013117283950617295,
+          -0.009382716049382699
+        ],
+        "variation": 0.9600000000000001,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          0.1,
+          0.5
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 35950.207169199995,
+        "max_value": 22468879.480749995
+      }
+    }
+  ],
+  "rounds_hint": "全部 5 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
+  "free_parameters": []
+}

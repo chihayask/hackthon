@@ -1,0 +1,42 @@
+{
+  "run_id": "scale-ref-phys-cyclotron",
+  "run_dir": "runs/scale-ref-phys-cyclotron",
+  "checked_at_utc": "2026-10-09T14:29:25+00:00",
+  "status": "out-of-scope",
+  "agrees": false,
+  "task_id": "phys-cyclotron",
+  "formula": "q*B/m",
+  "original_verdict": "accepted",
+  "manifest_ok": true,
+  "manifest_detail": {
+    "untracked": [],
+    "missing": [],
+    "mismatched": []
+  },
+  "task_resolution": "resolved from run.json inputs/task_id: E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-cyclotron",
+  "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-cyclotron",
+  "settings_source": "cli-override",
+  "settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "params_source": "run.json.free_parameters",
+  "free_parameters": [],
+  "recomputed_verdict": "accepted",
+  "recorded_checks": [
+    "scale-monotonic-B",
+    "scale-monotonic-m",
+    "scale-scaling-B",
+    "scale-scaling-m",
+    "scale-scaling-q",
+    "scale-sign-y"
+  ],
+  "detail": "该运行由其它判定套件产出（检验项：scale-monotonic-B,scale-monotonic-m,scale-scaling-B,scale-scaling-m,scale-scaling-q,scale-sign-y），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+  "foreign_checks": []
+}

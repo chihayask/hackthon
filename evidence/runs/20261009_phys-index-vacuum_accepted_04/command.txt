@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-index-vacuum --formula "1/sqrt(eps*mu)" --run-id scale-ref-phys-index-vacuum

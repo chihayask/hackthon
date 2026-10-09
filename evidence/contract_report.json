@@ -1,0 +1,33 @@
+{
+  "tasks_root": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks",
+  "checked": 22,
+  "tasks": [
+    "phys-buoyancy",
+    "phys-coulomb",
+    "phys-cyclotron",
+    "phys-elastic-pe",
+    "phys-energy-shift",
+    "phys-grav-potential-energy",
+    "phys-gravitation",
+    "phys-hydrogen-level",
+    "phys-ideal-gas",
+    "phys-index-vacuum",
+    "phys-joule-heating",
+    "phys-kinetic-energy",
+    "phys-ohm",
+    "phys-pendulum-exact",
+    "phys-pendulum-period",
+    "phys-radioactive-decay",
+    "phys-snells-law",
+    "phys-spring-energy",
+    "phys-stefan-boltzmann",
+    "phys-surface-gravity",
+    "phys-transit-depth",
+    "phys-weight"
+  ],
+  "errors": 0,
+  "warnings": 0,
+  "ok": true,
+  "by_code": {},
+  "findings": []
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "phys-pendulum-exact",
+  "verdict": "rejected",
+  "formula": "2*pi*sqrt(L/g)",
+  "parameters": {},
+  "free_parameters": [],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "unclassified",
+  "hypothesis_source_note": "未标注来源——不计入任何能力声明，需补齐",
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "inputs": [
+    "tasks/phys-pendulum-exact"
+  ],
+  "notes": "判别力对照：错误式",
+  "duplicate_check_names": [
+    "scale-limit-theta0-to-0-0",
+    "scale-monotonic-theta0",
+    "scale-scaling-L",
+    "scale-scaling-g",
+    "scale-sign-y"
+  ]
+}

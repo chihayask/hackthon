@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-joule-heating --formula "I2*R"

@@ -1,0 +1,27 @@
+{
+  "name": "scale-limit-theta2-to-0-0",
+  "passed": true,
+  "reason": "theta2 -> 0 时，公式与极限式 d*theta2 的相对偏差依次为 1.01e-04、6.30e-06、3.94e-07（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+  "metrics": {
+    "rel_errors": [
+      0.00010054332738807344,
+      6.300951362451601e-06,
+      3.9387578677601605e-07
+    ],
+    "probe_values": [
+      0.05499999999999999,
+      0.013749999999999998,
+      0.0034374999999999996
+    ],
+    "nearest_rel_error": 3.9387578677601605e-07,
+    "monotone": true,
+    "contraction": [
+      0.06266901569839062,
+      0.06251052644576599
+    ],
+    "contraction_ok": true,
+    "coarse_normalization_used": false,
+    "limit_target": "d*theta2",
+    "limit_at": 0.0
+  }
+}

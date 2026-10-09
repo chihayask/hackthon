@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-spring-energy --formula "k*x/2" --run-id scale-variant-phys-spring-energy

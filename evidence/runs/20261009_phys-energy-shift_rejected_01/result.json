@@ -1,0 +1,99 @@
+{
+  "task_id": "phys-energy-shift",
+  "formula": "A*B/h",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: h",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: h",
+      "metrics": {}
+    },
+    {
+      "name": "scale-scaling-h",
+      "passed": true,
+      "reason": "缩放 h×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-A",
+      "passed": true,
+      "reason": "在 A ∈ [5e-19, 1e-18] 上用等距网格扫描 9 点：整体相对变化 5.000e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.06250000000000003,
+          0.06250000000000003,
+          0.062499999999999854,
+          0.06250000000000003,
+          0.06250000000000012,
+          0.062499999999999854,
+          0.06250000000000003,
+          0.06250000000000003
+        ],
+        "variation": 0.5,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          5e-19,
+          1e-18
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-B",
+      "passed": false,
+      "reason": "在 B ∈ [1e-21, 1e-20] 上用等比网格扫描 9 点：整体相对变化 9.000e-01；有 8 个步长方向相反（极值 3.335e-02），不满足全程递减",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          0.033352143216332404,
+          0.04447579778755988,
+          0.059309429562273246,
+          0.07909039545067242,
+          0.10546873741174433,
+          0.14064482176176674,
+          0.1875528841421068,
+          0.2501057906675442
+        ],
+        "variation": 0.8999999999999999,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": false,
+        "range": [
+          1e-21,
+          1e-20
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 7.545950898210759e-07,
+        "max_value": 1.5091901796421519e-05
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

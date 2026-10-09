@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-transit-depth --formula "A*(Rp/Rs)**2" --run-id scale-ref-phys-transit-depth

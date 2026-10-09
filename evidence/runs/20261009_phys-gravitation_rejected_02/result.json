@@ -1,0 +1,73 @@
+{
+  "task_id": "phys-gravitation",
+  "formula": "G*m1*m2/r",
+  "parameters": {
+    "G": 4.413386301047806e-11
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
+      "metrics": {}
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "G": 4.413386301047806e-11,
+        "train_relative_error_median": 0.3168446872900901,
+        "train_relative_error_p90": 0.8487835785809839,
+        "train_rmsre": 0.5033303324564236,
+        "train_relative_rmse": 0.6226031315262441,
+        "train_normalized_rmse": 0.38964739447937907
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.3677（阈值 0.0800）；诊断口径 p90=0.9360、RMSE/中位|y|=0.4615、RMSE/std(y)=0.4208、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.36771431296218116,
+        "relative_error_p75": 0.5940211237860946,
+        "relative_error_p90": 0.9359515249011237,
+        "rmsre": 0.5054326498284614,
+        "max_relative_error": 0.9738794478730428,
+        "rmse": 5.562027453356067e-11,
+        "relative_rmse": 0.46147945412311747,
+        "normalized_rmse": 0.4207803506643195,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.08,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.3173（阈值 0.1500），非有限值比例 0.00%；诊断口径 p90=0.8398、RMSE/中位|y|=0.7492、RMSE/std(y)=0.3214",
+      "metrics": {
+        "relative_error_median": 0.31730201757517856,
+        "relative_error_p75": 0.5695142505994948,
+        "relative_error_p90": 0.8397511360322342,
+        "rmsre": 0.4830868529727117,
+        "max_relative_error": 0.9730731367157239,
+        "rmse": 6.369655657911218e-11,
+        "relative_rmse": 0.7492452125367615,
+        "normalized_rmse": 0.3214423302683479,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.15,
+        "criterion": "relative_error_median"
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
+  "free_parameters": [
+    "G"
+  ]
+}

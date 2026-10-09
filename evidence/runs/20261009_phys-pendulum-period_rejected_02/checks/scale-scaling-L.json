@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-L",
+  "passed": false,
+  "reason": "缩放 L×4 倍后 y 变为 4 倍，物理预期 2 倍（相对偏差 1.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+  "metrics": {
+    "ratio": 4.0,
+    "expected_ratio": 2.0,
+    "rel_error": 1.0,
+    "lambda": 4.0,
+    "expect_power": 0.5
+  }
+}

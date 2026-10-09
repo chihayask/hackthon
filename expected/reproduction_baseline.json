@@ -1,0 +1,5246 @@
+{
+  "adversarial": {
+    "外推区严格位于训练支撑域之外": true,
+    "外推崩溃 / 小角度近似": true,
+    "工具调用失败/恶意输入": true,
+    "拟合不收敛": true,
+    "放水攻击：只放宽阈值不够": true,
+    "数据缺失/异常值": true,
+    "物理荒谬但拟合好（人为给错单位）": true,
+    "留出集隔离": true,
+    "符号错误被自由参数吸收（已知边界）": true,
+    "结论对随机种子的稳定性": true,
+    "负对照（纯噪声输入）": true,
+    "过拟合（域内好、域外崩）": true,
+    "量纲不一致（漏掉速度的平方）": true,
+    "量纲检验的覆盖面": true
+  },
+  "discrimination": {
+    "buckets": {
+      "ref:caught-by-scale-only": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 0
+      },
+      "ref:dimension": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "ref:extrapolation": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "ref:fit": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 9,
+        "ref_total": 9,
+        "wrong_total": 0
+      },
+      "ref:holdout": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "ref:scale:invariance": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 1,
+        "ref_total": 1,
+        "wrong_total": 0
+      },
+      "ref:scale:limit": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 3,
+        "ref_total": 3,
+        "wrong_total": 0
+      },
+      "ref:scale:monotonic": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 31,
+        "ref_total": 31,
+        "wrong_total": 0
+      },
+      "ref:scale:scaling": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 46,
+        "ref_total": 46,
+        "wrong_total": 0
+      },
+      "ref:scale:sign": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "ref:scale:symmetry": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 3,
+        "ref_total": 3,
+        "wrong_total": 0
+      },
+      "ref:verdict": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "ref:verdict-numeric-only": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 22,
+        "ref_total": 22,
+        "wrong_total": 0
+      },
+      "wrong:caught-by-scale-only": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 22
+      },
+      "wrong:dimension": {
+        "fail_on_wrong": 19,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 22
+      },
+      "wrong:expression": {
+        "fail_on_wrong": 9,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 9
+      },
+      "wrong:extrapolation": {
+        "fail_on_wrong": 12,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 13
+      },
+      "wrong:holdout": {
+        "fail_on_wrong": 13,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 13
+      },
+      "wrong:scale:invariance": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 1
+      },
+      "wrong:scale:limit": {
+        "fail_on_wrong": 1,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 3
+      },
+      "wrong:scale:monotonic": {
+        "fail_on_wrong": 7,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 31
+      },
+      "wrong:scale:scaling": {
+        "fail_on_wrong": 23,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 46
+      },
+      "wrong:scale:sign": {
+        "fail_on_wrong": 1,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 22
+      },
+      "wrong:scale:symmetry": {
+        "fail_on_wrong": 0,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 3
+      },
+      "wrong:verdict": {
+        "fail_on_wrong": 22,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 22
+      },
+      "wrong:verdict-numeric-only": {
+        "fail_on_wrong": 22,
+        "pass_on_ref": 0,
+        "ref_total": 0,
+        "wrong_total": 22
+      }
+    },
+    "reference_count": 22,
+    "wrong_count": 22
+  },
+  "environment": {
+    "engine_version": "0.1.0",
+    "numpy": "2.4.6",
+    "platform": "Windows",
+    "python": "3.13.5"
+  },
+  "manifest_integrity": {
+    "discrim-ref-phys-buoyancy": true,
+    "discrim-ref-phys-coulomb": true,
+    "discrim-ref-phys-cyclotron": true,
+    "discrim-ref-phys-elastic-pe": true,
+    "discrim-ref-phys-energy-shift": true,
+    "discrim-ref-phys-grav-potential-energy": true,
+    "discrim-ref-phys-gravitation": true,
+    "discrim-ref-phys-hydrogen-level": true,
+    "discrim-ref-phys-ideal-gas": true,
+    "discrim-ref-phys-index-vacuum": true,
+    "discrim-ref-phys-joule-heating": true,
+    "discrim-ref-phys-kinetic-energy": true,
+    "discrim-ref-phys-ohm": true,
+    "discrim-ref-phys-pendulum-exact": true,
+    "discrim-ref-phys-pendulum-period": true,
+    "discrim-ref-phys-radioactive-decay": true,
+    "discrim-ref-phys-snells-law": true,
+    "discrim-ref-phys-spring-energy": true,
+    "discrim-ref-phys-stefan-boltzmann": true,
+    "discrim-ref-phys-surface-gravity": true,
+    "discrim-ref-phys-transit-depth": true,
+    "discrim-ref-phys-weight": true,
+    "discrim-wrong-phys-buoyancy": true,
+    "discrim-wrong-phys-coulomb": true,
+    "discrim-wrong-phys-cyclotron": true,
+    "discrim-wrong-phys-elastic-pe": true,
+    "discrim-wrong-phys-energy-shift": true,
+    "discrim-wrong-phys-grav-potential-energy": true,
+    "discrim-wrong-phys-gravitation": true,
+    "discrim-wrong-phys-hydrogen-level": true,
+    "discrim-wrong-phys-ideal-gas": true,
+    "discrim-wrong-phys-index-vacuum": true,
+    "discrim-wrong-phys-joule-heating": true,
+    "discrim-wrong-phys-kinetic-energy": true,
+    "discrim-wrong-phys-ohm": true,
+    "discrim-wrong-phys-pendulum-exact": true,
+    "discrim-wrong-phys-pendulum-period": true,
+    "discrim-wrong-phys-radioactive-decay": true,
+    "discrim-wrong-phys-snells-law": true,
+    "discrim-wrong-phys-spring-energy": true,
+    "discrim-wrong-phys-stefan-boltzmann": true,
+    "discrim-wrong-phys-surface-gravity": true,
+    "discrim-wrong-phys-transit-depth": true,
+    "discrim-wrong-phys-weight": true,
+    "negctl-summary": true,
+    "phys-gravitation-cand01": true,
+    "phys-gravitation-cand02": true,
+    "refcheck-phys-buoyancy": true,
+    "refcheck-phys-coulomb": true,
+    "refcheck-phys-cyclotron": true,
+    "refcheck-phys-elastic-pe": true,
+    "refcheck-phys-energy-shift": true,
+    "refcheck-phys-grav-potential-energy": true,
+    "refcheck-phys-gravitation": true,
+    "refcheck-phys-hydrogen-level": true,
+    "refcheck-phys-ideal-gas": true,
+    "refcheck-phys-index-vacuum": true,
+    "refcheck-phys-joule-heating": true,
+    "refcheck-phys-kinetic-energy": true,
+    "refcheck-phys-ohm": true,
+    "refcheck-phys-pendulum-exact": true,
+    "refcheck-phys-pendulum-period": true,
+    "refcheck-phys-radioactive-decay": true,
+    "refcheck-phys-snells-law": true,
+    "refcheck-phys-spring-energy": true,
+    "refcheck-phys-stefan-boltzmann": true,
+    "refcheck-phys-surface-gravity": true,
+    "refcheck-phys-transit-depth": true,
+    "refcheck-phys-weight": true,
+    "scale-ref-phys-buoyancy": true,
+    "scale-ref-phys-coulomb": true,
+    "scale-ref-phys-cyclotron": true,
+    "scale-ref-phys-elastic-pe": true,
+    "scale-ref-phys-energy-shift": true,
+    "scale-ref-phys-grav-potential-energy": true,
+    "scale-ref-phys-gravitation": true,
+    "scale-ref-phys-hydrogen-level": true,
+    "scale-ref-phys-ideal-gas": true,
+    "scale-ref-phys-index-vacuum": true,
+    "scale-ref-phys-joule-heating": true,
+    "scale-ref-phys-kinetic-energy": true,
+    "scale-ref-phys-ohm": true,
+    "scale-ref-phys-pendulum-exact": true,
+    "scale-ref-phys-pendulum-period": true,
+    "scale-ref-phys-radioactive-decay": true,
+    "scale-ref-phys-snells-law": true,
+    "scale-ref-phys-spring-energy": true,
+    "scale-ref-phys-stefan-boltzmann": true,
+    "scale-ref-phys-surface-gravity": true,
+    "scale-ref-phys-transit-depth": true,
+    "scale-ref-phys-weight": true,
+    "scale-variant-phys-buoyancy": true,
+    "scale-variant-phys-coulomb": true,
+    "scale-variant-phys-cyclotron": true,
+    "scale-variant-phys-elastic-pe": true,
+    "scale-variant-phys-energy-shift": true,
+    "scale-variant-phys-grav-potential-energy": true,
+    "scale-variant-phys-gravitation": true,
+    "scale-variant-phys-hydrogen-level": true,
+    "scale-variant-phys-ideal-gas": true,
+    "scale-variant-phys-index-vacuum": true,
+    "scale-variant-phys-joule-heating": true,
+    "scale-variant-phys-kinetic-energy": true,
+    "scale-variant-phys-ohm": true,
+    "scale-variant-phys-pendulum-exact": true,
+    "scale-variant-phys-pendulum-period": true,
+    "scale-variant-phys-radioactive-decay": true,
+    "scale-variant-phys-snells-law": true,
+    "scale-variant-phys-spring-energy": true,
+    "scale-variant-phys-stefan-boltzmann": true,
+    "scale-variant-phys-surface-gravity": true,
+    "scale-variant-phys-transit-depth": true,
+    "scale-variant-phys-weight": true,
+    "variant-phys-buoyancy": true,
+    "variant-phys-coulomb": true,
+    "variant-phys-cyclotron": true,
+    "variant-phys-elastic-pe": true,
+    "variant-phys-energy-shift": true,
+    "variant-phys-grav-potential-energy": true,
+    "variant-phys-gravitation": true,
+    "variant-phys-hydrogen-level": true,
+    "variant-phys-ideal-gas": true,
+    "variant-phys-index-vacuum": true,
+    "variant-phys-joule-heating": true,
+    "variant-phys-kinetic-energy": true,
+    "variant-phys-ohm": true,
+    "variant-phys-pendulum-exact": true,
+    "variant-phys-pendulum-period": true,
+    "variant-phys-radioactive-decay": true,
+    "variant-phys-snells-law": true,
+    "variant-phys-spring-energy": true,
+    "variant-phys-stefan-boltzmann": true,
+    "variant-phys-surface-gravity": true,
+    "variant-phys-transit-depth": true,
+    "variant-phys-weight": true
+  },
+  "negative_control": {
+    "accepted": 0,
+    "best_fit_normalized_rms": null,
+    "note": "全部尝试都在拟合阶段被拦下：归一化残差门槛是 0.5·std(y)，而纯噪声上最好的拟合仍远高于它。这说明负对照没有走到留出集/外推区就已经被否决——本实验因此没有对后两道门构成压力，如实记录。",
+    "rejected": 80
+  },
+  "runs": {
+    "discrim-ref-phys-buoyancy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00249448
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00281975
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V*g",
+      "task_id": "phys-buoyancy",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-coulomb": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00276611
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00288318
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r**2",
+      "task_id": "phys-coulomb",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-cyclotron": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00232853
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00320212
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B/m",
+      "task_id": "phys-cyclotron",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-elastic-pe": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00275532
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00231569
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x**2/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-energy-shift": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0067076
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.007206
+        },
+        "scale-monotonic-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-h": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "(A-B)/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-grav-potential-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00335539
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.0026502
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-gravitation": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00286142
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00277085
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r**2",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-hydrogen-level": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00228658
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00432101
+        },
+        "scale-monotonic-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-ideal-gas": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00192738
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00261599
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "n*R*T/V",
+      "task_id": "phys-ideal-gas",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-index-vacuum": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00271146
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00276476
+        },
+        "scale-monotonic-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "1/sqrt(eps*mu)",
+      "task_id": "phys-index-vacuum",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-joule-heating": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00250752
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00290762
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I**2*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-kinetic-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00204287
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00236588
+        },
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v**2/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-ohm": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00263376
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00337362
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-ohm",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-pendulum-exact": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.000252667
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.000279959
+        },
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-pendulum-period": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00331774
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00288635
+        },
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-period",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-radioactive-decay": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0129824
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.0063243
+        },
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*exp(-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-snells-law": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00320112
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00296714
+        },
+        "scale-limit-theta2-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
+      "task_id": "phys-snells-law",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-spring-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00292369
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00231731
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x**2/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-stefan-boltzmann": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00285231
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00255147
+        },
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**4",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-surface-gravity": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00343182
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00312327
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R**2",
+      "task_id": "phys-surface-gravity",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-transit-depth": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0022261
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00209325
+        },
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)**2",
+      "task_id": "phys-transit-depth",
+      "verdict": "accepted"
+    },
+    "discrim-ref-phys-weight": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00240582
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00298171
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*g",
+      "task_id": "phys-weight",
+      "verdict": "accepted"
+    },
+    "discrim-wrong-phys-buoyancy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.895303
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.898011
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V",
+      "task_id": "phys-buoyancy",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-coulomb": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r",
+      "task_id": "phys-coulomb",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-cyclotron": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B*m",
+      "task_id": "phys-cyclotron",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-elastic-pe": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.17899
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 2.8335
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-energy-shift": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-B": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-h": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*B/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-grav-potential-energy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r**2",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-gravitation": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r",
+      "task_id": "phys-gravitation",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-hydrogen-level": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-ideal-gas": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-V": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "R*n*T",
+      "task_id": "phys-ideal-gas",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-index-vacuum": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "scale-monotonic-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "eps*mu",
+      "task_id": "phys-index-vacuum",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-joule-heating": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.392637
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.449337
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-kinetic-energy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.751521
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.901965
+        },
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-ohm": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.983352
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.998686
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I/R",
+      "task_id": "phys-ohm",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-pendulum-exact": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0227602
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.0275501
+        },
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-pendulum-period": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.592908
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.588666
+        },
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*L/g",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-radioactive-decay": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.59747
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 9.71592
+        },
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*(1-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-snells-law": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-limit-theta2-to-0-0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)*n",
+      "task_id": "phys-snells-law",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-spring-energy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.05153
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 2.45009
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-stefan-boltzmann": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**2",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-surface-gravity": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "expression": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R",
+      "task_id": "phys-surface-gravity",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-transit-depth": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 12.8414
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 12.9298
+        },
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)",
+      "task_id": "phys-transit-depth",
+      "verdict": "rejected"
+    },
+    "discrim-wrong-phys-weight": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.977278
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.982328
+        },
+        "scale-monotonic-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m/g",
+      "task_id": "phys-weight",
+      "verdict": "rejected"
+    },
+    "negctl-summary": {
+      "checks": {
+        "negative-control": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "(纯噪声，正确结论是未发现公式)",
+      "task_id": "negative-control",
+      "verdict": "accepted"
+    },
+    "phys-gravitation-cand01": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00286142
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00277085
+        }
+      },
+      "formula": "G*m1*m2/r**2",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "phys-gravitation-cand02": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.317302
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.367714
+        }
+      },
+      "formula": "G*m1*m2/r",
+      "task_id": "phys-gravitation",
+      "verdict": "rejected"
+    },
+    "refcheck-phys-buoyancy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00249448
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00281975
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V*g",
+      "task_id": "phys-buoyancy",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-coulomb": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00276611
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00288318
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r**2",
+      "task_id": "phys-coulomb",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-cyclotron": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00232853
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00320212
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B/m",
+      "task_id": "phys-cyclotron",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-elastic-pe": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00275532
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00231569
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x**2/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-energy-shift": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0067076
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.007206
+        },
+        "scale-monotonic-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-h": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "(A-B)/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-grav-potential-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00335539
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.0026502
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-gravitation": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00286142
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00277085
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r**2",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-hydrogen-level": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00228658
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00432101
+        },
+        "scale-monotonic-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-ideal-gas": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00192738
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00261599
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "n*R*T/V",
+      "task_id": "phys-ideal-gas",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-index-vacuum": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00271146
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00276476
+        },
+        "scale-monotonic-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "1/sqrt(eps*mu)",
+      "task_id": "phys-index-vacuum",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-joule-heating": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00250752
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00290762
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I**2*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-kinetic-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00204287
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00236588
+        },
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v**2/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-ohm": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00263376
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00337362
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-ohm",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-pendulum-exact": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.000252667
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.000279959
+        },
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-pendulum-period": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00331774
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00288635
+        },
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-period",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-radioactive-decay": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0129824
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.0063243
+        },
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*exp(-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-snells-law": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00320112
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00296714
+        },
+        "scale-limit-theta2-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
+      "task_id": "phys-snells-law",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-spring-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00292369
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00231731
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x**2/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-stefan-boltzmann": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00285231
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00255147
+        },
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**4",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-surface-gravity": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00343182
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00312327
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R**2",
+      "task_id": "phys-surface-gravity",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-transit-depth": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0022261
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00209325
+        },
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)**2",
+      "task_id": "phys-transit-depth",
+      "verdict": "accepted"
+    },
+    "refcheck-phys-weight": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.00240582
+        },
+        "holdout": {
+          "passed": true,
+          "relative_error_median": 0.00298171
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*g",
+      "task_id": "phys-weight",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-buoyancy": {
+      "checks": {
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V*g",
+      "task_id": "phys-buoyancy",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-coulomb": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r**2",
+      "task_id": "phys-coulomb",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-cyclotron": {
+      "checks": {
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B/m",
+      "task_id": "phys-cyclotron",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-elastic-pe": {
+      "checks": {
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x**2/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-energy-shift": {
+      "checks": {
+        "scale-monotonic-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-h": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "(A-B)/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-grav-potential-energy": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-gravitation": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r**2",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-hydrogen-level": {
+      "checks": {
+        "scale-monotonic-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-ideal-gas": {
+      "checks": {
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "n*R*T/V",
+      "task_id": "phys-ideal-gas",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-index-vacuum": {
+      "checks": {
+        "scale-monotonic-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "1/sqrt(eps*mu)",
+      "task_id": "phys-index-vacuum",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-joule-heating": {
+      "checks": {
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I**2*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-kinetic-energy": {
+      "checks": {
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v**2/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-ohm": {
+      "checks": {
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-ohm",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-pendulum-exact": {
+      "checks": {
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-pendulum-period": {
+      "checks": {
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-period",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-radioactive-decay": {
+      "checks": {
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*exp(-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-snells-law": {
+      "checks": {
+        "scale-limit-theta2-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
+      "task_id": "phys-snells-law",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-spring-energy": {
+      "checks": {
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x**2/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-stefan-boltzmann": {
+      "checks": {
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**4",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-surface-gravity": {
+      "checks": {
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R**2",
+      "task_id": "phys-surface-gravity",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-transit-depth": {
+      "checks": {
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)**2",
+      "task_id": "phys-transit-depth",
+      "verdict": "accepted"
+    },
+    "scale-ref-phys-weight": {
+      "checks": {
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*g",
+      "task_id": "phys-weight",
+      "verdict": "accepted"
+    },
+    "scale-variant-phys-buoyancy": {
+      "checks": {
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V",
+      "task_id": "phys-buoyancy",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-coulomb": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r",
+      "task_id": "phys-coulomb",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-cyclotron": {
+      "checks": {
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B*m",
+      "task_id": "phys-cyclotron",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-elastic-pe": {
+      "checks": {
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-energy-shift": {
+      "checks": {
+        "scale-monotonic-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-B": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-h": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*B/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-grav-potential-energy": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r**2",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-gravitation": {
+      "checks": {
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r",
+      "task_id": "phys-gravitation",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-hydrogen-level": {
+      "checks": {
+        "scale-monotonic-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-ideal-gas": {
+      "checks": {
+        "scale-monotonic-V": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-n": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "R*n*T",
+      "task_id": "phys-ideal-gas",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-index-vacuum": {
+      "checks": {
+        "scale-monotonic-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "eps*mu",
+      "task_id": "phys-index-vacuum",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-joule-heating": {
+      "checks": {
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-kinetic-energy": {
+      "checks": {
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-ohm": {
+      "checks": {
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I/R",
+      "task_id": "phys-ohm",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-pendulum-exact": {
+      "checks": {
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-pendulum-period": {
+      "checks": {
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*L/g",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-radioactive-decay": {
+      "checks": {
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*(1-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-snells-law": {
+      "checks": {
+        "scale-limit-theta2-to-0-0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)*n",
+      "task_id": "phys-snells-law",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-spring-energy": {
+      "checks": {
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-stefan-boltzmann": {
+      "checks": {
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**2",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-surface-gravity": {
+      "checks": {
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R",
+      "task_id": "phys-surface-gravity",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-transit-depth": {
+      "checks": {
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)",
+      "task_id": "phys-transit-depth",
+      "verdict": "rejected"
+    },
+    "scale-variant-phys-weight": {
+      "checks": {
+        "scale-monotonic-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m/g",
+      "task_id": "phys-weight",
+      "verdict": "rejected"
+    },
+    "variant-phys-buoyancy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.895303
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.898011
+        },
+        "scale-monotonic-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-V": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-rho": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "rho*V",
+      "task_id": "phys-buoyancy",
+      "verdict": "rejected"
+    },
+    "variant-phys-coulomb": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.950193
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.457
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-q1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-q1-q2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*q1*q2/r",
+      "task_id": "phys-coulomb",
+      "verdict": "rejected"
+    },
+    "variant-phys-cyclotron": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "scale-monotonic-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-B": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-q": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "q*B*m",
+      "task_id": "phys-cyclotron",
+      "verdict": "rejected"
+    },
+    "variant-phys-elastic-pe": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.17899
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 2.8335
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-c": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "c*x/2",
+      "task_id": "phys-elastic-pe",
+      "verdict": "rejected"
+    },
+    "variant-phys-energy-shift": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "fit": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*B/h",
+      "task_id": "phys-energy-shift",
+      "verdict": "rejected"
+    },
+    "variant-phys-grav-potential-energy": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.329823
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.258621
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-G*m1*m2/r**2",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "rejected"
+    },
+    "variant-phys-gravitation": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.317302
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.367714
+        },
+        "scale-monotonic-r": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m1": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-r": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-symmetry-m1-m2": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*m1*m2/r",
+      "task_id": "phys-gravitation",
+      "verdict": "rejected"
+    },
+    "variant-phys-hydrogen-level": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "fit": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "variant-phys-ideal-gas": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "fit": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "R*n*T",
+      "task_id": "phys-ideal-gas",
+      "verdict": "rejected"
+    },
+    "variant-phys-index-vacuum": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 1.0
+        },
+        "scale-monotonic-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-eps-mu": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "eps*mu",
+      "task_id": "phys-index-vacuum",
+      "verdict": "rejected"
+    },
+    "variant-phys-joule-heating": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.392637
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.449337
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I*R",
+      "task_id": "phys-joule-heating",
+      "verdict": "rejected"
+    },
+    "variant-phys-kinetic-energy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.751521
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.901965
+        },
+        "scale-monotonic-v": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-v": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-v-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m*v/2",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "rejected"
+    },
+    "variant-phys-ohm": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.983352
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.998686
+        },
+        "scale-monotonic-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-I": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "I/R",
+      "task_id": "phys-ohm",
+      "verdict": "rejected"
+    },
+    "variant-phys-pendulum-exact": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": true,
+          "relative_error_median": 0.0227602
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.0275501
+        },
+        "scale-limit-theta0-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*sqrt(L/g)",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "rejected"
+    },
+    "variant-phys-pendulum-period": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.592908
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.588666
+        },
+        "scale-monotonic-L": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-g": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-L": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "2*pi*L/g",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "variant-phys-radioactive-decay": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.59747
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 9.71592
+        },
+        "scale-limit-t-to-0-0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-t": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-tau": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-N0": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": false,
+          "relative_error_median": null
+        }
+      },
+      "formula": "N0*(1-t/tau)",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "rejected"
+    },
+    "variant-phys-snells-law": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.13735
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.0817988
+        },
+        "scale-limit-theta2-to-0-0": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-theta2": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-d": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "d*sin(theta2)*n",
+      "task_id": "phys-snells-law",
+      "verdict": "rejected"
+    },
+    "variant-phys-spring-energy": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 3.05153
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 2.45009
+        },
+        "scale-monotonic-x": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-k": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-x": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-x-parity": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "k*x/2",
+      "task_id": "phys-spring-energy",
+      "verdict": "rejected"
+    },
+    "variant-phys-stefan-boltzmann": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 2.27098
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.551308
+        },
+        "scale-monotonic-T": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-T": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-sigma": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "sigma*A*T**2",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "rejected"
+    },
+    "variant-phys-surface-gravity": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 1.878
+        },
+        "fit": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 1.70499
+        },
+        "scale-monotonic-R": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-M": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-R": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "G*M/R",
+      "task_id": "phys-surface-gravity",
+      "verdict": "rejected"
+    },
+    "variant-phys-transit-depth": {
+      "checks": {
+        "dimension": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 12.8414
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 12.9298
+        },
+        "scale-invariance-Rp-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rp": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-monotonic-Rs": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-A": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-Rp": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "A*(Rp/Rs)",
+      "task_id": "phys-transit-depth",
+      "verdict": "rejected"
+    },
+    "variant-phys-weight": {
+      "checks": {
+        "dimension": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "extrapolation": {
+          "passed": false,
+          "relative_error_median": 0.977278
+        },
+        "holdout": {
+          "passed": false,
+          "relative_error_median": 0.982328
+        },
+        "scale-monotonic-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-monotonic-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-scaling-g": {
+          "passed": false,
+          "relative_error_median": null
+        },
+        "scale-scaling-m": {
+          "passed": true,
+          "relative_error_median": null
+        },
+        "scale-sign-y": {
+          "passed": true,
+          "relative_error_median": null
+        }
+      },
+      "formula": "m/g",
+      "task_id": "phys-weight",
+      "verdict": "rejected"
+    }
+  },
+  "scoring": {
+    "agent_fixture_tasks": 1,
+    "by_layer": {
+      "base": {
+        "gold_ok": 13,
+        "tasks": 13,
+        "wrong_ok": 13
+      },
+      "challenge": {
+        "gold_ok": 9,
+        "tasks": 9,
+        "wrong_ok": 9
+      }
+    },
+    "gold_reference_accepted": 22,
+    "gold_reference_checked": 22,
+    "gold_reference_rate": 1.0,
+    "tasks_in_scope": 22,
+    "wrong_variant_checked": 22,
+    "wrong_variant_rate": 1.0,
+    "wrong_variant_rejected": 22
+  },
+  "splits": {
+    "phys-buoyancy": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "86d90fc40ad136d4",
+        "holdout": "cdd2dcbe925d0014",
+        "train": "f2add74a15c5cc37"
+      },
+      "seed": 20261008
+    },
+    "phys-coulomb": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "a2e0424452fe4662",
+        "holdout": "8d3c16e59fbe353c",
+        "train": "0e3ab2dfef366012"
+      },
+      "seed": 20261008
+    },
+    "phys-cyclotron": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "aa9d828a6de1c4d6",
+        "holdout": "5b4f2376c6f1a504",
+        "train": "53a82ef7f27b1c92"
+      },
+      "seed": 20261008
+    },
+    "phys-elastic-pe": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "bffd125007f4fa28",
+        "holdout": "2dbe430aab95f3a5",
+        "train": "9c21beb6983afa3f"
+      },
+      "seed": 20261008
+    },
+    "phys-energy-shift": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "398bfb5a9e5d54dc",
+        "holdout": "8582e14986f44240",
+        "train": "7c8ff065e3fe52ea"
+      },
+      "seed": 20261008
+    },
+    "phys-grav-potential-energy": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "f005b2bbf945ed98",
+        "holdout": "7f42ee8c93973c06",
+        "train": "056b2e8ff5c4ce50"
+      },
+      "seed": 20261008
+    },
+    "phys-gravitation": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "57e10f3bb5a971e3",
+        "holdout": "b668ae13b5f79c1a",
+        "train": "be10f91a921a2bb1"
+      },
+      "seed": 20261008
+    },
+    "phys-hydrogen-level": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "d99c3e53406be58f",
+        "holdout": "39c268dd1d456e59",
+        "train": "4cb620034fa2e863"
+      },
+      "seed": 20261008
+    },
+    "phys-ideal-gas": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "dfa9566735d0c4ab",
+        "holdout": "88a1855d44c813f8",
+        "train": "adc3557fb0a9a234"
+      },
+      "seed": 20261008
+    },
+    "phys-index-vacuum": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "be584c42384bbd7b",
+        "holdout": "1223de60e2ca0e5c",
+        "train": "f88ceaa71ed03921"
+      },
+      "seed": 20261008
+    },
+    "phys-joule-heating": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "25e92dd258d189d9",
+        "holdout": "ab23e1f4289f76a8",
+        "train": "3a615c19401b8e91"
+      },
+      "seed": 20261008
+    },
+    "phys-kinetic-energy": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "05fa2317a61b6fac",
+        "holdout": "582910c4d716cbaa",
+        "train": "d4a4acf0934946de"
+      },
+      "seed": 20261008
+    },
+    "phys-ohm": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "23f86abb9cd727be",
+        "holdout": "1fce4a96d352cad5",
+        "train": "6ab5e648baa4d7ee"
+      },
+      "seed": 20261008
+    },
+    "phys-pendulum-exact": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "3c7342f3858622f0",
+        "holdout": "e44a581b8109207e",
+        "train": "71a2d9505466065e"
+      },
+      "seed": 20261008
+    },
+    "phys-pendulum-period": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "fdacc2f80f8b2751",
+        "holdout": "4eef7d2a90bf41f7",
+        "train": "92143505fd0403d6"
+      },
+      "seed": 20261008
+    },
+    "phys-radioactive-decay": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "709013c1fffb7c7c",
+        "holdout": "5739c13a920359b4",
+        "train": "8111eea8267a3435"
+      },
+      "seed": 20261008
+    },
+    "phys-snells-law": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "8322b278ddac2a7d",
+        "holdout": "e75e18cecd853e0a",
+        "train": "5df2f686d93fb5fb"
+      },
+      "seed": 20261008
+    },
+    "phys-spring-energy": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "969a336e5f41ce71",
+        "holdout": "0e93dcf197bc2a71",
+        "train": "c2a4d845d93b4054"
+      },
+      "seed": 20261008
+    },
+    "phys-stefan-boltzmann": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "1b55e855791e88b5",
+        "holdout": "736b37d033b26d20",
+        "train": "2bb96b4b1db62865"
+      },
+      "seed": 20261008
+    },
+    "phys-surface-gravity": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "1d288a18f771f704",
+        "holdout": "fc97227029e0884b",
+        "train": "d4b1e75a3f8b89ed"
+      },
+      "seed": 20261008
+    },
+    "phys-transit-depth": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "e88bc4e9d698b3aa",
+        "holdout": "c5edc3495e30f27a",
+        "train": "b6b553d53b5be2c5"
+      },
+      "seed": 20261008
+    },
+    "phys-weight": {
+      "counts": {
+        "extrapolation": 60,
+        "holdout": 80,
+        "train": 260
+      },
+      "fingerprint": {
+        "extrapolation": "965a5351043b81d3",
+        "holdout": "992c1cdfc050d739",
+        "train": "0480c0a48bd5fd24"
+      },
+      "seed": 20261008
+    }
+  },
+  "tasks": [
+    "phys-buoyancy",
+    "phys-coulomb",
+    "phys-cyclotron",
+    "phys-elastic-pe",
+    "phys-energy-shift",
+    "phys-grav-potential-energy",
+    "phys-gravitation",
+    "phys-hydrogen-level",
+    "phys-ideal-gas",
+    "phys-index-vacuum",
+    "phys-joule-heating",
+    "phys-kinetic-energy",
+    "phys-ohm",
+    "phys-pendulum-exact",
+    "phys-pendulum-period",
+    "phys-radioactive-decay",
+    "phys-snells-law",
+    "phys-spring-energy",
+    "phys-stefan-boltzmann",
+    "phys-surface-gravity",
+    "phys-transit-depth",
+    "phys-weight"
+  ]
+}

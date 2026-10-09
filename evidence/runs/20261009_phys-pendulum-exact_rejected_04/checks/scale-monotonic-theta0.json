@@ -1,0 +1,26 @@
+{
+  "name": "scale-monotonic-theta0",
+  "passed": false,
+  "reason": "在 theta0 ∈ [0.05, 1.2] 上用等比网格扫描 9 点：整体相对变化 0.000e+00；有 8 个步长方向相反（极值 0.000e+00），不满足全程递增",
+  "metrics": {
+    "direction": "increasing",
+    "rel_steps": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "variation": 0.0,
+    "min_variation": 0.001,
+    "grid": "等比",
+    "strict": false,
+    "range": [
+      0.05,
+      1.2
+    ]
+  }
+}

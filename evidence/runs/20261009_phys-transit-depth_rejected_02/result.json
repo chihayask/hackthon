@@ -1,0 +1,258 @@
+{
+  "task_id": "phys-transit-depth",
+  "formula": "A*(Rp/Rs)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 12.9298（阈值 0.0200）；诊断口径 p90=36.7260、RMSE/中位|y|=16.3914、RMSE/std(y)=12.4000、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 12.929803468617507,
+        "relative_error_p75": 24.231174185675556,
+        "relative_error_p90": 36.725982782381514,
+        "rmsre": 26.06463417943093,
+        "max_relative_error": 93.54989899484751,
+        "rmse": 0.053958799098155576,
+        "relative_rmse": 16.39141594549884,
+        "normalized_rmse": 12.39997581804802,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 12.8414（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=49.9685、RMSE/中位|y|=15.0989、RMSE/std(y)=11.1448",
+      "metrics": {
+        "relative_error_median": 12.841449115986826,
+        "relative_error_p75": 27.78851819382573,
+        "relative_error_p90": 49.96849674817625,
+        "rmsre": 32.352840073133855,
+        "max_relative_error": 102.64004938789296,
+        "rmse": 0.05790018203532275,
+        "relative_rmse": 15.09887900573443,
+        "normalized_rmse": 11.144761455507174,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-A",
+      "passed": true,
+      "reason": "缩放 A×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-Rp",
+      "passed": false,
+      "reason": "缩放 Rp×2 倍后 y 变为 2 倍，物理预期 4 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 4.0,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-invariance-Rp-Rs",
+      "passed": true,
+      "reason": "无量纲群不变性成立：同时缩放 Rp×3、Rs×3 后 y 保持不变（相对偏差 1.11e-16），说明公式只通过这些量的无量纲组合依赖它们",
+      "metrics": {
+        "ratio": 0.9999999999999999,
+        "expected_ratio": 1.0,
+        "rel_error": 1.1102230246251565e-16,
+        "lambda": 3.0,
+        "expect_power": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-Rp",
+      "passed": true,
+      "reason": "在 Rp ∈ [6e+06, 9e+07] 上用等比网格扫描 9 点：整体相对变化 9.333e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.02685670346711166,
+          0.03767594128391714,
+          0.05285371502751418,
+          0.07414586330195168,
+          0.10401556526215432,
+          0.14591829314529947,
+          0.2047015580867551,
+          0.28716569375862977
+        ],
+        "variation": 0.9333333333333332,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          6000000.0,
+          90000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-Rs",
+      "passed": true,
+      "reason": "在 Rs ∈ [6e+08, 7e+08] 上用等距网格扫描 9 点：整体相对变化 1.429e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.02040816326530604,
+          -0.019591836734693932,
+          -0.018823529411764687,
+          -0.018099547511312254,
+          -0.017416545718432562,
+          -0.016771488469601605,
+          -0.01616161616161619,
+          -0.01558441558441553
+        ],
+        "variation": 0.1428571428571428,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          600000000.0,
+          700000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.004285714285714286,
+        "max_value": 0.15
+      }
+    },
+    {
+      "name": "scale-scaling-A",
+      "passed": true,
+      "reason": "缩放 A×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-Rp",
+      "passed": false,
+      "reason": "缩放 Rp×2 倍后 y 变为 2 倍，物理预期 4 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 4.0,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-invariance-Rp-Rs",
+      "passed": true,
+      "reason": "无量纲群不变性成立：同时缩放 Rp×3、Rs×3 后 y 保持不变（相对偏差 1.11e-16），说明公式只通过这些量的无量纲组合依赖它们",
+      "metrics": {
+        "ratio": 0.9999999999999999,
+        "expected_ratio": 1.0,
+        "rel_error": 1.1102230246251565e-16,
+        "lambda": 3.0,
+        "expect_power": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-Rp",
+      "passed": true,
+      "reason": "在 Rp ∈ [6e+06, 9e+07] 上用等比网格扫描 9 点：整体相对变化 9.333e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.02685670346711166,
+          0.03767594128391714,
+          0.05285371502751418,
+          0.07414586330195168,
+          0.10401556526215432,
+          0.14591829314529947,
+          0.2047015580867551,
+          0.28716569375862977
+        ],
+        "variation": 0.9333333333333332,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          6000000.0,
+          90000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-Rs",
+      "passed": true,
+      "reason": "在 Rs ∈ [6e+08, 7e+08] 上用等距网格扫描 9 点：整体相对变化 1.429e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.02040816326530604,
+          -0.019591836734693932,
+          -0.018823529411764687,
+          -0.018099547511312254,
+          -0.017416545718432562,
+          -0.016771488469601605,
+          -0.01616161616161619,
+          -0.01558441558441553
+        ],
+        "variation": 0.1428571428571428,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          600000000.0,
+          700000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.004285714285714286,
+        "max_value": 0.15
+      }
+    }
+  ],
+  "rounds_hint": "判别力对照记录（三重验证 + 尺度检验）",
+  "free_parameters": []
+}

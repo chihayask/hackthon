@@ -1,0 +1,145 @@
+{
+  "task_id": "phys-ohm",
+  "formula": "I*R",
+  "parameters": {},
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0034（阈值 0.0200）；诊断口径 p90=0.0070、RMSE/中位|y|=0.0054、RMSE/std(y)=0.0074、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.0033736210826528714,
+        "relative_error_p75": 0.0048204495753713305,
+        "relative_error_p90": 0.007031441190805793,
+        "rmsre": 0.004180317371661613,
+        "max_relative_error": 0.01040326819588974,
+        "rmse": 0.14434507885286044,
+        "relative_rmse": 0.005435629830747721,
+        "normalized_rmse": 0.0073659789183956,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0026（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0073、RMSE/中位|y|=0.0186、RMSE/std(y)=0.0062",
+      "metrics": {
+        "relative_error_median": 0.0026337637809161142,
+        "relative_error_p75": 0.005269679581439076,
+        "relative_error_p90": 0.007318146697246536,
+        "rmsre": 0.00444335552952128,
+        "max_relative_error": 0.01361753514496475,
+        "rmse": 0.18629189001710278,
+        "relative_rmse": 0.018627370931189914,
+        "normalized_rmse": 0.0062127741484532695,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-I",
+      "passed": true,
+      "reason": "缩放 I×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-R",
+      "passed": true,
+      "reason": "缩放 R×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-I",
+      "passed": true,
+      "reason": "在 I ∈ [0.05, 2] 上用等比网格扫描 9 点：整体相对变化 9.750e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.01464582937843108,
+          0.023225842105715686,
+          0.036832310931743384,
+          0.05840990059252882,
+          0.09262835811610073,
+          0.14689312325900564,
+          0.23294798806365544,
+          0.3694166475528192
+        ],
+        "variation": 0.9750000000000001,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.05,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-R",
+      "passed": true,
+      "reason": "在 R ∈ [1, 50] 上用等比网格扫描 9 点：整体相对变化 9.800e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.012613788179066191,
+          0.020569170790383694,
+          0.03354192895883048,
+          0.05469646830902912,
+          0.08919295157868418,
+          0.14544600149264564,
+          0.23717725420866453,
+          0.38676243648269615
+        ],
+        "variation": 0.98,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1.0,
+          50.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.05,
+        "max_value": 100.0
+      }
+    }
+  ],
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "free_parameters": []
+}

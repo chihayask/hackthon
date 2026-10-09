@@ -22,7 +22,11 @@ import sys
 from datetime import datetime
 from typing import Dict, List, Optional
 
+from .archive import archive_runs, check_archive
+from .contract import validate_taskset
 from .evidence import write_evidence
+from .recheck import recheck_all
+from .split import build_split, check_split, seal_split, write_split
 from .scale_checks import load_specs, run_scale_checks
 from .settings import verify_settings
 from .verify import VerifyError, load_task, verify_formula
@@ -51,49 +55,84 @@ def _parse_param_values(text: str) -> Dict[str, float]:
 REQUIRED_META = ("task_id", "var_names", "source")
 
 
+def _write_json(path: str, payload: object) -> None:
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+
+
 def cmd_validate_tasks(args: argparse.Namespace) -> int:
-    root = args.tasks
-    problems: List[str] = []
-    checked = 0
-    for name in sorted(os.listdir(root)):
-        task_dir = os.path.join(root, name)
+    """数据契约校验（M2 第 2 项）。--strict 时把 warn 也当失败。"""
+    result = validate_taskset(
+        args.tasks,
+        args.reference or None,
+        bool(getattr(args, "require_split", False)),
+        args.sealed or None,
+    )
+    if getattr(args, "report", ""):
+        _write_json(args.report, result)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    if result.get("errors"):
+        return 1
+    if getattr(args, "strict", False) and result.get("warnings"):
+        return 1
+    return 0
+
+
+def cmd_split(args: argparse.Namespace) -> int:
+    """三段划分落盘与物理封印；--check 重算并与 split.json 逐位比对。"""
+    settings = verify_settings()
+    hr = float(settings["holdout_ratio"])
+    er = float(settings["extrapolation_ratio"])
+    seed = int(settings["seed"])
+    sealed_root = args.sealed or "sealed"
+    results: List[Dict[str, object]] = []
+    for name in sorted(os.listdir(args.tasks)):
+        task_dir = os.path.join(args.tasks, name)
         if not os.path.isdir(task_dir):
             continue
-        checked += 1
-        meta_path = os.path.join(task_dir, "meta.json")
-        csv_path = os.path.join(task_dir, "data.csv")
-        if not os.path.exists(meta_path):
-            problems.append(name + ": 缺少 meta.json")
-            continue
-        if not os.path.exists(csv_path):
-            problems.append(name + ": 缺少 data.csv")
-            continue
-        try:
-            with open(meta_path, encoding="utf-8") as fh:
-                meta = json.load(fh)
-        except json.JSONDecodeError as exc:
-            problems.append(name + ": meta.json 不是合法 JSON (" + str(exc) + ")")
-            continue
-        for key in REQUIRED_META:
-            if key not in meta:
-                problems.append(name + ": meta.json 缺少字段 " + key)
-        var_names = meta.get("var_names") or []
-        if not isinstance(var_names, list) or not var_names:
-            problems.append(name + ": var_names 必须是非空数组")
-        header = open(csv_path, encoding="utf-8").readline().strip()
-        columns = [c.strip() for c in header.split(",")]
-        for var in var_names:
-            if var not in columns:
-                problems.append(name + ": data.csv 缺少列 " + str(var))
-        if "y" not in columns:
-            problems.append(name + ": data.csv 缺少目标列 y")
-        leak = [f for f in os.listdir(task_dir) if re.search(r"reference|answer|ground", f, re.I)]
-        if leak:
-            problems.append(name + ": 任务目录出现疑似标准答案文件 " + ",".join(leak) +
-                            "（必须移出 tasks/，避免进入智能体上下文）")
-    result = {"checked": checked, "problems": problems, "ok": not problems}
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if not problems else 1
+        columns, meta = load_task(task_dir)
+        if args.check:
+            results.append(check_split(task_dir, columns, meta, hr, er, seed))
+        else:
+            manifest, masks = build_split(columns, meta, hr, er, seed, name)
+            write_split(task_dir, manifest)
+            rel = seal_split(task_dir, sealed_root, columns, masks, manifest)
+            results.append({"task_id": name, "status": "written",
+                            "counts": manifest["counts"], "files": rel})
+    identical = all(bool(r.get("identical", True)) for r in results) if args.check else True
+    payload = {
+        "mode": "check" if args.check else "build",
+        "tasks": len(results),
+        "identical": identical,
+        "settings": {"holdout_ratio": hr, "extrapolation_ratio": er, "seed": seed},
+        "results": results,
+    }
+    if getattr(args, "report", ""):
+        _write_json(args.report, payload)
+    preview = {k: v for k, v in payload.items() if k != "results"}
+    preview["drifting"] = [r["task_id"] for r in results if not r.get("identical", True)]
+    print(json.dumps(preview, ensure_ascii=False, indent=2))
+    return 0 if identical else 1
+
+
+def cmd_recheck(args: argparse.Namespace) -> int:
+    """独立复算：对每条运行重新划分、重新拟合、重新判定（不改写 runs/）。"""
+    summary = recheck_all(args.runs, args.tasks, args.out, verify_settings())
+    preview = {k: v for k, v in summary.items() if k != "results"}
+    print(json.dumps(preview, ensure_ascii=False, indent=2))
+    return 0 if not summary.get("disagree") else 1
+
+
+def cmd_archive(args: argparse.Namespace) -> int:
+    """证据归档 / 双向孤儿检测。"""
+    result = check_archive(args.runs, args.out) if args.check else archive_runs(args.runs, args.out)
+    preview = {k: v for k, v in result.items() if k not in ("entries", "detail")}
+    print(json.dumps(preview, ensure_ascii=False, indent=2)[:4000])
+    return 0
 
 
 def _hypothesis_source(explicit: str = "") -> str:
@@ -220,7 +259,31 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_val = sub.add_parser("validate-tasks", help="校验任务集格式与答案泄漏")
     p_val.add_argument("--tasks", required=True)
+    p_val.add_argument("--reference", default="")
+    p_val.add_argument("--sealed", default="")
+    p_val.add_argument("--require-split", action="store_true")
+    p_val.add_argument("--strict", action="store_true")
+    p_val.add_argument("--report", default="")
     p_val.set_defaults(func=cmd_validate_tasks)
+
+    p_split = sub.add_parser("split", help="三段划分落盘与物理封印")
+    p_split.add_argument("--tasks", required=True)
+    p_split.add_argument("--sealed", default="sealed")
+    p_split.add_argument("--check", action="store_true")
+    p_split.add_argument("--report", default="")
+    p_split.set_defaults(func=cmd_split)
+
+    p_recheck = sub.add_parser("recheck", help="独立复算（不改写 runs/）")
+    p_recheck.add_argument("--runs", default="runs")
+    p_recheck.add_argument("--tasks", default="tasks")
+    p_recheck.add_argument("--out", default="recheck")
+    p_recheck.set_defaults(func=cmd_recheck)
+
+    p_archive = sub.add_parser("archive", help="证据归档与孤儿检测")
+    p_archive.add_argument("--runs", default="runs")
+    p_archive.add_argument("--out", default="evidence")
+    p_archive.add_argument("--check", action="store_true")
+    p_archive.set_defaults(func=cmd_archive)
 
     return parser
 

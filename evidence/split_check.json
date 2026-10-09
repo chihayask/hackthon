@@ -1,0 +1,1024 @@
+{
+  "mode": "check",
+  "tasks": 22,
+  "identical": true,
+  "settings": {
+    "holdout_ratio": 0.2,
+    "extrapolation_ratio": 0.15,
+    "seed": 20261008
+  },
+  "results": [
+    {
+      "task_id": "phys-buoyancy",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "86d90fc40ad136d4ed7799a77a507444455a068b402f28da29b4ac442faf8ae1",
+          "y_max": 227.1641786,
+          "y_min": 10.49418307
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "cdd2dcbe925d0014990ff3da43549e40d208aff0b8385789d63647aec99d2872",
+          "y_max": 209.7594897,
+          "y_min": 9.494597167
+        },
+        "train": {
+          "n": 260,
+          "sha256": "f2add74a15c5cc371c0e5b3d02a201ae85cbbfb7f09934523a934ffc84ca5927",
+          "y_max": 213.7425325,
+          "y_min": 9.404112405
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "f2add74a15c5cc371c0e5b3d02a201ae85cbbfb7f09934523a934ffc84ca5927",
+          "n": 260,
+          "y_min": 9.404112405,
+          "y_max": 213.7425325
+        },
+        "holdout": {
+          "sha256": "cdd2dcbe925d0014990ff3da43549e40d208aff0b8385789d63647aec99d2872",
+          "n": 80,
+          "y_min": 9.494597167,
+          "y_max": 209.7594897
+        },
+        "extrapolation": {
+          "sha256": "86d90fc40ad136d4ed7799a77a507444455a068b402f28da29b4ac442faf8ae1",
+          "n": 60,
+          "y_min": 10.49418307,
+          "y_max": 227.1641786
+        }
+      }
+    },
+    {
+      "task_id": "phys-coulomb",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "a2e0424452fe4662643e9763203ef4168cf5dd4664848c975df96a1f343dac66",
+          "y_max": 14972864.7,
+          "y_min": 56613.40258
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "8d3c16e59fbe353cc48ab8b7eac2d12d12d98f09e2f64c84a789070c1ef75b15",
+          "y_max": 6454408.82,
+          "y_min": 130040.364
+        },
+        "train": {
+          "n": 260,
+          "sha256": "0e3ab2dfef3660129bd65049e45491f4cff75a80b04c980b3347f73400a08a93",
+          "y_max": 9639742.452,
+          "y_min": 80818.6145
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "0e3ab2dfef3660129bd65049e45491f4cff75a80b04c980b3347f73400a08a93",
+          "n": 260,
+          "y_min": 80818.6145,
+          "y_max": 9639742.452
+        },
+        "holdout": {
+          "sha256": "8d3c16e59fbe353cc48ab8b7eac2d12d12d98f09e2f64c84a789070c1ef75b15",
+          "n": 80,
+          "y_min": 130040.364,
+          "y_max": 6454408.82
+        },
+        "extrapolation": {
+          "sha256": "a2e0424452fe4662643e9763203ef4168cf5dd4664848c975df96a1f343dac66",
+          "n": 60,
+          "y_min": 56613.40258,
+          "y_max": 14972864.7
+        }
+      }
+    },
+    {
+      "task_id": "phys-cyclotron",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "aa9d828a6de1c4d670ffc146debf17370e450ff6f9dcc5fab29cfe3403c6803f",
+          "y_max": 28514916340.0,
+          "y_min": 2617552.613
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "5b4f2376c6f1a50418100bd6ba18d6f9979af122dddb04a2e5b3a82e2f07e6d4",
+          "y_max": 3185822199.0,
+          "y_min": 3918963.98
+        },
+        "train": {
+          "n": 260,
+          "sha256": "53a82ef7f27b1c926db477a427d7d37cdf18547c297f4532bda89ee552bf986f",
+          "y_max": 20290288900.0,
+          "y_min": 4881397.214
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "53a82ef7f27b1c926db477a427d7d37cdf18547c297f4532bda89ee552bf986f",
+          "n": 260,
+          "y_min": 4881397.214,
+          "y_max": 20290288900.0
+        },
+        "holdout": {
+          "sha256": "5b4f2376c6f1a50418100bd6ba18d6f9979af122dddb04a2e5b3a82e2f07e6d4",
+          "n": 80,
+          "y_min": 3918963.98,
+          "y_max": 3185822199.0
+        },
+        "extrapolation": {
+          "sha256": "aa9d828a6de1c4d670ffc146debf17370e450ff6f9dcc5fab29cfe3403c6803f",
+          "n": 60,
+          "y_min": 2617552.613,
+          "y_max": 28514916340.0
+        }
+      }
+    },
+    {
+      "task_id": "phys-elastic-pe",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "bffd125007f4fa28902c96a33b828e739269bec7fa962fcfbf18b9829e407ac9",
+          "y_max": 20.72665386,
+          "y_min": 0.01000609204
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "2dbe430aab95f3a5ca80a81153ba7fa9d477565f4c37ceeca5ed1ce9f003f75d",
+          "y_max": 17.63437816,
+          "y_min": 0.01067655237
+        },
+        "train": {
+          "n": 260,
+          "sha256": "9c21beb6983afa3f29a9ee4ab59519458ff543db781e86350553c422e763e2e0",
+          "y_max": 20.73527312,
+          "y_min": 0.006820313567
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "9c21beb6983afa3f29a9ee4ab59519458ff543db781e86350553c422e763e2e0",
+          "n": 260,
+          "y_min": 0.006820313567,
+          "y_max": 20.73527312
+        },
+        "holdout": {
+          "sha256": "2dbe430aab95f3a5ca80a81153ba7fa9d477565f4c37ceeca5ed1ce9f003f75d",
+          "n": 80,
+          "y_min": 0.01067655237,
+          "y_max": 17.63437816
+        },
+        "extrapolation": {
+          "sha256": "bffd125007f4fa28902c96a33b828e739269bec7fa962fcfbf18b9829e407ac9",
+          "n": 60,
+          "y_min": 0.01000609204,
+          "y_max": 20.72665386
+        }
+      }
+    },
+    {
+      "task_id": "phys-energy-shift",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "398bfb5a9e5d54dc24534a81436a8e17ad2c1f225a5d38aeb7e9d09b3674a7a0",
+          "y_max": 1510085083000000.0,
+          "y_min": 712273945100000.0
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "8582e14986f44240859fcb83cb83fd325fc2935c7a8a75ef1e890914bd93d9f2",
+          "y_max": 1442757847000000.0,
+          "y_min": 826956034700000.0
+        },
+        "train": {
+          "n": 260,
+          "sha256": "7c8ff065e3fe52ea030d4ca3aab4077fbad06e2960e7e903cbc991d7b318e127",
+          "y_max": 1447649798000000.0,
+          "y_min": 803274903800000.0
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "7c8ff065e3fe52ea030d4ca3aab4077fbad06e2960e7e903cbc991d7b318e127",
+          "n": 260,
+          "y_min": 803274903800000.0,
+          "y_max": 1447649798000000.0
+        },
+        "holdout": {
+          "sha256": "8582e14986f44240859fcb83cb83fd325fc2935c7a8a75ef1e890914bd93d9f2",
+          "n": 80,
+          "y_min": 826956034700000.0,
+          "y_max": 1442757847000000.0
+        },
+        "extrapolation": {
+          "sha256": "398bfb5a9e5d54dc24534a81436a8e17ad2c1f225a5d38aeb7e9d09b3674a7a0",
+          "n": 60,
+          "y_min": 712273945100000.0,
+          "y_max": 1510085083000000.0
+        }
+      }
+    },
+    {
+      "task_id": "phys-grav-potential-energy",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "f005b2bbf945ed98b9da857007676c917903ff7aafa37dd2af58cc0146e40a55",
+          "y_max": -1.229536142e-11,
+          "y_min": -1.379100275e-09
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "7f42ee8c93973c06fb850f3e5ef7e248546432ec8bef6b459870d12e50cbf641",
+          "y_max": -3.607388293e-11,
+          "y_min": -8.96204311e-10
+        },
+        "train": {
+          "n": 260,
+          "sha256": "056b2e8ff5c4ce50b21f317b20a4a8d639c05c242b4f0bd87e609b418f74b256",
+          "y_max": -1.878091797e-11,
+          "y_min": -1.231062153e-09
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "056b2e8ff5c4ce50b21f317b20a4a8d639c05c242b4f0bd87e609b418f74b256",
+          "n": 260,
+          "y_min": -1.231062153e-09,
+          "y_max": -1.878091797e-11
+        },
+        "holdout": {
+          "sha256": "7f42ee8c93973c06fb850f3e5ef7e248546432ec8bef6b459870d12e50cbf641",
+          "n": 80,
+          "y_min": -8.96204311e-10,
+          "y_max": -3.607388293e-11
+        },
+        "extrapolation": {
+          "sha256": "f005b2bbf945ed98b9da857007676c917903ff7aafa37dd2af58cc0146e40a55",
+          "n": 60,
+          "y_min": -1.379100275e-09,
+          "y_max": -1.229536142e-11
+        }
+      }
+    },
+    {
+      "task_id": "phys-gravitation",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "57e10f3bb5a971e382ad52607bdb7302a66144230472388ecd0dd80cbf5873ca",
+          "y_max": 8.481840155e-10,
+          "y_min": 5.445671178e-12
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "b668ae13b5f79c1a415d2d2a62e43e34cd18bf2de1fa7897dcf9213f17be79c8",
+          "y_max": 6.847893139e-10,
+          "y_min": 9.735892045e-12
+        },
+        "train": {
+          "n": 260,
+          "sha256": "be10f91a921a2bb1d3650542795731b86024f5b8c0a6c3f4ea1d1529c377ac12",
+          "y_max": 9.925755053e-10,
+          "y_min": 8.71698505e-12
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "be10f91a921a2bb1d3650542795731b86024f5b8c0a6c3f4ea1d1529c377ac12",
+          "n": 260,
+          "y_min": 8.71698505e-12,
+          "y_max": 9.925755053e-10
+        },
+        "holdout": {
+          "sha256": "b668ae13b5f79c1a415d2d2a62e43e34cd18bf2de1fa7897dcf9213f17be79c8",
+          "n": 80,
+          "y_min": 9.735892045e-12,
+          "y_max": 6.847893139e-10
+        },
+        "extrapolation": {
+          "sha256": "57e10f3bb5a971e382ad52607bdb7302a66144230472388ecd0dd80cbf5873ca",
+          "n": 60,
+          "y_min": 5.445671178e-12,
+          "y_max": 8.481840155e-10
+        }
+      }
+    },
+    {
+      "task_id": "phys-hydrogen-level",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "d99c3e53406be58f92351cd73e09c47cf222b9f7b39a7c7767497edfcfe23a43",
+          "y_max": -5.65017953e-20,
+          "y_min": -2.24602201e-18
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "39c268dd1d456e59078822b3f48c28be61c728783bb55b76423ccb14e938d8be",
+          "y_max": -6.107427017e-20,
+          "y_min": -8.8443754e-19
+        },
+        "train": {
+          "n": 260,
+          "sha256": "4cb620034fa2e8636754bd691c0e028c8ecc1aa8c78d185cc496a78ec136dab4",
+          "y_max": -6.683043652e-20,
+          "y_min": -1.147102805e-18
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "4cb620034fa2e8636754bd691c0e028c8ecc1aa8c78d185cc496a78ec136dab4",
+          "n": 260,
+          "y_min": -1.147102805e-18,
+          "y_max": -6.683043652e-20
+        },
+        "holdout": {
+          "sha256": "39c268dd1d456e59078822b3f48c28be61c728783bb55b76423ccb14e938d8be",
+          "n": 80,
+          "y_min": -8.8443754e-19,
+          "y_max": -6.107427017e-20
+        },
+        "extrapolation": {
+          "sha256": "d99c3e53406be58f92351cd73e09c47cf222b9f7b39a7c7767497edfcfe23a43",
+          "n": 60,
+          "y_min": -2.24602201e-18,
+          "y_max": -5.65017953e-20
+        }
+      }
+    },
+    {
+      "task_id": "phys-ideal-gas",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "dfa9566735d0c4abf9e292c6cf06c5fc1a7c2a367d50c9249d3ebb6cade1ac2f",
+          "y_max": 679008.8274,
+          "y_min": 57357.18326
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "88a1855d44c813f8c34b3289bb1b66616b344b19c3975c055b351795e7400dce",
+          "y_max": 813120.415,
+          "y_min": 62692.29123
+        },
+        "train": {
+          "n": 260,
+          "sha256": "adc3557fb0a9a2345749eed8ac920ca2350c0efb3d5ea23cdd27561112ef020b",
+          "y_max": 1130152.969,
+          "y_min": 45700.5487
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "adc3557fb0a9a2345749eed8ac920ca2350c0efb3d5ea23cdd27561112ef020b",
+          "n": 260,
+          "y_min": 45700.5487,
+          "y_max": 1130152.969
+        },
+        "holdout": {
+          "sha256": "88a1855d44c813f8c34b3289bb1b66616b344b19c3975c055b351795e7400dce",
+          "n": 80,
+          "y_min": 62692.29123,
+          "y_max": 813120.415
+        },
+        "extrapolation": {
+          "sha256": "dfa9566735d0c4abf9e292c6cf06c5fc1a7c2a367d50c9249d3ebb6cade1ac2f",
+          "n": 60,
+          "y_min": 57357.18326,
+          "y_max": 679008.8274
+        }
+      }
+    },
+    {
+      "task_id": "phys-index-vacuum",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "be584c42384bbd7b0c2d29ee2007d7f8b79ee170df8e9e036e5c6256b5ed9876",
+          "y_max": 193612101.8,
+          "y_min": 99162341.78
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "1223de60e2ca0e5c5685a1667f526e6e5bf21e8639c206493d3fa606fa0269d6",
+          "y_max": 190197806.0,
+          "y_min": 98808716.06
+        },
+        "train": {
+          "n": 260,
+          "sha256": "f88ceaa71ed039216389c377174d9d9a372299700204d811003a93064004d2fd",
+          "y_max": 197591941.0,
+          "y_min": 99201957.21
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "f88ceaa71ed039216389c377174d9d9a372299700204d811003a93064004d2fd",
+          "n": 260,
+          "y_min": 99201957.21,
+          "y_max": 197591941.0
+        },
+        "holdout": {
+          "sha256": "1223de60e2ca0e5c5685a1667f526e6e5bf21e8639c206493d3fa606fa0269d6",
+          "n": 80,
+          "y_min": 98808716.06,
+          "y_max": 190197806.0
+        },
+        "extrapolation": {
+          "sha256": "be584c42384bbd7b0c2d29ee2007d7f8b79ee170df8e9e036e5c6256b5ed9876",
+          "n": 60,
+          "y_min": 99162341.78,
+          "y_max": 193612101.8
+        }
+      }
+    },
+    {
+      "task_id": "phys-joule-heating",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "25e92dd258d189d9a54b3566efa3735121a0d77297acd2d5c0d1a66dfc05d0bc",
+          "y_max": 170.119297,
+          "y_min": 0.1148300335
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "ab23e1f4289f76a81da7b1061ed7cad44fa71cb734d70bbe6450b3cd031ff046",
+          "y_max": 134.0995213,
+          "y_min": 0.3085685006
+        },
+        "train": {
+          "n": 260,
+          "sha256": "3a615c19401b8e9120a926c8950457a258fd11673d8fa969a49795edd3cbef64",
+          "y_max": 145.0795585,
+          "y_min": 0.1048876007
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "3a615c19401b8e9120a926c8950457a258fd11673d8fa969a49795edd3cbef64",
+          "n": 260,
+          "y_min": 0.1048876007,
+          "y_max": 145.0795585
+        },
+        "holdout": {
+          "sha256": "ab23e1f4289f76a81da7b1061ed7cad44fa71cb734d70bbe6450b3cd031ff046",
+          "n": 80,
+          "y_min": 0.3085685006,
+          "y_max": 134.0995213
+        },
+        "extrapolation": {
+          "sha256": "25e92dd258d189d9a54b3566efa3735121a0d77297acd2d5c0d1a66dfc05d0bc",
+          "n": 60,
+          "y_min": 0.1148300335,
+          "y_max": 170.119297
+        }
+      }
+    },
+    {
+      "task_id": "phys-kinetic-energy",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "05fa2317a61b6fac647ce15b56f8a5bfe6e75e2bb3cbd515167a1c70de1efc63",
+          "y_max": 1635.630659,
+          "y_min": 0.4943322029
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "582910c4d716cbaa8486908e4deea40fbac10a3f3501259ac96a5ff9eaa922c6",
+          "y_max": 1357.823478,
+          "y_min": 2.640579996
+        },
+        "train": {
+          "n": 260,
+          "sha256": "d4a4acf0934946deaeedba99b630985dc9c6e2dd408da380f1136c9943d47dd4",
+          "y_max": 1578.070976,
+          "y_min": 3.651190512
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "d4a4acf0934946deaeedba99b630985dc9c6e2dd408da380f1136c9943d47dd4",
+          "n": 260,
+          "y_min": 3.651190512,
+          "y_max": 1578.070976
+        },
+        "holdout": {
+          "sha256": "582910c4d716cbaa8486908e4deea40fbac10a3f3501259ac96a5ff9eaa922c6",
+          "n": 80,
+          "y_min": 2.640579996,
+          "y_max": 1357.823478
+        },
+        "extrapolation": {
+          "sha256": "05fa2317a61b6fac647ce15b56f8a5bfe6e75e2bb3cbd515167a1c70de1efc63",
+          "n": 60,
+          "y_min": 0.4943322029,
+          "y_max": 1635.630659
+        }
+      }
+    },
+    {
+      "task_id": "phys-ohm",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "23f86abb9cd727be3524cff5d7731ef980b61fd1241530b0bfd26df293daf612",
+          "y_max": 97.26295673,
+          "y_min": 0.1326230774
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "1fce4a96d352cad5f62a3a7f81828a9c2eb8f6a9510495a6462dddcb8c2aff72",
+          "y_max": 77.45543768,
+          "y_min": 2.000795484
+        },
+        "train": {
+          "n": 260,
+          "sha256": "6ab5e648baa4d7ee61c80ee66cd2bb585b419cf584e010a5dcf34945820340ce",
+          "y_max": 86.05172067,
+          "y_min": 0.8592332657
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "6ab5e648baa4d7ee61c80ee66cd2bb585b419cf584e010a5dcf34945820340ce",
+          "n": 260,
+          "y_min": 0.8592332657,
+          "y_max": 86.05172067
+        },
+        "holdout": {
+          "sha256": "1fce4a96d352cad5f62a3a7f81828a9c2eb8f6a9510495a6462dddcb8c2aff72",
+          "n": 80,
+          "y_min": 2.000795484,
+          "y_max": 77.45543768
+        },
+        "extrapolation": {
+          "sha256": "23f86abb9cd727be3524cff5d7731ef980b61fd1241530b0bfd26df293daf612",
+          "n": 60,
+          "y_min": 0.1326230774,
+          "y_max": 97.26295673
+        }
+      }
+    },
+    {
+      "task_id": "phys-pendulum-exact",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "3c7342f3858622f07a2b59f87b18986c3911cfa9414d921eaafb14b65e60d602",
+          "y_max": 6.755974298,
+          "y_min": 0.9237528627
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "e44a581b8109207e42f4c98f6740b5b407589a48091d1d5f8a4c63463329f87f",
+          "y_max": 5.372385578,
+          "y_min": 1.036054064
+        },
+        "train": {
+          "n": 260,
+          "sha256": "71a2d9505466065e325429ff16b90d8458f25cbc86c79727c6a25449d19d08ba",
+          "y_max": 5.276711515,
+          "y_min": 1.021750249
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "71a2d9505466065e325429ff16b90d8458f25cbc86c79727c6a25449d19d08ba",
+          "n": 260,
+          "y_min": 1.021750249,
+          "y_max": 5.276711515
+        },
+        "holdout": {
+          "sha256": "e44a581b8109207e42f4c98f6740b5b407589a48091d1d5f8a4c63463329f87f",
+          "n": 80,
+          "y_min": 1.036054064,
+          "y_max": 5.372385578
+        },
+        "extrapolation": {
+          "sha256": "3c7342f3858622f07a2b59f87b18986c3911cfa9414d921eaafb14b65e60d602",
+          "n": 60,
+          "y_min": 0.9237528627,
+          "y_max": 6.755974298
+        }
+      }
+    },
+    {
+      "task_id": "phys-pendulum-period",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "fdacc2f80f8b2751a72c9ad6322b488bde37d4a041611494c8e870f8dba1300f",
+          "y_max": 6.700880736,
+          "y_min": 0.881121618
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "4eef7d2a90bf41f7b0ea8f57925fdca5c0cf4bf951751e0a3a88657937eeb8d0",
+          "y_max": 4.719440497,
+          "y_min": 0.9392152175
+        },
+        "train": {
+          "n": 260,
+          "sha256": "92143505fd0403d66752a12c9daa34ac410a526f685433fde60c47bce4230dfa",
+          "y_max": 5.708480004,
+          "y_min": 0.946526712
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "92143505fd0403d66752a12c9daa34ac410a526f685433fde60c47bce4230dfa",
+          "n": 260,
+          "y_min": 0.946526712,
+          "y_max": 5.708480004
+        },
+        "holdout": {
+          "sha256": "4eef7d2a90bf41f7b0ea8f57925fdca5c0cf4bf951751e0a3a88657937eeb8d0",
+          "n": 80,
+          "y_min": 0.9392152175,
+          "y_max": 4.719440497
+        },
+        "extrapolation": {
+          "sha256": "fdacc2f80f8b2751a72c9ad6322b488bde37d4a041611494c8e870f8dba1300f",
+          "n": 60,
+          "y_min": 0.881121618,
+          "y_max": 6.700880736
+        }
+      }
+    },
+    {
+      "task_id": "phys-radioactive-decay",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "709013c1fffb7c7c68f683865c65b175b6733295b002594e93861eab2a71a4d1",
+          "y_max": 7.430049353e+21,
+          "y_min": -9.322561976e+18
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "5739c13a920359b4d319b56da201c2c00772b3d8fbf63afa12389fe0b288b5a0",
+          "y_max": 8.17630446e+21,
+          "y_min": 5.246334084e+18
+        },
+        "train": {
+          "n": 260,
+          "sha256": "8111eea8267a343563d89d71018c2e4e81923f2fc870203b73b00fa3e1c9499c",
+          "y_max": 8.395156757e+21,
+          "y_min": -1.047520611e+19
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "8111eea8267a343563d89d71018c2e4e81923f2fc870203b73b00fa3e1c9499c",
+          "n": 260,
+          "y_min": -1.047520611e+19,
+          "y_max": 8.395156757e+21
+        },
+        "holdout": {
+          "sha256": "5739c13a920359b4d319b56da201c2c00772b3d8fbf63afa12389fe0b288b5a0",
+          "n": 80,
+          "y_min": 5.246334084e+18,
+          "y_max": 8.17630446e+21
+        },
+        "extrapolation": {
+          "sha256": "709013c1fffb7c7c68f683865c65b175b6733295b002594e93861eab2a71a4d1",
+          "n": 60,
+          "y_min": -9.322561976e+18,
+          "y_max": 7.430049353e+21
+        }
+      }
+    },
+    {
+      "task_id": "phys-snells-law",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "8322b278ddac2a7d1a94a96fb0dffb9805acdd578ee7152ff7b12eac9efc8839",
+          "y_max": 0.8767055004,
+          "y_min": 0.05072897331
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "e75e18cecd853e0afcb7cb2a743406a503594be7f0d7dad43be00549981f8121",
+          "y_max": 0.7337430429,
+          "y_min": 0.1097972715
+        },
+        "train": {
+          "n": 260,
+          "sha256": "5df2f686d93fb5fbb28d2a0594127f45db66f3f68715dfdfb155c06fcd7943a1",
+          "y_max": 0.7697878532,
+          "y_min": 0.09257867319
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "5df2f686d93fb5fbb28d2a0594127f45db66f3f68715dfdfb155c06fcd7943a1",
+          "n": 260,
+          "y_min": 0.09257867319,
+          "y_max": 0.7697878532
+        },
+        "holdout": {
+          "sha256": "e75e18cecd853e0afcb7cb2a743406a503594be7f0d7dad43be00549981f8121",
+          "n": 80,
+          "y_min": 0.1097972715,
+          "y_max": 0.7337430429
+        },
+        "extrapolation": {
+          "sha256": "8322b278ddac2a7d1a94a96fb0dffb9805acdd578ee7152ff7b12eac9efc8839",
+          "n": 60,
+          "y_min": 0.05072897331,
+          "y_max": 0.8767055004
+        }
+      }
+    },
+    {
+      "task_id": "phys-spring-energy",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "969a336e5f41ce7197e015a5670d8bf0dc5549cd0b4ffc1f2a8e6b15e95d1ad2",
+          "y_max": 24.40127244,
+          "y_min": 0.02902416039
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "0e93dcf197bc2a711db6986dba23ffab9086e201e13eb07820730918e692df81",
+          "y_max": 18.40425155,
+          "y_min": 0.01475657152
+        },
+        "train": {
+          "n": 260,
+          "sha256": "c2a4d845d93b4054452bafb26f99fffde572ff28973c46ba51367adad6e11ed0",
+          "y_max": 19.34337416,
+          "y_min": 0.007093551191
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "c2a4d845d93b4054452bafb26f99fffde572ff28973c46ba51367adad6e11ed0",
+          "n": 260,
+          "y_min": 0.007093551191,
+          "y_max": 19.34337416
+        },
+        "holdout": {
+          "sha256": "0e93dcf197bc2a711db6986dba23ffab9086e201e13eb07820730918e692df81",
+          "n": 80,
+          "y_min": 0.01475657152,
+          "y_max": 18.40425155
+        },
+        "extrapolation": {
+          "sha256": "969a336e5f41ce7197e015a5670d8bf0dc5549cd0b4ffc1f2a8e6b15e95d1ad2",
+          "n": 60,
+          "y_min": 0.02902416039,
+          "y_max": 24.40127244
+        }
+      }
+    },
+    {
+      "task_id": "phys-stefan-boltzmann",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "1b55e855791e88b57d965b085d9d8aed0a2c091cf7681b4f990a0d61c40956c9",
+          "y_max": 99579.85477,
+          "y_min": 90.8815839
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "736b37d033b26d2067eedcf91d6743d36526460a60ce66222ea90e7ff9fd83ef",
+          "y_max": 78959.61301,
+          "y_min": 229.5410545
+        },
+        "train": {
+          "n": 260,
+          "sha256": "2bb96b4b1db6286555a3511918f6bc832f267188a93614ad180c763884500073",
+          "y_max": 84442.23029,
+          "y_min": 151.9432792
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "2bb96b4b1db6286555a3511918f6bc832f267188a93614ad180c763884500073",
+          "n": 260,
+          "y_min": 151.9432792,
+          "y_max": 84442.23029
+        },
+        "holdout": {
+          "sha256": "736b37d033b26d2067eedcf91d6743d36526460a60ce66222ea90e7ff9fd83ef",
+          "n": 80,
+          "y_min": 229.5410545,
+          "y_max": 78959.61301
+        },
+        "extrapolation": {
+          "sha256": "1b55e855791e88b57d965b085d9d8aed0a2c091cf7681b4f990a0d61c40956c9",
+          "n": 60,
+          "y_min": 90.8815839,
+          "y_max": 99579.85477
+        }
+      }
+    },
+    {
+      "task_id": "phys-surface-gravity",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "1d288a18f771f704484cbf9a8160f1c5b474f3a925ed8eb09f231cc87ac09b1d",
+          "y_max": 494.8038835,
+          "y_min": 0.1365306743
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "fc97227029e0884b26a158261d43b89a048f553ce6b3392e66bdae445b622d4e",
+          "y_max": 276.9518443,
+          "y_min": 1.13545714
+        },
+        "train": {
+          "n": 260,
+          "sha256": "d4b1e75a3f8b89ed279c123b5922c0dfda6c0e361b64183430a2718209804e39",
+          "y_max": 456.1849334,
+          "y_min": 0.8472844915
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "d4b1e75a3f8b89ed279c123b5922c0dfda6c0e361b64183430a2718209804e39",
+          "n": 260,
+          "y_min": 0.8472844915,
+          "y_max": 456.1849334
+        },
+        "holdout": {
+          "sha256": "fc97227029e0884b26a158261d43b89a048f553ce6b3392e66bdae445b622d4e",
+          "n": 80,
+          "y_min": 1.13545714,
+          "y_max": 276.9518443
+        },
+        "extrapolation": {
+          "sha256": "1d288a18f771f704484cbf9a8160f1c5b474f3a925ed8eb09f231cc87ac09b1d",
+          "n": 60,
+          "y_min": 0.1365306743,
+          "y_max": 494.8038835
+        }
+      }
+    },
+    {
+      "task_id": "phys-transit-depth",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "e88bc4e9d698b3aaa4b3d4ae9a3e2aad45fdb16aa4053ba300d63db8a720c6dd",
+          "y_max": 0.01901457736,
+          "y_min": 7.401925917e-05
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "c5edc3495e30f27a424847f86f031b083ceff5e1362c92562896c0417e794113",
+          "y_max": 0.01670629614,
+          "y_min": 9.524578777e-05
+        },
+        "train": {
+          "n": 260,
+          "sha256": "b6b553d53b5be2c508559d9d05bc774d38009f2453737aa8f5aacd8e9471e750",
+          "y_max": 0.02048087947,
+          "y_min": 5.436605276e-05
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "b6b553d53b5be2c508559d9d05bc774d38009f2453737aa8f5aacd8e9471e750",
+          "n": 260,
+          "y_min": 5.436605276e-05,
+          "y_max": 0.02048087947
+        },
+        "holdout": {
+          "sha256": "c5edc3495e30f27a424847f86f031b083ceff5e1362c92562896c0417e794113",
+          "n": 80,
+          "y_min": 9.524578777e-05,
+          "y_max": 0.01670629614
+        },
+        "extrapolation": {
+          "sha256": "e88bc4e9d698b3aaa4b3d4ae9a3e2aad45fdb16aa4053ba300d63db8a720c6dd",
+          "n": 60,
+          "y_min": 7.401925917e-05,
+          "y_max": 0.01901457736
+        }
+      }
+    },
+    {
+      "task_id": "phys-weight",
+      "status": "ok",
+      "identical": true,
+      "differing_fields": [],
+      "stored_fingerprint": {
+        "extrapolation": {
+          "n": 60,
+          "sha256": "965a5351043b81d39cddb20f62478ab8b2ebb18be07555c8d94bc41dabc608c8",
+          "y_max": 212.6899485,
+          "y_min": 1.475882495
+        },
+        "holdout": {
+          "n": 80,
+          "sha256": "992c1cdfc050d7392d53269eba98bac1e8fe263e2d3eb70db19bd39c10462b7e",
+          "y_max": 193.2204471,
+          "y_min": 12.91781419
+        },
+        "train": {
+          "n": 260,
+          "sha256": "0480c0a48bd5fd249f786afdac8c69c060e9018d0f70337d53109bf1fd9f7d72",
+          "y_max": 197.9030381,
+          "y_min": 4.67443229
+        }
+      },
+      "recomputed_fingerprint": {
+        "train": {
+          "sha256": "0480c0a48bd5fd249f786afdac8c69c060e9018d0f70337d53109bf1fd9f7d72",
+          "n": 260,
+          "y_min": 4.67443229,
+          "y_max": 197.9030381
+        },
+        "holdout": {
+          "sha256": "992c1cdfc050d7392d53269eba98bac1e8fe263e2d3eb70db19bd39c10462b7e",
+          "n": 80,
+          "y_min": 12.91781419,
+          "y_max": 193.2204471
+        },
+        "extrapolation": {
+          "sha256": "965a5351043b81d39cddb20f62478ab8b2ebb18be07555c8d94bc41dabc608c8",
+          "n": 60,
+          "y_min": 1.475882495,
+          "y_max": 212.6899485
+        }
+      }
+    }
+  ]
+}

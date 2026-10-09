@@ -1,8 +1,13 @@
 # M1 进度与交接 —— AGH 自主发现层（2026-10-09 完成）
 
+> **接手清单（M2 照做即可）**：`set PYTHONPATH=src` → `python reproduce.py`（应打印「复现成功：指纹与基线完全一致」）
+> → `python run_tests.py`（应 60/60）→ `python src/scoring/compare.py --runs runs --tasks tasks --reference reference --out evidence/scoring`。
+> 三条都通过即表示流水线与证据链完整。
+
 > 目标：把评分表的「智能体发现」层从空/1 条扩到覆盖 22 个任务。
-> 结论：**已完成主体**。22 个任务全部跑过 AGH 自主闭环，产出 **62 条 `agh-llm` 证据**，
-> **19 个任务给出 accepted 的公式**，其中 **16 个与标准答案一致**。
+> 结论：**已完成**。22 个任务全部跑过 AGH 自主闭环，产出 **86 条 `agh-llm` 证据**（其中 55 条 rejected），
+> **20 个任务给出 accepted 的公式**，其中 **16 个与标准答案一致**；
+> 评分脚本一键可复算，`python reproduce.py` 复现成功（指纹与基线完全一致），单元测试 60/60。
 
 ---
 
@@ -12,7 +17,7 @@
 |---|---|---|---|
 | 金标准自检（标准答案必须被接受） | 22 | 22 | 100.0% |
 | 判别力（结构错误式必须被拒绝） | 22 | 22 | 100.0% |
-| **智能体发现**（仅计 `hypothesis_source=agh-llm`） | 22 | **16** | **72.7%** |
+| **智能体发现**（仅计 `hypothesis_source=agh-llm`） | 22 | **16 命中 / 20 accepted** | **72.7%** |
 | 按难度：base / challenge | 13 / 9 | 10 / 6 | — |
 
 证据：`evidence/scoring/comparison.md|json|csv`，会话轨迹 `evidence/agh-sessions/*.json`。

@@ -1,0 +1,93 @@
+{
+  "task_id": "phys-coulomb",
+  "formula": "k*q1*q2/r",
+  "parameters": {
+    "k": 8987551792.3
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-r",
+      "passed": false,
+      "reason": "缩放 r×2 倍后 y 变为 0.5 倍，物理预期 0.25 倍（相对偏差 1.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.25,
+        "rel_error": 1.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-scaling-q1",
+      "passed": true,
+      "reason": "缩放 q1×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-symmetry-q1-q2",
+      "passed": true,
+      "reason": "把 q1=0.00149535, q2=0.0033437 与两者互换后分别求值：200968 vs 200968，相对差异 1.45e-16；两个同类量地位对称，符合物理",
+      "metrics": {
+        "value_ab": 200967.76758882866,
+        "value_ba": 200967.7675888287,
+        "rel_error": 1.4481839951707518e-16,
+        "swap": [
+          "q1",
+          "q2"
+        ],
+        "probe": [
+          0.0014953487812212206,
+          0.00334370152488211
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-r",
+      "passed": true,
+      "reason": "在 r ∈ [0.1, 0.5] 上用等距网格扫描 9 点：整体相对变化 8.000e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.3333333333333333,
+          -0.16666666666666666,
+          -0.09999999999999996,
+          -0.06666666666666671,
+          -0.04761904761904756,
+          -0.03571428571428577,
+          -0.02777777777777779,
+          -0.022222222222222192
+        ],
+        "variation": 0.7999999999999999,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          0.1,
+          0.5
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 17975.103584599998,
+        "max_value": 2246887.9480749997
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-scaling-r。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

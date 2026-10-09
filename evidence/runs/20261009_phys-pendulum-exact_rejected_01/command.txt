@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-pendulum-exact --formula "2*sqrt(L/g)*K(sin(theta0/2))"

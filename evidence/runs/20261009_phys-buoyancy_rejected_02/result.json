@@ -1,0 +1,111 @@
+{
+  "task_id": "phys-buoyancy",
+  "formula": "rho*V",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-rho",
+      "passed": true,
+      "reason": "缩放 rho×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-V",
+      "passed": true,
+      "reason": "缩放 V×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-g",
+      "passed": false,
+      "reason": "缩放 g×2 倍后 y 变为 1 倍，物理预期 2 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-rho",
+      "passed": true,
+      "reason": "在 rho ∈ [800, 1200] 上用等距网格扫描 9 点：整体相对变化 3.333e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.041666666666666616,
+          0.04166666666666678,
+          0.04166666666666653,
+          0.0416666666666667,
+          0.0416666666666667,
+          0.0416666666666667,
+          0.0416666666666667,
+          0.04166666666666653
+        ],
+        "variation": 0.33333333333333326,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          800.0,
+          1200.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-V",
+      "passed": true,
+      "reason": "在 V ∈ [0.001, 0.02] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.022710771672447675,
+          0.033026354671608735,
+          0.04802743467401239,
+          0.06984223673191017,
+          0.10156565856213924,
+          0.14769834818946972,
+          0.2147852174320443,
+          0.31234397806636777
+        ],
+        "variation": 0.9500000000000001,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.001,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 0.8,
+        "max_value": 24.0
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-scaling-g。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

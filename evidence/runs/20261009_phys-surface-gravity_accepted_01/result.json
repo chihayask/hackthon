@@ -1,0 +1,136 @@
+{
+  "task_id": "phys-surface-gravity",
+  "formula": "G*M/R/R",
+  "parameters": {
+    "G": 6.676610289534831e-11
+  },
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
+      "metrics": {}
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "G": 6.676610289534831e-11,
+        "train_relative_error_median": 0.003072873657743453,
+        "train_relative_error_p90": 0.006543885584741332,
+        "train_rmsre": 0.004194627954305033,
+        "train_relative_rmse": 0.022206482645106548,
+        "train_normalized_rmse": 0.004052850861394331
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0031（阈值 0.0200）；诊断口径 p90=0.0069、RMSE/中位|y|=0.0221、RMSE/std(y)=0.0053、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.0031232705194547067,
+        "relative_error_p75": 0.004763661241196928,
+        "relative_error_p90": 0.006883925171585223,
+        "rmsre": 0.004136896297953197,
+        "max_relative_error": 0.008547632907474689,
+        "rmse": 0.26660121022545324,
+        "relative_rmse": 0.022131350777422242,
+        "normalized_rmse": 0.0052712385006753034,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0034（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0071、RMSE/中位|y|=0.0537、RMSE/std(y)=0.0050",
+      "metrics": {
+        "relative_error_median": 0.0034318245307037526,
+        "relative_error_p75": 0.005385849714173647,
+        "relative_error_p90": 0.007086956683779575,
+        "rmsre": 0.004626392406478131,
+        "max_relative_error": 0.011957516745784028,
+        "rmse": 0.48381326418037607,
+        "relative_rmse": 0.0537317704868787,
+        "normalized_rmse": 0.0050028174388884105,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-R",
+      "passed": true,
+      "reason": "缩放 R×2 倍后 y 变为 0.25 倍，物理预期 0.25 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.25,
+        "expected_ratio": 0.25,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-scaling-M",
+      "passed": true,
+      "reason": "缩放 M×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-R",
+      "passed": true,
+      "reason": "在 R ∈ [1e+06, 1e+07] 上用等比网格扫描 9 点：整体相对变化 9.900e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.43765867480965087,
+          -0.24611355917351127,
+          -0.13839982501294562,
+          -0.0778279410038923,
+          -0.04376586748096508,
+          -0.02461135591735111,
+          -0.01383998250129456,
+          -0.007782794100389232
+        ],
+        "variation": 0.9899999999999999,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1000000.0,
+          10000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.0667661028953483,
+        "max_value": 667.6610289534832
+      }
+    }
+  ],
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "free_parameters": [
+    "G"
+  ]
+}

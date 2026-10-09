@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-surface-gravity --formula "G*M/R" --params G=6.674e-11 --run-id scale-variant-phys-surface-gravity

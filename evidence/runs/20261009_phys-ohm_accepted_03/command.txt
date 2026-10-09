@@ -1,0 +1,1 @@
+python -m formula_agh scale-check --task tasks/phys-ohm --formula "I*R" --run-id scale-ref-phys-ohm

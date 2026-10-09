@@ -1,0 +1,119 @@
+{
+  "task_id": "phys-index-vacuum",
+  "formula": "eps*mu",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "量纲不一致：公式推出 (Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+      "metrics": {}
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 1.0000（阈值 0.0200）；诊断口径 p90=1.0000、RMSE/中位|y|=1.0674、RMSE/std(y)=5.6111、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 1.0,
+        "relative_error_p75": 1.0,
+        "relative_error_p90": 1.0,
+        "rmsre": 1.0,
+        "max_relative_error": 1.0,
+        "rmse": 127997390.74665381,
+        "relative_rmse": 1.067413267862499,
+        "normalized_rmse": 5.611093040067591,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 1.0000（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=1.0000、RMSE/中位|y|=1.0518、RMSE/std(y)=5.4413",
+      "metrics": {
+        "relative_error_median": 1.0,
+        "relative_error_p75": 1.0,
+        "relative_error_p90": 1.0,
+        "rmsre": 1.0,
+        "max_relative_error": 1.0,
+        "rmse": 134477827.30195302,
+        "relative_rmse": 1.0518233172485223,
+        "normalized_rmse": 5.441274936235902,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-eps",
+      "passed": false,
+      "reason": "缩放 eps×2 倍后 y 变为 2 倍，物理预期 0.707107 倍（相对偏差 1.83e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 0.7071067811865476,
+        "rel_error": 1.82842712474619,
+        "lambda": 2.0,
+        "expect_power": -0.5
+      }
+    },
+    {
+      "name": "scale-scaling-eps-mu",
+      "passed": false,
+      "reason": "缩放 eps×2、mu×2 倍后 y 变为 4 倍，物理预期 0.5 倍（相对偏差 7.00e+00，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 0.5,
+        "rel_error": 7.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-eps",
+      "passed": false,
+      "reason": "在 eps ∈ [2e-11, 8e-11] 上用等距网格扫描 9 点：整体相对变化 7.500e-01；有 8 个步长方向相反（极值 9.375e-02），不满足全程递减",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          0.09375000000000003,
+          0.09374999999999997,
+          0.09375000000000003,
+          0.09374999999999997,
+          0.09375000000000003,
+          0.09375000000000003,
+          0.09375000000000003,
+          0.0937499999999999
+        ],
+        "variation": 0.75,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": false,
+        "range": [
+          2e-11,
+          8e-11
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 2.4e-17,
+        "max_value": 1.04e-16
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：dimension、holdout、extrapolation、scale-scaling-eps、scale-scaling-eps-mu、scale-monotonic-eps。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-eps、scale-scaling-eps-mu、scale-monotonic-eps）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "free_parameters": []
+}

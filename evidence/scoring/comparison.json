@@ -17,7 +17,7 @@
     "wrong_variant_rate": 1.0,
     "agent_candidates": 22,
     "agent_fixture_tasks": 1,
-    "agent_accepted": 19,
+    "agent_accepted": 20,
     "agent_matches_reference": 16,
     "agent_match_rate": 0.7272727272727273,
     "by_layer": {
@@ -1051,7 +1051,7 @@
         "holdout": null,
         "extrapolation": null,
         "dimension": false,
-        "candidates_tried": 8,
+        "candidates_tried": 25,
         "candidates_accepted": 0,
         "structural_match": false,
         "reference_parameter_source": "reference.true_constants",
@@ -1159,20 +1159,27 @@
         ]
       },
       "agent": {
-        "run_id": "20261009-221200-phys-stefan-boltzmann",
+        "run_id": "20261009-223517-phys-stefan-boltzmann",
         "formula": "sigma*A*T**4",
-        "verdict": "rejected",
-        "parameters": {},
-        "holdout": null,
-        "extrapolation": null,
-        "dimension": false,
-        "candidates_tried": 14,
-        "candidates_accepted": 0,
+        "verdict": "accepted",
+        "parameters": {
+          "sigma": 5.671562917239015e-08
+        },
+        "holdout": 0.00553959029493357,
+        "extrapolation": 0.005466015951956779,
+        "dimension": true,
+        "candidates_tried": 21,
+        "candidates_accepted": 1,
         "structural_match": true,
         "reference_parameter_source": "reference.true_constants",
         "numeric_equivalence": {
-          "available": false,
-          "reason": "公式无法求值: 未知名称: sigma"
+          "available": true,
+          "probe_points": 259,
+          "probe_seed": 20261008,
+          "max_scaled_deviation": 0.00020959784155219951,
+          "max_relative_deviation": 0.0002095978415525578,
+          "all_finite": true,
+          "equivalent": false
         },
         "matches_reference": true
       },

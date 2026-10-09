@@ -1,0 +1,87 @@
+{
+  "task_id": "phys-stefan-boltzmann",
+  "formula": "sigma*A*T**2",
+  "parameters": {
+    "sigma": 5.670374419e-08
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "scale-scaling-T",
+      "passed": false,
+      "reason": "缩放 T×2 倍后 y 变为 4 倍，物理预期 16 倍（相对偏差 7.50e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 16.0,
+        "rel_error": 0.75,
+        "lambda": 2.0,
+        "expect_power": 4.0
+      }
+    },
+    {
+      "name": "scale-scaling-A",
+      "passed": true,
+      "reason": "缩放 A×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-sigma",
+      "passed": true,
+      "reason": "缩放 sigma×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-T",
+      "passed": true,
+      "reason": "在 T ∈ [300, 1000] 上用等距网格扫描 9 点：整体相对变化 9.100e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.06015625,
+          0.07546875,
+          0.09078125000000002,
+          0.10609374999999993,
+          0.12140625000000002,
+          0.13671875000000003,
+          0.15203124999999992,
+          0.16734375000000007
+        ],
+        "variation": 0.9099999999999999,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          300.0,
+          1000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.00051033369771,
+        "max_value": 0.11340748838
+      }
+    }
+  ],
+  "rounds_hint": "未通过的尺度检验：scale-scaling-T。尺度检验不通过说明公式\"单位可能对、形状不对\"，必须更换函数族，继续调参数不会改善。",
+  "free_parameters": []
+}

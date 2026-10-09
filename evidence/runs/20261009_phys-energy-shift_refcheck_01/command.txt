@@ -1,0 +1,1 @@
+python examples/reference_check.py  # task=phys-energy-shift
