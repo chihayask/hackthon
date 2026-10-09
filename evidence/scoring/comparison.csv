@@ -25,7 +25,7 @@ phys-hydrogen-level,challenge,wrong-variant,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*
 phys-hydrogen-level,challenge,agent-candidate,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),rejected,,,False,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),False
 phys-ideal-gas,base,gold-reference,n*R*T/V,accepted,0.00606509,0.00805481,True,n*R*T/V,
 phys-ideal-gas,base,wrong-variant,R*n*T,rejected,,,,n*R*T/V,
-phys-ideal-gas,base,agent-candidate,R * n * T / V,accepted,0.00606509,0.00805481,True,n*R*T/V,False
+phys-ideal-gas,base,agent-candidate,R*n*T/V,accepted,0.00606509,0.00805481,True,n*R*T/V,False
 phys-index-vacuum,challenge,gold-reference,1/sqrt(eps*mu),accepted,0.0212973,0.0185376,True,1/sqrt(eps*mu),
 phys-index-vacuum,challenge,wrong-variant,eps*mu,rejected,,,,1/sqrt(eps*mu),
 phys-index-vacuum,challenge,agent-candidate,1/sqrt(eps*mu),accepted,0.0212973,0.0185376,True,1/sqrt(eps*mu),True

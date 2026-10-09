@@ -35,7 +35,7 @@
 | phys-grav-potential-energy | base | `-G*m1*m2/r` | `G*m1*m2/r` | 0.00664254 | 0.00484022 | pass | 不一致 (偏差 0.000124) |
 | phys-gravitation | base | `G*m1*m2/r**2` | `G*m1*m2/r**2` | 0.00688375 | 0.00619655 | pass | 结构相同 |
 | phys-hydrogen-level | challenge | `-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)` | - |  |  | fail | 不可判定 |
-| phys-ideal-gas | base | `n*R*T/V` | `R * n * T / V` | 0.00606509 | 0.00805481 | pass | 不一致 (偏差 0.000608) |
+| phys-ideal-gas | base | `n*R*T/V` | `R*n*T/V` | 0.00606509 | 0.00805481 | pass | 不一致 (偏差 0.000608) |
 | phys-index-vacuum | challenge | `1/sqrt(eps*mu)` | `1/sqrt(eps*mu)` | 0.0212973 | 0.0185376 | pass | 结构相同 |
 | phys-joule-heating | base | `I**2*R` | `I*I*R` | 0.00528938 | 0.00530535 | pass | 数值等价 |
 | phys-kinetic-energy | base | `m*v**2/2` | `0.5*m*v*v` | 0.00508397 | 0.0052265 | pass | 数值等价 |

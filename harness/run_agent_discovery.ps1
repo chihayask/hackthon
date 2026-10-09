@@ -58,7 +58,7 @@ foreach ($task in $taskList) {
 
 只许读这两个文件。禁止读取 reference/、sealed/，以及任何名为 answer / ground_truth / solution 的文件。
 
-按 formula-discovery-loop 技能执行，最多 $MaxRounds 轮。每轮：
+先调用 skill_read 读取 formula-discovery-loop 技能（若返回 NOT_FOUND，说明该工作区的技能发现尚未完成，**重试一次**即可）；然后按它的要求执行，最多 $MaxRounds 轮。每轮：
 1) 先用一句话声明本轮假设与依据（量纲 / 单调性 / 极限行为 / 上一轮失败原因）；
 2) 然后执行下面这一条命令验证。必须原样照抄：绝对路径、不加引号、不加 & 、不要用 cmd /c 、
    不要加管道 | 、&& 或重定向：

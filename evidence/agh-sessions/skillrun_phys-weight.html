@@ -1,0 +1,611 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>agnes:local:local-dev:cli:workspace:a78cf046ee3a290d</title><style>:root{color-scheme:light dark}body{font:14px/1.5 system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#1c211e;background:#fff}.meta,.minor{color:#69707a;font-size:12px}.meta{border-bottom:1px solid #d6dbd5;margin-bottom:1rem;padding-bottom:.5rem}.node{margin:.7rem 0}.user{background:#f3f5f4;border-radius:6px;padding:.6rem}.assistant{padding:.6rem}.tool{border:1px solid #d6dbd5;border-radius:6px;padding:.4rem .6rem;color:#4d555f}.approval{border-left:3px solid #0e6b54;padding:.4rem .6rem}.content{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.label{font-weight:600}.attachment{display:block}.compaction{text-align:center}@media(prefers-color-scheme:dark){body{color:#e7ece8;background:#151816}.user{background:#242925}.tool{border-color:#454c47;color:#c5ccc7}.meta,.minor{color:#abb3ad}}</style></head><body><header class="meta">agnes:local:local-dev:cli:workspace:a78cf046ee3a290d · 2026-10-09T15:04:03.508Z · redacted · 39 items</header><main><section class="node user"><div class="label">User · local</div><div class="content">你现在只处理一个任务：phys-weight。工作目录就是你的工作区，里面只有 tasks\phys-weight\meta.json 和 tasks\phys-weight\data_train.csv。
+
+只许读这两个文件。禁止读取 reference/、sealed/，以及任何名为 answer / ground_truth / solution 的文件。
+
+按 formula-discovery-loop 技能执行，最多 3 轮。每轮：
+1) 先用一句话声明本轮假设与依据（量纲 / 单调性 / 极限行为 / 上一轮失败原因）；
+2) 然后执行下面这一条命令验证。必须原样照抄：绝对路径、不加引号、不加 &amp; 、不要用 cmd /c 、
+   不要加管道 | 、&amp;&amp; 或重定向：
+   E:\fagh\harness\run_verify.cmd phys-weight &lt;公式&gt; &lt;自由参数,逗号分隔&gt;
+   自由参数以 meta.json 的 free_parameters 为准；若为空就写一对空双引号 &quot;。
+3) 读取命令输出 JSON 里的 verdict 与 checks[]，看哪些项 passed=false；
+   参数用法（最容易出错，务必看清）：
+   * 第三个参数是**自由参数的名称列表**（逗号分隔），名字必须与 meta.json 的 free_parameters 完全一致；
+     它**不是数值**。meta 写 [sigma] 就传 sigma，不要传 5.67e-8。
+   * 若 free_parameters 非空，公式里必须把这些名字**当符号用**，拟合交给引擎。
+     例：free_parameters=[sigma] 时应写 sigma*A*T**4 并传 sigma；
+     写成 A*T**4（拿已声明单位的 A 当系数）会被量纲门正确拒绝。
+   * 若 free_parameters 为空，第三个参数写一对空双引号 &quot;。
+4) 失败必须显式处理：dimension 或 scale-* 失败说明形状不对，必须换函数族，不要原地调参数；
+   holdout / extrapolation 失败说明域内没拟合好或过拟合。每轮失败理由要写进下一轮假设。
+
+若连续几轮都在同一族里打转，换族前先检查三件事（方法论，不是答案）：
+(a) 是否有某个量出现在**分母或被开方**里（试 sqrt / 分母结构）；
+(b) 小量极限是否被正确保留（例如小角度时 sin(x)≈x，但大角度不能近似）；
+(c) 是否漏掉了 meta.json 里已声明的某个变量或自由参数。
+
+硬性要求：每一轮都**必须真的执行**上面那条命令并把它的 JSON 结果作为依据；只在回答里写出公式而不调用验证器，视为本轮无效。
+公式里幂次一律写成 ** ，不要写成 ^ （^ 在 Windows 命令行里是转义符）。参数与公式都必须用英文双引号成对闭合。
+
+结束时用一段话给出：最终公式、最终判定、以及你是否推翻过自己（引用一次否决的原文理由）。
+不要执行 run_verify.cmd 以外的任何 shell 命令。</div></section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>read · completed</summary><div class="content">read
+{&quot;path&quot;:&quot;E:\\agh-runs2\\phys-weight\\tasks\\phys-weight\\meta.json&quot;}
+1	{
+2	  &quot;task_id&quot;: &quot;phys-weight&quot;,
+3	  &quot;var_names&quot;: [
+4	    &quot;m&quot;,
+5	    &quot;g&quot;
+6	  ],
+7	  &quot;units&quot;: {
+8	    &quot;m&quot;: &quot;kg&quot;,
+9	    &quot;g&quot;: &quot;m/s^2&quot;,
+10	    &quot;y&quot;: &quot;N&quot;
+11	  },
+12	  &quot;free_parameters&quot;: [],
+13	  &quot;source&quot;: [
+14	    &quot;https://en.wikipedia.org/wiki/Weight&quot;
+15	  ],
+16	  &quot;source_note&quot;: &quot;公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）&quot;,
+17	  &quot;sampling&quot;: {
+18	    &quot;m&quot;: [
+19	      0.5,
+20	      20.0
+21	    ],
+22	    &quot;g&quot;: [
+23	      1.6,
+24	      12.0
+25	    ]
+26	  },
+27	  &quot;sample_count&quot;: 400,
+28	  &quot;noise_relative_sigma&quot;: 0.004,
+29	  &quot;layer&quot;: &quot;base&quot;,
+30	  &quot;domain&quot;: &quot;mechanics&quot;,
+31	  &quot;phenomenon&quot;: &quot;物体所受重力等于质量与重力加速度之积&quot;
+32	}</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;query&quot;:&quot;formula-discovery-loop&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>shell · completed</summary><div class="content">shell
+{&quot;command&quot;:&quot;E:\\fagh\\harness\\run_verify.cmd phys-weight \&quot;m*g\&quot; \&quot;\&quot;&quot;}
+{
+  &quot;task_id&quot;: &quot;phys-weight&quot;,
+  &quot;formula&quot;: &quot;m*g&quot;,
+  &quot;parameters&quot;: {},
+  &quot;verdict&quot;: &quot;accepted&quot;,
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;dimension&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;量纲一致（严格比对）&quot;,
+      &quot;metrics&quot;: {}
+    },
+    {
+      &quot;name&quot;: &quot;holdout&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;留出集中位相对误差 0.0030（阈值 0.0200）；诊断口径 p90=0.0070、RMSE/中位|y|=0.0069、RMSE/std(y)=0.0087、非有限值比例 0.00%&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p75&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p90&quot;: 0.[REDACTED:id],
+        &quot;rmsre&quot;: 0.[REDACTED:id],
+        &quot;max_relative_error&quot;: 0.[REDACTED:id],
+        &quot;rmse&quot;: 0.37217187002848706,
+        &quot;relative_rmse&quot;: 0.0069326674181028605,
+        &quot;normalized_rmse&quot;: 0.[REDACTED:id],
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 80,
+        &quot;n_relative_points&quot;: 80,
+        &quot;threshold&quot;: 0.02,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;extrapolation&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;外推区中位相对误差 0.0024（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0056、RMSE/中位|y|=0.0141、RMSE/std(y)=0.0058&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.0024058242319669283,
+        &quot;relative_error_p75&quot;: 0.0036974206315824928,
+        &quot;relative_error_p90&quot;: 0.[REDACTED:id],
+        &quot;rmsre&quot;: 0.[REDACTED:id],
+        &quot;max_relative_error&quot;: 0.01168594879546337,
+        &quot;rmse&quot;: 0.4207967960391953,
+        &quot;relative_rmse&quot;: 0.[REDACTED:id],
+        &quot;normalized_rmse&quot;: 0.00575098552852992,
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 60,
+        &quot;n_relative_points&quot;: 60,
+        &quot;threshold&quot;: 0.03,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-m&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 m×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-g&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 g×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-m&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 m ∈ [0.5, 20] 上用等比网格扫描 9 点：整体相对变化 9.750e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.[REDACTED:id],
+          0.[REDACTED:id],
+          0.03683231093174339,
+          0.05840990059252881,
+          0.09262835811610073,
+          0.1468931232590056,
+          0.23294798806365544,
+          0.3694166475528192
+        ],
+        &quot;variation&quot;: 0.975,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等比&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          0.5,
+          20.0
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-g&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 g ∈ [1.6, 12] 上用等距网格扫描 9 点：整体相对变化 8.667e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.10833333333333334,
+          0.10833333333333334,
+          0.10833333333333334,
+          0.10833333333333342,
+          0.10833333333333324,
+          0.10833333333333342,
+          0.10833333333333314,
+          0.10833333333333342
+        ],
+        &quot;variation&quot;: 0.8666666666666667,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等距&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          1.6,
+          12.0
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-sign-y&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在声明区间上采样 17 点（17 点可求值）：满足\&quot;恒正\&quot;的有 17 点（100%），符号性质成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;expect&quot;: &quot;positive&quot;,
+        &quot;satisfied&quot;: 17,
+        &quot;evaluated&quot;: 17,
+        &quot;ratio&quot;: 1.0,
+        &quot;min_value&quot;: 0.8,
+        &quot;max_value&quot;: 240.0
+      }
+    }
+  ],
+  &quot;r</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">**第一轮假设**：依据是量纲分析（W = m·g，即 kg × m/s² = N，与 meta.json 声明单位 N 匹配）、单调性（y 对 m 和 g 均一次方增加）与极限行为（m→0 或 g→0 时 y→0），且现象语义&quot;物体所受重力等于质量与重力加速度之积&quot;与自由参数为空一致，因此假设应为二元乘积形式 m*g，无需系数。
+
+**验证结果**（原样调用命令 `E:\fagh\harness\run_verify.cmd phys-weight &quot;m*g&quot; &quot;&quot;`）：
+
+- verdict = `accepted`（全部检验通过）
+- checks 概览：
+  - dimension：passed=true（量纲一致，严格比对）
+  - holdout：passed=true（留出集中位相对误差 0.0030 &lt; 0.0200）
+  - extrapolation：passed=true（外推区中位相对误差 0.0024 &lt; 0.0300）
+  - scale-scaling-m / scale-scaling-g：passed=true（m×2 / g×2 → y 恰好 ×2，期望幂次 1）
+  - scale-monotonic-m / scale-monotonic-g：passed=true（声明区间内均递增）
+  - scale-sign-y：passed=true（17/17 采样点恒正，min=0.8，max=240）
+- run_dir：`runs/20261009-225105-phys-weight`
+- rounds_hint：「全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。」
+
+由于第一轮即获得 accepted，无需进入第 2/3 轮，也未做任何失败后的族切换或方法论回溯。
+
+**最终结论**：
+
+- **最终公式**：`y = m * g`
+- **最终判定**：accepted（8/8 checks 全部通过，dimension / holdout / extrapolation / 4 项 scale 检验均 passed=true；验证证据位于 `runs/20261009-225105-phys-weight`，即本轮调用 run_verify.cmd 返回 JSON 的 `run_dir` 字段）
+- **是否推翻过自己**：否。本轮假设与验证结果首轮一致即通过，未触发任何&quot;否决&quot;分支，故也无可引用的否决原文；如需严格照规则复述，则&quot;未发生否决&quot;本身就是一次未执行的假设修正——本轮未改变 `m*g` 的形态，未引入自由参数，未换函数族，未用近似。</div></section>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">$0.000 (estimated) · title</section>
+<section class="node user"><div class="label">User · local</div><div class="content">只做一件事：调用 skill_read 读取名为 formula-discovery-loop 的技能，然后原样列出它「每轮必须按顺序执行」的第 1 步和第 2 步。不要做别的。</div></section>
+<section class="node minor">Context breakdown · 5 sections · 1360 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>skill_read · completed</summary><div class="content">skill_read
+{&quot;name&quot;:&quot;formula-discovery-loop&quot;}
+resourceId: skill/workspace/workspace-agnes/be2f10a5aace47577c772c19d52c48ae02e12070b54089506e5efff4fea320e1
+revision: 4421f32c5afbd9f0de7a81565d4fc2b6cdfc78a302c6a4ea08763d0cba662c50
+directory: E:\agh-runs2\phys-weight\.agh\skills\formula-discovery-loop
+
+Base directory for this Skill: E:\agh-runs2\phys-weight\.agh\skills\formula-discovery-loop
+Resolve relative paths this Skill mentions (for example scripts/ or references/) against that directory. Read those files with the read tool and run its scripts with the shell, loading them only as needed; the directory is read-only.
+
+
+# 公式发现闭环（Formula Discovery Loop）
+
+目标不是「给出一个公式」，而是**用可被独立复核的证据证明这个公式是真的**。
+核心不是搜索技巧，而是纪律：**先验证，再宣布**。
+
+## 每轮必须按顺序执行
+
+1. **声明假设**：一句话写出本轮要检验的函数形式，并说明依据（量纲、单调性、极限行为、上一轮的失败原因）。
+2. **调用工具**：**只允许**用下面这一条命令验证（原样照抄，路径不要加引号、不要加 `&amp;`、不要用 `cmd /c`）：
+
+       E:\fagh\harness\run_verify.cmd &lt;任务ID&gt; &quot;&lt;公式&gt;&quot; &quot;&lt;自由参数,逗号分隔&gt;&quot;
+
+   三个理由，一个都不能少：
+   * 它设好 `PYTHONPATH`，并保证验证跑齐四道门；
+   * 它把这次运行**自动归档**进 `evidence/` 并更新索引（归档是纪律，由脚本保证，不靠你记得）；
+   * 它把 `hypothesis_source` 如实标成 `agh-llm`。**直连 `python -m formula_agh` 会被记成 `cli`**，
+     于是你的自主发现不计入评分表的「智能体发现」层——证据会在关键结论上说反话。
+
+   注：命令必须以盘符开头的**绝对路径**书写且不加引号，这是本部署的审批规则（AGH 的
+   `checkCommandRule` 要求 allow 规则的 argv 以绝对路径形状开头）决定的；写成
+   `harness\run_verify.cmd ...` 或 `&amp; &quot;...&quot;` 会被审批门拦下。
+3. **读取结论**：输出 JSON 含 `verdict`、`checks`（每项 `passed`/`reason`/`metrics`）、`rounds_hint`。只有 `accepted` 才能进入第 5 步。
+   一条命令会跑齐四道门，不需要你分别调用：`dimension`、`holdout`、`extrapolation`，
+   以及若干条 `scale-*`（幂律标度 / 无量纲群 / 极限行为 / 单调性 / 符号 / 对称性）。
+4. **显式处理失败**（评审最看重的部分）：
+   - `dimension` 失败：该形式物理上不成立，**放弃这个函数族**，不要继续调参数。
+   - `scale-*` 失败：**单位可能对、形状不对**——例如漏掉了某个自变量、或对某个量不是幂律关系。
+     这类失败不看任何误差数字，所以它比阈值更硬：**必须换函数族**，调参数不会有改善。
+   - `extrapolation` 失败：过拟合式发现（域内好、域外崩），**换函数族或加结构性约束**。
+   - `holdout` 失败：域内都没拟合好，检查是否漏了变量或形式不对。
+   - `fit` 失败：拟合不收敛，先怀疑函数形式，而不是反复换初值。
+   - 每轮失败必须在下一轮假设里**引用上一条失败理由**，形成可追溯推理链。
+5. **记录结论**：公式、拟合参数、四道门的指标、以及「我是否推翻过自己」。
+
+## 六条硬约束
+
+1. **禁止读取任何名为 reference / answer / ground_truth / solution 的文件**。那是评分用标准答案，读到即作弊，结论也失去意义。
+   **同样禁止读取 `sealed/` 目录**：那里是留出集与外推集的数据点，读了就等于把考卷答案抄进来。
+   你只应使用 `tasks/&lt;id&gt;/data.csv`（或 `data_train.csv`）与 `meta.json`。
+2. **禁止跳过任何一项检验**。四道门都必须跑，不能因为「看起来对」就省略外推、量纲或尺度行为。
+   注意：判定的误差口径是 `median(|预测-真值|/|真值|)`，阈值来自 `config/agent.yaml`；
+   不要自己估算误差，也不要用别的口径自我安慰。
+3. **禁止只报告成功轮次**。失败轮次必须进入结论，它们是「验证严谨性」与「异常处理」的直接证据。
+4. **禁止在同一函数形式上反复微调参数来刷过阈值**。连续 3 次否决后必须更换函数族。
+5. **禁止编造结论**。数据是纯噪声时，正确行为是报告「未发现稳定公式」。负对照下编出公式比没有结果更糟。
+6. **禁止修改 data.csv、划分规则或阈值**。阈值统一在 `config/agent.yaml`；为让某个公式通过而放宽阈值属于作弊。
+
+## 工具接口速查
+
+```
+验证单个公式（AGH 里**只能**用这一条，原样照抄）：
+  E:\fagh\harness\run_verify.cmd &lt;id&gt; &quot;G*m1*m2/r**2&quot; &quot;G&quot;
+  E:\fagh\harness\run_verify.cmd &lt;id&gt; &quot;G*m1*m2/r**2&quot; &quot;G&quot; &lt;run_id&gt;    :: 想指定 run_id 时
+
+人在终端调试时也可以直连引擎，但要如实标注来源（否则会造成假溯源）：
+  set FORMULA_AGH_HYPOTHESIS_SOURCE=cli
+  python -m formula_agh verify --task tasks/&lt;id&gt; --formula &quot;G*m1*m2/r**2&quot; --params G --run-id &lt;run_id&gt; --out runs
+
+批量跑候选：
+  python -m formula_agh batch --tasks tasks --out runs [--layer base]
+
+校验任务集（含答案泄漏检测）：
+  python -m formula_agh validate-tasks --tasks tasks
+```
+
+证据自动落盘于 `runs/&lt;run_id&gt;/`：`result.json`（结论）、`checks/*.json`（逐项检验，
+尺度检验为 `scale-*.json`）、`command.txt`（复现命令）、`env.json`（环境快照）、
+`run.json`（生效阈值、种子、自由参数名、**假设来源**）、`manifest.sha256`（防篡改校验）。
+
+**你不需要自己归档**：`harness/run_verify.cmd` 在每次验证后会把这次运行自动复制进 `evidence/`
+并更新索引。归档是纪律，由脚本保证。
+
+**关于 `hypothesis_source`**：只有你（模型）自己提出假设的那些运行才应标为 `agh-llm`。
+如果你的假设来自人给的清单或参考公式，如实标注——把人工编排的候选算成自主发现，
+会被判为误导，比做不出结果更严重。
+
+## 结论自评表
+
+| 维度 | 合格线 |
+|---|---|
+| 任务完成度 | 至少一个任务给出 `accepted` 的公式，并与标准答案对照 |
+| 验证严谨性 | 四道门（量纲/留出集/外推区/尺度行为）齐全，且有至少一条「自己推翻自己」的记录 |
+| 异常处理 | 对 6 类异常各有一句处理说明 |
+| 可复现性 | 任何人用 `command.txt` 的命令重跑，得到相同结论 |</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 5 sections · 1360 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">原样照录如下：
+
+1. **第 1 步（声明假设）**：
+   &gt; **声明假设**：一句话写出本轮要检验的函数形式，并说明依据（量纲、单调性、极限行为、上一轮的失败原因）。
+
+2. **第 2 步（调用工具）**：
+   &gt; **调用工具**：**只允许**用下面这一条命令验证（原样照抄，路径不要加引号、不要加 `&amp;`、不要用 `cmd /c`）：
+   &gt;
+   &gt;       E:\fagh\harness\run_verify.cmd &lt;任务ID&gt; &quot;&lt;公式&gt;&quot; &quot;&lt;自由参数,逗号分隔&gt;&quot;
+   &gt;
+   &gt;   三个理由，一个都不能少：
+   &gt;   * 它设好 `PYTHONPATH`，并保证验证跑齐四道门；
+   &gt;   * 它把这次运行**自动归档**进 `evidence/` 并更新索引（归档是纪律，由脚本保证，不靠你记得）；
+   &gt;   * 它把 `hypothesis_source` 如实标成 `agh-llm`。**直连 `python -m formula_agh` 会被记成 `cli`**，
+   &gt;     于是你的自主发现不计入评分表的「智能体发现」层——证据会在关键结论上说反话。
+   &gt;
+   &gt;   注：命令必须以盘符开头的**绝对路径**书写且不加引号，这是本部署的审批规则（AGH 的
+   &gt;   `checkCommandRule` 要求 allow 规则的 argv 以绝对路径形状开头）决定的；写成
+   &gt;   `harness\run_verify.cmd ...` 或 `&amp; &quot;...&quot;` 会被审批门拦下。</div></section>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node user"><div class="label">User · local</div><div class="content">你现在只处理一个任务：phys-weight。工作目录就是你的工作区，里面只有 tasks\phys-weight\meta.json 和 tasks\phys-weight\data_train.csv。
+
+只许读这两个文件。禁止读取 reference/、sealed/，以及任何名为 answer / ground_truth / solution 的文件。
+
+按 formula-discovery-loop 技能执行，最多 4 轮。每轮：
+1) 先用一句话声明本轮假设与依据（量纲 / 单调性 / 极限行为 / 上一轮失败原因）；
+2) 然后执行下面这一条命令验证。必须原样照抄：绝对路径、不加引号、不加 &amp; 、不要用 cmd /c 、
+   不要加管道 | 、&amp;&amp; 或重定向：
+   E:\fagh\harness\run_verify.cmd phys-weight &lt;公式&gt; &lt;自由参数,逗号分隔&gt;
+   自由参数以 meta.json 的 free_parameters 为准；若为空就写一对空双引号 &quot;。
+3) 读取命令输出 JSON 里的 verdict 与 checks[]，看哪些项 passed=false；
+   参数用法（最容易出错，务必看清）：
+   * 第三个参数是**自由参数的名称列表**（逗号分隔），名字必须与 meta.json 的 free_parameters 完全一致；
+     它**不是数值**。meta 写 [sigma] 就传 sigma，不要传 5.67e-8。
+   * 若 free_parameters 非空，公式里必须把这些名字**当符号用**，拟合交给引擎。
+     例：free_parameters=[sigma] 时应写 sigma*A*T**4 并传 sigma；
+     写成 A*T**4（拿已声明单位的 A 当系数）会被量纲门正确拒绝。
+   * 若 free_parameters 为空，第三个参数写一对空双引号 &quot;。
+4) 失败必须显式处理：dimension 或 scale-* 失败说明形状不对，必须换函数族，不要原地调参数；
+   holdout / extrapolation 失败说明域内没拟合好或过拟合。每轮失败理由要写进下一轮假设。
+
+若连续几轮都在同一族里打转，换族前先检查三件事（方法论，不是答案）：
+(a) 是否有某个量出现在**分母或被开方**里（试 sqrt / 分母结构）；
+(b) 小量极限是否被正确保留（例如小角度时 sin(x)≈x，但大角度不能近似）；
+(c) 是否漏掉了 meta.json 里已声明的某个变量或自由参数。
+
+硬性要求：每一轮都**必须真的执行**上面那条命令并把它的 JSON 结果作为依据；只在回答里写出公式而不调用验证器，视为本轮无效。
+公式里幂次一律写成 ** ，不要写成 ^ （^ 在 Windows 命令行里是转义符）。参数与公式都必须用英文双引号成对闭合。
+
+结束时用一段话给出：最终公式、最终判定、以及你是否推翻过自己（引用一次否决的原文理由）。
+不要执行 run_verify.cmd 以外的任何 shell 命令。</div></section>
+<section class="node minor">Context breakdown · 5 sections · 1360 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>read · completed</summary><div class="content">read
+{&quot;path&quot;:&quot;E:\\agh-runs2\\phys-weight\\tasks\\phys-weight\\meta.json&quot;}
+1	{
+2	  &quot;task_id&quot;: &quot;phys-weight&quot;,
+3	  &quot;var_names&quot;: [
+4	    &quot;m&quot;,
+5	    &quot;g&quot;
+6	  ],
+7	  &quot;units&quot;: {
+8	    &quot;m&quot;: &quot;kg&quot;,
+9	    &quot;g&quot;: &quot;m/s^2&quot;,
+10	    &quot;y&quot;: &quot;N&quot;
+11	  },
+12	  &quot;free_parameters&quot;: [],
+13	  &quot;source&quot;: [
+14	    &quot;https://en.wikipedia.org/wiki/Weight&quot;
+15	  ],
+16	  &quot;source_note&quot;: &quot;公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）&quot;,
+17	  &quot;sampling&quot;: {
+18	    &quot;m&quot;: [
+19	      0.5,
+20	      20.0
+21	    ],
+22	    &quot;g&quot;: [
+23	      1.6,
+24	      12.0
+25	    ]
+26	  },
+27	  &quot;sample_count&quot;: 400,
+28	  &quot;noise_relative_sigma&quot;: 0.004,
+29	  &quot;layer&quot;: &quot;base&quot;,
+30	  &quot;domain&quot;: &quot;mechanics&quot;,
+31	  &quot;phenomenon&quot;: &quot;物体所受重力等于质量与重力加速度之积&quot;
+32	}</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 5 sections · 1360 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>shell · completed</summary><div class="content">shell
+{&quot;command&quot;:&quot;E:\\fagh\\harness\\run_verify.cmd phys-weight \&quot;m*g\&quot; \&quot;\&quot;&quot;}
+{
+  &quot;task_id&quot;: &quot;phys-weight&quot;,
+  &quot;formula&quot;: &quot;m*g&quot;,
+  &quot;parameters&quot;: {},
+  &quot;verdict&quot;: &quot;accepted&quot;,
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;dimension&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;量纲一致（严格比对）&quot;,
+      &quot;metrics&quot;: {}
+    },
+    {
+      &quot;name&quot;: &quot;holdout&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;留出集中位相对误差 0.0030（阈值 0.0200）；诊断口径 p90=0.0070、RMSE/中位|y|=0.0069、RMSE/std(y)=0.0087、非有限值比例 0.00%&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p75&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p90&quot;: 0.[REDACTED:id],
+        &quot;rmsre&quot;: 0.[REDACTED:id],
+        &quot;max_relative_error&quot;: 0.[REDACTED:id],
+        &quot;rmse&quot;: 0.37217187002848706,
+        &quot;relative_rmse&quot;: 0.0069326674181028605,
+        &quot;normalized_rmse&quot;: 0.[REDACTED:id],
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 80,
+        &quot;n_relative_points&quot;: 80,
+        &quot;threshold&quot;: 0.02,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;extrapolation&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;外推区中位相对误差 0.0024（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0056、RMSE/中位|y|=0.0141、RMSE/std(y)=0.0058&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.0024058242319669283,
+        &quot;relative_error_p75&quot;: 0.0036974206315824928,
+        &quot;relative_error_p90&quot;: 0.[REDACTED:id],
+        &quot;rmsre&quot;: 0.[REDACTED:id],
+        &quot;max_relative_error&quot;: 0.01168594879546337,
+        &quot;rmse&quot;: 0.4207967960391953,
+        &quot;relative_rmse&quot;: 0.[REDACTED:id],
+        &quot;normalized_rmse&quot;: 0.00575098552852992,
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 60,
+        &quot;n_relative_points&quot;: 60,
+        &quot;threshold&quot;: 0.03,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-m&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 m×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-g&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 g×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-m&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 m ∈ [0.5, 20] 上用等比网格扫描 9 点：整体相对变化 9.750e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.[REDACTED:id],
+          0.[REDACTED:id],
+          0.03683231093174339,
+          0.05840990059252881,
+          0.09262835811610073,
+          0.1468931232590056,
+          0.23294798806365544,
+          0.3694166475528192
+        ],
+        &quot;variation&quot;: 0.975,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等比&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          0.5,
+          20.0
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-g&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 g ∈ [1.6, 12] 上用等距网格扫描 9 点：整体相对变化 8.667e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.10833333333333334,
+          0.10833333333333334,
+          0.10833333333333334,
+          0.10833333333333342,
+          0.10833333333333324,
+          0.10833333333333342,
+          0.10833333333333314,
+          0.10833333333333342
+        ],
+        &quot;variation&quot;: 0.8666666666666667,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等距&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          1.6,
+          12.0
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-sign-y&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在声明区间上采样 17 点（17 点可求值）：满足\&quot;恒正\&quot;的有 17 点（100%），符号性质成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;expect&quot;: &quot;positive&quot;,
+        &quot;satisfied&quot;: 17,
+        &quot;evaluated&quot;: 17,
+        &quot;ratio&quot;: 1.0,
+        &quot;min_value&quot;: 0.8,
+        &quot;max_value&quot;: 240.0
+      }
+    }
+  ],
+  &quot;r</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 5 sections · 1360 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">（第 1/4 轮）
+**假设与依据**：`m*g` —— 量纲上 kg·(m/s²)=N 恰等于 meta.json 声明的 y 单位；现象语义即&quot;重力=质量×重力加速度&quot;；单调性上 y 对 m、g 均一次方递增；极限行为上 m→0 或 g→0 时 y→0；free_parameters 为空，因此公式不含自由系数，且上一轮不存在失败原因可引用（本轮为首次尝试，故从最简单的二元乘积族起检验）。
+
+**验证命令（原样照抄执行）**：
+```
+E:\fagh\harness\run_verify.cmd phys-weight &quot;m*g&quot; &quot;&quot;
+```
+
+**JSON 结果**：
+- verdict = `accepted`
+- checks[]：
+  1. dimension — passed=true（量纲一致，严格比对）
+  2. holdout — passed=true（中位相对误差 0.0030 &lt; 阈值 0.0200）
+  3. extrapolation — passed=true（中位相对误差 0.0024 &lt; 阈值 0.0300）
+  4. scale-scaling-m — passed=true（m×2 → y 恰 ×2，幂次 1）
+  5. scale-scaling-g — passed=true（g×2 → y 恰 ×2，幂次 1）
+  6. scale-monotonic-m — passed=true（m∈[0.5,20] 上 9 点等比扫描，递增）
+  7. scale-monotonic-g — passed=true（g∈[1.6,12] 上 9 点等距扫描，递增）
+  8. scale-sign-y — passed=true（17/17 采样点恒正，min=0.8，max=240）
+- rounds_hint =「全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。」
+- run_dir = `runs/20261009-230224-phys-weight`
+
+**处理与结论**：四道门（dimension / holdout / extrapolation / scale-* 若干项）全部通过，按技能规则&quot;只有 `accepted` 才能进入第 5 步&quot;，直接跳到第 5 步记录结论，不再进入第 2~4 轮，也未做任何族切换。没有发生任何失败，因此没有可引用的&quot;否决原文&quot;。
+
+**最终公式**：`y = m * g`
+**最终判定**：`accepted`（8/8 checks 全部 passed=true）
+**是否推翻过自己**：否。本轮假设与首轮验证结果一致即通过，未触发&quot;否决→换族&quot;分支；如严格按技能自评表&quot;有至少一条自己推翻自己的记录&quot;来看，本次任务**不适用**该条目，因为不存在失败轮次可供推翻。验证证据位置：`runs/20261009-230224-phys-weight`（即本次 run_verify.cmd 返回 JSON 中的 `run_dir` 字段），其中 `result.json`、`checks/*.json`、`command.txt`、`env.json`、`run.json`、`manifest.sha256` 由脚本自动归档，无人工修改。</div></section>
+<section class="node minor">$0.000 (estimated) · inference</section></main></body></html>

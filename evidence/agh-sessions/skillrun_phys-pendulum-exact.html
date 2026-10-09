@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>agnes:local:local-dev:cli:workspace:5173bf03f11145f4</title><style>:root{color-scheme:light dark}body{font:14px/1.5 system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#1c211e;background:#fff}.meta,.minor{color:#69707a;font-size:12px}.meta{border-bottom:1px solid #d6dbd5;margin-bottom:1rem;padding-bottom:.5rem}.node{margin:.7rem 0}.user{background:#f3f5f4;border-radius:6px;padding:.6rem}.assistant{padding:.6rem}.tool{border:1px solid #d6dbd5;border-radius:6px;padding:.4rem .6rem;color:#4d555f}.approval{border-left:3px solid #0e6b54;padding:.4rem .6rem}.content{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.label{font-weight:600}.attachment{display:block}.compaction{text-align:center}@media(prefers-color-scheme:dark){body{color:#e7ece8;background:#151816}.user{background:#242925}.tool{border-color:#454c47;color:#c5ccc7}.meta,.minor{color:#abb3ad}}</style></head><body><header class="meta">agnes:local:local-dev:cli:workspace:5173bf03f11145f4 · 2026-10-09T15:04:18.070Z · redacted · 6 items</header><main><section class="node user"><div class="label">User · local</div><div class="content">你现在只处理一个任务：phys-pendulum-exact。工作目录就是你的工作区，里面只有 tasks\phys-pendulum-exact\meta.json 和 tasks\phys-pendulum-exact\data_train.csv。
+
+只许读这两个文件。禁止读取 reference/、sealed/，以及任何名为 answer / ground_truth / solution 的文件。
+
+按 formula-discovery-loop 技能执行，最多 4 轮。每轮：
+1) 先用一句话声明本轮假设与依据（量纲 / 单调性 / 极限行为 / 上一轮失败原因）；
+2) 然后执行下面这一条命令验证。必须原样照抄：绝对路径、不加引号、不加 &amp; 、不要用 cmd /c 、
+   不要加管道 | 、&amp;&amp; 或重定向：
+   E:\fagh\harness\run_verify.cmd phys-pendulum-exact &lt;公式&gt; &lt;自由参数,逗号分隔&gt;
+   自由参数以 meta.json 的 free_parameters 为准；若为空就写一对空双引号 &quot;。
+3) 读取命令输出 JSON 里的 verdict 与 checks[]，看哪些项 passed=false；
+   参数用法（最容易出错，务必看清）：
+   * 第三个参数是**自由参数的名称列表**（逗号分隔），名字必须与 meta.json 的 free_parameters 完全一致；
+     它**不是数值**。meta 写 [sigma] 就传 sigma，不要传 5.67e-8。
+   * 若 free_parameters 非空，公式里必须把这些名字**当符号用**，拟合交给引擎。
+     例：free_parameters=[sigma] 时应写 sigma*A*T**4 并传 sigma；
+     写成 A*T**4（拿已声明单位的 A 当系数）会被量纲门正确拒绝。
+   * 若 free_parameters 为空，第三个参数写一对空双引号 &quot;。
+4) 失败必须显式处理：dimension 或 scale-* 失败说明形状不对，必须换函数族，不要原地调参数；
+   holdout / extrapolation 失败说明域内没拟合好或过拟合。每轮失败理由要写进下一轮假设。
+
+若连续几轮都在同一族里打转，换族前先检查三件事（方法论，不是答案）：
+(a) 是否有某个量出现在**分母或被开方**里（试 sqrt / 分母结构）；
+(b) 小量极限是否被正确保留（例如小角度时 sin(x)≈x，但大角度不能近似）；
+(c) 是否漏掉了 meta.json 里已声明的某个变量或自由参数。
+
+硬性要求：每一轮都**必须真的执行**上面那条命令并把它的 JSON 结果作为依据；只在回答里写出公式而不调用验证器，视为本轮无效。
+公式里幂次一律写成 ** ，不要写成 ^ （^ 在 Windows 命令行里是转义符）。参数与公式都必须用英文双引号成对闭合。
+
+结束时用一段话给出：最终公式、最终判定、以及你是否推翻过自己（引用一次否决的原文理由）。
+不要执行 run_verify.cmd 以外的任何 shell 命令。</div></section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">Got it. I&#39;ll keep that in mind.</div></section>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">$0.000 (estimated) · title</section></main></body></html>
