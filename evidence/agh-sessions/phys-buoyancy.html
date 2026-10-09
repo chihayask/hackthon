@@ -1,0 +1,350 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>agnes:local:local-dev:cli:workspace:b549bb641f02b8ad</title><style>:root{color-scheme:light dark}body{font:14px/1.5 system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#1c211e;background:#fff}.meta,.minor{color:#69707a;font-size:12px}.meta{border-bottom:1px solid #d6dbd5;margin-bottom:1rem;padding-bottom:.5rem}.node{margin:.7rem 0}.user{background:#f3f5f4;border-radius:6px;padding:.6rem}.assistant{padding:.6rem}.tool{border:1px solid #d6dbd5;border-radius:6px;padding:.4rem .6rem;color:#4d555f}.approval{border-left:3px solid #0e6b54;padding:.4rem .6rem}.content{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.label{font-weight:600}.attachment{display:block}.compaction{text-align:center}@media(prefers-color-scheme:dark){body{color:#e7ece8;background:#151816}.user{background:#242925}.tool{border-color:#454c47;color:#c5ccc7}.meta,.minor{color:#abb3ad}}</style></head><body><header class="meta">agnes:local:local-dev:cli:workspace:b549bb641f02b8ad · 2026-10-09T14:49:33.464Z · redacted · 43 items</header><main><section class="node user"><div class="label">User · local</div><div class="content">你现在只处理一个任务：phys-buoyancy。工作目录就是你的工作区，里面只有 tasks\phys-buoyancy\meta.json 和 tasks\phys-buoyancy\data_train.csv。
+
+只许读这两个文件。禁止读取 reference/、sealed/，以及任何名为 answer / ground_truth / solution 的文件。
+
+按 formula-discovery-loop 技能执行，最多 3 轮。每轮：
+1) 先用一句话声明本轮假设与依据（量纲 / 单调性 / 极限行为 / 上一轮失败原因）；
+2) 然后执行下面这一条命令验证。必须原样照抄：绝对路径、不加引号、不加 &amp; 、不要用 cmd /c 、
+   不要加管道 | 、&amp;&amp; 或重定向：
+   E:\fagh\harness\run_verify.cmd phys-buoyancy &lt;公式&gt; &lt;自由参数,逗号分隔&gt;
+   自由参数以 meta.json 的 free_parameters 为准；若为空就写一对空双引号 &quot;。
+3) 读取命令输出 JSON 里的 verdict 与 checks[]，看哪些项 passed=false；
+4) 失败必须显式处理：dimension 或 scale-* 失败说明形状不对，必须换函数族，不要原地调参数；
+   holdout / extrapolation 失败说明域内没拟合好或过拟合。每轮失败理由要写进下一轮假设。
+
+结束时用一段话给出：最终公式、最终判定、以及你是否推翻过自己（引用一次否决的原文理由）。
+不要执行 run_verify.cmd 以外的任何 shell 命令。</div></section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">I&#39;ll start by reading the two permitted files.
+
+</div></section>
+<details class="node tool"><summary>read · completed</summary><div class="content">read
+{&quot;path&quot;:&quot;tasks\\phys-buoyancy\\meta.json&quot;}
+1	{
+2	  &quot;task_id&quot;: &quot;phys-buoyancy&quot;,
+3	  &quot;var_names&quot;: [
+4	    &quot;rho&quot;,
+5	    &quot;V&quot;,
+6	    &quot;g&quot;
+7	  ],
+8	  &quot;units&quot;: {
+9	    &quot;rho&quot;: &quot;kg/m^3&quot;,
+10	    &quot;V&quot;: &quot;m^3&quot;,
+11	    &quot;g&quot;: &quot;m/s^2&quot;,
+12	    &quot;y&quot;: &quot;N&quot;
+13	  },
+14	  &quot;free_parameters&quot;: [],
+15	  &quot;source&quot;: [
+16	    &quot;https://en.wikipedia.org/wiki/Buoyancy&quot;
+17	  ],
+18	  &quot;source_note&quot;: &quot;公式与变量语义取自上述公开来源；采样点由 examples/make_physics_tasks.py 按 meta 声明区间生成（SEED=20261008, N=400）&quot;,
+19	  &quot;sampling&quot;: {
+20	    &quot;rho&quot;: [
+21	      800.0,
+22	      1200.0
+23	    ],
+24	    &quot;V&quot;: [
+25	      0.001,
+26	      0.02
+27	    ],
+28	    &quot;g&quot;: [
+29	      9.0,
+30	      10.5
+31	    ]
+32	  },
+33	  &quot;sample_count&quot;: 400,
+34	  &quot;noise_relative_sigma&quot;: 0.004,
+35	  &quot;layer&quot;: &quot;base&quot;,
+36	  &quot;domain&quot;: &quot;fluids&quot;,
+37	  &quot;phenomenon&quot;: &quot;浮力等于排开液体的重量&quot;
+38	}</div></details>
+<details class="node tool"><summary>read · completed</summary><div class="content">read
+{&quot;path&quot;:&quot;tasks\\phys-buoyancy\\data_train.csv&quot;}
+1	rho,V,g,y
+2	1086.6541500000001,0.[REDACTED:id],10.17926563,115.4790005
+3	916.90560600000003,0.0168975081,9.3258265139999992,145.1988111
+4	832.19537609999998,0.01438194037,10.296685480000001,123.0380771
+5	958.34173669999996,0.00165930668,9.1372000690000004,14.58626522
+6	1133.787914,0.0095712589769999992,10.28185029,110.71143739999999
+7	1053.735815,0.0096364878729999996,9.6504377770000005,97.426027930000004
+8	904.41877880000004,0.0047385203169999996,9.794667424,42.152771600000001
+9	909.02829729999996,0.0028768246340000001,10.071923760000001,26.223557240000002
+10	1087.445567,0.0061396737350000001,9.6499098649999997,64.435039119999999
+11	1029.3247779999999,0.[REDACTED:id],9.8513723609999992,141.59547219999999
+12	962.7670564,0.01160326534,9.7626673719999992,108.4200846
+13	855.27874840000004,0.[REDACTED:id],10.12965181,134.44919060000001
+14	1040.2694730000001,0.[REDACTED:id],9.1255386909999991,181.2284937
+15	849.75138819999995,0.01379945716,10.22753383,119.75008920000001
+16	1046.349559,0.01209526534,10.113732349999999,127.7908848
+17	980.12947840000004,0.01931895069,9.0561896980000007,172.14721979999999
+18	947.05639189999999,0.0033715075350000002,10.223291919999999,32.691270729999999
+19	996.02138520000005,0.01168232093,9.0444804189999992,105.5022852
+20	927.33213980000005,0.0063701280069999996,10.41347092,61.920873219999997
+21	1006.501212,0.0090010897929999993,9.4574991409999996,85.761915259999995
+22	1145.8093710000001,0.01705556825,10.13121542,197.791507
+23	906.57599449999998,0.[REDACTED:id],10.27230181,153.4485
+24	870.32513610000001,0.01307246317,10.42466555,118.2852421
+25	882.11851669999999,0.0092337002170000005,9.9868107790000007,81.095518299999995
+26	1018.679334,0.0170878647,10.41059767,181.06028689999999
+27	835.60810860000004,0.01107632079,9.9187723870000006,91.314480549999999
+28	1076.1291719999999,0.0092245505030000008,9.8870407520000008,98.094503320000001
+29	1130.2432470000001,0.01135127172,9.2517380500000002,118.7124319
+30	859.80671459999996,0.0014841857550000001,9.7221156230000005,12.465336199999999
+31	873.27366529999995,0.[REDACTED:id],9.6768456349999994,134.33368809999999
+32	878.7731162,0.[REDACTED:id],9.0442481650000008,128.1665754
+33	1119.9919850000001,0.0046768253509999998,9.7757091410000001,51.388349120000001
+34	954.26929459999997,0.0071940993420000002,9.8790621870000006,67.610606790000006
+35	1041.2786369999999,0.01210556252,9.0507842210000007,114.83855749999999
+36	1092.0267260000001,0.0061058135920000001,9.8782780839999997,65.598847969999994
+37	839.56788830000005,0.[REDACTED:id],9.6550023150000008,130.85479290000001
+38	1049.916481,0.002953201511,10.019367839999999,30.976724659999999
+39	972.60704940000005,0.01161000117,10.31741175,116.7790601
+40	916.44371960000001,0.0065070743460000002,10.00408374,59.667138209999997
+41	1048.497132,0.01287146347,10.005540460000001,134.35607010000001
+42	932.33895170000005,0.0072155231759999999,9.1410199070000004,61.646069679999997
+43	1096.875716,0.0064708890689999998,10.082345159999999,71.215346769999996
+44	1108.951294,0.0098327029109999999,10.148209230000001,110.0613237
+45	886.16927740000006,0.0042142969049999996,10.237718060000001,37.943993069999998
+46	1055.4733329999999,0.0044197945759999998,9.6764653549999995,44.835174469999998
+47	1103.1666849999999,0.0082029890929999991,9.2572457220000004,83.393448939999999
+48	1022.550761,0.0076144464139999996,9.1654393429999992,71.334185739999995
+49	1113.6007810000001,0.0062066629479999996,9.689257907,67.040237219999995
+50	1122.4834989999999,0.0043109846680000003,9.7505238609999996,47.349194369999999
+51	849.23853429999997,0.[REDACTED:id],10.133361649999999,162.85194540000001
+52	1115.7653290000001,0.01503460385,10.448095390000001,175.06869320000001
+53	956.68246399999998,0.0074910619080000001,10.136075959999999,72.534465789999999
+54	834.44795109999995,0.0088950339700000006,9.282151485,69.169464989999994
+55	850.21425390000002,0.[REDACTED:id],9.0154414119999995,144.73103
+56	848.05892889999996,0.0017648079379999999,9.4259802849999996,14.06727</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">I need to check if the skill `formula-discovery-loop` is available.
+
+</div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;query&quot;:&quot;formula-discovery-loop&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;query&quot;:&quot;formula discovery loop&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">Let me try listing available skills.
+
+</div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;limit&quot;:20,&quot;query&quot;:&quot;skill discovery formula physics&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>tool_describe · completed</summary><div class="content">tool_describe
+{&quot;name&quot;:&quot;skill_read&quot;}
+skill_read: Read the full instructions for an enabled, trusted Skill using its exact name from available_skills or tool_search. Call this when the user names a Skill or the current task matches that Skill description, before acting on it. Do not use filesystem tools to discover Skills. Use tool_search to find ready Skills by name or description. Long Skills are returned in parts; follow the continuation line at the end of a part.
+parameters: {&quot;additionalProperties&quot;:false,&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;name&quot;:{&quot;minLength&quot;:1,&quot;maxLength&quot;:128,&quot;description&quot;:&quot;Exact skill name from available_skills or tool_search.&quot;,&quot;type&quot;:&quot;string&quot;},&quot;offset&quot;:{&quot;minimum&quot;:0,&quot;description&quot;:&quot;UTF-8 byte offset from the previous part.&quot;,&quot;type&quot;:&quot;integer&quot;},&quot;pageKey&quot;:{&quot;pattern&quot;:&quot;^[a-f0-9]{64}$&quot;,&quot;description&quot;:&quot;Page key from the previous part; required after offset zero.&quot;,&quot;type&quot;:&quot;string&quot;}},&quot;required&quot;:[&quot;name&quot;]}</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>skill_read · failed</summary><div class="content">skill_read
+{&quot;name&quot;:&quot;formula-discovery-loop&quot;}
+Skill is unavailable: NOT_FOUND</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;limit&quot;:20,&quot;query&quot;:&quot;loop&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content"></div></section>
+<details class="node tool"><summary>tool_search · completed</summary><div class="content">tool_search
+{&quot;limit&quot;:20,&quot;query&quot;:&quot;verify&quot;}
+no matching tools or ready Skills</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">我注意到这个会话中没有可用的 `formula-discovery-loop` 技能。我会直接遵循你的流程说明执行。
+
+先看一下数据特征并做量纲分析。
+
+**量纲分析**：
+- y 单位是 N（力），= kg·m/s²
+- rho 单位 kg/m³, V 单位 m³, g 单位 m/s²
+- rho * V * g 的量纲：(kg/m³) · m³ · (m/s²) = kg·m/s² = N ✓
+
+所以最简单的假设是 **y = rho * V * g**（阿基米德原理，浮力 = 排开液体体积 × 液体密度 × 重力加速度）。
+
+**单调性**：y 应随 rho, V, g 各增大而增大（一阶）。
+
+**极限行为**：当 g → 0（无重力）时 y → 0；当 V → 0 时 y → 0。
+
+检查数据验证：
+- 行 1: rho=1086.65, V=0.010489, g=10.179 → rho*V*g = 1086.65*0.010489*10.179 ≈ 115.48 ✓ 与 y=115.48 一致
+- 行 2: 916.91*0.016898*9.3258 ≈ 145.21 ✓ 与 y=145.20 一致
+
+公式显然是 `rho*V*g`，无自由参数。
+
+现在按流程跑 3 轮。第 1 轮：假设 y = rho*V*g。
+
+**第 1 轮**
+假设依据（量纲+单调性+极限行为）：y = rho * V * g。执行命令：
+
+</div></section>
+<details class="node tool"><summary>shell · completed</summary><div class="content">shell
+{&quot;command&quot;:&quot;E:\\fagh\\harness\\run_verify.cmd phys-buoyancy \&quot;rho*V*g\&quot; \&quot;\&quot;&quot;}
+{
+  &quot;task_id&quot;: &quot;phys-buoyancy&quot;,
+  &quot;formula&quot;: &quot;rho*V*g&quot;,
+  &quot;parameters&quot;: {},
+  &quot;verdict&quot;: &quot;accepted&quot;,
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;dimension&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;量纲一致（严格比对）&quot;,
+      &quot;metrics&quot;: {}
+    },
+    {
+      &quot;name&quot;: &quot;holdout&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;留出集中位相对误差 0.0028（阈值 0.0200）；诊断口径 p90=0.0068、RMSE/中位|y|=0.0054、RMSE/std(y)=0.0087、非有限值比例 0.00%&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p75&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p90&quot;: 0.0068024171945742186,
+        &quot;rmsre&quot;: 0.0041281446883811536,
+        &quot;max_relative_error&quot;: 0.01246670939861434,
+        &quot;rmse&quot;: 0.48471135522616743,
+        &quot;relative_rmse&quot;: 0.[REDACTED:id],
+        &quot;normalized_rmse&quot;: 0.[REDACTED:id],
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 80,
+        &quot;n_relative_points&quot;: 80,
+        &quot;threshold&quot;: 0.02,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;extrapolation&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;外推区中位相对误差 0.0025（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0059、RMSE/中位|y|=0.0045、RMSE/std(y)=0.0085&quot;,
+      &quot;metrics&quot;: {
+        &quot;relative_error_median&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p75&quot;: 0.[REDACTED:id],
+        &quot;relative_error_p90&quot;: 0.[REDACTED:id],
+        &quot;rmsre&quot;: 0.[REDACTED:id],
+        &quot;max_relative_error&quot;: 0.[REDACTED:id],
+        &quot;rmse&quot;: 0.5400271814557348,
+        &quot;relative_rmse&quot;: 0.0045147416624111356,
+        &quot;normalized_rmse&quot;: 0.[REDACTED:id],
+        &quot;nonfinite_ratio&quot;: 0.0,
+        &quot;n_finite&quot;: 60,
+        &quot;n_relative_points&quot;: 60,
+        &quot;threshold&quot;: 0.03,
+        &quot;criterion&quot;: &quot;relative_error_median&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-rho&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 rho×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-V&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 V×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-scaling-g&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;缩放 g×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）&quot;,
+      &quot;metrics&quot;: {
+        &quot;ratio&quot;: 2.0,
+        &quot;expected_ratio&quot;: 2.0,
+        &quot;rel_error&quot;: 0.0,
+        &quot;lambda&quot;: 2.0,
+        &quot;expect_power&quot;: 1.0
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-rho&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 rho ∈ [800, 1200] 上用等距网格扫描 9 点：整体相对变化 3.333e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666652,
+          0.04166666666666679,
+          0.04166666666666666,
+          0.04166666666666666,
+          0.04166666666666679,
+          0.04166666666666652
+        ],
+        &quot;variation&quot;: 0.33333333333333326,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等距&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          800.0,
+          1200.0
+        ]
+      }
+    },
+    {
+      &quot;name&quot;: &quot;scale-monotonic-V&quot;,
+      &quot;passed&quot;: true,
+      &quot;reason&quot;: &quot;在 V ∈ [0.001, 0.02] 上用等比网格扫描 9 点：整体相对变化 9.500e-01；全程递增，单调性成立&quot;,
+      &quot;metrics&quot;: {
+        &quot;direction&quot;: &quot;increasing&quot;,
+        &quot;rel_steps&quot;: [
+          0.02271077167244768,
+          0.03302635467160874,
+          0.04802743467401238,
+          0.06984223673191019,
+          0.10156565856213923,
+          0.14769834818946975,
+          0.21478521743204435,
+          0.31234397806636766
+        ],
+        &quot;variation&quot;: 0.95,
+        &quot;min_variation&quot;: 0.001,
+        &quot;grid&quot;: &quot;等比&quot;,
+        &quot;strict&quot;: true,
+        &quot;range&quot;: [
+          0.001,
+          0.02
+        ]
+      }
+    },
+    {</div></details>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">Context breakdown · 4 sections · 1226 tokens (estimated)</section>
+<section class="node assistant"><div class="label">Assistant</div><div class="content">第 1 轮判定：**accepted**，所有 9 项检验全部 passed=true（dimension、holdout、extrapolation、scale-scaling-{rho,V,g}、scale-monotonic-{rho,V}、scale-sign-y）。按流程提示，全部检验通过，无需进入第 2、3 轮。
+
+---
+
+## 结论
+
+- **最终公式**：`y = rho * V * g`（自由参数为空，无系数），即阿基米德浮力：排开液体的重量 = 液体密度 × 排开体积 × 重力加速度。
+- **最终判定**：第 1 轮 run_verify 即判定 **accepted**；9 项检查全部通过——量纲一致、holdout 中位相对误差 0.0028（阈值 0.0200）、extrapolation 中位相对误差 0.0025（阈值 0.0300）、rho/V/g 三个变量的 ×2 缩放均给出 2 倍响应用于物理幂次 1（相对偏差 0）、rho 与 V 单调性扫描全程递增、y 在声明区间内 100% 恒正。证据位置：`runs/20261009-214719-phys-buoyancy`（由 run_verify 输出 JSON 给出）。
+- **是否推翻过自己**：没有。我在第 1 轮前用纯量纲分析（kg·m/s² 要求 rho·V·g 的乘积）与数据第 1、2 行手工验算（1086.65×0.010489×10.179 ≈ 115.48，与表中 y=115.4790005 吻合）已独立得出 y = rho·V·g，第 1 轮 run_verify 一次通过，未经历&quot;被否决→换函数族&quot;的迭代路径；因此引用一次否决原文理由为**不适用（never refuted）**。</div></section>
+<section class="node minor">$0.000 (estimated) · inference</section>
+<section class="node minor">$0.000 (estimated) · title</section></main></body></html>

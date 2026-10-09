@@ -40,6 +40,14 @@ foreach ($task in $taskList) {
   if (-not (Test-Path -LiteralPath $dataDir)) { Write-Host "[skip] $task : 没有 tasks\$task"; continue }
 
   $work = Join-Path $WorkRoot $task
+  # 把技能放进**本工作区**的技能根（AGH 约定：<workspace>/.agh/skills/dir/SKILL.md）。
+  # 少了这一步，模型调用 skill_read 会得到 NOT_FOUND —— AGH 的技能机制就等于没用上。
+  $skillSrc = Join-Path $ProjectRoot 'skills\formula-discovery-loop\SKILL.md'
+  if (Test-Path -LiteralPath $skillSrc) {
+    $skillDst = Join-Path $work '.agh\skills\formula-discovery-loop'
+    New-Item -ItemType Directory -Force -Path $skillDst | Out-Null
+    Copy-Item -LiteralPath $skillSrc -Destination $skillDst -Force
+  }
   $visible = Join-Path $work ("tasks\" + $task)
   New-Item -ItemType Directory -Force -Path $visible | Out-Null
   Copy-Item -LiteralPath (Join-Path $dataDir 'meta.json')      -Destination $visible -Force

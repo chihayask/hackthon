@@ -1,0 +1,24 @@
+{
+  "task_id": "phys-snells-law",
+  "formula": "d*asin(sin(theta2)/n)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 不支持的函数调用",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 不支持的函数调用",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": [
+    "d"
+  ]
+}

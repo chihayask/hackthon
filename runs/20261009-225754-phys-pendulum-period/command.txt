@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-pendulum-period --formula "2*pi*sqrt(L/g)"

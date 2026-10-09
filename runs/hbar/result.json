@@ -1,0 +1,24 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "K*me*el**2/(eps0**2*hbar**2*n**2)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: K",
+      "metrics": {}
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 未知名称: K",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": [
+    "eps0"
+  ]
+}
