@@ -1,0 +1,11 @@
+{
+  "task_id": "t-b2e1aaaa",
+  "formula": "k*q1*q2/r**2",
+  "free_parameters": [
+    "k"
+  ],
+  "true_constants": {
+    "k": 8987551792.3
+  },
+  "y_unit": "N"
+}

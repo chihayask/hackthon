@@ -1,7 +1,7 @@
 {
   "run_id": "discrim-ref-phys-radioactive-decay",
   "run_dir": "runs/discrim-ref-phys-radioactive-decay",
-  "checked_at_utc": "2026-10-10T03:58:19+00:00",
+  "checked_at_utc": "2026-10-10T04:30:50+00:00",
   "status": "agree",
   "agrees": true,
   "task_id": "phys-radioactive-decay",

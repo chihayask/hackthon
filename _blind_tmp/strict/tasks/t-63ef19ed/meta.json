@@ -1,0 +1,28 @@
+{
+  "task_id": "t-63ef19ed",
+  "var_names": [
+    "m",
+    "v"
+  ],
+  "free_parameters": [],
+  "sampling": {
+    "m": [
+      0.5,
+      10.0
+    ],
+    "v": [
+      1.0,
+      20.0
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "base",
+  "source": [
+    "blind-set: 真实出处见 blind/mapping.json（评审侧，不进入智能体可见面）"
+  ],
+  "blinded": {
+    "level": "strict",
+    "note": "本任务集为盲化派生集，原任务标识与现象说明已移除"
+  }
+}

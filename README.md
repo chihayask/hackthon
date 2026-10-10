@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![deps](https://img.shields.io/badge/dependencies-numpy%20only-green)
-![tests](https://img.shields.io/badge/tests-88%2F88%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-95%2F95%20passing-brightgreen)
 ![reproduce](https://img.shields.io/badge/reproduce-fingerprint%20identical-brightgreen)
 
 > 2026 年江苏省 AI+科学与工程创新实践黑客松（高校组），本科生组。
@@ -152,14 +152,14 @@
 
     python reproduce.py
 
-该脚本依次执行 15 个步骤，并与基线指纹逐字段比对：
+该脚本依次执行 16 个步骤，并与基线指纹逐字段比对：
 
     复现成功：指纹与基线完全一致。
       任务 22 个，本流水线运行 135 条，对抗用例 14 项，全部逐位一致。
 
-15 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
+16 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
 候选批量验证、判别力报告、尺度检验（参考式）、尺度检验（错误式）、负对照、对抗性测试、
-独立复算、评分对照、证据归档。
+独立复算、评分对照、证据归档、提示泄漏审计。
 
 在空目录中重建全部产物：
 
@@ -390,8 +390,8 @@ AGH 自主发现执行统计：
 | AGH 工具调用次数 | 241，涉及 shell、read、tool_search、todo、skill_read、tool_describe、ls |
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
-| 一键复现 | 15 步全部通过，指纹与基线逐位一致 |
-| 单元测试 | 88 / 88 |
+| 一键复现 | 16 步全部通过，指纹与基线逐位一致 |
+| 单元测试 | 95 / 95 |
 
 迭代修正示例：
 

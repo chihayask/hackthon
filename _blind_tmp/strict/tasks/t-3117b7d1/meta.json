@@ -1,0 +1,35 @@
+{
+  "task_id": "t-3117b7d1",
+  "var_names": [
+    "m1",
+    "m2",
+    "r"
+  ],
+  "free_parameters": [
+    "G"
+  ],
+  "sampling": {
+    "m1": [
+      0.5,
+      5.0
+    ],
+    "m2": [
+      0.5,
+      5.0
+    ],
+    "r": [
+      1.0,
+      3.0
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "base",
+  "source": [
+    "blind-set: 真实出处见 blind/mapping.json（评审侧，不进入智能体可见面）"
+  ],
+  "blinded": {
+    "level": "strict",
+    "note": "本任务集为盲化派生集，原任务标识与现象说明已移除"
+  }
+}

@@ -7,7 +7,7 @@
     set PYTHONPATH=src
     python reproduce.py
 
-退出码 `0` 且打印「复现成功：指纹与基线完全一致」= 流水线成立（15 步 + 指纹比对）。
+退出码 `0` 且打印「复现成功：指纹与基线完全一致」= 流水线成立（16 步 + 指纹比对）。
 项目总览与操作方式见 [README.md](README.md)。
 
 ## 硬规则（改代码前必须知道）
@@ -28,7 +28,7 @@
 
     python -m formula_agh settings          # 打印当前生效的判据与阈值
     python -m formula_agh import <file> --task-id <id> --target <col>   # 导入自有数据
-    python reproduce.py                     # 15 步全跑 + 指纹比对
+    python reproduce.py                     # 16 步全跑 + 指纹比对
     python run_tests.py                     # 单元测试（不依赖 pytest）
     python -m formula_agh validate-tasks --tasks tasks --reference reference --require-split --strict
     python -m formula_agh split --tasks tasks --sealed sealed

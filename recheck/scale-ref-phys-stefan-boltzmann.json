@@ -1,7 +1,7 @@
 {
   "run_id": "scale-ref-phys-stefan-boltzmann",
   "run_dir": "runs/scale-ref-phys-stefan-boltzmann",
-  "checked_at_utc": "2026-10-10T03:58:20+00:00",
+  "checked_at_utc": "2026-10-10T04:30:59+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-stefan-boltzmann",

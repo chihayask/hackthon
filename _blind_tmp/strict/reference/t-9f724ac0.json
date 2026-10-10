@@ -1,0 +1,11 @@
+{
+  "task_id": "t-9f724ac0",
+  "formula": "n*R*T/V",
+  "free_parameters": [
+    "R"
+  ],
+  "true_constants": {
+    "R": 8.314462618
+  },
+  "y_unit": "Pa"
+}

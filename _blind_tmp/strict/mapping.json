@@ -1,0 +1,101 @@
+{
+  "level": "strict",
+  "note": "匿名 id 到真实 id 的映射。仅用于评分与分析，**不得进入智能体可见面**。",
+  "removed_meta_fields": [
+    "domain",
+    "phenomenon",
+    "source",
+    "source_note",
+    "units"
+  ],
+  "map": {
+    "t-68481d2b": {
+      "real_id": "phys-buoyancy",
+      "formula_hidden": true
+    },
+    "t-b2e1aaaa": {
+      "real_id": "phys-coulomb",
+      "formula_hidden": true
+    },
+    "t-77c5f561": {
+      "real_id": "phys-cyclotron",
+      "formula_hidden": true
+    },
+    "t-83ec7158": {
+      "real_id": "phys-elastic-pe",
+      "formula_hidden": true
+    },
+    "t-e564efb7": {
+      "real_id": "phys-energy-shift",
+      "formula_hidden": true
+    },
+    "t-2915c721": {
+      "real_id": "phys-grav-potential-energy",
+      "formula_hidden": true
+    },
+    "t-3117b7d1": {
+      "real_id": "phys-gravitation",
+      "formula_hidden": true
+    },
+    "t-88b57449": {
+      "real_id": "phys-hydrogen-level",
+      "formula_hidden": true
+    },
+    "t-9f724ac0": {
+      "real_id": "phys-ideal-gas",
+      "formula_hidden": true
+    },
+    "t-cd40e173": {
+      "real_id": "phys-index-vacuum",
+      "formula_hidden": true
+    },
+    "t-0f7c0e34": {
+      "real_id": "phys-joule-heating",
+      "formula_hidden": true
+    },
+    "t-63ef19ed": {
+      "real_id": "phys-kinetic-energy",
+      "formula_hidden": true
+    },
+    "t-767b319d": {
+      "real_id": "phys-ohm",
+      "formula_hidden": true
+    },
+    "t-f4b8c49a": {
+      "real_id": "phys-pendulum-exact",
+      "formula_hidden": true
+    },
+    "t-86f07a26": {
+      "real_id": "phys-pendulum-period",
+      "formula_hidden": true
+    },
+    "t-3aa62649": {
+      "real_id": "phys-radioactive-decay",
+      "formula_hidden": true
+    },
+    "t-fc4d457f": {
+      "real_id": "phys-snells-law",
+      "formula_hidden": true
+    },
+    "t-9c912023": {
+      "real_id": "phys-spring-energy",
+      "formula_hidden": true
+    },
+    "t-468531c4": {
+      "real_id": "phys-stefan-boltzmann",
+      "formula_hidden": true
+    },
+    "t-4c350174": {
+      "real_id": "phys-surface-gravity",
+      "formula_hidden": true
+    },
+    "t-5cfd5be6": {
+      "real_id": "phys-transit-depth",
+      "formula_hidden": true
+    },
+    "t-4321a502": {
+      "real_id": "phys-weight",
+      "formula_hidden": true
+    }
+  }
+}

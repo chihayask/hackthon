@@ -1,0 +1,7 @@
+{
+  "task_id": "t-5cfd5be6",
+  "formula": "A*(Rp/Rs)**2",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "-"
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "t-f4b8c49a",
+  "var_names": [
+    "L",
+    "g",
+    "theta0"
+  ],
+  "units": {
+    "L": "m",
+    "g": "m/s^2",
+    "theta0": "rad",
+    "y": "s"
+  },
+  "free_parameters": [],
+  "sampling": {
+    "L": [
+      0.2,
+      2.0
+    ],
+    "g": [
+      1.6,
+      12.0
+    ],
+    "theta0": [
+      0.05,
+      1.2
+    ]
+  },
+  "sample_count": 400,
+  "noise_relative_sigma": 0.004,
+  "layer": "challenge",
+  "source": [
+    "blind-set: 真实出处见 blind/mapping.json（评审侧，不进入智能体可见面）"
+  ],
+  "blinded": {
+    "level": "metadata",
+    "note": "本任务集为盲化派生集，原任务标识与现象说明已移除"
+  }
+}

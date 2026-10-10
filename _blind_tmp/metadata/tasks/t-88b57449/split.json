@@ -1,0 +1,62 @@
+{
+  "contains_row_indices": false,
+  "counts": {
+    "extrapolation": 60,
+    "holdout": 80,
+    "train": 260
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 60,
+      "sha256": "d99c3e53406be58f92351cd73e09c47cf222b9f7b39a7c7767497edfcfe23a43",
+      "y_max": -5.65017953e-20,
+      "y_min": -2.24602201e-18
+    },
+    "holdout": {
+      "n": 80,
+      "sha256": "39c268dd1d456e59078822b3f48c28be61c728783bb55b76423ccb14e938d8be",
+      "y_max": -6.107427017e-20,
+      "y_min": -8.8443754e-19
+    },
+    "train": {
+      "n": 260,
+      "sha256": "4cb620034fa2e8636754bd691c0e028c8ecc1aa8c78d185cc496a78ec136dab4",
+      "y_max": -6.683043652e-20,
+      "y_min": -1.147102805e-18
+    }
+  },
+  "n_total": 400,
+  "note": "本文件不含留出集/外推集的行号，只有规则、计数、支撑域与集合指纹；留出与外推数据点同时被封印到 sealed/<task_id>/，位于 tasks/ 之外。",
+  "rule": {
+    "extrapolation": "按主自变量（极差最大者）升序排列后，取最小端与最大端各占样本量 7.5% 的点，合计 15%，严格位于训练支撑域之外",
+    "extrapolation_ratio": 0.15,
+    "holdout": "中间区域内均匀随机抽取 20%（种子固定）",
+    "holdout_ratio": 0.2,
+    "main_axis": {
+      "criterion": "取值范围极差最大的自变量",
+      "index": 2,
+      "name": "n"
+    },
+    "seed": 20261008,
+    "train": "其余点；支撑域 [support_lo, support_hi] 只由训练点决定"
+  },
+  "rule_version": "split-v1",
+  "support": {
+    "hi": [
+      9.498201062e-31,
+      1.649345846e-19,
+      5.624382574
+    ],
+    "lo": [
+      9.003255227e-31,
+      1.55011558e-19,
+      1.434992575
+    ],
+    "var_names": [
+      "me",
+      "el",
+      "n"
+    ]
+  },
+  "task_id": "t-88b57449"
+}

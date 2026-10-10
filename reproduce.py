@@ -380,6 +380,12 @@ def main(argv=None):
         print("第十五步：证据归档与孤儿检测")
         run_step("archive", ["-m", "formula_agh", "archive", "--runs", "runs",
                              "--out", "evidence"], root)
+        # 提示泄漏审计进流水线：它量化"智能体可见面泄漏了多少定律信息"。
+        # 放进来的理由——这条数字支撑 README 里"带先验的已知定律恢复"这个自我限定，
+        # 如果只手工跑过一次，之后任务集改了它就会悄悄失真。它只写
+        # evidence/hint_leak_audit.json，不进指纹，因此不影响复现判定。
+        print("第十六步：提示泄漏审计（智能体可见面泄漏了什么）")
+        run_step("hint-audit", ["examples/hint_audit.py"], root)
 
     print("采集指纹 ...")
     actual, other_runs, agent_layer = fingerprint(root)

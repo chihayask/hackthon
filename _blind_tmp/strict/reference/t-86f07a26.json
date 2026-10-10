@@ -1,0 +1,7 @@
+{
+  "task_id": "t-86f07a26",
+  "formula": "2*pi*sqrt(L/g)",
+  "free_parameters": [],
+  "true_constants": {},
+  "y_unit": "s"
+}
