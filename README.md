@@ -356,6 +356,14 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 同时程序在运行时优先读取 **exe 同级目录**的 `config/agent.yaml`，
 保证阈值仍然只有一处、且可被使用者覆盖。
 
+**当前发布版本：v0.2.0**（[Releases](https://github.com/chihayask/hackthon/releases)），
+提供的是**目录式**产物 `formula_agh_onedir_0.2.0_win64.zip`，已在本机实际运行验证。
+
+> 单文件版在本机构建成功但**启动失败**（`[PYI-…:ERROR] Could not create temporary directory!`），
+> 已排除代码问题（同版本目录式正常）。PyInstaller 单文件需要在临时目录里创建带私有 ACL 的目录，
+> 本机此前出现过同类 ACL 异常（见 `docs/AGH启动失败诊断.md`）。
+> **因此本次只发布验证过能运行的产物**；需要单文件版请在自己机器上执行构建脚本。
+
 产物与源码行为一致：
 
     dist\formula_agh.exe settings
