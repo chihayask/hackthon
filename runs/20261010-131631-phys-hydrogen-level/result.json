@@ -1,0 +1,111 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "1/(me*el**2)*n**2",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(0, 1), Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+      "metrics": {
+        "mode": "strict",
+        "inferred": "(Fraction(0, 1), Fraction(-1, 1), Fraction(-2, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+        "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 3173611441318938507970080246431511826249622775474160990225036263499213607977795715072000.0000（阈值 0.0200）；诊断口径 p90=12868915785853230538190434467579262374094829478160094271656169194980672794290417691525120.0000、RMSE/中位|y|=4126904486597540291213149040405418190285681511600011221874964896064906028335086006435840.0000、RMSE/std(y)=3459250578283993686002788092642747004028476282240649548306330893213018646872746044162048.0000、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 3.1736114413189385e+87,
+        "relative_error_p75": 8.500365349226074e+87,
+        "relative_error_p90": 1.286891578585323e+88,
+        "rmsre": 7.5945955117576e+87,
+        "max_relative_error": 2.3314446109590637e+88,
+        "rmse": 6.935585369061494e+68,
+        "relative_rmse": 4.12690448659754e+87,
+        "normalized_rmse": 3.4592505782839937e+87,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 8364026377257927376360186945111928799977123183446589877256324690301279091928699357888512.0000（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=23962501005375909817815435436743762417839741216432148388052861225175133889782770059706368.0000、RMSE/中位|y|=1663419143133274010444156385967384661570518696999983661294895175740898856566491925446656.0000、RMSE/std(y)=1242987133948945486660022349717657498414383219730480195521909757122538640366408262746112.0000",
+      "metrics": {
+        "relative_error_median": 8.364026377257927e+87,
+        "relative_error_p75": 2.1462989891003912e+88,
+        "relative_error_p90": 2.396250100537591e+88,
+        "rmsre": 1.5295397492233826e+88,
+        "max_relative_error": 2.8707655897508135e+88,
+        "rmse": 9.990203377062059e+68,
+        "relative_rmse": 1.663419143133274e+87,
+        "normalized_rmse": 1.2429871339489455e+87,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-n",
+      "passed": false,
+      "reason": "缩放 n×2 倍后 y 变为 4 倍，物理预期 0.25 倍（相对偏差 1.50e+01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 0.25,
+        "rel_error": 15.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-monotonic-n",
+      "passed": true,
+      "reason": "在 n ∈ [1, 6] 上用等距网格扫描 9 点：整体相对变化 9.722e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.04557291666666667,
+          0.06727430555555554,
+          0.08897569444444446,
+          0.1106770833333333,
+          0.13237847222222224,
+          0.15407986111111116,
+          0.17578124999999997,
+          0.1974826388888889
+        ],
+        "variation": 0.9722222222222223,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          6.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": false,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 0 点（0%），符号性质被破坏——这是物理上不可接受的候选式（例如\"剩余粒子数为负\"）",
+      "metrics": {
+        "expect": "negative",
+        "satisfied": 0,
+        "evaluated": 65,
+        "ratio": 0.0,
+        "min_value": 3.866415349668939e+67,
+        "max_value": 1.664932362122789e+69
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：dimension、holdout、extrapolation、scale-scaling-n、scale-sign-y。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-n、scale-sign-y）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "free_parameters": []
+}

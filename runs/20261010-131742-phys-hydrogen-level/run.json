@@ -1,0 +1,33 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "verdict": "rejected",
+  "formula": "eps0*(el*el)/((me*n*n))",
+  "parameters": {
+    "eps0": -7.98521885966533e-11
+  },
+  "free_parameters": [
+    "eps0"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "cli",
+  "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
+  "inputs": [
+    "tasks/phys-hydrogen-level"
+  ],
+  "notes": "",
+  "duplicate_check_names": []
+}

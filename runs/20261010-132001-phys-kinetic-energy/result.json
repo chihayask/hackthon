@@ -1,0 +1,134 @@
+{
+  "task_id": "phys-kinetic-energy",
+  "formula": "m*v**2",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）（模式 strict）",
+      "metrics": {
+        "mode": "strict",
+        "free_parameters_with_units": []
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 1.0001（阈值 0.0200）；诊断口径 p90=1.0065、RMSE/中位|y|=2.3135、RMSE/std(y)=1.4224、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 1.000149710484393,
+        "relative_error_p75": 1.004288553865311,
+        "relative_error_p90": 1.0064788838964382,
+        "rmsre": 0.9990908320556112,
+        "max_relative_error": 1.0164957371534682,
+        "rmse": 482.09956329069166,
+        "relative_rmse": 2.31345038759565,
+        "normalized_rmse": 1.4224168358321205,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.9999（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=1.0072、RMSE/中位|y|=11.2466、RMSE/std(y)=1.3208",
+      "metrics": {
+        "relative_error_median": 0.9999311234898648,
+        "relative_error_p75": 1.003637134257416,
+        "relative_error_p90": 1.0072387336165365,
+        "rmsre": 0.9998840027543244,
+        "max_relative_error": 1.0150807995143656,
+        "rmse": 798.2229612045033,
+        "relative_rmse": 11.246586633017044,
+        "normalized_rmse": 1.320805988897915,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-v",
+      "passed": true,
+      "reason": "缩放 v×2 倍后 y 变为 4 倍，物理预期 4 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 4.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-scaling-m",
+      "passed": true,
+      "reason": "缩放 m×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 2.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-v-parity",
+      "passed": true,
+      "reason": "缩放 v×-1 倍后 y 变为 1 倍，物理预期 1 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 1.0,
+        "rel_error": 0.0,
+        "lambda": -1.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-monotonic-v",
+      "passed": true,
+      "reason": "在 v ∈ [1, 20] 上用等比网格扫描 9 点：整体相对变化 9.975e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0027868563172028207,
+          0.005893483570296126,
+          0.012463200337580454,
+          0.026356459774920613,
+          0.05573712634405641,
+          0.11786967140592258,
+          0.24926400675160906,
+          0.527129195498412
+        ],
+        "variation": 0.9974999999999999,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.5,
+        "max_value": 4000.0
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
+  "free_parameters": []
+}

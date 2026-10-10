@@ -1,0 +1,27 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "eps0/(me*el**2)*(n**-2)",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "量纲不成立（结构性错误）: 指数必须是数值常量",
+      "metrics": {
+        "mode": "strict",
+        "reason_code": "dimension-mismatch"
+      }
+    },
+    {
+      "name": "fit",
+      "passed": false,
+      "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 551200960670371776.000 > 0.500）",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。",
+  "free_parameters": [
+    "eps0"
+  ]
+}

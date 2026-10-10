@@ -1,0 +1,3 @@
+usage: formula_agh [-h]
+                   {verify,batch,import,settings,validate-tasks,split,recheck,archive} ...
+formula_agh: error: unrecognized arguments: test-handshake

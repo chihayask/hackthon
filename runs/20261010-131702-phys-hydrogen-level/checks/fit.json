@@ -1,0 +1,6 @@
+{
+  "name": "fit",
+  "passed": false,
+  "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 551200960670371840.000 > 0.500）",
+  "metrics": {}
+}

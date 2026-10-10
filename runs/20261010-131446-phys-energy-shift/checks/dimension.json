@@ -1,0 +1,12 @@
+{
+  "name": "dimension",
+  "passed": true,
+  "reason": "结构一致性通过（模式 structural）；自由参数 h 未声明单位，可吸收单位，严格量纲比对无法进行",
+  "metrics": {
+    "mode": "structural",
+    "free_parameters_without_units": [
+      "h"
+    ],
+    "free_parameters_with_units": []
+  }
+}

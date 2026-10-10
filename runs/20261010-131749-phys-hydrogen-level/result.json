@@ -1,0 +1,30 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "el*el*(n*n)/me",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过（模式 structural）；自由参数 eps0 未声明单位，可吸收单位，严格量纲比对无法进行",
+      "metrics": {
+        "mode": "structural",
+        "free_parameters_without_units": [
+          "eps0"
+        ],
+        "free_parameters_with_units": []
+      }
+    },
+    {
+      "name": "fit",
+      "passed": false,
+      "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 2052244391537.365 > 0.500）",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。",
+  "free_parameters": [
+    "eps0"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dimension",
+  "passed": false,
+  "reason": "量纲不成立（结构性错误）: 指数必须是数值常量",
+  "metrics": {
+    "mode": "strict",
+    "reason_code": "dimension-mismatch"
+  }
+}

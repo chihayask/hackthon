@@ -1,0 +1,13 @@
+{
+  "name": "scale-sign-y",
+  "passed": true,
+  "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+  "metrics": {
+    "expect": "positive",
+    "satisfied": 17,
+    "evaluated": 17,
+    "ratio": 1.0,
+    "min_value": 0.25,
+    "max_value": 2000.0
+  }
+}

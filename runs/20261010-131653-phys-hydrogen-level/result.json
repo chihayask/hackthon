@@ -1,0 +1,130 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "eps0*eps0*(-1)/(me*el**2*n**2)",
+  "parameters": {
+    "eps0": 2.272628906505436e-43
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过（模式 structural）；自由参数 eps0 未声明单位，可吸收单位，严格量纲比对无法进行",
+      "metrics": {
+        "mode": "structural",
+        "free_parameters_without_units": [
+          "eps0"
+        ],
+        "free_parameters_with_units": []
+      }
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "eps0": 2.272628906505436e-43,
+        "train_relative_error_median": 0.08923979186363895,
+        "train_relative_error_p90": 0.17554194282593807,
+        "train_rmsre": 0.11282551871507732,
+        "train_relative_rmse": 0.22057552293601326,
+        "train_normalized_rmse": 0.17741132336742688
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.1013（阈值 0.0200）；诊断口径 p90=0.1709、RMSE/中位|y|=0.2408、RMSE/std(y)=0.2019、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.10126155275497264,
+        "relative_error_p75": 0.15514173875805654,
+        "relative_error_p90": 0.17090343161350272,
+        "rmsre": 0.11949511599334275,
+        "max_relative_error": 0.2335029975009494,
+        "rmse": 4.047561529072282e-20,
+        "relative_rmse": 0.2408434031916232,
+        "normalized_rmse": 0.2018795648099418,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.1037（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.1836、RMSE/中位|y|=0.2310、RMSE/std(y)=0.1726",
+      "metrics": {
+        "relative_error_median": 0.1036653378620642,
+        "relative_error_p75": 0.15748972260114202,
+        "relative_error_p90": 0.18357477314736778,
+        "rmsre": 0.12229306054148113,
+        "max_relative_error": 0.2145992492027097,
+        "rmse": 1.3872568037509226e-19,
+        "relative_rmse": 0.2309852399100793,
+        "normalized_rmse": 0.17260332882758914,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-n",
+      "passed": true,
+      "reason": "缩放 n×2 倍后 y 变为 0.25 倍，物理预期 0.25 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.25,
+        "expected_ratio": 0.25,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -2.0
+      }
+    },
+    {
+      "name": "scale-monotonic-n",
+      "passed": true,
+      "reason": "在 n ∈ [1, 6] 上用等距网格扫描 9 点：整体相对变化 9.722e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.621301775147929,
+          0.18116736065454017,
+          0.07654787743004506,
+          0.039350333706261335,
+          0.022863139746256627,
+          0.014448183675078666,
+          0.009708025150976272,
+          0.006835526711135151
+        ],
+        "variation": 0.9722222222222222,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          1.0,
+          6.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "negative",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": -2.3886424542416904e-18,
+        "max_value": -5.547062487376794e-20
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
+  "free_parameters": [
+    "eps0"
+  ]
+}

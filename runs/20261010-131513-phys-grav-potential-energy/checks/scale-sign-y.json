@@ -1,0 +1,13 @@
+{
+  "name": "scale-sign-y",
+  "passed": true,
+  "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 65 点（100%），符号性质成立",
+  "metrics": {
+    "expect": "negative",
+    "satisfied": 65,
+    "evaluated": 65,
+    "ratio": 1.0,
+    "min_value": -1.6682936938256058e-09,
+    "max_value": -5.560978979418687e-12
+  }
+}

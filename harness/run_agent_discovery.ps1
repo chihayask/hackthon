@@ -154,6 +154,16 @@ foreach ($task in $taskList) {
   if ([string]::IsNullOrWhiteSpace($sessionId)) {
     Write-Host ("[warn] {0}: 未取得会话号，本轮 run.json 的 provenance_bound 将为 false" -f $task)
   }
+  # 握手文件（AGH 的 shell 工具不继承环境变量，见 run_verify.cmd 的说明）。
+  # 工作区根与任务目录各放一份，因为无法假定 shell 工具的当前目录是哪一个。
+  $provLine = 'agh-llm ' + $sessionId
+  foreach ($dir in @($work, $visible)) {
+    if (Test-Path -LiteralPath $dir) {
+      [System.IO.File]::WriteAllText((Join-Path $dir '_agh_provenance.txt'), $provLine,
+        (New-Object System.Text.UTF8Encoding($false)))
+    }
+  }
+
   $env:FORMULA_AGH_HYPOTHESIS_SOURCE = 'agh-llm'
   $env:FORMULA_AGH_SESSION_ID = $sessionId
   $env:FORMULA_AGH_AGENT_WORKSPACE = $work

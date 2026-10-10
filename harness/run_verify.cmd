@@ -22,6 +22,19 @@ set PYTHONPATH=%ROOT%\src
 set FORMULA_AGH_AUTOARCHIVE=1
 set FORMULA_AGH_RUNS=runs
 set FORMULA_AGH_EVIDENCE=evidence
+REM --- 来源与会话号：握手文件而不是环境变量 ---------------------------------------
+REM 实测（2026-10-10）：AGH 的 shell 工具**不继承**驱动进程的环境变量，所以
+REM 驱动脚本 export 的 FORMULA_AGH_HYPOTHESIS_SOURCE / _SESSION_ID 传不到这里，
+REM 22 条自主运行被记成了 cli（保守但错误）。改为在工作区里放一个握手文件，
+REM 由驱动脚本写入，本脚本从**当前目录**读。读不到就退回诚实默认（cli、无会话号）。
+set "PROV_FILE=%CD%\_agh_provenance.txt"
+if exist "%PROV_FILE%" (
+  for /f "usebackq tokens=1,2" %%a in ("%PROV_FILE%") do (
+    if "%FORMULA_AGH_HYPOTHESIS_SOURCE%"=="" set "FORMULA_AGH_HYPOTHESIS_SOURCE=%%a"
+    if "%FORMULA_AGH_SESSION_ID%"=="" set "FORMULA_AGH_SESSION_ID=%%b"
+    if "%FORMULA_AGH_AGENT_WORKSPACE%"=="" set "FORMULA_AGH_AGENT_WORKSPACE=%CD%"
+  )
+)
 REM 引擎选择：默认用**源码** Python（与仓库一致，不会因为 exe 过期而与源码行为分叉）。
 REM 打包的 exe 需要显式开启：set FORMULA_AGH_USE_EXE=1。
 REM 教训（2026-10-10）：原先无条件优先 exe，结果源码加了 session_id/provenance_bound 后，
