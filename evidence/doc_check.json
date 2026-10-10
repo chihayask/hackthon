@@ -1,9 +1,9 @@
 {
-  "tests_actual": 107,
+  "tests_actual": 109,
   "steps_actual": 18,
   "stats": {
     "docs_scanned": 10,
-    "paths_checked": 168,
+    "paths_checked": 170,
     "numbers_checked": 7,
     "acknowledged_missing": [
       "evidence/video"

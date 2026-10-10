@@ -88,3 +88,56 @@ def test_allow_rule_rejects_invalid_regex():
     ok, why = mod.check_argv("^(" + BS + BS + "]]")
     assert not ok
     assert "不合法" in why or "路径形状" in why
+
+
+# --------------------------------------------------------------------------
+# 去提示消融汇总
+# --------------------------------------------------------------------------
+
+def test_ablation_report_counts_gate_independently(tmp_path=None):
+    """门无关主指标：只要**任何一次**运行给出正确公式就算命中，哪怕它被门拒了。"""
+    import json
+    import shutil
+    import tempfile
+    mod = _load("ablation_report", "examples/ablation_report.py")
+    root = tempfile.mkdtemp(prefix="_abl_tmp_")
+    try:
+        os.makedirs(os.path.join(root, "tasks", "t-1"))
+        with open(os.path.join(root, "tasks", "t-1", "meta.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-1", "var_names": ["I", "R"]}, fh)
+        os.makedirs(os.path.join(root, "reference"))
+        with open(os.path.join(root, "reference", "t-1.json"), "w", encoding="utf-8") as fh:
+            json.dump({"formula": "I*R"}, fh)
+        os.makedirs(os.path.join(root, "tasks", "t-2"))
+        with open(os.path.join(root, "tasks", "t-2", "meta.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-2", "var_names": ["x"]}, fh)
+        with open(os.path.join(root, "reference", "t-2.json"), "w", encoding="utf-8") as fh:
+            json.dump({"formula": "x**2"}, fh)
+        # t-1：正确公式出现在**被拒**的运行里（门无关口径应算命中）
+        os.makedirs(os.path.join(root, "runs", "r1"))
+        with open(os.path.join(root, "runs", "r1", "run.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-1", "hypothesis_source": "agh-llm", "formula": "I*R",
+                       "verdict": "rejected", "provenance_bound": True}, fh)
+        # t-2：只有错误公式
+        os.makedirs(os.path.join(root, "runs", "r2"))
+        with open(os.path.join(root, "runs", "r2", "run.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-2", "hypothesis_source": "agh-llm", "formula": "x",
+                       "verdict": "accepted", "provenance_bound": True}, fh)
+        # 非 agh-llm 的运行不得计入
+        os.makedirs(os.path.join(root, "runs", "r3"))
+        with open(os.path.join(root, "runs", "r3", "run.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-2", "hypothesis_source": "cli", "formula": "x**2",
+                       "verdict": "accepted", "provenance_bound": False}, fh)
+        entry = mod.summarize_arm("试", root, 2)
+        assert entry["any_run_match"] == 1, entry
+        assert entry["tasks_with_a_match"] == ["t-1"], entry
+        assert entry["runs_bound"] == 2 and entry["runs_total"] == 3, entry
+    finally:
+        shutil.rmtree(root, ignore_errors=True)
+
+
+def test_ablation_report_marks_scorer_metric_as_confounded():
+    mod = _load("ablation_report", "examples/ablation_report.py")
+    import inspect
+    source = inspect.getsource(mod.summarize_arm)
+    assert "受判定门数影响" in source or "门数" in source

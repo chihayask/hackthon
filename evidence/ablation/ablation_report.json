@@ -1,0 +1,107 @@
+{
+  "primary_metric": "any_run_match（该任务是否曾有任一次给出正确公式，与门无关）",
+  "arms": [
+    {
+      "arm": "先验辅助",
+      "root": "E:\\.dsh\\deepseek harness workspace\\hackathon-2026",
+      "tasks_total": 22,
+      "any_run_match": 14,
+      "any_run_match_ratio": 0.6364,
+      "tasks_with_a_match": [
+        "phys-buoyancy",
+        "phys-coulomb",
+        "phys-cyclotron",
+        "phys-energy-shift",
+        "phys-gravitation",
+        "phys-index-vacuum",
+        "phys-joule-heating",
+        "phys-ohm",
+        "phys-pendulum-period",
+        "phys-radioactive-decay",
+        "phys-stefan-boltzmann",
+        "phys-surface-gravity",
+        "phys-transit-depth",
+        "phys-weight"
+      ],
+      "runs_total": 332,
+      "runs_bound": 31,
+      "scorer": {
+        "agent_candidates": 22,
+        "agent_accepted": 20,
+        "agent_candidates_bound": 22,
+        "agent_matches_reference": 16,
+        "agent_match_rate": 0.7272727272727273,
+        "agent_matches_reference_bound": 16,
+        "agent_match_rate_bound": 0.7272727272727273
+      },
+      "scorer_note": "受判定门数影响，仅作对照；跨支路比较请用 any_run_match"
+    },
+    {
+      "arm": "盲化",
+      "root": "E:\\fagh-blind-root",
+      "tasks_total": 22,
+      "any_run_match": 12,
+      "any_run_match_ratio": 0.5455,
+      "tasks_with_a_match": [
+        "t-0f7c0e34",
+        "t-3117b7d1",
+        "t-3aa62649",
+        "t-4321a502",
+        "t-468531c4",
+        "t-4c350174",
+        "t-5cfd5be6",
+        "t-68481d2b",
+        "t-767b319d",
+        "t-77c5f561",
+        "t-b2e1aaaa",
+        "t-e564efb7"
+      ],
+      "runs_total": 36,
+      "runs_bound": 36,
+      "scorer": {
+        "agent_candidates": 20,
+        "agent_accepted": 18,
+        "agent_candidates_bound": 20,
+        "agent_matches_reference": 14,
+        "agent_match_rate": 0.7,
+        "agent_matches_reference_bound": 14,
+        "agent_match_rate_bound": 0.7
+      },
+      "scorer_note": "受判定门数影响，仅作对照；跨支路比较请用 any_run_match"
+    },
+    {
+      "arm": "纯数据",
+      "root": "E:\\fagh-noprior-root",
+      "tasks_total": 22,
+      "any_run_match": 13,
+      "any_run_match_ratio": 0.5909,
+      "tasks_with_a_match": [
+        "t-0f7c0e34",
+        "t-3117b7d1",
+        "t-4321a502",
+        "t-468531c4",
+        "t-4c350174",
+        "t-5cfd5be6",
+        "t-68481d2b",
+        "t-767b319d",
+        "t-77c5f561",
+        "t-83ec7158",
+        "t-9f724ac0",
+        "t-b2e1aaaa",
+        "t-cd40e173"
+      ],
+      "runs_total": 31,
+      "runs_bound": 31,
+      "scorer": {
+        "agent_candidates": 20,
+        "agent_accepted": 19,
+        "agent_candidates_bound": 20,
+        "agent_matches_reference": 17,
+        "agent_match_rate": 0.85,
+        "agent_matches_reference_bound": 17,
+        "agent_match_rate_bound": 0.85
+      },
+      "scorer_note": "受判定门数影响，仅作对照；跨支路比较请用 any_run_match"
+    }
+  ]
+}

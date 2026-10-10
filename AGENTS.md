@@ -43,6 +43,7 @@
     python examples/make_delivery_reports.py # 从现有证据重建交付报告（流水线第十七步）
     python examples/model_guard.py          # 校验模型路由全部为 Agnes（通知五（二））
     python examples/check_docs.py           # 文档一致性（流水线第十八步）
+    python examples/ablation_report.py      # 去提示消融汇总（需 --arm 指定各支路根）
     python harness/check_agh_command_rule.py # 校验 AGH allow 规则的绝对路径形状
 
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
