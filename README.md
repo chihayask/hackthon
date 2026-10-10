@@ -356,15 +356,18 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 同时程序在运行时优先读取 **exe 同级目录**的 `config/agent.yaml`，
 保证阈值仍然只有一处、且可被使用者覆盖。
 
-**当前发布版本：v0.2.0**（[Releases](https://github.com/chihayask/hackthon/releases)），
-提供的是**目录式**产物 `formula_agh_onedir_0.2.0_win64.zip`，已在本机实际运行验证。
+**当前发布版本：v0.2.0**（[Releases](https://github.com/chihayask/hackthon/releases)），提供两种产物，均已验证：
 
-> 单文件版在本机构建成功但**启动失败**（`[PYI-…:ERROR] Could not create temporary directory!`）。
-> 已逐项排除：环境普遍不支持（hello-world 单文件正常）、numpy（numpy 单文件正常）、
-> 本项目入口脚本（同一入口在别处构建正常）、`--add-data` 与含空格源路径（两种路径均正常）、
-> 构建目录含空格（经无空格联接构建仍失败）、产物损坏（重建仍失败）。
-> **差异尚未定位**，因此本次只发布验证过能运行的目录式产物；
-> 需要单文件版请在自己机器上执行 `packaging\build_exe.cmd`。
+| 产物 | 验证方式 |
+|---|---|
+| 单文件 `formula_agh.exe`（31.8 MB） | 置于项目根目录运行 `verify --task tasks/phys-ohm --formula "I*R"` → `accepted`，8 项检查全通过 |
+| 目录式 `formula_agh_onedir_0.2.0_win64.zip`（31.8 MB） | 解压即用，启动与 `settings/verify` 正常 |
+
+两者都需放在**项目根目录**下运行。
+
+> 注意：单文件版若从**构建它的智能体工作区内**启动会报 `Could not create temporary directory`。
+> 这与产物无关——同一份字节放到工作区外即正常（已逐项排除环境、依赖、路径长度、构建参数等原因，
+> 仅剩「是否位于该工作区内」这一变量，详见 `packaging/release_notes_v0.2.0.md` 第六节）。
 
 产物与源码行为一致：
 
