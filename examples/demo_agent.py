@@ -108,6 +108,9 @@ def main():
     final = None
     rounds = builtin_hypotheses(args.task)
     max_rounds = len(rounds) if rounds else 6
+    # 混合来源必须如实记录：只要有一轮回退到内置生成器，这条运行就不是纯模型发现。
+    # 外部审计（2026-10-10）指出旧写法只按 --llm 开关标注，回退后仍记 agh-llm。
+    used_fallback = False
     for idx in range(max_rounds):
         if args.llm and args.agh_entry:
             formula, params, reason = llm_hypothesis(args.task, columns, meta, history,
@@ -117,7 +120,10 @@ def main():
                     break
                 _, formula, params = rounds[idx]
                 reason = '内置生成器（LLM 不可用）'
+                used_fallback = True
         else:
+            if args.llm:
+                used_fallback = True
             if idx >= len(rounds):
                 break
             reason, formula, params = rounds[idx]
@@ -193,12 +199,19 @@ def main():
                    inputs=[task_dir],
                    # 来源必须如实标注：默认模式下每一条"假设"都是人手写在 STRATEGIES
                    # 表里的，不是模型提出的。不标注，这条运行看起来就像真实的自主闭环。
-                   hypothesis_source=('agh-llm' if args.llm else 'human-authored-fixture'),
-                   notes=('假设由 Agnes 模型经 AGH 提出；轨迹见 trajectory.jsonl'
-                          if args.llm else
-                          '演示用固定装置：假设链由人工编写在本脚本的 STRATEGIES 表中；'
-                          '调用的是真实验证引擎，但假设不是模型自主提出的，'
-                          '不得用于支撑"智能体自主发现"的结论。轨迹见 trajectory.jsonl'))
+                   hypothesis_source=(
+                       # 只有**每一轮**都由模型产出才算 agh-llm。请求了模型但中途回退，
+                       # 记 fixture-fallback——它同样不计入评分脚本的智能体发现层。
+                       'agh-llm' if (args.llm and not used_fallback)
+                       else ('fixture-fallback' if args.llm else 'human-authored-fixture')),
+                   notes=('假设每轮均由 Agnes 模型经 AGH 提出；轨迹见 trajectory.jsonl'
+                          if (args.llm and not used_fallback) else
+                          ('请求了 Agnes 模型，但至少有一轮回退到内置生成器；'
+                           '混合来源不作为纯模型发现计入。轨迹见 trajectory.jsonl'
+                           if args.llm else
+                           '演示用固定装置：假设链由人工编写在本脚本的 STRATEGIES 表中；'
+                           '调用的是真实验证引擎，但假设不是模型自主提出的，'
+                           '不得用于支撑"智能体自主发现"的结论。轨迹见 trajectory.jsonl')))
     emit('证据目录: ' + os.path.relpath(run_dir, ROOT))
     emit('=' * 68)
     return 0

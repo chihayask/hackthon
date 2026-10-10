@@ -87,6 +87,28 @@ foreach ($task in $taskList) {
 不要执行 run_verify.cmd 以外的任何 shell 命令。
 "@
 
+  # --- 溯源绑定（外部审计 2026-10-10 指出的可达误标路径）---------------------------------
+  # run_verify.cmd 不再自作主张标 agh-llm：来源必须由调用方显式声明。这里就是调用方。
+  # 会话号是关键——只写标签等于自报，绑定到真实 AGH 会话才可核对。
+  # AGH 的会话键由 cwd 派生：先用一次最小调用把会话建出来（顺带让技能发现先跑一轮，
+  # 避免真实运行时 skill_read 与发现竞态返回 NOT_FOUND），再查回它的 sessionId。
+  $sessionId = ''
+  try {
+    & node $AghEntry -p '就绪确认：只回复 ok' --mode json --cwd $work 2>&1 | Out-Null
+    $sessionsJson = & node $AghEntry sessions --json 2>&1 | Out-String
+    $parsed = $sessionsJson | ConvertFrom-Json
+    $match = $parsed.items | Where-Object { $_.cwd -eq $work } | Select-Object -First 1
+    if ($match) { $sessionId = [string]$match.sessionId }
+  } catch {
+    Write-Host ("[warn] {0}: 预建会话失败：{1}" -f $task, $_.Exception.Message)
+  }
+  if ([string]::IsNullOrWhiteSpace($sessionId)) {
+    Write-Host ("[warn] {0}: 未取得会话号，本轮 run.json 的 provenance_bound 将为 false" -f $task)
+  }
+  $env:FORMULA_AGH_HYPOTHESIS_SOURCE = 'agh-llm'
+  $env:FORMULA_AGH_SESSION_ID = $sessionId
+  $env:FORMULA_AGH_AGENT_WORKSPACE = $work
+
   $outFile = Join-Path $SessionOut ($task + '.json')
   Write-Host ("[run ] {0} ..." -f $task)
   $sw = [System.Diagnostics.Stopwatch]::StartNew()

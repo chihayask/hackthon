@@ -343,7 +343,7 @@ def main():
     print('wrote %s' % os.path.relpath(frame_path, ROOT))
 
     title_card(os.path.join(VIDEO, 'title-open.png'), 'FORMULA-AGH',
-               '面向公开科学数据的可验证公式发现智能体',
+               '面向科学数据的可验证公式发现智能体（合成采样）',
                'B3. 科学计算与仿真 ｜ 2026 江苏省 AI+科学与工程创新实践黑客松',
                (255, 122, 60))
     title_card(os.path.join(VIDEO, 'title-close.png'),

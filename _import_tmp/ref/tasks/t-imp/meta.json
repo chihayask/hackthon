@@ -1,0 +1,34 @@
+{
+  "task_id": "t-imp",
+  "var_names": [
+    "x",
+    "k"
+  ],
+  "layer": "base",
+  "source": [
+    "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\_import_tmp\\ref\\d.csv"
+  ],
+  "sampling": {
+    "x": [
+      0.015073446516394081,
+      0.19938652135594961
+    ],
+    "k": [
+      51.30698471822658,
+      398.4250992020374
+    ]
+  },
+  "sample_count": 200,
+  "import": {
+    "imported_from": "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\_import_tmp\\ref\\d.csv",
+    "imported_at": "2026-10-10T03:17:22+00:00",
+    "read_info": {
+      "format": "delimited",
+      "delimiter": ",",
+      "raw_rows": 200
+    },
+    "target_column_original": "PE",
+    "target_column_renamed_to": "y",
+    "sampling_inferred_from_data": true
+  }
+}

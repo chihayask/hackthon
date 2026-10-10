@@ -197,6 +197,10 @@ def collect_runs(runs_root: str) -> Dict[str, List[Dict[str, object]]]:
             "parameters": meta.get("parameters") or {},
             "free_parameters": meta.get("free_parameters"),
             "hypothesis_source": meta.get("hypothesis_source") or "unclassified",
+            # 溯源绑定：agh-llm 是自报标签，session_id 才是可核对物。外部审计
+            # （2026-10-10）指出只信标签等于把"自称"当成"证据"。
+            "provenance_bound": bool(meta.get("provenance_bound")),
+            "session_id": meta.get("session_id") or "",
             "checks": checks,
         })
     return by_task
@@ -289,6 +293,8 @@ def build_comparison(runs_root: str, tasks_root: str, reference_root: str) -> Di
                 "run_id": best["run_id"],
                 "formula": best["formula"],
                 "verdict": best["verdict"],
+                "provenance_bound": bool(best.get("provenance_bound")),
+                "session_id": best.get("session_id") or "",
                 "parameters": best["parameters"],
                 "holdout": _metric(best, "holdout", "normalized_rmse"),
                 "extrapolation": _metric(best, "extrapolation", "normalized_rmse"),
@@ -363,6 +369,10 @@ def _summarize(rows: Sequence[Mapping[str, object]], notes: List[str]) -> Dict[s
     wrong_ok = sum(1 for r in wrong if r["wrong_variant"]["as_expected"])
     agent_match = sum(1 for r in agent if r["agent"].get("matches_reference"))
     agent_accepted = sum(1 for r in agent if r["agent"].get("verdict") == "accepted")
+    # 已绑定 = agh-llm 且带 AGH 会话号。未绑定的单独汇报，不与已绑定的混为一谈。
+    agent_bound = [r for r in agent if r["agent"].get("provenance_bound")]
+    agent_unbound = [r for r in agent if not r["agent"].get("provenance_bound")]
+    agent_match_bound = sum(1 for r in agent_bound if r["agent"].get("matches_reference"))
 
     by_layer: Dict[str, Dict[str, int]] = {}
     for row in rows:
@@ -380,6 +390,11 @@ def _summarize(rows: Sequence[Mapping[str, object]], notes: List[str]) -> Dict[s
             if row["agent"].get("matches_reference"):
                 bucket["agent_match"] += 1
 
+    if agent and agent_unbound:
+        notes.append("有 %d 个候选式运行标了 agh-llm 但**没有** AGH 会话号（provenance_bound=false），"
+                     "已单列不计入绑定层：标签是自报的，只有绑定到真实会话才可核对。"
+                     "请让调用方设置 FORMULA_AGH_SESSION_ID（见 harness/run_agent_discovery.ps1）。"
+                     % len(agent_unbound))
     if len(gold) < len(tasks):
         notes.append("有 %d 个任务缺少 refcheck 运行（金标准自检未覆盖），"
                      "先运行 examples/reference_check.py。" % (len(tasks) - len(gold)))
@@ -411,6 +426,11 @@ def _summarize(rows: Sequence[Mapping[str, object]], notes: List[str]) -> Dict[s
         "agent_accepted": agent_accepted,
         "agent_matches_reference": agent_match,
         "agent_match_rate": (agent_match / len(agent)) if agent else None,
+        # 绑定层：只统计带 AGH 会话号的候选式运行
+        "agent_candidates_bound": len(agent_bound),
+        "agent_candidates_unbound": len(agent_unbound),
+        "agent_matches_reference_bound": agent_match_bound,
+        "agent_match_rate_bound": (agent_match_bound / len(agent_bound)) if agent_bound else None,
         "by_layer": by_layer,
     }
 

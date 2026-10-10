@@ -210,6 +210,22 @@ def _hypothesis_source(explicit: str = "") -> str:
     return "cli"
 
 
+def _session_id(explicit: str = "") -> str:
+    """AGH 会话号：--session-id > FORMULA_AGH_SESSION_ID > 空。
+
+    与 _hypothesis_source 配合使用：来源标签是自报的，会话号才是可核对的绑定物。
+    两者同时存在，这条运行才算"已绑定的智能体发现"（见 run.json.provenance_bound）。
+    """
+    explicit = str(explicit or "").strip()
+    if explicit:
+        return explicit
+    return str(os.environ.get("FORMULA_AGH_SESSION_ID", "") or "").strip()
+
+
+def _agent_workspace() -> str:
+    return str(os.environ.get("FORMULA_AGH_AGENT_WORKSPACE", "") or "").strip()
+
+
 def cmd_verify(args: argparse.Namespace) -> int:
     settings = verify_settings()
     columns, meta = load_task(args.task)
@@ -242,7 +258,9 @@ def cmd_verify(args: argparse.Namespace) -> int:
         command += " --params " + ",".join(params)
     write_evidence(run_dir, report, command, inputs=[args.task],
                    settings_in=settings,
-                   hypothesis_source=_hypothesis_source(args.hypothesis_source))
+                   hypothesis_source=_hypothesis_source(args.hypothesis_source),
+                   session_id=_session_id(getattr(args, "session_id", "")),
+                   agent_workspace=_agent_workspace())
     payload = json.loads(report.to_json())
     payload["run_dir"] = run_dir.replace(os.sep, "/")
     print(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -279,7 +297,9 @@ def cmd_batch(args: argparse.Namespace) -> int:
                 continue
             run_dir = os.path.join(args.out, run_id)
             write_evidence(run_dir, report, "batch: " + name, inputs=[task_dir],
-                           hypothesis_source=_hypothesis_source(args.hypothesis_source))
+                           hypothesis_source=_hypothesis_source(args.hypothesis_source),
+                           session_id=_session_id(getattr(args, "session_id", "")),
+                           agent_workspace=_agent_workspace())
             summary[report.verdict if report.verdict in ("accepted", "rejected") else "errors"] += 1
             summary["runs"].append({"task": name, "run_id": run_id, "verdict": report.verdict,
                                     "formula": formula})
@@ -303,6 +323,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_verify.add_argument("--extrapolation-threshold", type=float, default=None)
     p_verify.add_argument("--hypothesis-source", default="",
                           help="假设来源（AGH 调用时应为 agh-llm）")
+    p_verify.add_argument("--session-id", default="",
+                          help="产生该假设的 AGH 会话号，用于溯源绑定")
     p_verify.add_argument("--scale-specs", default="")
     p_verify.add_argument("--no-scale-check", action="store_true")
     p_verify.add_argument("--no-dimension-check", action="store_true")
@@ -313,6 +335,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_batch.add_argument("--out", default="runs")
     p_batch.add_argument("--layer", default="")
     p_batch.add_argument("--hypothesis-source", default="")
+    p_batch.add_argument("--session-id", default="")
     p_batch.set_defaults(func=cmd_batch)
 
     p_import = sub.add_parser("import", help="把用户数据文件转换为任务格式")

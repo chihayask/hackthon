@@ -56,6 +56,8 @@ HYPOTHESIS_SOURCES = {
     "fixture-variant": "人为构造的结构错误候选式（判别力测试）",
     "fixture-experiment": "受控实验装置（负对照 / 窄域外推 / 量纲验收）",
     "human-authored-fixture": "假设由人工编写的策略表给出（演示用，不是自主发现）",
+    "fixture-fallback": ("自称走了模型，但实际回退到了内置生成器 / 人工策略表。"
+                         "混合来源不得记为纯模型发现，因此不计入智能体发现层"),
     "unclassified": "未标注来源——不计入任何能力声明，需补齐",
 }
 
@@ -66,7 +68,9 @@ def write_evidence(run_dir: str,
                    inputs: Optional[Sequence[str]] = None,
                    notes: str = "",
                    settings_in: Optional[Mapping[str, object]] = None,
-                   hypothesis_source: str = "unclassified") -> str:
+                   hypothesis_source: str = "unclassified",
+                   session_id: str = "",
+                   agent_workspace: str = "") -> str:
     # 把一次验证写入 runs/<run_id>/，返回 run_dir。
     os.makedirs(run_dir, exist_ok=True)
     checks_dir = os.path.join(run_dir, "checks")
@@ -136,6 +140,12 @@ def write_evidence(run_dir: str,
         # 假设从哪来：决定这条运行能不能用来支撑"智能体自主发现"。
         "hypothesis_source": hypothesis_source,
         "hypothesis_source_note": HYPOTHESIS_SOURCES.get(hypothesis_source, ""),
+        # 溯源绑定（外部审计 2026-10-10 指出的可达漏洞：标签是自报的，可被误标）。
+        # session_id 由 AGH 会话产生，包装脚本经环境变量传入；只有 agh-llm **且**
+        # 带上会话号的运行才算"已绑定"，评分脚本据此把未绑定的单独列出。
+        "session_id": str(session_id or ""),
+        "agent_workspace": str(agent_workspace or ""),
+        "provenance_bound": bool(hypothesis_source == "agh-llm" and str(session_id or "").strip()),
         "rounds_hint": report.rounds_hint,
         "inputs": list(inputs or []),
         "notes": notes,

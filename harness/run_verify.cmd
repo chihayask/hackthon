@@ -6,10 +6,13 @@ REM 三件事在这里一起保证：
 REM   1. PYTHONPATH 指向 src，让 python -m formula_agh 可用；
 REM   2. FORMULA_AGH_AUTOARCHIVE=1，验证一结束就自动归档进 evidence/ 并更新索引
 REM      （归档是纪律，由脚本保证，不依赖智能体记得去调用归档命令）；
-REM   3. FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm，把"假设来自 AGH 里的模型"如实写进 run.json。
-REM      少了第 3 条，模型自主提出的公式会被记成 cli（人工给出），从而不计入评分脚本的
-REM      「智能体发现」层——证据会在关键结论上说反话。这是第一次真实 AGH 运行后
-REM      核对证据时发现的缺口。人工调试想改标，先 set FORMULA_AGH_HYPOTHESIS_SOURCE=cli。
+REM   3. **故意不设**假设来源。
+REM      旧版本在这里写 set FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm，等于把"脚本被调用"
+REM      直接当成"模型自主发现"：任何人手工敲一条 run_verify.cmd 都会留下 agh-llm 证据。
+REM      外部审计（2026-10-10）把这条列为可达的误标路径，已移除。
+REM      现在来源由**调用方**显式声明：harness/run_agent_discovery.ps1 会 export
+REM      FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm 与 FORMULA_AGH_SESSION_ID；两者都到位，
+REM      run.json 的 provenance_bound 才为 true。人工调试默认记 cli（诚实）。
 
 setlocal
 set ROOT=%~dp0..
@@ -19,11 +22,13 @@ set PYTHONPATH=%ROOT%\src
 set FORMULA_AGH_AUTOARCHIVE=1
 set FORMULA_AGH_RUNS=runs
 set FORMULA_AGH_EVIDENCE=evidence
-if "%FORMULA_AGH_HYPOTHESIS_SOURCE%"=="" set FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm
-REM 优先使用打包好的 exe（目标机无需 Python）；没有则回退到源码运行。
+REM 引擎选择：默认用**源码** Python（与仓库一致，不会因为 exe 过期而与源码行为分叉）。
+REM 打包的 exe 需要显式开启：set FORMULA_AGH_USE_EXE=1。
+REM 教训（2026-10-10）：原先无条件优先 exe，结果源码加了 session_id/provenance_bound 后，
+REM 包装脚本仍在跑旧 exe，新字段根本没写进 run.json——静默走了一条与源码不同的路径。
 set "ENGINE="
-if exist "%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe" set "ENGINE=%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe"
-if not defined ENGINE if exist "%ROOT%\dist\formula_agh.exe" set "ENGINE=%ROOT%\dist\formula_agh.exe"
+if /I "%FORMULA_AGH_USE_EXE%"=="1" if exist "%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe" set "ENGINE=%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe"
+if /I "%FORMULA_AGH_USE_EXE%"=="1" if not defined ENGINE if exist "%ROOT%\dist\formula_agh.exe" set "ENGINE=%ROOT%\dist\formula_agh.exe"
 
 pushd "%ROOT%"
 if not defined ENGINE set "ENGINE=%PY%"

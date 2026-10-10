@@ -50,3 +50,7 @@
 | phys-transit-depth | challenge | `A*(Rp/Rs)**2` | `A*(Rp/Rs)**2` | 0.00564293 | 0.00466753 | pass | 结构相同 |
 | phys-weight | base | `m*g` | `m*g` | 0.00869578 | 0.00575099 | pass | 结构相同 |
 
+## 四、如实说明（不掩盖空缺）
+
+- 有 22 个候选式运行标了 agh-llm 但**没有** AGH 会话号（provenance_bound=false），已单列不计入绑定层：标签是自报的，只有绑定到真实会话才可核对。请让调用方设置 FORMULA_AGH_SESSION_ID（见 harness/run_agent_discovery.ps1）。
+
