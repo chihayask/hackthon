@@ -1,7 +1,7 @@
 {
   "run_id": "scale-ref-phys-transit-depth",
   "run_dir": "runs/scale-ref-phys-transit-depth",
-  "checked_at_utc": "2026-10-10T05:53:16+00:00",
+  "checked_at_utc": "2026-10-10T08:09:18+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-transit-depth",

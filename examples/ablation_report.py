@@ -121,6 +121,8 @@ def main(argv=None):
                     metavar="名字=路径", help="可重复；路径是含 tasks/ reference/ runs/ 的支路根")
     ap.add_argument("--mapping", default="", help="可选：盲化映射 json（匿名 id → 真实 id）")
     ap.add_argument("--out", default="evidence/ablation")
+    ap.add_argument("--force", action="store_true",
+                    help="允许覆盖已有的汇总（默认拒绝，避免单臂运行悄悄顶掉归档的多臂结果）")
     args = ap.parse_args(argv)
 
     alias_of = {}
@@ -144,6 +146,19 @@ def main(argv=None):
     report = {"primary_metric": "any_run_match（该任务是否曾有任一次给出正确公式，与门无关）",
               "arms": arms}
     out_dir = args.out if os.path.isabs(args.out) else os.path.join(ROOT, args.out)
+    # 不静默覆盖：仓库里归档的是三条支路的汇总，若有人只带一条支路就跑，
+    # 默认拒绝，免得把归档结果顶掉却没人注意（本项目的证据纪律）。
+    archive = os.path.join(out_dir, "ablation_report.json")
+    if os.path.isfile(archive) and not args.force:
+        try:
+            previous = _load(archive).get("arms") or []
+        except Exception:
+            previous = []
+        if len(previous) > len(arms):
+            print("拒绝覆盖：%s 已有 %d 条支路的汇总，本次只提供了 %d 条。"
+                  % (archive, len(previous), len(arms)), file=sys.stderr)
+            print("要覆盖请显式加 --force。", file=sys.stderr)
+            return 3
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "ablation_report.json"), "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, indent=2)

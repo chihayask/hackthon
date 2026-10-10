@@ -141,3 +141,25 @@ def test_ablation_report_marks_scorer_metric_as_confounded():
     import inspect
     source = inspect.getsource(mod.summarize_arm)
     assert "受判定门数影响" in source or "门数" in source
+
+
+def test_ablation_report_refuses_to_shrink_the_archive():
+    """单臂运行不得悄悄顶掉归档的多臂汇总（本项目的不静默覆盖纪律）。"""
+    import json
+    import shutil
+    import tempfile
+    mod = _load("ablation_report", "examples/ablation_report.py")
+    work = tempfile.mkdtemp(prefix="_abl_guard_")
+    try:
+        arm = os.path.join(work, "arm")
+        os.makedirs(os.path.join(arm, "tasks", "t-1"))
+        with open(os.path.join(arm, "tasks", "t-1", "meta.json"), "w", encoding="utf-8") as fh:
+            json.dump({"task_id": "t-1"}, fh)
+        out = os.path.join(work, "out")
+        os.makedirs(out)
+        with open(os.path.join(out, "ablation_report.json"), "w", encoding="utf-8") as fh:
+            json.dump({"arms": [{"arm": "a"}, {"arm": "b"}, {"arm": "c"}]}, fh)
+        assert mod.main(["--arm", "单臂=" + arm, "--out", out]) == 3
+        assert mod.main(["--arm", "单臂=" + arm, "--out", out, "--force"]) == 0
+    finally:
+        shutil.rmtree(work, ignore_errors=True)

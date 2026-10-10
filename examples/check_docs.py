@@ -43,6 +43,18 @@ TOP_LEVEL_DIRS = {
 }
 PENDING_MARKS = ("未完成", "待录制", "待补", "待本人完成", "尚未", "计划中")
 
+# 这些路径**按设计不入库**（按需生成的中间产物、或 git 不跟踪的空占位目录），
+# 文档提到它们是合理的。干净克隆里它们必然不存在——检查器若把它当缺失，
+# 干净克隆的流水线第十八步就会误报（实测于 2026-10-10 的克隆验证）。
+NOT_COMMITTED = {
+    "blind": "由 examples/make_blind_taskset.py 按需生成",
+    "blind/tasks": "同上",
+    "blind/reference": "同上",
+    "blind/physics/scale_specs.json": "同上",
+    "blind/mapping.json": "同上",
+    "superseded/runs": "空占位目录（git 不跟踪空目录）",
+}
+
 
 def _read(rel):
     with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
@@ -118,6 +130,10 @@ def check(scan_docs=None):
                 if not clean:
                     continue
                 stats["paths_checked"] += 1
+                normalised = clean.replace("\\", "/").rstrip("/")
+                if normalised in NOT_COMMITTED:
+                    stats["acknowledged_missing"].append(normalised)
+                    continue
                 if os.path.exists(os.path.join(ROOT, clean.replace("/", os.sep))):
                     continue
                 if pending:
@@ -172,8 +188,39 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="文档一致性检查")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--out", default="evidence/doc_check.json")
+    ap.add_argument("--fix", action="store_true",
+                    help="把文档里的测试数与步数改写为实测值（这项同步以前要人工做三次，已错过三轮）")
     args = ap.parse_args(argv)
     report = check()
+    if args.fix:
+        fixed = 0
+        for rel in SCAN_DOCS:
+            path = os.path.join(ROOT, rel)
+            if not os.path.isfile(path):
+                continue
+            text = _read(rel)
+            next_text = text
+            # 只改"同一行同时出现测试字样与 N / N"的数字，避免误伤 22/22 这类金标准比值
+            for line in text.split(NL):
+                if not any(k in line for k in ("测试", "run_tests", "passing")):
+                    continue
+                for m in re.finditer(r"(\d+)\s*/\s*(\d+)", line):
+                    a, b = int(m.group(1)), int(m.group(2))
+                    if a != b or a < 10 or a == report["tests_actual"]:
+                        continue
+                    next_text = next_text.replace(m.group(0), "%d / %d" % (report["tests_actual"], report["tests_actual"]))
+            for m in re.finditer(r"(\d+)\s*步", text):
+                claimed = int(m.group(1))
+                if claimed <= 5 or claimed == report["steps_actual"]:
+                    continue
+                next_text = next_text.replace(m.group(0), "%d 步" % report["steps_actual"])
+            if next_text != text:
+                with open(path, "w", encoding="utf-8", newline=NL) as fh:
+                    fh.write(next_text)
+                fixed += 1
+        if fixed:
+            print("已同步 %d 份文档的测试数/步数" % fixed)
+        report = check()
     out_path = os.path.join(ROOT, args.out)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8", newline=NL) as fh:

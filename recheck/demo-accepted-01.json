@@ -1,7 +1,7 @@
 {
   "run_id": "demo-accepted-01",
   "run_dir": "runs/demo-accepted-01",
-  "checked_at_utc": "2026-10-10T05:53:14+00:00",
+  "checked_at_utc": "2026-10-10T08:09:11+00:00",
   "status": "unresolvable",
   "agrees": false,
   "task_id": "mech-gravity",

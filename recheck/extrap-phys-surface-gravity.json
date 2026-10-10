@@ -1,7 +1,7 @@
 {
   "run_id": "extrap-phys-surface-gravity",
   "run_dir": "runs/extrap-phys-surface-gravity",
-  "checked_at_utc": "2026-10-10T05:53:15+00:00",
+  "checked_at_utc": "2026-10-10T08:09:14+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-surface-gravity",
