@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![deps](https://img.shields.io/badge/dependencies-numpy%20only-green)
-![tests](https://img.shields.io/badge/tests-76%2F76%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-88%2F88%20passing-brightgreen)
 ![reproduce](https://img.shields.io/badge/reproduce-fingerprint%20identical-brightgreen)
 
 > 2026 年江苏省 AI+科学与工程创新实践黑客松（高校组），本科生组。
@@ -387,7 +387,7 @@ AGH 自主发现执行统计：
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
 | 一键复现 | 15 步全部通过，指纹与基线逐位一致 |
-| 单元测试 | 76 / 76 |
+| 单元测试 | 88 / 88 |
 
 迭代修正示例：
 

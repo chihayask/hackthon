@@ -384,35 +384,54 @@ def _check_dimension(formula, meta, free_parameters=None):
     #   无自由参数：公式推断量纲必须等于 y 的量纲（最严格）
     #   有自由参数：只做结构一致性检查（函数参数是否无量纲、加减是否同量纲），
     #               并明确说明'严格量纲比对因存在自由参数而推迟'。
+    # 分档上报（外部审计 2026-10-10 的建议：不要笼统说 PASS）：
+    #   strict      完整量纲比对（无自由参数，或全部自由参数都声明了单位）
+    #   structural  只做结构一致性（部分自由参数会吸收单位，严格比对做不了）
+    #   skipped     缺单位信息 / 单位表未收录 / y 的单位不可识别
+    # 三种档位的含义完全不同，混在一起报"通过"会让读者以为量纲门全程严格生效。
     units_map = meta.get('units') or {}
     params = [str(p) for p in (free_parameters or [])]
     if not units_map or not isinstance(units_map, dict):
-        return CheckResult('dimension', True, 'meta.json 未提供单位信息，量纲检验不适用', {})
+        return CheckResult('dimension', True, 'meta.json 未提供单位信息，量纲检验不适用',
+                           {'mode': 'skipped', 'reason_code': 'no-units'})
     var_units = {}
     for key, value in units_map.items():
         if str(key) == 'y':
             continue
         var_units[str(key)] = str(value)
+    # 声明了单位的自由参数按"已知量纲符号"参与严格比对，不再当作可吸收单位的未知量。
+    resolved = [p for p in params if p in var_units]
+    unresolved = [p for p in params if p not in var_units]
     try:
-        inferred = infer_from_source(formula, var_units, params)
+        inferred = infer_from_source(formula, var_units, unresolved)
         want = expected_dimension(str(units_map.get('y', '')))
     except UnknownUnit as exc:
-        return CheckResult('dimension', True, '存在未知单位，跳过量纲检验: ' + str(exc), {})
+        return CheckResult('dimension', True, '存在未知单位，跳过量纲检验: ' + str(exc),
+                           {'mode': 'skipped', 'reason_code': 'unknown-unit'})
     except DimensionError as exc:
-        return CheckResult('dimension', False, '量纲不成立（结构性错误）: ' + str(exc), {})
+        return CheckResult('dimension', False, '量纲不成立（结构性错误）: ' + str(exc),
+                           {'mode': 'strict', 'reason_code': 'dimension-mismatch'})
     except UnsafeExpression as exc:
-        return CheckResult('dimension', False, '表达式不可用: ' + str(exc), {})
+        return CheckResult('dimension', False, '表达式不可用: ' + str(exc),
+                           {'mode': 'strict', 'reason_code': 'unsafe-expression'})
     if want is None:
-        return CheckResult('dimension', True, 'y 的单位无法识别，跳过量纲比对', {})
-    if params:
+        return CheckResult('dimension', True, 'y 的单位无法识别，跳过量纲比对',
+                           {'mode': 'skipped', 'reason_code': 'unknown-y-unit'})
+    if unresolved:
         return CheckResult('dimension', True,
-                           '结构一致性通过；因存在自由参数 ' + ','.join(params) +
-                           '（可吸收单位），严格量纲比对推迟到参数拟合之后',
-                           {})
+                           '结构一致性通过（模式 structural）；自由参数 ' + ','.join(unresolved) +
+                           ' 未声明单位，可吸收单位，严格量纲比对无法进行',
+                           {'mode': 'structural', 'free_parameters_without_units': unresolved,
+                            'free_parameters_with_units': resolved})
     if inferred == want:
-        return CheckResult('dimension', True, '量纲一致（严格比对）', {})
+        note = '（模式 strict'
+        note += '；含已声明单位的自由参数 ' + ','.join(resolved) + '）' if resolved else '）'
+        return CheckResult('dimension', True, '量纲一致（严格比对）' + note,
+                           {'mode': 'strict', 'free_parameters_with_units': resolved})
     return CheckResult('dimension', False,
-                       '量纲不一致：公式推出 ' + str(inferred) + '，而 y 应为 ' + str(want), {})
+                       '量纲不一致（模式 strict）：公式推出 ' + str(inferred) +
+                       '，而 y 应为 ' + str(want),
+                       {'mode': 'strict', 'inferred': str(inferred), 'expected': str(want)})
 
 DEFAULT_SCALE_SPECS = 'physics/scale_specs.json'
 

@@ -1,4 +1,5 @@
 task_id,layer,kind,formula,verdict,holdout_rmse,extrapolation_rmse,dimension,reference_formula,matches_reference
+dimtest,,no-run,,,,,,0.5*k*x**2,
 phys-buoyancy,base,gold-reference,rho*V*g,accepted,0.0086714,0.00848339,True,rho*V*g,
 phys-buoyancy,base,wrong-variant,rho*V,rejected,,,,rho*V*g,
 phys-buoyancy,base,agent-candidate,rho*V*g,accepted,0.0086714,0.00848339,True,rho*V*g,True

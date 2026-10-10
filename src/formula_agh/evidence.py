@@ -72,11 +72,46 @@ def write_evidence(run_dir: str,
                    session_id: str = "",
                    agent_workspace: str = "") -> str:
     # 把一次验证写入 runs/<run_id>/，返回 run_dir。
+    #
+    # 覆盖留痕（外部审计 2026-10-10：原实现允许覆盖已有 run，SHA256 重建不能保证不可变）。
+    # 完全禁止覆盖会让原地复现（reproduce.py --update-baseline）与各检查脚本的重跑直接失效；
+    # 完全放任则"某条证据被改过"是静默的。折中：**允许覆盖，但把被覆盖的那一份记下来**，
+    # 覆盖永远留痕——读者能看出这条运行曾经存在过、原来是什么结论。
+    previous = None
+    prev_run_json = os.path.join(run_dir, "run.json")
+    if os.path.exists(prev_run_json):
+        try:
+            with open(prev_run_json, encoding="utf-8") as fh:
+                prev = json.load(fh)
+            previous = {
+                "run_id": os.path.basename(os.path.normpath(run_dir)),
+                "task_id": prev.get("task_id"),
+                "verdict": prev.get("verdict"),
+                "formula": prev.get("formula"),
+                "hypothesis_source": prev.get("hypothesis_source"),
+                "session_id": prev.get("session_id") or "",
+                "engine_version": prev.get("engine_version"),
+                "overwritten_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "note": ("本目录此前已存在。以下是**被覆盖**的那一份的关键字段，"
+                         "完整内容不可恢复；这本身也是证据——说明该 run_id 被重写过。"),
+            }
+        except (OSError, ValueError):
+            previous = {
+                "run_id": os.path.basename(os.path.normpath(run_dir)),
+                "overwritten_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "note": "覆盖了已有目录，但旧的 run.json 无法解析。",
+            }
+
     os.makedirs(run_dir, exist_ok=True)
     checks_dir = os.path.join(run_dir, "checks")
     figures_dir = os.path.join(run_dir, "figures")
     os.makedirs(checks_dir, exist_ok=True)
     os.makedirs(figures_dir, exist_ok=True)
+    if previous is not None:
+        with open(os.path.join(run_dir, "overwritten_from.json"), "w",
+                  encoding="utf-8", newline="\n") as fh:
+            json.dump(previous, fh, ensure_ascii=False, indent=2)
+            fh.write("\n")
 
     result_path = os.path.join(run_dir, "result.json")
     with open(result_path, "w", encoding="utf-8") as fh:

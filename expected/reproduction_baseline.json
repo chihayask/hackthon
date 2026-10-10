@@ -4921,6 +4921,11 @@
         "gold_ok": 9,
         "tasks": 9,
         "wrong_ok": 9
+      },
+      "unknown": {
+        "gold_ok": 0,
+        "tasks": 0,
+        "wrong_ok": 0
       }
     },
     "gold_reference_accepted": 22,

@@ -7,8 +7,12 @@
     {
       "name": "dimension",
       "passed": false,
-      "reason": "量纲不一致：公式推出 (Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-      "metrics": {}
+      "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+      "metrics": {
+        "mode": "strict",
+        "inferred": "(Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+        "expected": "(Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+      }
     },
     {
       "name": "holdout",

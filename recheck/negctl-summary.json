@@ -1,7 +1,7 @@
 {
   "run_id": "negctl-summary",
   "run_dir": "runs/negctl-summary",
-  "checked_at_utc": "2026-10-10T03:36:02+00:00",
+  "checked_at_utc": "2026-10-10T03:48:57+00:00",
   "status": "unresolvable",
   "agrees": false,
   "task_id": "negative-control",

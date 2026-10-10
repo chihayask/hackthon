@@ -1,0 +1,11 @@
+{
+  "run_id": "variant-phys-buoyancy",
+  "task_id": "phys-buoyancy",
+  "verdict": "rejected",
+  "formula": "rho*V",
+  "hypothesis_source": "fixture-variant",
+  "session_id": "",
+  "engine_version": "0.1.0",
+  "overwritten_at_utc": "2026-10-10T03:48:19+00:00",
+  "note": "本目录此前已存在。以下是**被覆盖**的那一份的关键字段，完整内容不可恢复；这本身也是证据——说明该 run_id 被重写过。"
+}

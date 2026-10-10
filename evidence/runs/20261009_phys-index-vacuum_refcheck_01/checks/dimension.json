@@ -1,6 +1,9 @@
 {
   "name": "dimension",
   "passed": true,
-  "reason": "量纲一致（严格比对）",
-  "metrics": {}
+  "reason": "量纲一致（严格比对）（模式 strict）",
+  "metrics": {
+    "mode": "strict",
+    "free_parameters_with_units": []
+  }
 }

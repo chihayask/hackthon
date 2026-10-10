@@ -107,15 +107,22 @@ def _check_meta(meta: Mapping[str, object], name: str, findings: List[Finding]) 
                 findings.append(_warn(name, "SOURCE_NOT_URL",
                                       "source 不是可点击链接: " + str(s)[:80]))
 
+    # 先取自由参数：units 可能给自由参数声明单位（审计建议），那种键不算"未声明变量"。
+    params_raw = meta.get("free_parameters")
+    if not isinstance(params_raw, list):
+        params_raw = []
     units = meta.get("units")
     if units is not None:
         if not isinstance(units, dict):
             findings.append(_err(name, "BAD_UNITS", "units 必须是对象 {变量: 单位}"))
         else:
             for key, value in units.items():
-                if var_list and str(key) not in var_list and str(key) != "y":
+                declared_params = [str(p) for p in (params_raw or [])
+                                   if isinstance(p, str)]
+                if (var_list and str(key) not in var_list and str(key) != "y"
+                        and str(key) not in declared_params):
                     findings.append(_warn(name, "UNKNOWN_UNIT_KEY",
-                                          "units 含未声明变量 " + str(key)))
+                                          "units 含未声明变量或自由参数 " + str(key)))
                 try:
                     unit_dimension(str(value))
                 except UnknownUnit:

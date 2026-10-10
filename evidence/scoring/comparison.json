@@ -25,6 +25,13 @@
     "agent_matches_reference_bound": 0,
     "agent_match_rate_bound": null,
     "by_layer": {
+      "unknown": {
+        "tasks": 0,
+        "gold_ok": 0,
+        "wrong_ok": 0,
+        "agent_match": 0,
+        "agent_total": 0
+      },
       "base": {
         "tasks": 13,
         "gold_ok": 13,
@@ -42,6 +49,22 @@
     }
   },
   "rows": [
+    {
+      "task_id": "dimtest",
+      "layer": null,
+      "domain": null,
+      "var_names": null,
+      "reference_formula": "0.5*k*x**2",
+      "reference_source": [
+        "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\_dimtest\\in.csv"
+      ],
+      "has_reference": true,
+      "has_task_dir": false,
+      "gold_reference": null,
+      "wrong_variant": null,
+      "agent": null,
+      "agent_fixture": null
+    },
     {
       "task_id": "phys-buoyancy",
       "layer": "base",
