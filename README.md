@@ -299,7 +299,8 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     python examples/make_blind_taskset.py --out blind  # 生成盲化派生任务集（去提示消融用）
     python examples/make_delivery_reports.py           # 从现有证据重建四份交付报告
     python examples/model_guard.py                     # 校验模型路由全部为 Agnes（通知五（二））
-    python examples/check_docs.py                      # 文档一致性（路径 / 测试数 / 步数 / 角色字样）
+    python examples/key_numbers.py                     # 从产物算关键数字（流水线第十八步）
+    python examples/check_docs.py                      # 文档一致性（流水线第十九步）
     python examples/ablation_report.py --arm 先验辅助=. --arm 盲化=<盲化根> --out evidence/ablation  # 消融汇总（门无关口径）
     python harness/check_agh_command_rule.py           # 校验 AGH allow 规则的绝对路径形状
 
@@ -408,7 +409,7 @@ AGH 自主发现执行统计：
 | AGH 工具调用次数 | 241，涉及 shell、read、tool_search、todo、skill_read、tool_describe、ls |
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
-| 一键复现 | 18 步全部通过，指纹与基线逐位一致 |
+| 一键复现 | 19 步全部通过，指纹与基线逐位一致 |
 | 单元测试 | 110 / 110 |
 
 迭代修正示例：

@@ -1,10 +1,10 @@
 {
   "tests_actual": 110,
-  "steps_actual": 18,
+  "steps_actual": 19,
   "stats": {
     "docs_scanned": 10,
     "paths_checked": 171,
-    "numbers_checked": 7,
+    "numbers_checked": 11,
     "acknowledged_missing": [
       "blind/reference",
       "blind/physics/scale_specs.json",

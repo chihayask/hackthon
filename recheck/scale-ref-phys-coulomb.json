@@ -1,7 +1,7 @@
 {
   "run_id": "scale-ref-phys-coulomb",
   "run_dir": "runs/scale-ref-phys-coulomb",
-  "checked_at_utc": "2026-10-10T08:38:06+00:00",
+  "checked_at_utc": "2026-10-10T08:54:55+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-coulomb",

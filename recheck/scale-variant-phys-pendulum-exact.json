@@ -1,7 +1,7 @@
 {
   "run_id": "scale-variant-phys-pendulum-exact",
   "run_dir": "runs/scale-variant-phys-pendulum-exact",
-  "checked_at_utc": "2026-10-10T08:38:06+00:00",
+  "checked_at_utc": "2026-10-10T08:54:55+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-pendulum-exact",

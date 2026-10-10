@@ -394,7 +394,12 @@ def main(argv=None):
         run_step("delivery-reports", ["examples/make_delivery_reports.py"], root)
         # 第十八步：文档一致性。文档漂移在本项目反复发生（审计抓到测试数三种写法、
         # 提交清单标了四份不存在的报告、README 印着已删除的脚本内容），靠人记不住，靠检查器。
-        print("第十八步：文档一致性检查（路径存在性 / 测试数与步数 / 角色字样）")
+        # 第十八步必须在第十九步之前：检查器读 evidence/关键数字.json 核对文档里的
+        # 带标签数字，先算后查才不会拿旧值比对。顺序反过来等于没查。
+        print("第十八步：关键数字（从产物算出权威值，供文档与检查器引用）")
+        run_step("key-numbers", ["examples/key_numbers.py"], root)
+
+        print("第十九步：文档一致性检查（路径存在性 / 测试数与步数 / 带标签数字 / 角色字样）")
         run_step("doc-check", ["examples/check_docs.py"], root)
 
     print("采集指纹 ...")

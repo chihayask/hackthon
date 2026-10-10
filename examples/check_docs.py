@@ -46,6 +46,31 @@ PENDING_MARKS = ("未完成", "待录制", "待补", "待本人完成", "尚未"
 # 这些路径**按设计不入库**（按需生成的中间产物、或 git 不跟踪的空占位目录），
 # 文档提到它们是合理的。干净克隆里它们必然不存在——检查器若把它当缺失，
 # 干净克隆的流水线第十八步就会误报（实测于 2026-10-10 的克隆验证）。
+# 关键数字的**带标签**核对规则：(标签子串, 关键数字键, 取数正则, 取值组号)。
+# 只对措辞明确的句子生效，避免把金标准 22/22、判别力 22/22 这类同形数字误伤。
+CLAIM_RULES = [
+    ("绑定层", "agent_matches_reference_bound", r"(\d+)\s*/\s*22", 1),
+    ("绑定 AGH 会话", "agent_matches_reference_bound", r"(\d+)\s*/\s*22", 1),
+    ("盲化（去现象/来源/任务名）", "ablation_盲化", r"(\d+)\s*/\s*22", 1),
+    ("纯数据（再去掉尺度反馈）", "ablation_纯数据", r"(\d+)\s*/\s*22", 1),
+    ("先验辅助（现象/来源/任务名齐全）", "ablation_先验辅助", r"(\d+)\s*/\s*22", 1),
+    # 必须紧邻："14 条对抗用例 + 143 条被拒运行" 这种行里，紧邻匹配才不会取错数
+    ("被拒运行", "runs_rejected", r"(\d+)\s*条\s*被拒运行", 1),
+]
+
+
+def load_key_numbers():
+    path = os.path.join(ROOT, "evidence", "关键数字.json")
+    if not os.path.isfile(path):
+        return {}
+    return _read_json(path)
+
+
+def _read_json(path):
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
 NOT_COMMITTED = {
     "blind": "由 examples/make_blind_taskset.py 按需生成",
     "blind/tasks": "同上",
@@ -179,6 +204,27 @@ def check(scan_docs=None):
         if not acknowledged:
             problems.append({"doc": "(全局)", "kind": "missing-dir",
                              "detail": rel + " 被引用但没有任何一处标注未完成"})
+
+    # 带标签的关键数字核对：文档写的必须等于产物算出来的。
+    numbers = load_key_numbers()
+    if numbers:
+        for rel, text in texts.items():
+            for line in text.split(NL):
+                for label, key, pattern, group in CLAIM_RULES:
+                    if label not in line:
+                        continue
+                    match = re.search(pattern, line)
+                    if not match:
+                        continue
+                    claimed = int(match.group(group))
+                    actual = numbers.get(key)
+                    if actual is None:
+                        continue
+                    stats["numbers_checked"] += 1  # 计"核对过的数字"，不是"错了几处"
+                    if claimed == actual:
+                        continue
+                    problems.append({"doc": rel, "kind": "claim-mismatch",
+                                     "detail": "%s：文档写 %d，产物是 %s" % (label, claimed, actual)})
 
     return {"tests_actual": tests, "steps_actual": steps, "stats": stats,
             "problems": problems, "ok": not problems}

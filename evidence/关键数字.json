@@ -1,0 +1,20 @@
+{
+  "ablation_先验辅助": 14,
+  "ablation_盲化": 12,
+  "ablation_纯数据": 13,
+  "agent_accepted": 20,
+  "agent_candidates": 22,
+  "agent_candidates_bound": 22,
+  "agent_candidates_unbound": 0,
+  "agent_matches_reference": 16,
+  "agent_matches_reference_bound": 16,
+  "gold_reference_accepted": 22,
+  "pipeline_steps": 19,
+  "runs_agh_llm": 145,
+  "runs_bound": 31,
+  "runs_rejected": 182,
+  "runs_total": 332,
+  "tasks_in_scope": 22,
+  "tests_total": 110,
+  "wrong_variant_rejected": 22
+}
