@@ -25,6 +25,8 @@ from typing import Dict, List, Optional
 from .archive import archive_runs, check_archive
 from .contract import validate_taskset
 from .evidence import write_evidence
+from .importer import DataImportError
+from .importer import convert as convert_dataset
 from .recheck import recheck_all
 from .split import build_split, check_split, seal_split, write_split
 from .scale_checks import load_specs, run_scale_checks
@@ -62,6 +64,55 @@ def _write_json(path: str, payload: object) -> None:
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=2)
         fh.write("\n")
+
+
+def _parse_pairs(text: str) -> Dict[str, str]:
+    """解析 "键=值,键=值" 形式的参数（单位表用）。"""
+    out: Dict[str, str] = {}
+    for chunk in re.split(r"[,;]", text or ""):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        if "=" not in chunk:
+            raise DataImportError("参数应为 键=值 形式，实际收到: " + chunk)
+        key, value = chunk.split("=", 1)
+        if not key.strip() or not value.strip():
+            raise DataImportError("参数 键=值 两侧都不能为空: " + chunk)
+        out[key.strip()] = value.strip()
+    return out
+
+
+def _parse_list(text: str) -> Optional[List[str]]:
+    items = [t for t in re.split(r"[,\s]+", (text or "").strip()) if t]
+    return items or None
+
+
+def cmd_import(args: argparse.Namespace) -> int:
+    """把用户数据文件转换成 tasks/<task_id>/{data.csv, meta.json}。"""
+    try:
+        units = _parse_pairs(args.units)
+        report = convert_dataset(
+            source=args.source,
+            task_id=args.task_id,
+            target=args.target,
+            variables=_parse_list(args.variables),
+            layer=args.layer,
+            source_url=args.source_url,
+            units=units or None,
+            free_parameters=_parse_list(args.free_params),
+            domain=args.domain,
+            phenomenon=args.phenomenon,
+            tasks_root=args.tasks,
+            reference_root=args.reference,
+            formula=args.formula,
+            force=args.force,
+        )
+    except DataImportError as exc:
+        print(json.dumps({"ok": False, "error": str(exc)}, ensure_ascii=False, indent=2))
+        return 2
+    report["ok"] = report["errors"] == 0
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 0 if report["ok"] else 1
 
 
 def cmd_settings(args: argparse.Namespace) -> int:
@@ -263,6 +314,23 @@ def build_parser() -> argparse.ArgumentParser:
     p_batch.add_argument("--layer", default="")
     p_batch.add_argument("--hypothesis-source", default="")
     p_batch.set_defaults(func=cmd_batch)
+
+    p_import = sub.add_parser("import", help="把用户数据文件转换为任务格式")
+    p_import.add_argument("source", help="输入文件（csv/tsv/txt/json/xlsx）")
+    p_import.add_argument("--task-id", required=True)
+    p_import.add_argument("--target", default="y", help="目标列名（转换后固定为 y）")
+    p_import.add_argument("--variables", default="", help="自变量列，逗号分隔；默认除目标列外全部")
+    p_import.add_argument("--layer", default="base", choices=["base", "challenge"])
+    p_import.add_argument("--source-url", default="", help="可追溯出处链接（强烈建议填写）")
+    p_import.add_argument("--units", default="", help="单位表，例如 I=A,R=ohm,y=V")
+    p_import.add_argument("--free-params", default="", help="需要拟合的自由参数名，逗号分隔")
+    p_import.add_argument("--domain", default="")
+    p_import.add_argument("--phenomenon", default="")
+    p_import.add_argument("--tasks", default="tasks")
+    p_import.add_argument("--reference", default="reference")
+    p_import.add_argument("--formula", default="", help="同时写入 reference/<id>.json 的标准答案")
+    p_import.add_argument("--force", action="store_true", help="覆盖已存在的任务目录")
+    p_import.set_defaults(func=cmd_import)
 
     p_settings = sub.add_parser("settings", help="打印当前生效的判据与阈值")
     p_settings.set_defaults(func=cmd_settings)

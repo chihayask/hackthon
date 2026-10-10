@@ -27,6 +27,7 @@
     set PYTHONPATH=src          :: 不设它，python -m formula_agh 会 ModuleNotFoundError
 
     python -m formula_agh settings          # 打印当前生效的判据与阈值
+    python -m formula_agh import <file> --task-id <id> --target <col>   # 导入自有数据
     python reproduce.py                     # 15 步全跑 + 指纹比对
     python run_tests.py                     # 单元测试（不依赖 pytest）
     python -m formula_agh validate-tasks --tasks tasks --reference reference --require-split --strict
@@ -56,7 +57,7 @@
 | 文件 | 内容 |
 |---|---|
 | `README.md` | **项目总览与操作入口（验收直接看这个）** |
-| `docs/数据卡.md` | 任务集与数据的字段定义 |
+| `docs/数据卡.md` | 任务集与数据的字段定义（含导入自有数据的规则） |
 | `docs/尺度检验说明.md` | 尺度/极限检验怎么算 |
 | `docs/判据口径演进.md` | 四次判据口径演进（我们推翻过自己的判据） |
 | `docs/自我怀疑与边界回应.md` | 能证伪的与识别不了的，逐条 |

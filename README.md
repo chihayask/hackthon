@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![deps](https://img.shields.io/badge/dependencies-numpy%20only-green)
-![tests](https://img.shields.io/badge/tests-60%2F60%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-76%2F76%20passing-brightgreen)
 ![reproduce](https://img.shields.io/badge/reproduce-fingerprint%20identical-brightgreen)
 
 > 2026 年江苏省 AI+科学与工程创新实践黑客松（高校组），本科生组。
@@ -233,10 +233,45 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 
 输出 `comparison.md`、`comparison.json`、`comparison.csv`，包含金标准自检、判别力与智能体发现三层统计。
 
+### 7.4 导入自有数据（任意表格转换为任务格式）
+
+支持以下输入：
+
+| 输入格式 | 说明 |
+|---|---|
+| `.csv` / `.tsv` / `.txt` | 分隔符自动嗅探（逗号、分号、制表符、竖线） |
+| `.json` | 记录数组 `[{列: 值}, ...]` 或列对象 `{列: [值, ...]}` |
+| `.xlsx` / `.xlsm` | 首个工作表；需要 openpyxl，缺失时给出明确提示 |
+
+    python -m formula_agh import <文件> --task-id <id> --target <目标列名> \
+        --units "x=m,k=N/m,y=J" --source-url "https://..." --variables x,k
+
+转换器执行以下处理：
+
+- 目标列重命名为 `y`；原列名写入 `meta.import.target_column_original`，保持可追溯
+- 自变量默认为除目标列外的全部列，可用 `--variables` 显式指定
+- 采样区间由数据实际取值范围推断，写入 `meta.sampling`，并标记为推断值
+- 提供 `--formula` 时同时写入 `reference/<id>.json`（标准答案）
+- 落盘后立即执行契约校验，错误与警告一并打印；有错误时退出码非 0
+
+不合规的输入会被明确拒绝，并指出具体位置：
+
+| 情形 | 处理 |
+|---|---|
+| 非数值单元格 / 空值 / NaN / Inf | 报错并给出行列位置（契约要求整表数值） |
+| 表头重复列名或空列名 | 报错 |
+| 目标列不存在 | 报错并列出实际列名 |
+| 自变量少于 2 个，或目标列同时作为自变量 | 报错 |
+| 样本量低于引擎硬下限 50 | 报错 |
+| 任务目录已存在 | 报错；确认覆盖需 `--force` |
+
+导入完成后按 7.1 的流程执行 `split` 与 `verify`。
+
 ## 8. 命令参考
 
     :: validation engine
     python -m formula_agh settings
+    python -m formula_agh import  <file> --task-id <id> --target <col> [--units ...]
     python -m formula_agh validate-tasks --tasks tasks --reference reference --require-split --strict
     python -m formula_agh split   --tasks tasks --sealed sealed [--check]
     python -m formula_agh verify  --task tasks/<id> --formula "<expr>" --params "<p1,p2>"
@@ -348,7 +383,7 @@ AGH 自主发现执行统计：
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
 | 一键复现 | 15 步全部通过，指纹与基线逐位一致 |
-| 单元测试 | 60 / 60 |
+| 单元测试 | 76 / 76 |
 
 迭代修正示例：
 
