@@ -32,3 +32,6 @@ dist_onedir/
 build/
 build_onedir/
 *.spec
+
+# 演示视频脚本：仅在本地保留，不同步到远端
+04_视频脚本与路演提纲_定稿.md
