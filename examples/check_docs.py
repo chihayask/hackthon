@@ -39,7 +39,7 @@ ROOT_FILE_EXT = (".md", ".py", ".cmd", ".ps1", ".yaml", ".txt")
 TOP_LEVEL_DIRS = {
     "blind", "config", "docs", "evidence", "examples", "expected", "harness",
     "packaging", "physics", "recheck", "reference", "runs", "sealed", "skills",
-    "src", "superseded", "tasks", "tests",
+    "src", "superseded", "tasks", "tests", "experiments",
 }
 PENDING_MARKS = ("未完成", "待录制", "待补", "待本人完成", "尚未", "计划中")
 

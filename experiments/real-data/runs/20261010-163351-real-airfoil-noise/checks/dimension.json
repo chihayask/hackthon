@@ -1,0 +1,9 @@
+{
+  "name": "dimension",
+  "passed": true,
+  "reason": "y 的单位无法识别，跳过量纲比对",
+  "metrics": {
+    "mode": "skipped",
+    "reason_code": "unknown-y-unit"
+  }
+}

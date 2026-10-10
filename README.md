@@ -293,6 +293,8 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     python src/scoring/compare.py --runs runs --tasks tasks --reference reference --out evidence/scoring
 
     :: auditability
+    python experiments/real-data/fetch.py              # 取真实公开数据（UCI 翼型自噪声）并校验哈希
+    python experiments/real-data/run_control.py        # 真实数据负对照（无定律处不产出结论）
     python examples/hint_audit.py                      # 量化智能体可见面的提示泄漏
     python examples/make_blind_taskset.py --out blind  # 生成盲化派生任务集（去提示消融用）
     python examples/make_delivery_reports.py           # 从现有证据重建四份交付报告

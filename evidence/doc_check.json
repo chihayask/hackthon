@@ -3,7 +3,7 @@
   "steps_actual": 18,
   "stats": {
     "docs_scanned": 10,
-    "paths_checked": 170,
+    "paths_checked": 171,
     "numbers_checked": 7,
     "acknowledged_missing": [
       "blind/reference",

@@ -1,0 +1,1 @@
+python -m formula_agh verify --task experiments\real-data\tasks\real-airfoil-noise --formula "k*displacement_m" --params k

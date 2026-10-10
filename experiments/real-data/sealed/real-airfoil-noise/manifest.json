@@ -1,0 +1,40 @@
+{
+  "access_policy": {
+    "extrapolation": "智能体不可见：仅验证引擎与评分脚本读取",
+    "holdout": "智能体不可见：仅验证引擎与评分脚本读取",
+    "train": "智能体可见：AGH 只应读取 data_train.csv（或由验证引擎内部切分 data.csv）"
+  },
+  "counts": {
+    "extrapolation": 224,
+    "holdout": 301,
+    "train": 978
+  },
+  "files": {
+    "extrapolation": "sealed/real-airfoil-noise/extrapolation.csv",
+    "holdout": "sealed/real-airfoil-noise/holdout.csv",
+    "train": "tasks/real-airfoil-noise/data_train.csv"
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 224,
+      "sha256": "25daf13b23a923f551e9b877dea5038565260248a399a24accf7cfc712e37fbc",
+      "y_max": 140.987,
+      "y_min": 108.265
+    },
+    "holdout": {
+      "n": 301,
+      "sha256": "ed6f883632c99b4536d9bae77c5a5f5961fffe9f64e409863da3103925712cd1",
+      "y_max": 139.226,
+      "y_min": 106.604
+    },
+    "train": {
+      "n": 978,
+      "sha256": "5d9b44c0bfd53b17285e0e2f7f489551a3763eb43313c8451bef4c9776d61b4d",
+      "y_max": 139.918,
+      "y_min": 103.38
+    }
+  },
+  "rule_version": "split-v1",
+  "seed": 20261008,
+  "task_id": "real-airfoil-noise"
+}

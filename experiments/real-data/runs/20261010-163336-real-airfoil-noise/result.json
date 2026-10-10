@@ -1,0 +1,27 @@
+{
+  "task_id": "real-airfoil-noise",
+  "formula": "k*velocity_ms**2*chord_m*displacement_m",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "y 的单位无法识别，跳过量纲比对",
+      "metrics": {
+        "mode": "skipped",
+        "reason_code": "unknown-y-unit"
+      }
+    },
+    {
+      "name": "fit",
+      "passed": false,
+      "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 14.990 > 0.500）",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。",
+  "free_parameters": [
+    "k"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "dataset": "UCI Airfoil Self-Noise (id 291)",
+  "source_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00291/airfoil_self_noise.dat",
+  "task_id": "real-airfoil-noise",
+  "candidates": [
+    {
+      "formula": "k*velocity_ms**5*displacement_m",
+      "k_unit": "s^5/m^6",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 16.144 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    },
+    {
+      "formula": "k*velocity_ms**4",
+      "k_unit": "s^4/m^4",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 12.384 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    },
+    {
+      "formula": "k*velocity_ms**3*chord_m",
+      "k_unit": "s^3/m^4",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 13.815 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    },
+    {
+      "formula": "k*velocity_ms**2*chord_m*displacement_m",
+      "k_unit": "s^2/m^4",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 14.990 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    },
+    {
+      "formula": "k*velocity_ms*chord_m**2",
+      "k_unit": "s/m^3",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 13.944 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    },
+    {
+      "formula": "k*displacement_m",
+      "k_unit": "1/m",
+      "verdict": "rejected",
+      "dimension_mode": "skipped",
+      "failed_checks": [
+        "fit"
+      ],
+      "failure_reasons": {
+        "fit": "参数拟合不收敛：残差过大（RMSE/std(y) = 13.922 > 0.500）"
+      },
+      "metrics": {
+        "fit": null
+      }
+    }
+  ],
+  "accepted_count": 0,
+  "candidate_count": 6
+}

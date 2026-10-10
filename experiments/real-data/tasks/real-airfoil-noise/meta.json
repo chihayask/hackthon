@@ -1,0 +1,50 @@
+{
+  "task_id": "real-airfoil-noise",
+  "var_names": [
+    "velocity_ms",
+    "displacement_m",
+    "chord_m"
+  ],
+  "layer": "base",
+  "source": [
+    "https://archive.ics.uci.edu/ml/machine-learning-databases/00291/airfoil_self_noise.dat"
+  ],
+  "sampling": {
+    "velocity_ms": [
+      31.7,
+      71.3
+    ],
+    "displacement_m": [
+      0.000400682,
+      0.0584113
+    ],
+    "chord_m": [
+      0.0254,
+      0.3048
+    ]
+  },
+  "sample_count": 1503,
+  "import": {
+    "imported_from": "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\experiments\\real-data\\airfoil.csv",
+    "imported_at": "2026-10-10T08:34:35+00:00",
+    "read_info": {
+      "format": "delimited",
+      "delimiter": ",",
+      "raw_rows": 1503
+    },
+    "target_column_original": "scaled_sound_pressure_level_db",
+    "target_column_renamed_to": "y",
+    "sampling_inferred_from_data": true
+  },
+  "units": {
+    "velocity_ms": "m/s",
+    "displacement_m": "m",
+    "chord_m": "m",
+    "y": "dB",
+    "k": "1/m"
+  },
+  "free_parameters": [
+    "k"
+  ],
+  "phenomenon": "NACA 0012 翼型自噪声的风洞测量（真实数据）"
+}

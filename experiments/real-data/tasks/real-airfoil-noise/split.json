@@ -1,0 +1,62 @@
+{
+  "contains_row_indices": false,
+  "counts": {
+    "extrapolation": 224,
+    "holdout": 301,
+    "train": 978
+  },
+  "fingerprint": {
+    "extrapolation": {
+      "n": 224,
+      "sha256": "25daf13b23a923f551e9b877dea5038565260248a399a24accf7cfc712e37fbc",
+      "y_max": 140.987,
+      "y_min": 108.265
+    },
+    "holdout": {
+      "n": 301,
+      "sha256": "ed6f883632c99b4536d9bae77c5a5f5961fffe9f64e409863da3103925712cd1",
+      "y_max": 139.226,
+      "y_min": 106.604
+    },
+    "train": {
+      "n": 978,
+      "sha256": "5d9b44c0bfd53b17285e0e2f7f489551a3763eb43313c8451bef4c9776d61b4d",
+      "y_max": 139.918,
+      "y_min": 103.38
+    }
+  },
+  "n_total": 1503,
+  "note": "本文件不含留出集/外推集的行号，只有规则、计数、支撑域与集合指纹；留出与外推数据点同时被封印到 sealed/<task_id>/，位于 tasks/ 之外。",
+  "rule": {
+    "extrapolation": "按主自变量（极差最大者）升序排列后，取最小端与最大端各占样本量 7.5% 的点，合计 15%，严格位于训练支撑域之外",
+    "extrapolation_ratio": 0.15,
+    "holdout": "中间区域内均匀随机抽取 20%（种子固定）",
+    "holdout_ratio": 0.2,
+    "main_axis": {
+      "criterion": "取值范围极差最大的自变量",
+      "index": 0,
+      "name": "velocity_ms"
+    },
+    "seed": 20261008,
+    "train": "其余点；支撑域 [support_lo, support_hi] 只由训练点决定"
+  },
+  "rule_version": "split-v1",
+  "support": {
+    "hi": [
+      71.3,
+      0.0584113,
+      0.3048
+    ],
+    "lo": [
+      31.7,
+      0.000400682,
+      0.0254
+    ],
+    "var_names": [
+      "velocity_ms",
+      "displacement_m",
+      "chord_m"
+    ]
+  },
+  "task_id": "real-airfoil-noise"
+}
