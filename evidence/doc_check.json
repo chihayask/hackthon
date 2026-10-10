@@ -3,7 +3,7 @@
   "steps_actual": 18,
   "stats": {
     "docs_scanned": 10,
-    "paths_checked": 163,
+    "paths_checked": 168,
     "numbers_checked": 7,
     "acknowledged_missing": [
       "evidence/video"
