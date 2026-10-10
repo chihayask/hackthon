@@ -1,7 +1,7 @@
 {
   "run_id": "extrap-phys-stefan-boltzmann",
   "run_dir": "runs/extrap-phys-stefan-boltzmann",
-  "checked_at_utc": "2026-10-10T08:09:13+00:00",
+  "checked_at_utc": "2026-10-10T08:38:05+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-stefan-boltzmann",

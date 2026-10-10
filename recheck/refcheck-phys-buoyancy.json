@@ -1,7 +1,7 @@
 {
   "run_id": "refcheck-phys-buoyancy",
   "run_dir": "runs/refcheck-phys-buoyancy",
-  "checked_at_utc": "2026-10-10T08:09:14+00:00",
+  "checked_at_utc": "2026-10-10T08:38:05+00:00",
   "status": "agree",
   "agrees": true,
   "task_id": "phys-buoyancy",

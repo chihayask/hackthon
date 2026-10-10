@@ -20,6 +20,8 @@
 
 用法：
     python experiments/real-data/run_control.py
+    # 第二臂（智能体）：把它的运行目录传进来
+    REAL_DATA_AGENT_RUNS=E:\fagh-realdata-root\runs python experiments/real-data/run_control.py
 输出：results.json + 终端表格。可由 fetch.py 先取数。
 """
 import json
@@ -92,9 +94,49 @@ def run_candidate(formula, unit):
             "failed_checks": failed, "failure_reasons": reasons, "metrics": metrics}
 
 
+def summarize_runs(runs_dir, out_name="agent_results.json"):
+    """汇总智能体在本任务上的运行（第二臂：模型会不会硬凑）。"""
+    rows = []
+    if os.path.isdir(runs_dir):
+        for run_id in sorted(os.listdir(runs_dir)):
+            path = os.path.join(runs_dir, run_id, "run.json")
+            if not os.path.isfile(path):
+                continue
+            run = json.load(open(path, encoding="utf-8"))
+            failed = []
+            checks_dir = os.path.join(runs_dir, run_id, "checks")
+            if os.path.isdir(checks_dir):
+                for name in sorted(os.listdir(checks_dir)):
+                    if not name.endswith(".json"):
+                        continue
+                    check = json.load(open(os.path.join(checks_dir, name), encoding="utf-8"))
+                    if check.get("passed") is False:
+                        failed.append({"check": check.get("name"),
+                                       "reason": str(check.get("reason", ""))[:120]})
+            rows.append({"run_id": run_id, "source": run.get("hypothesis_source"),
+                         "provenance_bound": bool(run.get("provenance_bound")),
+                         "formula": run.get("formula"), "verdict": run.get("verdict"),
+                         "failed": failed})
+    payload = {"runs": rows, "accepted_count": sum(1 for r in rows if r["verdict"] == "accepted"),
+               "run_count": len(rows)}
+    with open(os.path.join(HERE, out_name), "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    for r in rows:
+        print("%-34s %-9s %s" % (r["run_id"], r["verdict"], r["formula"]))
+        for f in r["failed"]:
+            print("    %s: %s" % (f["check"], f["reason"]))
+    print("\n%d 条智能体运行，accepted %d 条 —— 写入 %s" % (len(rows), payload["accepted_count"], out_name))
+    return payload
+
+
 def main():
     if not os.path.isfile(SOURCE):
         raise SystemExit("先运行 fetch.py 取数")
+    runs_dir = os.environ.get("REAL_DATA_AGENT_RUNS", "")
+    if runs_dir:
+        summarize_runs(runs_dir)
+        return 0
     rows = [run_candidate(f, u) for f, u in CANDIDATES]
     accepted = [r for r in rows if r.get("verdict") == "accepted"]
     payload = {"dataset": "UCI Airfoil Self-Noise (id 291)", "source_url": URL,

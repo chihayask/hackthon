@@ -1,0 +1,57 @@
+{
+  "runs": [
+    {
+      "run_id": "20261010-164137-real-airfoil-noise",
+      "source": "agh-llm",
+      "provenance_bound": true,
+      "formula": "A + B*log10(velocity_ms) + C*log10(frequency_hz) + D*(k*chord_m)*log10(chord_m)",
+      "verdict": "rejected",
+      "failed": [
+        {
+          "check": "dimension",
+          "reason": "表达式不可用: 未知名称: A"
+        },
+        {
+          "check": "expression",
+          "reason": "表达式不可用: 未知名称: A"
+        }
+      ]
+    },
+    {
+      "run_id": "20261010-164204-real-airfoil-noise",
+      "source": "agh-llm",
+      "provenance_bound": true,
+      "formula": "k*log10(velocity_ms)+k*log10(frequency_hz)",
+      "verdict": "rejected",
+      "failed": [
+        {
+          "check": "dimension",
+          "reason": "表达式不可用: 未知名称: frequency_hz"
+        },
+        {
+          "check": "expression",
+          "reason": "表达式不可用: 未知名称: frequency_hz"
+        }
+      ]
+    },
+    {
+      "run_id": "20261010-164243-real-airfoil-noise",
+      "source": "agh-llm",
+      "provenance_bound": true,
+      "formula": "k*log10(velocity_ms/chord_m)+k*log10(displacement_m*velocity_ms)",
+      "verdict": "rejected",
+      "failed": [
+        {
+          "check": "dimension",
+          "reason": "量纲不成立（结构性错误）: log10 的参数必须无量纲，实际为 T^-1"
+        },
+        {
+          "check": "fit",
+          "reason": "参数拟合不收敛：残差过大（RMSE/std(y) = 5.300 > 0.500）"
+        }
+      ]
+    }
+  ],
+  "accepted_count": 0,
+  "run_count": 3
+}
