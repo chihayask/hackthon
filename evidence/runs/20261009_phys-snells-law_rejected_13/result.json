@@ -1,0 +1,151 @@
+{
+  "task_id": "phys-snells-law",
+  "formula": "d*sin(theta2)*(1+(n-1)*(sin(theta2)**2))",
+  "parameters": {
+    "d": 1.134465151503603
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过；因存在自由参数 d（可吸收单位），严格量纲比对推迟到参数拟合之后",
+      "metrics": {}
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "d": 1.134465151503603,
+        "train_relative_error_median": 0.07684071332612886,
+        "train_relative_error_p90": 0.12340236692698653,
+        "train_rmsre": 0.08344931189830317,
+        "train_relative_rmse": 0.07074013045046015,
+        "train_normalized_rmse": 0.13973129696135725
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.0730（阈值 0.0200）；诊断口径 p90=0.1227、RMSE/中位|y|=0.0673、RMSE/std(y)=0.1360、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.07302586639259026,
+        "relative_error_p75": 0.1115333212465372,
+        "relative_error_p90": 0.1226732806224301,
+        "rmsre": 0.08298817548842491,
+        "max_relative_error": 0.1334220405361924,
+        "rmse": 0.024062015052060782,
+        "relative_rmse": 0.06726918322822882,
+        "normalized_rmse": 0.13597952994936385,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.1285（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.1407、RMSE/中位|y|=0.1671、RMSE/std(y)=0.1853",
+      "metrics": {
+        "relative_error_median": 0.12846603621160005,
+        "relative_error_p75": 0.1351072045083639,
+        "relative_error_p90": 0.14065337928924573,
+        "rmsre": 0.12202667614533272,
+        "max_relative_error": 0.1941651580835043,
+        "rmse": 0.06266490387144648,
+        "relative_rmse": 0.16705409331632748,
+        "normalized_rmse": 0.18527329061712305,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-d",
+      "passed": true,
+      "reason": "缩放 d×3 倍后 y 变为 3 倍，物理预期 3 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 3.0,
+        "expected_ratio": 3.0,
+        "rel_error": 0.0,
+        "lambda": 3.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-limit-theta2-to-0-0",
+      "passed": true,
+      "reason": "theta2 -> 0 时，公式与极限式 d*theta2 的相对偏差依次为 4.93e-05、3.13e-06、1.96e-07（每步探测距离缩小 4 倍）；最靠近极限处偏差已小于容差 5e-03，小量近似成立",
+      "metrics": {
+        "rel_errors": [
+          4.9300130776853037e-05,
+          3.1258736432619053e-06,
+          1.9554150587480048e-07
+        ],
+        "probe_values": [
+          0.05499999999999999,
+          0.013749999999999998,
+          0.0034374999999999996
+        ],
+        "nearest_rel_error": 1.9554150587480048e-07,
+        "monotone": true,
+        "contraction": [
+          0.06340497670098551,
+          0.06255579341676441
+        ],
+        "contraction_ok": true,
+        "coarse_normalization_used": false,
+        "limit_target": "d*theta2",
+        "limit_at": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-theta2",
+      "passed": true,
+      "reason": "在 theta2 ∈ [0.05, 0.6] 上用等比网格扫描 9 点：整体相对变化 9.163e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0304809324864739,
+          0.04158968158356191,
+          0.056752535649968065,
+          0.07745359740107266,
+          0.10571288313550702,
+          0.14421694584304806,
+          0.19620078154256826,
+          0.26392471910841336
+        ],
+        "variation": 0.9163320767506132,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          0.05,
+          0.6
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 0.05669962583868431,
+        "max_value": 0.7222577518525427
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
+  "free_parameters": [
+    "d"
+  ]
+}

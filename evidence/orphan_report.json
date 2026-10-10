@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": "2026-10-09T14:30:33+00:00",
-  "runs": 198,
-  "indexed": 198,
-  "evidence_dirs": 198,
+  "checked_at_utc": "2026-10-10T02:10:20+00:00",
+  "runs": 251,
+  "indexed": 251,
+  "evidence_dirs": 251,
   "orphan_run": [],
   "orphan_evidence": [],
   "dangling_index": [],

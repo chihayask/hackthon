@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from typing import Any, Dict, List, Mapping, Optional
 
 DEFAULTS: Dict[str, Any] = {
@@ -154,6 +155,23 @@ def _deep_merge(base: Dict[str, Any], override: Mapping[str, Any]) -> Dict[str, 
 
 
 def default_config_path() -> str:
+    """定位 config/agent.yaml。
+
+    三种部署形态都要正确：
+      1. 源码运行：<repo>/src/formula_agh/settings.py 上溯两级；
+      2. 打包成 exe 后**放在项目根目录**：优先用 exe 同级的 config/agent.yaml，
+         这样阈值仍然只有一处、可由使用者覆盖；
+      3. 打包成 exe 后单独拷贝到别处：退回构建时内联进 exe 的那一份。
+    没有第 2/3 条时冻结程序会找不到配置，静默退回内置默认阈值（与 config 不一致）。
+    """
+    if getattr(sys, "frozen", False):
+        exe_dir = os.path.dirname(os.path.abspath(sys.executable))
+        beside = os.path.join(exe_dir, "config", "agent.yaml")
+        if os.path.exists(beside):
+            return beside
+        bundle = getattr(sys, "_MEIPASS", None)
+        if bundle:
+            return os.path.join(bundle, "config", "agent.yaml")
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.abspath(os.path.join(here, "..", ".."))
     return os.path.join(root, "config", "agent.yaml")

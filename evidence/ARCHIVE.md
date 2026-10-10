@@ -3,17 +3,17 @@
 运行目录 runs/<run_id>/ 一经生成即视为不可变证据；本目录保存其只读副本。
 命名规则：<日期>_<任务编号>_<类型>_<序号>
 
-- 最近更新（UTC）：2026-10-09T14:30:33+00:00
-- 运行总数：198
+- 最近更新（UTC）：2026-10-10T02:10:20+00:00
+- 运行总数：251
 - 本次新增归档：135
-- 未变化（幂等跳过）：63
+- 未变化（幂等跳过）：116
 - 一致性：通过（无孤立文件）
 
 ## 假设来源分布（决定哪些运行能支撑「自主发现」）
 
 | 来源 | 条数 | 含义 |
 |---|---|---|
-| agh-llm | 62 | 假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环） |
+| agh-llm | 115 | 假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环） |
 | cli | 2 | 公式由人在命令行给出 |
 | fixture-variant | 22 | 人为构造的结构错误候选式（判别力测试） |
 | reference | 22 | 标准答案原样送回引擎（金标准自检） |
@@ -100,6 +100,58 @@
 | 20261009-221922-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_13 | agree |
 | 20261009-222001-phys-transit-depth | phys-transit-depth | rejected | agh-llm | runs/20261009_phys-transit-depth_rejected_01 | agree |
 | 20261009-222014-phys-transit-depth | phys-transit-depth | accepted | agh-llm | runs/20261009_phys-transit-depth_accepted_01 | agree |
+| 20261009-223204-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_11 | agree |
+| 20261009-223213-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_12 | agree |
+| 20261009-223219-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_13 | agree |
+| 20261009-223243-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_14 | agree |
+| 20261009-223255-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_15 | agree |
+| 20261009-223310-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_16 | agree |
+| 20261009-223333-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_17 | agree |
+| 20261009-223340-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_18 | agree |
+| 20261009-223349-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_19 | agree |
+| 20261009-223403-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_20 | agree |
+| 20261009-223414-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_21 | agree |
+| 20261009-223423-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_22 | agree |
+| 20261009-223517-phys-stefan-boltzmann | phys-stefan-boltzmann | accepted | agh-llm | runs/20261009_phys-stefan-boltzmann_accepted_03 | agree |
+| 20261009-223549-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_17 | agree |
+| 20261009-223609-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_18 | agree |
+| 20261009-223617-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_19 | agree |
+| 20261009-223627-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_20 | agree |
+| 20261009-223639-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_21 | agree |
+| 20261009-223850-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_22 | agree |
+| 20261009-223857-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_23 | agree |
+| 20261009-223905-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_24 | agree |
+| 20261009-223914-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_25 | agree |
+| 20261009-223920-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_26 | agree |
+| 20261009-223926-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_27 | agree |
+| 20261009-225105-phys-weight | phys-weight | accepted | agh-llm | runs/20261009_phys-weight_accepted_05 | agree |
+| 20261009-225213-phys-buoyancy | phys-buoyancy | accepted | agh-llm | runs/20261009_phys-buoyancy_accepted_04 | agree |
+| 20261009-225239-phys-coulomb | phys-coulomb | accepted | agh-llm | runs/20261009_phys-coulomb_accepted_04 | agree |
+| 20261009-225303-phys-elastic-pe | phys-elastic-pe | accepted | agh-llm | runs/20261009_phys-elastic-pe_accepted_04 | agree |
+| 20261009-225328-phys-energy-shift | phys-energy-shift | rejected | agh-llm | runs/20261009_phys-energy-shift_rejected_04 | agree |
+| 20261009-225332-phys-energy-shift | phys-energy-shift | accepted | agh-llm | runs/20261009_phys-energy-shift_accepted_04 | agree |
+| 20261009-225421-phys-grav-potential-energy | phys-grav-potential-energy | rejected | agh-llm | runs/20261009_phys-grav-potential-energy_rejected_04 | agree |
+| 20261009-225424-phys-grav-potential-energy | phys-grav-potential-energy | accepted | agh-llm | runs/20261009_phys-grav-potential-energy_accepted_04 | agree |
+| 20261009-225452-phys-gravitation | phys-gravitation | accepted | agh-llm | runs/20261009_phys-gravitation_accepted_05 | agree |
+| 20261009-225535-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261009_phys-hydrogen-level_rejected_04 | agree |
+| 20261009-225546-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261009_phys-hydrogen-level_rejected_05 | agree |
+| 20261009-225604-phys-ideal-gas | phys-ideal-gas | accepted | agh-llm | runs/20261009_phys-ideal-gas_accepted_04 | agree |
+| 20261009-225622-phys-index-vacuum | phys-index-vacuum | accepted | agh-llm | runs/20261009_phys-index-vacuum_accepted_05 | agree |
+| 20261009-225649-phys-joule-heating | phys-joule-heating | accepted | agh-llm | runs/20261009_phys-joule-heating_accepted_04 | agree |
+| 20261009-225715-phys-kinetic-energy | phys-kinetic-energy | accepted | agh-llm | runs/20261009_phys-kinetic-energy_accepted_04 | agree |
+| 20261009-225731-phys-ohm | phys-ohm | accepted | agh-llm | runs/20261009_phys-ohm_accepted_04 | agree |
+| 20261009-225754-phys-pendulum-period | phys-pendulum-period | accepted | agh-llm | runs/20261009_phys-pendulum-period_accepted_04 | agree |
+| 20261009-225824-phys-radioactive-decay | phys-radioactive-decay | accepted | agh-llm | runs/20261009_phys-radioactive-decay_accepted_06 | agree |
+| 20261009-225845-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_28 | agree |
+| 20261009-225850-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_29 | agree |
+| 20261009-225855-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_30 | agree |
+| 20261009-225901-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_31 | agree |
+| 20261009-225910-phys-snells-law | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_32 | agree |
+| 20261009-225930-phys-spring-energy | phys-spring-energy | accepted | agh-llm | runs/20261009_phys-spring-energy_accepted_04 | agree |
+| 20261009-230000-phys-stefan-boltzmann | phys-stefan-boltzmann | accepted | agh-llm | runs/20261009_phys-stefan-boltzmann_accepted_04 | agree |
+| 20261009-230022-phys-surface-gravity | phys-surface-gravity | accepted | agh-llm | runs/20261009_phys-surface-gravity_accepted_04 | agree |
+| 20261009-230058-phys-transit-depth | phys-transit-depth | accepted | agh-llm | runs/20261009_phys-transit-depth_accepted_04 | agree |
+| 20261009-230224-phys-weight | phys-weight | accepted | agh-llm | runs/20261009_phys-weight_accepted_06 | agree |
 | 5.67e-8 | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_14 | agree |
 | 8.314462618 | phys-ideal-gas | accepted | agh-llm | runs/20261009_phys-ideal-gas_accepted_01 | agree |
 | R | phys-ideal-gas | rejected | agh-llm | runs/20261009_phys-ideal-gas_rejected_02 | agree |
@@ -151,6 +203,7 @@
 | discrim-wrong-phys-transit-depth | phys-transit-depth | rejected | unclassified | runs/20261009_phys-transit-depth_rejected_02 | agree |
 | discrim-wrong-phys-weight | phys-weight | rejected | unclassified | runs/20261009_phys-weight_rejected_02 | agree |
 | h | phys-energy-shift | rejected | agh-llm | runs/20261009_phys-energy-shift_rejected_02 | agree |
+| hbar | phys-hydrogen-level | rejected | agh-llm | runs/20261009_phys-hydrogen-level_rejected_06 | agree |
 | negctl-summary | negative-control | accepted | unclassified | runs/20261009_negative-control_accepted_01 | unresolvable |
 | phys-gravitation-cand01 | phys-gravitation | accepted | cli | runs/20261009_phys-gravitation_accepted_03 | stale-metrics |
 | phys-gravitation-cand02 | phys-gravitation | rejected | cli | runs/20261009_phys-gravitation_rejected_02 | stale-metrics |

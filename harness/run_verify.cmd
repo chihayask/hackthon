@@ -20,11 +20,31 @@ set FORMULA_AGH_AUTOARCHIVE=1
 set FORMULA_AGH_RUNS=runs
 set FORMULA_AGH_EVIDENCE=evidence
 if "%FORMULA_AGH_HYPOTHESIS_SOURCE%"=="" set FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm
+REM 优先使用打包好的 exe（目标机无需 Python）；没有则回退到源码运行。
+set "ENGINE="
+if exist "%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe" set "ENGINE=%ROOT%\dist_onedir\formula_agh_onedir\formula_agh_onedir.exe"
+if not defined ENGINE if exist "%ROOT%\dist\formula_agh.exe" set "ENGINE=%ROOT%\dist\formula_agh.exe"
+
 pushd "%ROOT%"
+if not defined ENGINE set "ENGINE=%PY%"
+if not defined ENGINE set "ENGINE=python"
+
 if "%~4"=="" (
-  "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+  if "%ENGINE%"=="%PY%" (
+    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+  ) else if "%ENGINE%"=="python" (
+    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+  ) else (
+    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+  )
 ) else (
-  "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+  if "%ENGINE%"=="%PY%" (
+    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+  ) else if "%ENGINE%"=="python" (
+    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+  ) else (
+    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+  )
 )
 set RC=%ERRORLEVEL%
 popd

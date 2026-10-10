@@ -1,7 +1,7 @@
 {
   "run_id": "scale-ref-phys-kinetic-energy",
   "run_dir": "runs/scale-ref-phys-kinetic-energy",
-  "checked_at_utc": "2026-10-09T14:29:25+00:00",
+  "checked_at_utc": "2026-10-10T02:09:31+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-kinetic-energy",

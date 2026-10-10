@@ -25,3 +25,10 @@ _m3/
 #   recheck/  独立复算结果
 #   expected/ 复现基线指纹
 # 它们全部可由 python reproduce.py 从零重建，因此入库是安全且可核对的。
+
+# 打包产物（可重建：packaging\build_exe.cmd）
+dist/
+dist_onedir/
+build/
+build_onedir/
+*.spec

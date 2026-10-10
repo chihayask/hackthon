@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-d",
+  "passed": true,
+  "reason": "缩放 d×3 倍后 y 变为 3 倍，物理预期 3 倍（相对偏差 0.00e+00，容差 1e-04）",
+  "metrics": {
+    "ratio": 3.0,
+    "expected_ratio": 3.0,
+    "rel_error": 0.0,
+    "lambda": 3.0,
+    "expect_power": 1.0
+  }
+}

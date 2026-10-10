@@ -26,6 +26,7 @@
 
     set PYTHONPATH=src          :: 不设它，python -m formula_agh 会 ModuleNotFoundError
 
+    python -m formula_agh settings          # 打印当前生效的判据与阈值
     python reproduce.py                     # 15 步全跑 + 指纹比对
     python run_tests.py                     # 单元测试（不依赖 pytest）
     python -m formula_agh validate-tasks --tasks tasks --reference reference --require-split --strict
@@ -37,6 +38,9 @@
     powershell -ExecutionPolicy Bypass -File harness\run_agent_discovery.ps1 -Tasks "phys-ohm" -MaxRounds 3
 
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
+
+打包（目标机无需 Python）：`packaging\build_exe.cmd` 出单文件 exe，`packaging\build_exe.cmd onedir` 出目录式。
+`harness/run_verify.cmd` 会自动优先用 exe，找不到再回退源码运行。
 
 ## 环境
 

@@ -64,6 +64,13 @@ def _write_json(path: str, payload: object) -> None:
         fh.write("\n")
 
 
+def cmd_settings(args: argparse.Namespace) -> int:
+    """打印当前生效的判据与阈值，来源唯一：config/agent.yaml。"""
+    settings = verify_settings()
+    print(json.dumps(settings, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_validate_tasks(args: argparse.Namespace) -> int:
     """数据契约校验（M2 第 2 项）。--strict 时把 warn 也当失败。"""
     result = validate_taskset(
@@ -256,6 +263,9 @@ def build_parser() -> argparse.ArgumentParser:
     p_batch.add_argument("--layer", default="")
     p_batch.add_argument("--hypothesis-source", default="")
     p_batch.set_defaults(func=cmd_batch)
+
+    p_settings = sub.add_parser("settings", help="打印当前生效的判据与阈值")
+    p_settings.set_defaults(func=cmd_settings)
 
     p_val = sub.add_parser("validate-tasks", help="校验任务集格式与答案泄漏")
     p_val.add_argument("--tasks", required=True)

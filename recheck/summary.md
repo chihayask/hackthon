@@ -3,12 +3,12 @@
 对 runs/ 下每一次运行，从 data.csv 重新划分、重新拟合、重新判定，
 再与原始 result.json 逐项比对。复算不复用原始拟合值。
 
-- 生成时间（UTC）：2026-10-09T14:29:26+00:00
-- 运行总数：198
-- 判定一致：146
-- 独立复算通过率：96.7%
+- 生成时间（UTC）：2026-10-10T02:09:32+00:00
+- 运行总数：251
+- 判定一致：199
+- 独立复算通过率：97.5%
 
-- 属于标准三重验证、纳入复算统计的运行：151
+- 属于标准三重验证、纳入复算统计的运行：204
 - 由其它判定套件产出、不纳入统计的运行：44
 
 | run_id | 状态 | 原判定 | 复算判定 | manifest | 说明 |
@@ -69,6 +69,58 @@
 | 20261009-221922-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 20261009-222001-phys-transit-depth | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 20261009-222014-phys-transit-depth | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223204-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223213-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223219-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223243-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223255-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223310-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223333-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223340-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223349-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223403-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223414-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223423-phys-stefan-boltzmann | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223517-phys-stefan-boltzmann | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223549-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223609-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223617-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223627-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223639-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223850-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223857-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223905-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223914-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223920-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-223926-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225105-phys-weight | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225213-phys-buoyancy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225239-phys-coulomb | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225303-phys-elastic-pe | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225328-phys-energy-shift | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225332-phys-energy-shift | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225421-phys-grav-potential-energy | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225424-phys-grav-potential-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225452-phys-gravitation | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225535-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225546-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225604-phys-ideal-gas | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225622-phys-index-vacuum | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225649-phys-joule-heating | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225715-phys-kinetic-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225731-phys-ohm | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225754-phys-pendulum-period | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225824-phys-radioactive-decay | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225845-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225850-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225855-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225901-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225910-phys-snells-law | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-225930-phys-spring-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-230000-phys-stefan-boltzmann | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-230022-phys-surface-gravity | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-230058-phys-transit-depth | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261009-230224-phys-weight | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 5.67e-8 | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 8.314462618 | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | R | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
@@ -120,6 +172,7 @@
 | discrim-wrong-phys-transit-depth | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | discrim-wrong-phys-weight | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | h | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| hbar | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | negctl-summary | unresolvable | accepted | - | ok | 任务目录不存在，本次运行无法被独立复算（历史遗留运行） |
 | phys-gravitation-cand01 | stale-metrics | accepted | accepted | ok | 判定可复现，但指标数值对不上（metric 最大相对差 0.8 > 1e-03，参数最大相对差 0）：该证据很可能由旧口径或旧阈值产出，应重跑后再引用。 |
 | phys-gravitation-cand02 | stale-metrics | rejected | rejected | ok | 判定可复现，但指标数值对不上（metric 最大相对差 0.8 > 1e-03，参数最大相对差 0）：该证据很可能由旧口径或旧阈值产出，应重跑后再引用。 |

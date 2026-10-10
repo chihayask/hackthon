@@ -285,6 +285,31 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 人工调试时需先执行 `set FORMULA_AGH_HYPOTHESIS_SOURCE=cli`，
 否则手工验证会被标注为模型自主发现，产生错误的溯源记录。
 
+### 打包为 Windows 可执行文件
+
+目标机不需要安装 Python。构建脚本在 `packaging/build_exe.cmd`：
+
+    packaging\build_exe.cmd            :: 单文件  dist\formula_agh.exe
+    packaging\build_exe.cmd onedir     :: 目录式  dist_onedir\formula_agh_onedir\
+
+构建依赖 PyInstaller（实测 6.22.3）。`config/agent.yaml` 会一并内联进产物，
+同时程序在运行时优先读取 **exe 同级目录**的 `config/agent.yaml`，
+保证阈值仍然只有一处、且可被使用者覆盖。
+
+产物与源码行为一致：
+
+    dist\formula_agh.exe settings
+    dist\formula_agh.exe verify --task tasks/phys-ohm --formula "I*R"
+    dist\formula_agh.exe split --tasks tasks --check
+
+exe 需放在**项目根目录**下运行（验证需要 `tasks/`、`reference/`、`sealed/`、`physics/` 等数据）。
+`harness/run_verify.cmd` 会自动优先使用 exe，找不到再回退到 `python -m formula_agh`，
+因此 AGH 侧无需改动即可在无 Python 环境下运行。
+
+已知限制：单文件模式在**本项目自身目录**（USB 盘且路径含空格）下启动时报
+`Could not create temporary directory`，这是 PyInstaller 引导程序创建解压临时目录时的环境问题。
+换到无空格路径、或改用 `onedir` 产物即可正常运行；目录式产物不受影响。
+
 ## 9. 配置
 
 阈值与开关集中定义于 [config/agent.yaml](config/agent.yaml)，不在脚本或提示词中重复定义。
