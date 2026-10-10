@@ -1,0 +1,884 @@
+{
+  "summary": {
+    "tasks": 22,
+    "tasks_with_phenomenon_text": 22,
+    "tasks_with_source_link": 22,
+    "tasks_with_name_hint": 22,
+    "tasks_with_units": 22,
+    "high_severity_total": 36,
+    "prompt_formula_examples": [
+      {
+        "where": "harness/run_agent_discovery.ps1",
+        "snippet": "T**4"
+      },
+      {
+        "where": "harness/run_agent_discovery.ps1",
+        "snippet": "T**4"
+      },
+      {
+        "where": "harness/run_agent_discovery.ps1",
+        "snippet": "sigma*A*T",
+        "kind": "example-formula"
+      },
+      {
+        "where": "skills/formula-discovery-loop/SKILL.md",
+        "snippet": "r**2"
+      },
+      {
+        "where": "skills/formula-discovery-loop/SKILL.md",
+        "snippet": "r**2"
+      },
+      {
+        "where": "skills/formula-discovery-loop/SKILL.md",
+        "snippet": "r**2"
+      }
+    ],
+    "note": "这些泄漏都不是违规，但决定了主张的强度：存在 phenomenon 文本与 source 链接时，更准确的表述是「带物理先验的已知定律恢复」，而不是「从数据中发现」。hint_audit 只做清点，不改变任何判定。"
+  },
+  "tasks": [
+    {
+      "task_id": "phys-buoyancy",
+      "var_names": [
+        "rho",
+        "V",
+        "g"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: buoyancy"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "浮力等于排开液体的重量",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Buoyancy",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"rho\": \"kg/m^3\", \"V\": \"m^3\", \"g\": \"m/s^2\", \"y\": \"N\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-coulomb",
+      "var_names": [
+        "q1",
+        "q2",
+        "r"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: coulomb"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "两静止点电荷间作用力与电量乘积成正比、与距离平方成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "平方",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Coulomb%27s_law",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"q1\": \"C\", \"q2\": \"C\", \"r\": \"m\", \"y\": \"N\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "k",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-cyclotron",
+      "var_names": [
+        "q",
+        "B",
+        "m"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: cyclotron"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "带电粒子回旋角频率与磁感应强度成正比、与质量成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Cyclotron_resonance",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"q\": \"C\", \"B\": \"T\", \"m\": \"kg\", \"y\": \"Hz\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-elastic-pe",
+      "var_names": [
+        "c",
+        "x"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: elastic"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "弹性势能随形变量与劲度系数的组合变化",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Elastic_energy",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"c\": \"N/m\", \"x\": \"m\", \"y\": \"J\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-energy-shift",
+      "var_names": [
+        "A",
+        "B"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: energy,shift"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "能级差决定的光子频率",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Planck_relation",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"A\": \"J\", \"B\": \"J\", \"y\": \"Hz\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "h",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 1
+    },
+    {
+      "task_id": "phys-grav-potential-energy",
+      "var_names": [
+        "m1",
+        "m2",
+        "r"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: energy,grav"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "两质点间引力势能与距离成反比",
+          "severity": "high",
+          "matched": [
+            "反比",
+            "成反比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Gravitational_energy",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"m1\": \"kg\", \"m2\": \"kg\", \"r\": \"m\", \"y\": \"J\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "G",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-gravitation",
+      "var_names": [
+        "m1",
+        "m2",
+        "r"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: grav,gravitation"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "两质点间引力与质量乘积成正比、与距离平方成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "平方",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"m1\": \"kg\", \"m2\": \"kg\", \"r\": \"m\", \"y\": \"N\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "G",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-hydrogen-level",
+      "var_names": [
+        "me",
+        "el",
+        "n"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: hydrogen"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "氢原子束缚态能级与主量子数平方成反比",
+          "severity": "high",
+          "matched": [
+            "反比",
+            "平方",
+            "成反比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Bohr_model",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"me\": \"kg\", \"el\": \"C\", \"n\": \"-\", \"y\": \"J\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "eps0,hbar",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-ideal-gas",
+      "var_names": [
+        "n",
+        "T",
+        "V"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: ideal-gas"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "理想气体压强与物质量、温度成正比，与体积成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"n\": \"mol\", \"T\": \"K\", \"V\": \"m^3\", \"y\": \"Pa\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "R",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-index-vacuum",
+      "var_names": [
+        "eps",
+        "mu"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: index,vacuum"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "介质折射率与介电常数、磁导率的关系",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Refractive_index",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"eps\": \"F/m\", \"mu\": \"H/m\", \"y\": \"m/s\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-joule-heating",
+      "var_names": [
+        "I",
+        "R"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: joule"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "电阻发热功率与电流平方和电阻成正比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "平方",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Joule_heating",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"I\": \"A\", \"R\": \"ohm\", \"y\": \"W\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-kinetic-energy",
+      "var_names": [
+        "m",
+        "v"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: energy,kinetic"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "平动动能与质量成正比、与速度平方成正比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "平方",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Kinetic_energy",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"m\": \"kg\", \"v\": \"m/s\", \"y\": \"J\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-ohm",
+      "var_names": [
+        "I",
+        "R"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: ohm"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "导体两端电压等于电流与电阻之积",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Ohm%27s_law",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"I\": \"A\", \"R\": \"ohm\", \"y\": \"V\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-pendulum-exact",
+      "var_names": [
+        "L",
+        "g",
+        "theta0"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: pendulum"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "有限振幅单摆的精确周期（小角度近似的修正项）",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Pendulum_(mechanics)",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"L\": \"m\", \"g\": \"m/s^2\", \"theta0\": \"rad\", \"y\": \"s\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-pendulum-period",
+      "var_names": [
+        "L",
+        "g"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: pendulum"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "小角度单摆周期与摆长平方根成正比、与重力加速度平方根成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "平方",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Pendulum_(mechanics)",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"L\": \"m\", \"g\": \"m/s^2\", \"y\": \"s\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-radioactive-decay",
+      "var_names": [
+        "N0",
+        "t",
+        "tau"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: decay,radioactive"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "放射性衰变中剩余原子核数量随时间指数衰减",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Radioactive_decay",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"N0\": \"-\", \"t\": \"s\", \"tau\": \"s\", \"y\": \"-\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    },
+    {
+      "task_id": "phys-snells-law",
+      "var_names": [
+        "n",
+        "theta2"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: snell"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "折射光线的几何关系（斯涅尔定律的等价形式）",
+          "severity": "high",
+          "matched": [
+            "定律"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Snell%27s_law",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"n\": \"-\", \"theta2\": \"rad\", \"y\": \"m\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "d",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-spring-energy",
+      "var_names": [
+        "k",
+        "x"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: energy,spring"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "弹簧弹性势能与劲度系数和形变量平方成正比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "平方",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Elastic_energy",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"k\": \"N/m\", \"x\": \"m\", \"y\": \"J\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-stefan-boltzmann",
+      "var_names": [
+        "A",
+        "T"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: boltzmann,stefan"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "黑体辐射总功率与面积和温度四次方成正比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "四次方",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"A\": \"m^2\", \"T\": \"K\", \"y\": \"W\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "sigma",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-surface-gravity",
+      "var_names": [
+        "M",
+        "R"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: grav,surface"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "球对称天体表面重力加速度与质量成正比、与半径平方成反比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "反比",
+            "平方",
+            "成反比",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Gravity",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"M\": \"kg\", \"R\": \"m\", \"y\": \"m/s^2\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        },
+        {
+          "kind": "free_parameters",
+          "detail": "G",
+          "severity": "low"
+        }
+      ],
+      "leak_count": 5,
+      "high": 2
+    },
+    {
+      "task_id": "phys-transit-depth",
+      "var_names": [
+        "A",
+        "Rp",
+        "Rs"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: transit"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "掩星法中的相对光深与半径比平方成正比",
+          "severity": "high",
+          "matched": [
+            "正比",
+            "平方",
+            "成正比"
+          ]
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Astronomical_transit",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"A\": \"-\", \"Rp\": \"m\", \"Rs\": \"m\", \"y\": \"-\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 2
+    },
+    {
+      "task_id": "phys-weight",
+      "var_names": [
+        "m",
+        "g"
+      ],
+      "leaks": [
+        {
+          "kind": "task_id",
+          "detail": "任务名含现象词: weight"
+        },
+        {
+          "kind": "phenomenon",
+          "detail": "物体所受重力等于质量与重力加速度之积",
+          "severity": "medium",
+          "matched": []
+        },
+        {
+          "kind": "source",
+          "detail": "https://en.wikipedia.org/wiki/Weight",
+          "severity": "high",
+          "note": "链接通常直接指向定律条目（如 Wikipedia 的 Ohms_law）"
+        },
+        {
+          "kind": "units",
+          "detail": "{\"m\": \"kg\", \"g\": \"m/s^2\", \"y\": \"N\"}",
+          "severity": "low",
+          "note": "单位本身是合法物理输入，但同时暴露量纲结构，会缩小搜索空间"
+        }
+      ],
+      "leak_count": 4,
+      "high": 1
+    }
+  ]
+}

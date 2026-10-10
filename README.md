@@ -470,6 +470,34 @@ AGH 自主发现执行统计：
 | "发现新物理规律" | 全部任务都是已知定律的恢复 |
 | 智能体发现层的高覆盖率 | 历史运行的 `agh-llm` 标签**未绑定 AGH 会话号**（`provenance_bound=false`），评分脚本已单列该层，见 `agent_candidates_unbound` |
 
+#### 提示泄漏实测（`examples/hint_audit.py`）
+
+主张强度取决于模型能看到什么。实测 22 个任务的可见面（`evidence/hint_leak_audit.json`）：
+
+| 泄漏面 | 命中 |
+|---|---|
+| `phenomenon` 文本（写着定律或现象） | 22 / 22 |
+| `source` 链接（多数直指定律条目） | 22 / 22 |
+| 任务名本身含现象词（如 `phys-ohms-law`） | 22 / 22 |
+| `units`（暴露量纲结构） | 22 / 22 |
+| 启动提示与技能里当作示例给出的公式 | 6 处（含 `sigma*A*T**4`） |
+
+因此本项目的正确读法是**带物理先验的已知定律恢复**。要去掉先验，先得有盲化输入：
+
+    python examples/make_blind_taskset.py --out blind --level metadata
+    python -m formula_agh validate-tasks --tasks blind/tasks --reference blind/reference --require-split
+
+生成 `blind/tasks/<匿名 id>`（meta 已去 phenomenon / source / domain，id 匿名）、
+`blind/reference/`（评分侧答案）、`blind/physics/scale_specs.json`（键匿名、`physics_note` 中性化）
+与 `blind/mapping.json`（**评审侧**映射，不得进入智能体可见面）。
+盲化集的 `source` 是指向映射文件的占位串，会给出 22 条 `SOURCE_NOT_URL` 警告，属设计如此，勿加 `--strict`。
+
+`--level strict` 进一步去掉 `units`（量纲门降级为 skipped）。要跑"完全无先验"支路，
+还需在验证时加 `--no-scale-check`——尺度反馈的理由文本本身会写出目标幂次。
+
+**去提示消融尚未执行**：它需要 AGH 可用（见下文"环境依赖"）。本仓库交付的是可执行的盲化输入与实测泄漏清单，
+不是消融结论。
+
 更准确的称谓是：**带物理先验与验证反馈的已知定律恢复智能体**。
 去提示消融（盲化 task_id / phenomenon / 尺度反馈）与独立终测集尚未完成，列为后续工作。
 

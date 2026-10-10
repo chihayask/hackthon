@@ -36,3 +36,7 @@ build_onedir/
 
 # 演示视频脚本：仅在本地保留，不同步到远端
 04_视频脚本与路演提纲_定稿.md
+
+# 盲化派生任务集（由 examples/make_blind_taskset.py 生成，可随时重建）
+blind/
+blind_strict/
