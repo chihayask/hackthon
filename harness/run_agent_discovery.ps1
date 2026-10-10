@@ -40,6 +40,17 @@ if ([string]::IsNullOrWhiteSpace($AghEntry)) {
   throw ('找不到 AGH 入口。' + $nl + '  请用 -AghEntry <路径> 指定，或设置环境变量 AGH_ENTRY。' + $nl + '  常见位置：<仓库同级>/agnes-harness/packages/cli/dist/local/agnes.mjs' + $nl + '  构建方式见 https://github.com/AgnesAI-Labs/agnes-harness')
 }
 # 工作目录默认放到系统临时目录，避免把中间产物写进仓库，也避免智能体看到项目本体。
+# 预检：拒绝非 Agnes 模型路由（通知五（二））。放在跑任务之前，配置不对就直接不跑。
+$guard = Join-Path $ProjectRoot 'examples\model_guard.py'
+if (Test-Path -LiteralPath $guard) {
+  & python $guard
+  if ($LASTEXITCODE -ne 0) {
+    throw '模型路由守卫未通过：存在非 Agnes 配置，拒绝运行（通知五（二）：模型调用仅限 Agnes）。'
+  }
+} else {
+  Write-Host '[warn] 找不到 examples/model_guard.py，无法校验模型路由'
+}
+
 if ([string]::IsNullOrWhiteSpace($WorkRoot)) { $WorkRoot = Join-Path $env:TEMP 'agh-runs' }
 # 包装脚本：默认用项目内的 run_verify.cmd；含空格时必须换无空格别名（AGH 审批规则要求）。
 if ([string]::IsNullOrWhiteSpace($Wrapper)) {

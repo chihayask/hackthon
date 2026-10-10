@@ -41,6 +41,7 @@
     python examples/hint_audit.py           # 量化提示泄漏（智能体可见面泄漏了什么）
     python examples/make_blind_taskset.py   # 生成盲化派生任务集（去提示消融的输入）
     python examples/make_delivery_reports.py # 从现有证据重建交付报告（流水线第十七步）
+    python examples/model_guard.py          # 校验模型路由全部为 Agnes（通知五（二））
 
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
 

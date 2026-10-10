@@ -85,6 +85,19 @@ def main():
     ap.add_argument('--agh-entry', default='')
     ap.add_argument('--model', default='main=agnes/agnes-3.0-flash')
     args = ap.parse_args()
+    # 通知五（二）：作品中的所有模型调用仅限 Agnes 模型。这里**拒绝**非 Agnes 路由——
+    # 外部审计（2026-10-10）指出：示例允许自由传 --model，却没有任何一处真正拒绝别家模型，
+    # 于是"全程只用 Agnes"只能靠人记得别改参数，等于没有控制。
+    try:
+        from model_guard import check_routes
+    except ImportError as exc:  # 失败关闭：校验不了就不运行
+        print('拒绝运行：找不到模型路由守卫 examples/model_guard.py: %s' % exc)
+        return 2
+    _route_check = check_routes([args.model])
+    if not _route_check.get('ok'):
+        print('拒绝运行：' + str(_route_check.get('reason')))
+        print('依据：通知五（二）——作品中的所有模型调用仅限 Agnes 模型。')
+        return 2
 
     task_dir = os.path.join(ROOT, 'tasks', args.task)
     columns, meta = load_task(task_dir)

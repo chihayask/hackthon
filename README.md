@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![deps](https://img.shields.io/badge/dependencies-numpy%20only-green)
-![tests](https://img.shields.io/badge/tests-95%2F95%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-100%2F100%20passing-brightgreen)
 ![reproduce](https://img.shields.io/badge/reproduce-fingerprint%20identical-brightgreen)
 
 > 2026 年江苏省 AI+科学与工程创新实践黑客松（高校组），本科生组。
@@ -290,6 +290,7 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     python examples/hint_audit.py                      # 量化智能体可见面的提示泄漏
     python examples/make_blind_taskset.py --out blind  # 生成盲化派生任务集（去提示消融用）
     python examples/make_delivery_reports.py           # 从现有证据重建四份交付报告
+    python examples/model_guard.py                     # 校验模型路由全部为 Agnes（通知五（二））
 
     :: reproduction and tests
     python reproduce.py [--clean <dir>] [--update-baseline] [--strict-env]
@@ -396,7 +397,7 @@ AGH 自主发现执行统计：
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
 | 一键复现 | 17 步全部通过，指纹与基线逐位一致 |
-| 单元测试 | 95 / 95 |
+| 单元测试 | 100 / 100 |
 
 迭代修正示例：
 
