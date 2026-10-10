@@ -214,6 +214,12 @@ def fingerprint(root):
                          if k != "by_layer" and k not in agent_keys}
         by_layer = {}
         for layer, bucket in (summary.get("by_layer") or {}).items():
+            # 空桶（tasks == 0）不带信息，只反映"本工作区多跑了别的套件"：
+            # scoring 会给每个出现过的 layer 建桶，而本机 runs/ 里有 extrap-* 等
+            # 非流水线运行，于是多出一个 unknown 桶，干净目录里没有。
+            # 教训（2026-10-10）：不剔除空桶，干净 clone 报 /scoring/by_layer/unknown 缺失。
+            if int(bucket.get("tasks") or 0) == 0:
+                continue
             by_layer[layer] = {k: v for k, v in bucket.items()
                                if k not in ("agent_match", "agent_total")}
         fp["scoring"]["by_layer"] = by_layer

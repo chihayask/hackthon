@@ -2,5 +2,8 @@
   "name": "dimension",
   "passed": false,
   "reason": "表达式不可用: 未知名称: k",
-  "metrics": {}
+  "metrics": {
+    "mode": "strict",
+    "reason_code": "unsafe-expression"
+  }
 }

@@ -25,18 +25,9 @@
     "phys-transit-depth",
     "phys-weight"
   ],
-  "errors": 1,
+  "errors": 0,
   "warnings": 0,
-  "ok": false,
-  "by_code": {
-    "ORPHAN_REFERENCE": 1
-  },
-  "findings": [
-    {
-      "task_id": "dimtest",
-      "severity": "error",
-      "code": "ORPHAN_REFERENCE",
-      "message": "reference/dimtest.json 没有对应任务目录"
-    }
-  ]
+  "ok": true,
+  "by_code": {},
+  "findings": []
 }

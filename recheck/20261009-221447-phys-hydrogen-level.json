@@ -1,7 +1,7 @@
 {
   "run_id": "20261009-221447-phys-hydrogen-level",
   "run_dir": "runs/20261009-221447-phys-hydrogen-level",
-  "checked_at_utc": "2026-10-10T03:48:55+00:00",
+  "checked_at_utc": "2026-10-10T03:58:18+00:00",
   "status": "missing-formula",
   "agrees": false,
   "task_id": "phys-hydrogen-level",

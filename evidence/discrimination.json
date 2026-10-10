@@ -171,8 +171,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -432,8 +435,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 k（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 k 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "k"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -665,8 +674,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -924,8 +936,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -1135,8 +1150,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 h（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 h 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "h"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -1364,8 +1385,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 G 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "G"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -1577,8 +1604,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 G 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "G"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -1813,8 +1846,15 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 eps0,hbar（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 eps0,hbar 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "eps0",
+                  "hbar"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -1993,8 +2033,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 R（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 R 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "R"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -2214,8 +2260,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -2401,8 +2450,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -2638,8 +2690,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -2847,8 +2902,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -3084,8 +3142,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -3323,8 +3384,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -3560,8 +3624,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -3829,8 +3896,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 d（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 d 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "d"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -4058,8 +4131,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -4269,8 +4345,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 sigma（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 sigma 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "sigma"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -4492,8 +4574,14 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "结构一致性通过；因存在自由参数 G（可吸收单位），严格量纲比对推迟到参数拟合之后",
-              "metrics": {}
+              "reason": "结构一致性通过（模式 structural）；自由参数 G 未声明单位，可吸收单位，严格量纲比对无法进行",
+              "metrics": {
+                "mode": "structural",
+                "free_parameters_without_units": [
+                  "G"
+                ],
+                "free_parameters_with_units": []
+              }
             },
             "fit": {
               "passed": true,
@@ -4691,8 +4779,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -4950,8 +5041,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": true,
@@ -5189,8 +5283,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -5449,7 +5547,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: k",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -5560,8 +5661,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(0, 1), Fraction(2, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(0, 1), Fraction(2, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(0, 1), Fraction(2, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(0, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -5819,8 +5924,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -6017,7 +6126,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: h",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -6126,7 +6238,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: G",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -6227,7 +6342,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: G",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -6339,7 +6457,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: hbar",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -6423,7 +6544,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: R",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -6528,8 +6652,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(-2, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -6715,8 +6843,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -6952,8 +7084,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(1, 1), Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -7149,8 +7285,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(-2, 1), Fraction(-1, 1), Fraction(3, 1), Fraction(3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(-2, 1), Fraction(-1, 1), Fraction(3, 1), Fraction(3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(-2, 1), Fraction(-1, 1), Fraction(3, 1), Fraction(3, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-3, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -7386,8 +7526,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": false,
@@ -7625,8 +7768,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(0, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(0, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(0, 1), Fraction(0, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -7862,8 +8009,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": false,
@@ -8130,7 +8280,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: d",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -8239,8 +8392,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(2, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
@@ -8437,7 +8594,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: sigma",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -8543,7 +8703,10 @@
             "dimension": {
               "passed": false,
               "reason": "表达式不可用: 未知名称: G",
-              "metrics": {}
+              "metrics": {
+                "mode": "strict",
+                "reason_code": "unsafe-expression"
+              }
             },
             "expression": {
               "passed": false,
@@ -8637,8 +8800,11 @@
           "checks": {
             "dimension": {
               "passed": true,
-              "reason": "量纲一致（严格比对）",
-              "metrics": {}
+              "reason": "量纲一致（严格比对）（模式 strict）",
+              "metrics": {
+                "mode": "strict",
+                "free_parameters_with_units": []
+              }
             },
             "holdout": {
               "passed": false,
@@ -8896,8 +9062,12 @@
           "checks": {
             "dimension": {
               "passed": false,
-              "reason": "量纲不一致：公式推出 (Fraction(-1, 1), Fraction(1, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
-              "metrics": {}
+              "reason": "量纲不一致（模式 strict）：公式推出 (Fraction(-1, 1), Fraction(1, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))，而 y 应为 (Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+              "metrics": {
+                "mode": "strict",
+                "inferred": "(Fraction(-1, 1), Fraction(1, 1), Fraction(2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))",
+                "expected": "(Fraction(1, 1), Fraction(1, 1), Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1))"
+              }
             },
             "holdout": {
               "passed": false,
