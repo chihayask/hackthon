@@ -1,7 +1,0 @@
-{
-  "task_id": "t-cd40e173",
-  "formula": "1/sqrt(eps*mu)",
-  "free_parameters": [],
-  "true_constants": {},
-  "y_unit": "m/s"
-}

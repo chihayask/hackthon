@@ -13,10 +13,9 @@ _clean_repro/.env
 
 # 一键复现的干净目录（可随时重建）
 _clean_repro/
-_contract_tmp/
-_isolation_tmp/
-_adversarial_tmp/
-_import_tmp/
+# 测试夹具目录统一用通配挡住。教训（2026-10-10）：逐个列名字时，新加的测试
+# （_prov_tmp、_blind_tmp）被 git add -A 一并提交，243 个夹具文件混进仓库。
+_*_tmp/
 _m3/
 
 # 注意：以下目录**故意不忽略**，它们是提交物的一部分

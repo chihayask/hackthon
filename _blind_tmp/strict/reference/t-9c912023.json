@@ -1,7 +1,0 @@
-{
-  "task_id": "t-9c912023",
-  "formula": "k*x**2/2",
-  "free_parameters": [],
-  "true_constants": {},
-  "y_unit": "J"
-}

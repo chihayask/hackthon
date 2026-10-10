@@ -1,7 +1,0 @@
-{
-  "task_id": "t-3aa62649",
-  "formula": "N0*exp(-t/tau)",
-  "free_parameters": [],
-  "true_constants": {},
-  "y_unit": "-"
-}

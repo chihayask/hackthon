@@ -1,7 +1,0 @@
-{
-  "task_id": "t-68481d2b",
-  "formula": "rho*V*g",
-  "free_parameters": [],
-  "true_constants": {},
-  "y_unit": "N"
-}
