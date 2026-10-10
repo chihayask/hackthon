@@ -1,0 +1,19 @@
+{
+  "duplicate_names": [
+    "scale-monotonic-R",
+    "scale-scaling-M",
+    "scale-scaling-R",
+    "scale-sign-y"
+  ],
+  "counts": {
+    "dimension": 1,
+    "fit": 1,
+    "holdout": 1,
+    "extrapolation": 1,
+    "scale-scaling-R": 2,
+    "scale-scaling-M": 2,
+    "scale-monotonic-R": 2,
+    "scale-sign-y": 2
+  },
+  "note": "本次报告里出现了重名检验。checks/<name>.json 只保留最后一份，而 result.json 保存全部——两者不一致。上游应去重，否则独立复算必然报 stale-metrics。"
+}

@@ -1,0 +1,28 @@
+﻿
+task                       exit reason    seconds
+----                       ---- ------    -------
+phys-buoyancy                 0 completed    20.3
+phys-coulomb                  0 completed    27.8
+phys-cyclotron                1 error         5.9
+phys-elastic-pe               0 completed    25.1
+phys-energy-shift             0 completed    22.5
+phys-grav-potential-energy    0 completed    60.4
+phys-gravitation              0 completed    20.5
+phys-hydrogen-level           0 completed    53.1
+phys-ideal-gas                0 completed    14.7
+phys-index-vacuum             0 completed    24.9
+phys-joule-heating            0 completed    22.6
+phys-kinetic-energy           0 completed    25.7
+phys-ohm                      0 completed    12.6
+phys-pendulum-exact           0 completed     4.2
+phys-pendulum-period          0 completed    24.6
+phys-radioactive-decay        0 completed    30.2
+phys-snells-law               0 completed    43.5
+phys-spring-energy            0 completed    17.3
+phys-stefan-boltzmann         0 completed    32.7
+phys-surface-gravity          0 completed    26.8
+phys-transit-depth            0 completed    40.2
+phys-weight                   0 completed   118.4
+
+
+
