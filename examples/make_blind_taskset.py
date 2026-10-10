@@ -90,6 +90,24 @@ def build(out_root: str, level: str = "metadata") -> dict:
             split["task_id"] = anon
             _dump(os.path.join(dst, "split.json"), split)
 
+        # 封印数据（留出集/外推集）也要带过去并改名：验证引擎需要它才能划分。
+        sealed_src = os.path.join(ROOT, "sealed", name)
+        if os.path.isdir(sealed_src):
+            sealed_dst = os.path.join(out_root, "sealed", anon)
+            os.makedirs(sealed_dst, exist_ok=True)
+            for fname in os.listdir(sealed_src):
+                src = os.path.join(sealed_src, fname)
+                if os.path.isfile(src):
+                    shutil.copy2(src, os.path.join(sealed_dst, fname))
+                    if fname.endswith(".json"):
+                        try:
+                            payload = _load(src)
+                            if isinstance(payload, dict) and "task_id" in payload:
+                                payload["task_id"] = anon
+                                _dump(os.path.join(sealed_dst, fname), payload)
+                        except (OSError, ValueError):
+                            pass
+
         ref_src = os.path.join(ref_root, name + ".json")
         if os.path.isfile(ref_src):
             ref = _load(ref_src)
