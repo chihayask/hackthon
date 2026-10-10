@@ -38,6 +38,9 @@
     python src/scoring/compare.py --runs runs --tasks tasks --reference reference --out evidence/scoring
     powershell -ExecutionPolicy Bypass -File harness\run_agent_discovery.ps1 -Tasks "phys-ohm" -MaxRounds 3
 
+    python examples/hint_audit.py           # 量化提示泄漏（智能体可见面泄漏了什么）
+    python examples/make_blind_taskset.py   # 生成盲化派生任务集（去提示消融的输入）
+
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
 
 打包（目标机无需 Python）：`packaging\build_exe.cmd` 出单文件 exe，`packaging\build_exe.cmd onedir` 出目录式。
