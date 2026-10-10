@@ -35,7 +35,8 @@ if exist "%PROV_FILE%" (
     if "%FORMULA_AGH_AGENT_WORKSPACE%"=="" set "FORMULA_AGH_AGENT_WORKSPACE=%CD%"
     REM 第三个字段是消融开关：no-scale = 不把尺度检验的结论反馈给模型
     REM （尺度理由会写出目标幂次，本身也是一种先验）。
-    echo %%c | findstr /I "no-scale" >nul && set "FORMULA_AGH_NO_SCALE=1"
+    REM 不能用 echo|findstr && set：cmd 中管道右侧在子进程里执行，set 不会保留。
+    if /I "%%c"=="no-scale" set "FORMULA_AGH_NO_SCALE=1"
   )
 )
 set "SCALE_ARG="
