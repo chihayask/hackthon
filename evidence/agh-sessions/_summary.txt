@@ -1,7 +1,7 @@
 ﻿
 task     exit reason  seconds
 ----     ---- ------  -------
-phys-ohm    2 unknown     0.5
+phys-ohm    0 unknown       0
 
 
 

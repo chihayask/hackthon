@@ -216,6 +216,9 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 
     powershell -ExecutionPolicy Bypass -File harness\run_agent_discovery.ps1 -Tasks "phys-ohm,phys-weight" -MaxRounds 3
 
+脚本对每个任务执行以下操作（**每次运行都新建带时间戳的工作区**，因为 AGH 的会话键由
+工作目录派生——换目录就自动得到全新会话，避免上一轮上下文带进下一轮）：
+
 脚本对每个任务执行以下操作：
 
 - 建立独立工作目录 `E:\agh-runs\<task>\`，其中仅包含 `meta.json` 与 `data_train.csv`，
@@ -224,7 +227,10 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
   缺少该步骤时 `skill_read` 返回 `NOT_FOUND`，因为 AGH 的工作区技能根为
   `<workspace>/.agh/skills/dir/SKILL.md`
 - 以 `--cwd <workspace>` 启动独立会话（会话键由 cwd 派生），避免多任务共用上下文
-- 将模型输出与会话 ID 写入 `evidence/agh-sessions/<task>.json`
+- 将模型输出与会话 ID 写入 `evidence/agh-sessions/<task>-<时间戳>.json`
+
+`-DryRun` 只准备并报告、不做任何模型调用——AGH 不可用时（例如凭证库不可用）也能验证
+编排逻辑本身：工作区隔离、技能安装、来源与会话号传递、模型路由守卫。
 
 导出 AGH 原生轨迹：
 

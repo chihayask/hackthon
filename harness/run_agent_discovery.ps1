@@ -21,7 +21,8 @@ param(
   [string]$AghEntry = '',
   [string]$WorkRoot = '',
   [string]$SessionOut = '',
-  [string]$Wrapper = ''
+  [string]$Wrapper = '',
+  [switch]$DryRun = $false
 )
 
 $ErrorActionPreference = 'Continue'
@@ -75,7 +76,12 @@ foreach ($task in $taskList) {
   $dataDir = Join-Path $ProjectRoot ("tasks\" + $task)
   if (-not (Test-Path -LiteralPath $dataDir)) { Write-Host "[skip] $task : 没有 tasks\$task"; continue }
 
-  $work = Join-Path $WorkRoot $task
+  # 每次运行用**全新的**工作区（带时间戳）。理由有两条：
+  #   1) AGH 的会话键由 cwd 派生——同一个目录重跑会落回同一个会话，上一轮上下文会带进
+  #      下一轮，等于没有独立复现；换目录就自动得到全新会话。
+  #   2) 历史工作区留在原地，可作为「那一次到底给了模型什么」的现场（含被盲化的 meta）。
+  $runStamp = (Get-Date).ToUniversalTime().ToString('yyyyMMdd-HHmmss')
+  $work = Join-Path $WorkRoot ($task + '-' + $runStamp)
   # 把技能放进**本工作区**的技能根（AGH 约定：<workspace>/.agh/skills/dir/SKILL.md）。
   # 少了这一步，模型调用 skill_read 会得到 NOT_FOUND —— AGH 的技能机制就等于没用上。
   $skillSrc = Join-Path $ProjectRoot 'skills\formula-discovery-loop\SKILL.md'
@@ -129,14 +135,21 @@ foreach ($task in $taskList) {
   # AGH 的会话键由 cwd 派生：先用一次最小调用把会话建出来（顺带让技能发现先跑一轮，
   # 避免真实运行时 skill_read 与发现竞态返回 NOT_FOUND），再查回它的 sessionId。
   $sessionId = ''
-  try {
-    & node $AghEntry -p '就绪确认：只回复 ok' --mode json --cwd $work 2>&1 | Out-Null
-    $sessionsJson = & node $AghEntry sessions --json 2>&1 | Out-String
-    $parsed = $sessionsJson | ConvertFrom-Json
-    $match = $parsed.items | Where-Object { $_.cwd -eq $work } | Select-Object -First 1
-    if ($match) { $sessionId = [string]$match.sessionId }
-  } catch {
-    Write-Host ("[warn] {0}: 预建会话失败：{1}" -f $task, $_.Exception.Message)
+  if ($DryRun) {
+    # -DryRun：不做任何模型调用，只把工作区准备好并报告将要执行什么。
+    # 存在的理由：AGH 不可用时（例如凭证库不可用）也必须能验证编排逻辑本身——
+    # 工作区隔离、技能安装、来源与会话号的传递、模型路由守卫。
+    $sessionId = '(dry-run)'
+  } else {
+    try {
+      & node $AghEntry -p '就绪确认：只回复 ok' --mode json --cwd $work 2>&1 | Out-Null
+      $sessionsJson = & node $AghEntry sessions --json 2>&1 | Out-String
+      $parsed = $sessionsJson | ConvertFrom-Json
+      $match = $parsed.items | Where-Object { $_.cwd -eq $work } | Select-Object -First 1
+      if ($match) { $sessionId = [string]$match.sessionId }
+    } catch {
+      Write-Host ("[warn] {0}: 预建会话失败：{1}" -f $task, $_.Exception.Message)
+    }
   }
   if ([string]::IsNullOrWhiteSpace($sessionId)) {
     Write-Host ("[warn] {0}: 未取得会话号，本轮 run.json 的 provenance_bound 将为 false" -f $task)
@@ -145,15 +158,36 @@ foreach ($task in $taskList) {
   $env:FORMULA_AGH_SESSION_ID = $sessionId
   $env:FORMULA_AGH_AGENT_WORKSPACE = $work
 
-  $outFile = Join-Path $SessionOut ($task + '.json')
-  Write-Host ("[run ] {0} ..." -f $task)
+  if ($DryRun) {
+    $outFile = Join-Path $SessionOut ($task + '-' + $runStamp + '.dryrun.json')
+    Write-Host ('[dry ] {0} ...' -f $task)
+  } else {
+    # 带上时间戳：同一任务重跑不再覆盖上一次的会话记录（溯源记录不许静默覆盖）。
+    $outFile = Join-Path $SessionOut ($task + '-' + $runStamp + '.json')
+    Write-Host ('[run ] {0} ...' -f $task)
+  }
   $sw = [System.Diagnostics.Stopwatch]::StartNew()
-  try {
-    $raw = & node $AghEntry -p $prompt --mode json --cwd $work 2>&1 | Out-String
-    $code = $LASTEXITCODE
-  } catch {
-    $raw = "EXCEPTION: " + $_.Exception.Message
-    $code = -1
+  if ($DryRun) {
+    $raw = (@{
+      dry_run = $true
+      task = $task
+      workspace = $work
+      session_id = $sessionId
+      wrapper = $Wrapper
+      agnes_entry = $AghEntry
+      visible_files = @(Get-ChildItem -LiteralPath $visible | Select-Object -ExpandProperty Name)
+      skill_installed = (Test-Path -LiteralPath (Join-Path $work '.agh\skills\formula-discovery-loop\SKILL.md'))
+      planned_command = ('node ' + $AghEntry + ' -p <prompt> --mode json --cwd ' + $work)
+    } | ConvertTo-Json -Depth 4)
+    $code = 0
+  } else {
+    try {
+      $raw = & node $AghEntry -p $prompt --mode json --cwd $work 2>&1 | Out-String
+      $code = $LASTEXITCODE
+    } catch {
+      $raw = "EXCEPTION: " + $_.Exception.Message
+      $code = -1
+    }
   }
   $sw.Stop()
   [System.IO.File]::WriteAllText($outFile, $raw, (New-Object System.Text.UTF8Encoding($false)))
