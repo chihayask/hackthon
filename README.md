@@ -152,14 +152,14 @@
 
     python reproduce.py
 
-该脚本依次执行 16 个步骤，并与基线指纹逐字段比对：
+该脚本依次执行 17 个步骤，并与基线指纹逐字段比对：
 
     复现成功：指纹与基线完全一致。
       任务 22 个，本流水线运行 135 条，对抗用例 14 项，全部逐位一致。
 
-16 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
+17 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
 候选批量验证、判别力报告、尺度检验（参考式）、尺度检验（错误式）、负对照、对抗性测试、
-独立复算、评分对照、证据归档、提示泄漏审计。
+独立复算、评分对照、证据归档、提示泄漏审计、交付报告重建。
 
 在空目录中重建全部产物：
 
@@ -286,6 +286,11 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     :: scoring
     python src/scoring/compare.py --runs runs --tasks tasks --reference reference --out evidence/scoring
 
+    :: auditability
+    python examples/hint_audit.py                      # 量化智能体可见面的提示泄漏
+    python examples/make_blind_taskset.py --out blind  # 生成盲化派生任务集（去提示消融用）
+    python examples/make_delivery_reports.py           # 从现有证据重建四份交付报告
+
     :: reproduction and tests
     python reproduce.py [--clean <dir>] [--update-baseline] [--strict-env]
     python run_tests.py
@@ -390,7 +395,7 @@ AGH 自主发现执行统计：
 | AGH 工具调用次数 | 241，涉及 shell、read、tool_search、todo、skill_read、tool_describe、ls |
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
-| 一键复现 | 16 步全部通过，指纹与基线逐位一致 |
+| 一键复现 | 17 步全部通过，指纹与基线逐位一致 |
 | 单元测试 | 95 / 95 |
 
 迭代修正示例：

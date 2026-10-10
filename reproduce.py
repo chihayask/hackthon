@@ -386,6 +386,12 @@ def main(argv=None):
         # evidence/hint_leak_audit.json，不进指纹，因此不影响复现判定。
         print("第十六步：提示泄漏审计（智能体可见面泄漏了什么）")
         run_step("hint-audit", ["examples/hint_audit.py"], root)
+        # 交付报告也进流水线：外推崩溃分析 / 判别力与阈值敏感性 / 失败案例档案 /
+        # 标准答案一致性审查，全部从前面各步已经产生的证据里重建。
+        # 之前这几份报告"标着完成但文件不在仓库里"（外部审计的数字核验项），
+        # 放进流水线才能保证它们与证据始终一致、不会再次过期。
+        print("第十七步：重建交付报告（外推分析 / 判别力与阈值敏感性 / 失败档案 / 答案审查）")
+        run_step("delivery-reports", ["examples/make_delivery_reports.py"], root)
 
     print("采集指纹 ...")
     actual, other_runs, agent_layer = fingerprint(root)
