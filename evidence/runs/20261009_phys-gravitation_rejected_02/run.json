@@ -21,6 +21,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "cli",
   "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "未通过项：holdout、extrapolation。请针对失败项提出新的假设。",
   "inputs": [
     "tasks\\phys-gravitation"

@@ -19,6 +19,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "fixture-variant",
   "hypothesis_source_note": "人为构造的结构错误候选式（判别力测试）",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。",
   "inputs": [
     "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\tasks\\phys-energy-shift"

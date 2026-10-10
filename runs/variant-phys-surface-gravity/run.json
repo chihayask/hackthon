@@ -21,6 +21,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "fixture-variant",
   "hypothesis_source_note": "人为构造的结构错误候选式（判别力测试）",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "未通过项：holdout、extrapolation、scale-scaling-R。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-R）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
   "inputs": [
     "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\tasks\\phys-surface-gravity"

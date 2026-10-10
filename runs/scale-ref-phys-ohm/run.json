@@ -17,6 +17,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "unclassified",
   "hypothesis_source_note": "未标注来源——不计入任何能力声明，需补齐",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "全部 5 项尺度检验通过（幂律标度/无量纲群/极限行为/单调性/符号/对称性）；量纲之外，公式的物理形状也已核对。",
   "inputs": [
     "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\tasks\\phys-ohm",

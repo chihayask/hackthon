@@ -17,6 +17,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "reference",
   "hypothesis_source_note": "标准答案原样送回引擎（金标准自检）",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
   "inputs": [
     "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\tasks\\phys-pendulum-exact"

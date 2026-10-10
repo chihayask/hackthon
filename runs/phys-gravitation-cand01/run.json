@@ -21,6 +21,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "cli",
   "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
   "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
   "inputs": [
     "tasks\\phys-gravitation"
