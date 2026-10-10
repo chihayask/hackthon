@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-hydrogen-level --formula "eps0*h**2/(4*pi**2*me*el**2)*n**(-2)" --params eps0

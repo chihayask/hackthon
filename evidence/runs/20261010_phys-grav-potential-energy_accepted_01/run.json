@@ -1,0 +1,33 @@
+{
+  "task_id": "phys-grav-potential-energy",
+  "verdict": "accepted",
+  "formula": "G*m1*m2/r",
+  "parameters": {
+    "G": -6.673174775302424e-11
+  },
+  "free_parameters": [
+    "G"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "cli",
+  "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "inputs": [
+    "tasks/phys-grav-potential-energy"
+  ],
+  "notes": "",
+  "duplicate_check_names": []
+}

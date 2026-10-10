@@ -1,7 +1,7 @@
 {
   "entries": {
     "0": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_rejected_01",
       "file_count": 7,
       "formula": "n*T/V",
@@ -15,7 +15,7 @@
       "verdict": "rejected"
     },
     "20261009-214409-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-weight_rejected_01",
       "file_count": 7,
       "formula": "y = m * g",
@@ -29,7 +29,7 @@
       "verdict": "rejected"
     },
     "20261009-214613-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_01",
       "file_count": 13,
       "formula": "m*g",
@@ -43,7 +43,7 @@
       "verdict": "accepted"
     },
     "20261009-214719-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_accepted_01",
       "file_count": 14,
       "formula": "rho*V*g",
@@ -57,7 +57,7 @@
       "verdict": "accepted"
     },
     "20261009-214749-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_rejected_01",
       "file_count": 7,
       "formula": "k*q1*q2/r2",
@@ -71,7 +71,7 @@
       "verdict": "rejected"
     },
     "20261009-214756-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_accepted_01",
       "file_count": 14,
       "formula": "k*q1*q2/r**2",
@@ -85,7 +85,7 @@
       "verdict": "accepted"
     },
     "20261009-214822-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_accepted_01",
       "file_count": 14,
       "formula": "q*B/m",
@@ -99,7 +99,7 @@
       "verdict": "accepted"
     },
     "20261009-214857-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_accepted_02",
       "file_count": 14,
       "formula": "q*B/m",
@@ -113,7 +113,7 @@
       "verdict": "accepted"
     },
     "20261009-214923-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_rejected_01",
       "file_count": 7,
       "formula": "0.5*c*x2",
@@ -127,7 +127,7 @@
       "verdict": "rejected"
     },
     "20261009-214935-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_accepted_01",
       "file_count": 13,
       "formula": "0.5*c*x**2",
@@ -141,7 +141,7 @@
       "verdict": "accepted"
     },
     "20261009-215018-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_accepted_01",
       "file_count": 13,
       "formula": "(A-B)/h",
@@ -155,7 +155,7 @@
       "verdict": "accepted"
     },
     "20261009-220108-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_rejected_01",
       "file_count": 13,
       "formula": "0-G*m1*m2/r",
@@ -169,7 +169,7 @@
       "verdict": "rejected"
     },
     "20261009-220200-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_accepted_01",
       "file_count": 13,
       "formula": "G*m1*m2/r",
@@ -183,7 +183,7 @@
       "verdict": "accepted"
     },
     "20261009-220218-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_accepted_01",
       "file_count": 14,
       "formula": "G*m1*m2/r**2",
@@ -197,7 +197,7 @@
       "verdict": "accepted"
     },
     "20261009-220340-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_accepted_01",
       "file_count": 12,
       "formula": "1/sqrt(eps*mu)",
@@ -211,7 +211,7 @@
       "verdict": "accepted"
     },
     "20261009-220344-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_accepted_02",
       "file_count": 12,
       "formula": "1/sqrt(eps*mu)",
@@ -225,7 +225,7 @@
       "verdict": "accepted"
     },
     "20261009-220358-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_rejected_01",
       "file_count": 7,
       "formula": "I2*R",
@@ -239,7 +239,7 @@
       "verdict": "rejected"
     },
     "20261009-220404-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_accepted_01",
       "file_count": 13,
       "formula": "I*I*R",
@@ -253,7 +253,7 @@
       "verdict": "accepted"
     },
     "20261009-220421-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_accepted_01",
       "file_count": 13,
       "formula": "0.5*m*v*v",
@@ -267,7 +267,7 @@
       "verdict": "accepted"
     },
     "20261009-220450-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-ohm_accepted_01",
       "file_count": 13,
       "formula": "I*R",
@@ -281,7 +281,7 @@
       "verdict": "accepted"
     },
     "20261009-220517-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_rejected_01",
       "file_count": 7,
       "formula": "2*sqrt(L/g)*K(sin(theta0/2))",
@@ -295,7 +295,7 @@
       "verdict": "rejected"
     },
     "20261009-220522-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_rejected_02",
       "file_count": 7,
       "formula": "2*pi*sqrt(L/g)*(1+theta02/16+11*theta04/3072+173*theta06/737280)",
@@ -309,7 +309,7 @@
       "verdict": "rejected"
     },
     "20261009-220530-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_accepted_01",
       "file_count": 13,
       "formula": "2*pi*sqrt(L/g)*(1+theta0*theta0/16+11*theta0*theta0*theta0*theta0/3072+173*theta0*theta0*theta0*theta0*theta0*theta0/737280)",
@@ -323,7 +323,7 @@
       "verdict": "accepted"
     },
     "20261009-220616-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_rejected_01",
       "file_count": 7,
       "formula": "2*PI*sqrt(L/g)",
@@ -337,7 +337,7 @@
       "verdict": "rejected"
     },
     "20261009-220633-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_accepted_01",
       "file_count": 13,
       "formula": "2*3.141592653589793*sqrt(L/g)",
@@ -351,7 +351,7 @@
       "verdict": "accepted"
     },
     "20261009-220743-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_rejected_01",
       "file_count": 7,
       "formula": "test",
@@ -365,7 +365,7 @@
       "verdict": "rejected"
     },
     "20261009-220836-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_rejected_02",
       "file_count": 7,
       "formula": "y",
@@ -379,7 +379,7 @@
       "verdict": "rejected"
     },
     "20261009-220841-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_01",
       "file_count": 13,
       "formula": "N0*exp(-(t/tau))",
@@ -393,7 +393,7 @@
       "verdict": "accepted"
     },
     "20261009-220848-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_02",
       "file_count": 13,
       "formula": "N0*exp(-(t/tau))",
@@ -407,7 +407,7 @@
       "verdict": "accepted"
     },
     "20261009-220913-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_03",
       "file_count": 13,
       "formula": "N0*exp(-(t/tau))",
@@ -421,7 +421,7 @@
       "verdict": "accepted"
     },
     "20261009-221042-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_01",
       "file_count": 7,
       "formula": "d*sin(asin(n*sin(theta2)))",
@@ -435,7 +435,7 @@
       "verdict": "rejected"
     },
     "20261009-221048-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_02",
       "file_count": 13,
       "formula": "d*n*sin(theta2)",
@@ -449,7 +449,7 @@
       "verdict": "rejected"
     },
     "20261009-221121-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_accepted_01",
       "file_count": 13,
       "formula": "0.5*k*x**2",
@@ -463,7 +463,7 @@
       "verdict": "accepted"
     },
     "20261009-221200-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_01",
       "file_count": 7,
       "formula": "sigma*A*T**4",
@@ -477,7 +477,7 @@
       "verdict": "rejected"
     },
     "20261009-221203-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_02",
       "file_count": 7,
       "formula": "A*T**4",
@@ -491,7 +491,7 @@
       "verdict": "rejected"
     },
     "20261009-221205-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_03",
       "file_count": 7,
       "formula": "A*T**4",
@@ -505,7 +505,7 @@
       "verdict": "rejected"
     },
     "20261009-221207-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_04",
       "file_count": 7,
       "formula": "A*T**4",
@@ -519,7 +519,7 @@
       "verdict": "rejected"
     },
     "20261009-221209-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_05",
       "file_count": 7,
       "formula": "A*T**2",
@@ -533,7 +533,7 @@
       "verdict": "rejected"
     },
     "20261009-221220-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_06",
       "file_count": 7,
       "formula": "A*T**4",
@@ -547,7 +547,7 @@
       "verdict": "rejected"
     },
     "20261009-221223-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_07",
       "file_count": 13,
       "formula": "A*T**4",
@@ -561,7 +561,7 @@
       "verdict": "rejected"
     },
     "20261009-221231-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_08",
       "file_count": 7,
       "formula": "sigma*A*T**4",
@@ -575,7 +575,7 @@
       "verdict": "rejected"
     },
     "20261009-221311-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_rejected_01",
       "file_count": 7,
       "formula": "G*M/R2",
@@ -589,7 +589,7 @@
       "verdict": "rejected"
     },
     "20261009-221314-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_accepted_01",
       "file_count": 13,
       "formula": "G*M/R/R",
@@ -603,7 +603,7 @@
       "verdict": "accepted"
     },
     "20261009-221339-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_02",
       "file_count": 13,
       "formula": "m*g",
@@ -617,7 +617,7 @@
       "verdict": "accepted"
     },
     "20261009-221447-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_01",
       "file_count": 7,
       "formula": "",
@@ -631,7 +631,7 @@
       "verdict": "rejected"
     },
     "20261009-221613-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_03",
       "file_count": 7,
       "formula": "d*sin(asin(n*sin(theta2)))",
@@ -645,7 +645,7 @@
       "verdict": "rejected"
     },
     "20261009-221622-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_04",
       "file_count": 13,
       "formula": "d*n*sin(theta2)",
@@ -659,7 +659,7 @@
       "verdict": "rejected"
     },
     "20261009-221636-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_05",
       "file_count": 13,
       "formula": "d*n*tan(theta2)*sqrt(1-(n*sin(theta2))**2)",
@@ -673,7 +673,7 @@
       "verdict": "rejected"
     },
     "20261009-221649-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_06",
       "file_count": 13,
       "formula": "d*(sin(theta2) + (n-1)*(sin(theta2)**3))",
@@ -687,7 +687,7 @@
       "verdict": "rejected"
     },
     "20261009-221715-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_09",
       "file_count": 7,
       "formula": "sigma*A*T**4",
@@ -701,7 +701,7 @@
       "verdict": "rejected"
     },
     "20261009-221751-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_10",
       "file_count": 7,
       "formula": "A*T**4",
@@ -715,7 +715,7 @@
       "verdict": "rejected"
     },
     "20261009-221812-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_11",
       "file_count": 7,
       "formula": "A*T**4",
@@ -729,7 +729,7 @@
       "verdict": "rejected"
     },
     "20261009-221907-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_12",
       "file_count": 7,
       "formula": "A*T**2",
@@ -743,7 +743,7 @@
       "verdict": "rejected"
     },
     "20261009-221922-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_13",
       "file_count": 7,
       "formula": "A*T**3",
@@ -757,7 +757,7 @@
       "verdict": "rejected"
     },
     "20261009-222001-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_rejected_01",
       "file_count": 14,
       "formula": "(Rp/Rs)**2",
@@ -771,7 +771,7 @@
       "verdict": "rejected"
     },
     "20261009-222014-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_accepted_01",
       "file_count": 14,
       "formula": "A*(Rp/Rs)**2",
@@ -785,7 +785,7 @@
       "verdict": "accepted"
     },
     "20261009-223204-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_11",
       "file_count": 7,
       "formula": "d*sin(asin(n*sin(theta2)))",
@@ -799,7 +799,7 @@
       "verdict": "rejected"
     },
     "20261009-223213-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_12",
       "file_count": 13,
       "formula": "d*tan(theta2)*sqrt(1-(sin(theta2)/n)**2)",
@@ -813,7 +813,7 @@
       "verdict": "rejected"
     },
     "20261009-223219-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_13",
       "file_count": 13,
       "formula": "d*sin(theta2)*(1+(n-1)*(sin(theta2)**2))",
@@ -827,7 +827,7 @@
       "verdict": "rejected"
     },
     "20261009-223243-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_14",
       "file_count": 13,
       "formula": "d*(sin(theta2) + (n-1)*(sin(theta2)**3)/6 + 0.02*(n-1)**2*(sin(theta2)**5))",
@@ -841,7 +841,7 @@
       "verdict": "rejected"
     },
     "20261009-223255-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_15",
       "file_count": 13,
       "formula": "d*(sin(theta2)/sqrt(1-(n**2-1)*sin(theta2)**2))",
@@ -855,7 +855,7 @@
       "verdict": "rejected"
     },
     "20261009-223310-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_16",
       "file_count": 13,
       "formula": "d*(sin(theta2)/sqrt(1-(n**2-1)*sin(theta2)**2))",
@@ -869,7 +869,7 @@
       "verdict": "rejected"
     },
     "20261009-223333-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_17",
       "file_count": 7,
       "formula": "A*T**4",
@@ -883,7 +883,7 @@
       "verdict": "rejected"
     },
     "20261009-223340-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_18",
       "file_count": 7,
       "formula": "A*T**2",
@@ -897,7 +897,7 @@
       "verdict": "rejected"
     },
     "20261009-223349-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_19",
       "file_count": 7,
       "formula": "A*T**3",
@@ -911,7 +911,7 @@
       "verdict": "rejected"
     },
     "20261009-223403-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_20",
       "file_count": 7,
       "formula": "A*T**2",
@@ -925,7 +925,7 @@
       "verdict": "rejected"
     },
     "20261009-223414-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_21",
       "file_count": 7,
       "formula": "A*T**4",
@@ -939,7 +939,7 @@
       "verdict": "rejected"
     },
     "20261009-223423-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_22",
       "file_count": 13,
       "formula": "A*T**4",
@@ -953,7 +953,7 @@
       "verdict": "rejected"
     },
     "20261009-223517-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_accepted_03",
       "file_count": 14,
       "formula": "sigma*A*T**4",
@@ -967,7 +967,7 @@
       "verdict": "accepted"
     },
     "20261009-223549-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_17",
       "file_count": 7,
       "formula": "d*tan(asin(n*sin(theta2)))",
@@ -981,7 +981,7 @@
       "verdict": "rejected"
     },
     "20261009-223609-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_18",
       "file_count": 13,
       "formula": "d*(n*sin(theta2)/sqrt(1-(n*sin(theta2))**2))",
@@ -995,7 +995,7 @@
       "verdict": "rejected"
     },
     "20261009-223617-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_19",
       "file_count": 13,
       "formula": "d*(sin(theta2) + (n-1)*(sin(theta2)**3))",
@@ -1009,7 +1009,7 @@
       "verdict": "rejected"
     },
     "20261009-223627-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_20",
       "file_count": 13,
       "formula": "d*(sin(theta2)+n*(1-n)*(sin(theta2)**3))",
@@ -1023,7 +1023,7 @@
       "verdict": "rejected"
     },
     "20261009-223639-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_21",
       "file_count": 13,
       "formula": "d*(sin(theta2) + 2*(n-1)*(sin(theta2)**3))",
@@ -1037,7 +1037,7 @@
       "verdict": "rejected"
     },
     "20261009-223850-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_22",
       "file_count": 13,
       "formula": "d*sin(theta2)/sqrt(1-(n**2-1)*sin(theta2)**2)",
@@ -1051,7 +1051,7 @@
       "verdict": "rejected"
     },
     "20261009-223857-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_23",
       "file_count": 13,
       "formula": "d*n*tan(theta2)*sqrt(1-(n*sin(theta2))**2)",
@@ -1065,7 +1065,7 @@
       "verdict": "rejected"
     },
     "20261009-223905-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_24",
       "file_count": 13,
       "formula": "d*tan(theta2)*sqrt(1-(n**2-1)*sin(theta2)**2)",
@@ -1079,7 +1079,7 @@
       "verdict": "rejected"
     },
     "20261009-223914-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_25",
       "file_count": 13,
       "formula": "d*tan(theta2)*sqrt(1-n**2*sin(theta2)**2)",
@@ -1093,7 +1093,7 @@
       "verdict": "rejected"
     },
     "20261009-223920-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_26",
       "file_count": 13,
       "formula": "d*tan(theta2)*(1-(n**2-1)*sin(theta2)**2)",
@@ -1107,7 +1107,7 @@
       "verdict": "rejected"
     },
     "20261009-223926-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_27",
       "file_count": 13,
       "formula": "d*n*sin(theta2)/sqrt(1-(n**2-1)*sin(theta2)**2)",
@@ -1121,7 +1121,7 @@
       "verdict": "rejected"
     },
     "20261009-225105-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_05",
       "file_count": 13,
       "formula": "m*g",
@@ -1135,7 +1135,7 @@
       "verdict": "accepted"
     },
     "20261009-225213-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_accepted_04",
       "file_count": 14,
       "formula": "rho*g*V",
@@ -1149,7 +1149,7 @@
       "verdict": "accepted"
     },
     "20261009-225239-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_accepted_04",
       "file_count": 14,
       "formula": "k*q1*q2/r**2",
@@ -1163,7 +1163,7 @@
       "verdict": "accepted"
     },
     "20261009-225303-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_accepted_04",
       "file_count": 13,
       "formula": "0.5*c*x**2",
@@ -1177,7 +1177,7 @@
       "verdict": "accepted"
     },
     "20261009-225328-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_rejected_04",
       "file_count": 13,
       "formula": "h*(A-B)",
@@ -1191,7 +1191,7 @@
       "verdict": "rejected"
     },
     "20261009-225332-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_accepted_04",
       "file_count": 13,
       "formula": "(A-B)/h",
@@ -1205,7 +1205,7 @@
       "verdict": "accepted"
     },
     "20261009-225421-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_rejected_04",
       "file_count": 7,
       "formula": "sigma",
@@ -1219,7 +1219,7 @@
       "verdict": "rejected"
     },
     "20261009-225424-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_accepted_04",
       "file_count": 13,
       "formula": "sigma*m1*m2/r",
@@ -1233,7 +1233,7 @@
       "verdict": "accepted"
     },
     "20261009-225452-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_accepted_05",
       "file_count": 14,
       "formula": "G*m1*m2/r**2",
@@ -1247,7 +1247,7 @@
       "verdict": "accepted"
     },
     "20261009-225535-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_04",
       "file_count": 7,
       "formula": "me*el**2*hbar**2/(eps0**2*n**2)",
@@ -1261,7 +1261,7 @@
       "verdict": "rejected"
     },
     "20261009-225546-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_05",
       "file_count": 7,
       "formula": "me*el**2/(eps0**2*n**2)",
@@ -1275,7 +1275,7 @@
       "verdict": "rejected"
     },
     "20261009-225604-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_accepted_04",
       "file_count": 14,
       "formula": "R*n*T/V",
@@ -1289,7 +1289,7 @@
       "verdict": "accepted"
     },
     "20261009-225622-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_accepted_05",
       "file_count": 12,
       "formula": "1/sqrt(eps*mu)",
@@ -1303,7 +1303,7 @@
       "verdict": "accepted"
     },
     "20261009-225649-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_accepted_04",
       "file_count": 13,
       "formula": "I**2*R",
@@ -1317,7 +1317,7 @@
       "verdict": "accepted"
     },
     "20261009-225715-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_accepted_04",
       "file_count": 13,
       "formula": "0.5*m*v**2",
@@ -1331,7 +1331,7 @@
       "verdict": "accepted"
     },
     "20261009-225731-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-ohm_accepted_04",
       "file_count": 13,
       "formula": "I*R",
@@ -1345,7 +1345,7 @@
       "verdict": "accepted"
     },
     "20261009-225754-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_accepted_04",
       "file_count": 13,
       "formula": "2*pi*sqrt(L/g)",
@@ -1359,7 +1359,7 @@
       "verdict": "accepted"
     },
     "20261009-225824-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_06",
       "file_count": 13,
       "formula": "N0*exp(-t/tau)",
@@ -1373,7 +1373,7 @@
       "verdict": "accepted"
     },
     "20261009-225845-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_28",
       "file_count": 7,
       "formula": "y",
@@ -1387,7 +1387,7 @@
       "verdict": "rejected"
     },
     "20261009-225850-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_29",
       "file_count": 13,
       "formula": "d*sin(theta2)",
@@ -1401,7 +1401,7 @@
       "verdict": "rejected"
     },
     "20261009-225855-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_30",
       "file_count": 7,
       "formula": "d*asin(sin(theta2)/n)",
@@ -1415,7 +1415,7 @@
       "verdict": "rejected"
     },
     "20261009-225901-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_31",
       "file_count": 13,
       "formula": "d*sin(theta2)/n",
@@ -1429,7 +1429,7 @@
       "verdict": "rejected"
     },
     "20261009-225910-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_32",
       "file_count": 13,
       "formula": "d*sin(theta2*n)",
@@ -1443,7 +1443,7 @@
       "verdict": "rejected"
     },
     "20261009-225930-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_accepted_04",
       "file_count": 13,
       "formula": "0.5*k*x**2",
@@ -1457,7 +1457,7 @@
       "verdict": "accepted"
     },
     "20261009-230000-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_accepted_04",
       "file_count": 14,
       "formula": "sigma*A*T**4",
@@ -1471,7 +1471,7 @@
       "verdict": "accepted"
     },
     "20261009-230022-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_accepted_04",
       "file_count": 13,
       "formula": "G*M/R**2",
@@ -1485,7 +1485,7 @@
       "verdict": "accepted"
     },
     "20261009-230058-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_accepted_04",
       "file_count": 14,
       "formula": "A*(Rp/Rs)**2",
@@ -1499,7 +1499,7 @@
       "verdict": "accepted"
     },
     "20261009-230224-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_06",
       "file_count": 13,
       "formula": "m*g",
@@ -1512,8 +1512,1044 @@
       "task_id": "phys-weight",
       "verdict": "accepted"
     },
+    "20261010-131214-phys-buoyancy": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-buoyancy_accepted_01",
+      "file_count": 14,
+      "formula": "rho*V*g",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131214-phys-buoyancy",
+      "source_manifest_sha256": "35451893f57816866d1a31a53c330f16b652a96b5d979c296c08a257a72e5bd9",
+      "source_path": "runs/20261010-131214-phys-buoyancy",
+      "task_id": "phys-buoyancy",
+      "verdict": "accepted"
+    },
+    "20261010-131321-phys-coulomb": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-coulomb_accepted_01",
+      "file_count": 14,
+      "formula": "k*q1*q2/r**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131321-phys-coulomb",
+      "source_manifest_sha256": "90111d26888d9ff44235dda588f31908f16702cf115f7184b6ac98ddc2c7bda2",
+      "source_path": "runs/20261010-131321-phys-coulomb",
+      "task_id": "phys-coulomb",
+      "verdict": "accepted"
+    },
+    "20261010-131349-phys-cyclotron": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-cyclotron_accepted_01",
+      "file_count": 14,
+      "formula": "q*B/m",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131349-phys-cyclotron",
+      "source_manifest_sha256": "28e59b187c69b57ac259342e079ce6d1d359c93e16cc28e9adb49685e7f97a8c",
+      "source_path": "runs/20261010-131349-phys-cyclotron",
+      "task_id": "phys-cyclotron",
+      "verdict": "accepted"
+    },
+    "20261010-131412-phys-elastic-pe": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-elastic-pe_accepted_01",
+      "file_count": 13,
+      "formula": "0.5*c*x**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131412-phys-elastic-pe",
+      "source_manifest_sha256": "c106351b16084d02f4fc89f1aadad4b3959e3912c848424edee2420c87b35469",
+      "source_path": "runs/20261010-131412-phys-elastic-pe",
+      "task_id": "phys-elastic-pe",
+      "verdict": "accepted"
+    },
+    "20261010-131446-phys-energy-shift": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-energy-shift_accepted_01",
+      "file_count": 13,
+      "formula": "(A-B)/h",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131446-phys-energy-shift",
+      "source_manifest_sha256": "dd739c30e3c4b9772adb73894d48330451a872436763a1a0e4ced06682e13849",
+      "source_path": "runs/20261010-131446-phys-energy-shift",
+      "task_id": "phys-energy-shift",
+      "verdict": "accepted"
+    },
+    "20261010-131513-phys-grav-potential-energy": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-grav-potential-energy_accepted_01",
+      "file_count": 13,
+      "formula": "G*m1*m2/r",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131513-phys-grav-potential-energy",
+      "source_manifest_sha256": "4525366d92f1414c8d4b207a36e00eece92165d8dfe1846714fd96c59476ed20",
+      "source_path": "runs/20261010-131513-phys-grav-potential-energy",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "20261010-131517-phys-grav-potential-energy": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-grav-potential-energy_accepted_02",
+      "file_count": 13,
+      "formula": "G*m1*m2/r",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131517-phys-grav-potential-energy",
+      "source_manifest_sha256": "65dad32e2c0f751a45d17e4b8fe7fc8679e4fd34ebfea29a2f59f1b27e7930f3",
+      "source_path": "runs/20261010-131517-phys-grav-potential-energy",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "20261010-131537-phys-gravitation": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-gravitation_accepted_01",
+      "file_count": 14,
+      "formula": "G*m1*m2/r**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131537-phys-gravitation",
+      "source_manifest_sha256": "e6e2dcf40d64697243565bd4e5d5b6ae608a145088f236d60eea7c1dd8e778eb",
+      "source_path": "runs/20261010-131537-phys-gravitation",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "20261010-131558-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_02",
+      "file_count": 7,
+      "formula": "eps0*h**2/(4*pi**2*me*el**2)*n**(-2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131558-phys-hydrogen-level",
+      "source_manifest_sha256": "0290526f962da9abe3ce379c7ff2af14cd35747d8e0969793bdb598136da8be9",
+      "source_path": "runs/20261010-131558-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131618-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_03",
+      "file_count": 7,
+      "formula": "eps0/(me*el**2)*n**(-2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131618-phys-hydrogen-level",
+      "source_manifest_sha256": "95c7994ea65d781044d5460448c60524bb9451e40da58c241e0742931ffe293b",
+      "source_path": "runs/20261010-131618-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131621-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_04",
+      "file_count": 7,
+      "formula": "eps0/(me*el**2)*(n**-2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131621-phys-hydrogen-level",
+      "source_manifest_sha256": "7800421a09c44703eba26e642265f49989c2a394c5c4f973f872c4a033cfcdfc",
+      "source_path": "runs/20261010-131621-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131629-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_05",
+      "file_count": 7,
+      "formula": "eps0/(me*el**2*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131629-phys-hydrogen-level",
+      "source_manifest_sha256": "04e403a663c0081b9bfbf15a7d6986c7838d209f4f225204621155f7ef3f07d0",
+      "source_path": "runs/20261010-131629-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131631-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_06",
+      "file_count": 11,
+      "formula": "1/(me*el**2)*n**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131631-phys-hydrogen-level",
+      "source_manifest_sha256": "e7ba959b3c587f78c8e6fe170070b24801b87dc9b014b3f4b9f083fc1836bfaa",
+      "source_path": "runs/20261010-131631-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131650-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_07",
+      "file_count": 7,
+      "formula": "eps0*(-1)/(me*el**2*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131650-phys-hydrogen-level",
+      "source_manifest_sha256": "1047c066ccc71def79ab9635d60fccc327a37ec736322bc0432cdf3e35aec87c",
+      "source_path": "runs/20261010-131650-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131653-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_08",
+      "file_count": 12,
+      "formula": "eps0*eps0*(-1)/(me*el**2*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131653-phys-hydrogen-level",
+      "source_manifest_sha256": "985f49c22590744a5232f7940873baf1347242fe389a9f9e74684c595655a2fa",
+      "source_path": "runs/20261010-131653-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131656-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_09",
+      "file_count": 12,
+      "formula": "eps0*eps0*eps0*(-1)/(me*el**2*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131656-phys-hydrogen-level",
+      "source_manifest_sha256": "6fb4f97a0b24ffe30d1de25f43f2dd8ef2307a788216ee6a6606186ba7fd478d",
+      "source_path": "runs/20261010-131656-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131700-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_10",
+      "file_count": 12,
+      "formula": "eps0*eps0*eps0*eps0*(-1)/(me*el**2*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131700-phys-hydrogen-level",
+      "source_manifest_sha256": "e27fdeb1a8b4ba66d67b24eccf6852d373ecc14073eb088a4858d5f27a67e66a",
+      "source_path": "runs/20261010-131700-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131702-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_11",
+      "file_count": 7,
+      "formula": "eps0*(-1)*n**(-2)/(me*el**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131702-phys-hydrogen-level",
+      "source_manifest_sha256": "217f3ad2c9c5eaeb3012296f12a6141044bf4eca6a88f10feed5fce63a45e7cb",
+      "source_path": "runs/20261010-131702-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131711-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_12",
+      "file_count": 7,
+      "formula": "el*(-1)/(me*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131711-phys-hydrogen-level",
+      "source_manifest_sha256": "0fe9f86c1d1446418798f79c3d265124ace91ebc945b106f685bb283b863aff0",
+      "source_path": "runs/20261010-131711-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131714-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_13",
+      "file_count": 7,
+      "formula": "el*el*(-1)/(me*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131714-phys-hydrogen-level",
+      "source_manifest_sha256": "d228688c912d0814e9504b7336c57665b90f030fae50619c02527c9958fcd127",
+      "source_path": "runs/20261010-131714-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131725-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_14",
+      "file_count": 7,
+      "formula": "el*el*el*(-1)/(me*n**2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131725-phys-hydrogen-level",
+      "source_manifest_sha256": "597bede5598135d9bd44ac6477bce5d6b3fd2281b07d2d5e95369ab9737aac0f",
+      "source_path": "runs/20261010-131725-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131727-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_15",
+      "file_count": 7,
+      "formula": "eps0/((me*el*el*n*n))",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131727-phys-hydrogen-level",
+      "source_manifest_sha256": "c7c44592fd885875d84d309cee9957f74e2d2eab9eece896472c5675713c0dbe",
+      "source_path": "runs/20261010-131727-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131729-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:17+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_16",
+      "file_count": 7,
+      "formula": "eps0/((me*el*el*n*n))*(-1)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131729-phys-hydrogen-level",
+      "source_manifest_sha256": "56e837e911de8b349165f4e2f8bc98cf3c4baa28eb4f27aee55caee0e6a53950",
+      "source_path": "runs/20261010-131729-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131732-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_17",
+      "file_count": 7,
+      "formula": "eps0*(-1)/(me*el*el*n*n)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131732-phys-hydrogen-level",
+      "source_manifest_sha256": "8dbc52f2f6e39b65f67e08370142b53aa1200c3b4d431d3d783ac0ab278311fb",
+      "source_path": "runs/20261010-131732-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131734-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_18",
+      "file_count": 7,
+      "formula": "(eps0*me*el*el*n*n)*(-1)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131734-phys-hydrogen-level",
+      "source_manifest_sha256": "b361362e5c9ea853bbc50913bdf32d06db1af1848e9ded67b0896de5354cf6ff",
+      "source_path": "runs/20261010-131734-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131737-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_19",
+      "file_count": 7,
+      "formula": "eps0*(me*el*el*n*n)*(-1)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131737-phys-hydrogen-level",
+      "source_manifest_sha256": "96c4422c2562de75040322f6509ec0144c395e6cf5738df543045e7a9d922680",
+      "source_path": "runs/20261010-131737-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131739-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_20",
+      "file_count": 7,
+      "formula": "eps0*(me*el*el)/((n*n))",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131739-phys-hydrogen-level",
+      "source_manifest_sha256": "86dacb40640e525883e36e65e43353cf7776bba540598a11064b87a1c56b8072",
+      "source_path": "runs/20261010-131739-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131742-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_21",
+      "file_count": 12,
+      "formula": "eps0*(el*el)/((me*n*n))",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131742-phys-hydrogen-level",
+      "source_manifest_sha256": "34b1da69219312b0a107f20a315c91bcd49b51ae0e6efd3778cecfffa1fca0fd",
+      "source_path": "runs/20261010-131742-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131746-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_22",
+      "file_count": 7,
+      "formula": "el*el*(n*n)*(-1)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131746-phys-hydrogen-level",
+      "source_manifest_sha256": "9c3797cd5dcc3009f391e75195985fb5980272dfd530630e4251b6c67d280554",
+      "source_path": "runs/20261010-131746-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131749-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_23",
+      "file_count": 7,
+      "formula": "el*el*(n*n)/me",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131749-phys-hydrogen-level",
+      "source_manifest_sha256": "64ed765ad64ccd2a9ff874da126b338454e8ea7d176d4d5593b4fb609dcabe1f",
+      "source_path": "runs/20261010-131749-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131751-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_24",
+      "file_count": 12,
+      "formula": "eps0*el*el/(me*el*el*n*n)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131751-phys-hydrogen-level",
+      "source_manifest_sha256": "d3a7f1b14b6ca78186a5fe8ecc720b09c9174443846eedd98594731b807258ce",
+      "source_path": "runs/20261010-131751-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131755-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_25",
+      "file_count": 7,
+      "formula": "eps0*(-1)*n*n/(me*el*el)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131755-phys-hydrogen-level",
+      "source_manifest_sha256": "c09759b8e6b7061588b482d41f6837d05497e4136d2b924ae7e252f531286728",
+      "source_path": "runs/20261010-131755-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131815-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_26",
+      "file_count": 7,
+      "formula": "eps0*(-1)*me*el*el*el*el/(n*n)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131815-phys-hydrogen-level",
+      "source_manifest_sha256": "30bad350c763937a5e200d44941d467004a98d4883e7867ea61642a18f63e954",
+      "source_path": "runs/20261010-131815-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-131818-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_accepted_01",
+      "file_count": 12,
+      "formula": "eps0*eps0*(-1)*me*el*el*el*el/(n*n)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131818-phys-hydrogen-level",
+      "source_manifest_sha256": "c09252d65e9ce1e0e0f848e2d3a067701479b88370197f6a7a43183ec4939e9e",
+      "source_path": "runs/20261010-131818-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "accepted"
+    },
+    "20261010-131837-phys-ideal-gas": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-ideal-gas_accepted_01",
+      "file_count": 14,
+      "formula": "R*n*T/V",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131837-phys-ideal-gas",
+      "source_manifest_sha256": "32c5117d36826c3b8ce8c9af3488b109f89e066e4f3b7eaee20180f9270b2aba",
+      "source_path": "runs/20261010-131837-phys-ideal-gas",
+      "task_id": "phys-ideal-gas",
+      "verdict": "accepted"
+    },
+    "20261010-131918-phys-index-vacuum": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-index-vacuum_accepted_01",
+      "file_count": 12,
+      "formula": "1/sqrt(eps*mu)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131918-phys-index-vacuum",
+      "source_manifest_sha256": "21bd702ddff123a9414fcb511f0bdbcf078240adf3bff629e5108055a47e0e9e",
+      "source_path": "runs/20261010-131918-phys-index-vacuum",
+      "task_id": "phys-index-vacuum",
+      "verdict": "accepted"
+    },
+    "20261010-131939-phys-joule-heating": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-joule-heating_accepted_01",
+      "file_count": 13,
+      "formula": "I**2*R",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-131939-phys-joule-heating",
+      "source_manifest_sha256": "6d69f894ba74860c6d712ecaf01929e60c7d28a683dff4ee2f6fbf66f7fe9d73",
+      "source_path": "runs/20261010-131939-phys-joule-heating",
+      "task_id": "phys-joule-heating",
+      "verdict": "accepted"
+    },
+    "20261010-132001-phys-kinetic-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-kinetic-energy_rejected_01",
+      "file_count": 13,
+      "formula": "m*v**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132001-phys-kinetic-energy",
+      "source_manifest_sha256": "46b7324ac164361f3ee07810dae091abc6c414199e5a40937cd84a4f16efcf70",
+      "source_path": "runs/20261010-132001-phys-kinetic-energy",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "rejected"
+    },
+    "20261010-132013-phys-kinetic-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-kinetic-energy_accepted_01",
+      "file_count": 13,
+      "formula": "0.5*m*v**2",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132013-phys-kinetic-energy",
+      "source_manifest_sha256": "cf63bd790d0f323d2337def6cbd0e3854ced3095da2af33dbc3d1274c6d84183",
+      "source_path": "runs/20261010-132013-phys-kinetic-energy",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "accepted"
+    },
+    "20261010-132044-phys-ohm": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-ohm_accepted_01",
+      "file_count": 13,
+      "formula": "I*R",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132044-phys-ohm",
+      "source_manifest_sha256": "9a377e57743371118b9b71ffe330c9d462c1936ada941963cbf525f7d3b62e2a",
+      "source_path": "runs/20261010-132044-phys-ohm",
+      "task_id": "phys-ohm",
+      "verdict": "accepted"
+    },
+    "20261010-132107-phys-pendulum-exact": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-exact_accepted_02",
+      "file_count": 13,
+      "formula": "2*pi*sqrt(L/g)*(1+theta0**2/16+11*theta0**4/3072)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132107-phys-pendulum-exact",
+      "source_manifest_sha256": "943006574896ac2f46f21879918cd2e7f7db5d216d14cc674a872654396e4cd1",
+      "source_path": "runs/20261010-132107-phys-pendulum-exact",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "accepted"
+    },
+    "20261010-132142-phys-pendulum-period": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-period_rejected_01",
+      "file_count": 13,
+      "formula": "L**0.5/g**0.5",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132142-phys-pendulum-period",
+      "source_manifest_sha256": "2d2754e5aaececbc37dad71d3924f1e63a8beb55a39bd95d4f2bd36d81ab7b89",
+      "source_path": "runs/20261010-132142-phys-pendulum-period",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "20261010-132150-phys-pendulum-period": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-period_rejected_02",
+      "file_count": 7,
+      "formula": "2*acos(-1)*(L/g)**0.5",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132150-phys-pendulum-period",
+      "source_manifest_sha256": "d585d08113dd7c69bcc3c726d08f538f1338e2df3045b8e210b458ebca4ec75f",
+      "source_path": "runs/20261010-132150-phys-pendulum-period",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "20261010-132155-phys-pendulum-period": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-period_accepted_01",
+      "file_count": 13,
+      "formula": "6.283185307179586*(L/g)**0.5",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132155-phys-pendulum-period",
+      "source_manifest_sha256": "d3bf4fddb25e9d56134ff4dbd3a78bc1dcb761304ee403074b63678c3ae9e9b5",
+      "source_path": "runs/20261010-132155-phys-pendulum-period",
+      "task_id": "phys-pendulum-period",
+      "verdict": "accepted"
+    },
+    "20261010-132203-phys-buoyancy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-buoyancy_accepted_02",
+      "file_count": 14,
+      "formula": "rho*V*g",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132203-phys-buoyancy",
+      "source_manifest_sha256": "acec9897c9446665e057eefa692a474d4a2c1a5eb1a0d72294d713fd8888daae",
+      "source_path": "runs/20261010-132203-phys-buoyancy",
+      "task_id": "phys-buoyancy",
+      "verdict": "accepted"
+    },
+    "20261010-132233-phys-coulomb": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-coulomb_accepted_02",
+      "file_count": 14,
+      "formula": "k*q1*q2/r**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132233-phys-coulomb",
+      "source_manifest_sha256": "2578cd38a56f5a03dd4b8559050c35d77214823c32b76e7c05f4442e1c62cf70",
+      "source_path": "runs/20261010-132233-phys-coulomb",
+      "task_id": "phys-coulomb",
+      "verdict": "accepted"
+    },
+    "20261010-132259-phys-cyclotron": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-cyclotron_accepted_02",
+      "file_count": 14,
+      "formula": "q*B/m",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132259-phys-cyclotron",
+      "source_manifest_sha256": "36eec587bcda710afea7c5a8ace5d97f2724db513a06b292e8af4b7185fc13bb",
+      "source_path": "runs/20261010-132259-phys-cyclotron",
+      "task_id": "phys-cyclotron",
+      "verdict": "accepted"
+    },
+    "20261010-132408-phys-elastic-pe": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-elastic-pe_accepted_02",
+      "file_count": 13,
+      "formula": "0.5*c*x**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132408-phys-elastic-pe",
+      "source_manifest_sha256": "a8d160fd4dfbf5aa9dda15f2f883a96b0b0b81a40988e55e14a7c956681e637b",
+      "source_path": "runs/20261010-132408-phys-elastic-pe",
+      "task_id": "phys-elastic-pe",
+      "verdict": "accepted"
+    },
+    "20261010-132425-phys-energy-shift": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-energy-shift_accepted_02",
+      "file_count": 13,
+      "formula": "(A-B)/h",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132425-phys-energy-shift",
+      "source_manifest_sha256": "10a90bf211f435b08f85f7f45464102d9f2da22fc574c431ac24b5de3d26eebc",
+      "source_path": "runs/20261010-132425-phys-energy-shift",
+      "task_id": "phys-energy-shift",
+      "verdict": "accepted"
+    },
+    "20261010-132609-phys-grav-potential-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-grav-potential-energy_rejected_01",
+      "file_count": 7,
+      "formula": "",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "missing-formula",
+      "reproducible": false,
+      "run_id": "20261010-132609-phys-grav-potential-energy",
+      "source_manifest_sha256": "09ad9337ce25fe14b1587f71beea6a213d3c19b939bd1e158f91de5a903a4637",
+      "source_path": "runs/20261010-132609-phys-grav-potential-energy",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "rejected"
+    },
+    "20261010-132702-phys-grav-potential-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-grav-potential-energy_accepted_03",
+      "file_count": 13,
+      "formula": "G*m1*m2/r",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132702-phys-grav-potential-energy",
+      "source_manifest_sha256": "0f0861449b694a9a1d1e1a54844259cf445a35000b12cd3002a99773ec55d91b",
+      "source_path": "runs/20261010-132702-phys-grav-potential-energy",
+      "task_id": "phys-grav-potential-energy",
+      "verdict": "accepted"
+    },
+    "20261010-132740-phys-gravitation": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-gravitation_accepted_02",
+      "file_count": 14,
+      "formula": "G*m1*m2/r**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-132740-phys-gravitation",
+      "source_manifest_sha256": "4db1819d199ae3db1f557edde3e2968d4c0cd21946e2423683fcdce60ee42e4f",
+      "source_path": "runs/20261010-132740-phys-gravitation",
+      "task_id": "phys-gravitation",
+      "verdict": "accepted"
+    },
+    "20261010-133048-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_27",
+      "file_count": 7,
+      "formula": "A*(-1)*me*el**4/(eps0**2*hbar**2*n**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133048-phys-hydrogen-level",
+      "source_manifest_sha256": "3a11ba90bb9861a0f9b67bceb2ed4c5e5fc62fb0723da98cd75534288f7dbab6",
+      "source_path": "runs/20261010-133048-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-133154-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_28",
+      "file_count": 7,
+      "formula": "me*el**4/(eps0**2*n**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133154-phys-hydrogen-level",
+      "source_manifest_sha256": "d066d1076d408881105dd85f6889dbb2228ed6f55dfa67b20938c9a3bc3e6aba",
+      "source_path": "runs/20261010-133154-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-133230-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_29",
+      "file_count": 7,
+      "formula": "me*el**4/((-eps0)**2*n**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133230-phys-hydrogen-level",
+      "source_manifest_sha256": "5afe9c974f80b088a4594fee300a048479de2e323cbddb36eff2d410f47adf80",
+      "source_path": "runs/20261010-133230-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-133243-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_30",
+      "file_count": 7,
+      "formula": "me*el**4/(hbar**2*n**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133243-phys-hydrogen-level",
+      "source_manifest_sha256": "a10dde2d2f03c09228ce9c9abf211bfa08d6e5335210a4a538ff30a72b150115",
+      "source_path": "runs/20261010-133243-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-133249-phys-hydrogen-level": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_31",
+      "file_count": 7,
+      "formula": "eps0*me*el**4/(eps0**2*n**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133249-phys-hydrogen-level",
+      "source_manifest_sha256": "56e9781c4e1b49c1c096a450fb1ece45eb82190735a7d615208ce663a89dec7f",
+      "source_path": "runs/20261010-133249-phys-hydrogen-level",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
+    "20261010-133323-phys-ideal-gas": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-ideal-gas_accepted_02",
+      "file_count": 14,
+      "formula": "R*n*T/V",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133323-phys-ideal-gas",
+      "source_manifest_sha256": "359eed9010f374704ae3f8bdc99fc13633d22d2af2a14acc2496cae8fb442949",
+      "source_path": "runs/20261010-133323-phys-ideal-gas",
+      "task_id": "phys-ideal-gas",
+      "verdict": "accepted"
+    },
+    "20261010-133352-phys-index-vacuum": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-index-vacuum_accepted_02",
+      "file_count": 12,
+      "formula": "1/sqrt(eps*mu)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133352-phys-index-vacuum",
+      "source_manifest_sha256": "5a4cbd9cd0b3d06ec76dbc2de16548e0aa65863363e75203547d6c0a326deccd",
+      "source_path": "runs/20261010-133352-phys-index-vacuum",
+      "task_id": "phys-index-vacuum",
+      "verdict": "accepted"
+    },
+    "20261010-133415-phys-joule-heating": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-joule-heating_accepted_02",
+      "file_count": 13,
+      "formula": "I**2*R",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133415-phys-joule-heating",
+      "source_manifest_sha256": "f23e51f2d1f1c355c673cc95db125e4a9a4fac3c0f43905026a44847b11640a1",
+      "source_path": "runs/20261010-133415-phys-joule-heating",
+      "task_id": "phys-joule-heating",
+      "verdict": "accepted"
+    },
+    "20261010-133440-phys-kinetic-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-kinetic-energy_accepted_02",
+      "file_count": 13,
+      "formula": "0.5*m*v**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133440-phys-kinetic-energy",
+      "source_manifest_sha256": "21a298f3501b37307e5f60f8f1a74ba7ac9b8c2d7e1fc26f8dc107296580a2eb",
+      "source_path": "runs/20261010-133440-phys-kinetic-energy",
+      "task_id": "phys-kinetic-energy",
+      "verdict": "accepted"
+    },
+    "20261010-133504-phys-ohm": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-ohm_accepted_02",
+      "file_count": 13,
+      "formula": "I*R",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133504-phys-ohm",
+      "source_manifest_sha256": "5765645bd99c3d87922b490655b4adc3e0e4b70e9423c79e7925d63b3328e74d",
+      "source_path": "runs/20261010-133504-phys-ohm",
+      "task_id": "phys-ohm",
+      "verdict": "accepted"
+    },
+    "20261010-133526-phys-pendulum-exact": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-exact_rejected_01",
+      "file_count": 13,
+      "formula": "2*3.141592653589793*sqrt(L/g)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133526-phys-pendulum-exact",
+      "source_manifest_sha256": "dd25cf26efb8e11a03e1b9359367b442e17320a411d45fd31d3a06295fa46624",
+      "source_path": "runs/20261010-133526-phys-pendulum-exact",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "rejected"
+    },
+    "20261010-133529-phys-pendulum-exact": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-exact_accepted_03",
+      "file_count": 13,
+      "formula": "2*3.141592653589793*sqrt(L/g)*(1+theta0**2/16+11*theta0**4/3072+theta0**2/16*theta0**2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133529-phys-pendulum-exact",
+      "source_manifest_sha256": "a1a4e4cb685994c570edd4d2906581b0a1108ede51d9e21b30978dbd83548be0",
+      "source_path": "runs/20261010-133529-phys-pendulum-exact",
+      "task_id": "phys-pendulum-exact",
+      "verdict": "accepted"
+    },
+    "20261010-133622-phys-pendulum-period": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-period_rejected_03",
+      "file_count": 13,
+      "formula": "sqrt(L/g)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133622-phys-pendulum-period",
+      "source_manifest_sha256": "13a61fa0813d1bcc2409bb290590c25ceb8ce48c0b510a1223e6cc2f572f6b15",
+      "source_path": "runs/20261010-133622-phys-pendulum-period",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "20261010-133630-phys-pendulum-period": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-pendulum-period_rejected_04",
+      "file_count": 13,
+      "formula": "2 * (L/g)**0.5",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133630-phys-pendulum-period",
+      "source_manifest_sha256": "21c27e3a24c4acbc4252779da5f43c71615876acd88004222659dd1bd380a858",
+      "source_path": "runs/20261010-133630-phys-pendulum-period",
+      "task_id": "phys-pendulum-period",
+      "verdict": "rejected"
+    },
+    "20261010-133950-phys-radioactive-decay": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-radioactive-decay_accepted_01",
+      "file_count": 13,
+      "formula": "N0*exp(-t/tau)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-133950-phys-radioactive-decay",
+      "source_manifest_sha256": "c8864bf1ec1f25f9811ccea5ec09ac99f925889df16abf1941d5dde115632c6a",
+      "source_path": "runs/20261010-133950-phys-radioactive-decay",
+      "task_id": "phys-radioactive-decay",
+      "verdict": "accepted"
+    },
+    "20261010-134503-phys-snells-law": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-snells-law_accepted_01",
+      "file_count": 13,
+      "formula": "d*tan(theta2)*(1+(n-1)*theta2)",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134503-phys-snells-law",
+      "source_manifest_sha256": "23b11fc1caf492f82f0efa7ea128d0eb591182bc7b5ae93f778e73f228f39844",
+      "source_path": "runs/20261010-134503-phys-snells-law",
+      "task_id": "phys-snells-law",
+      "verdict": "accepted"
+    },
+    "20261010-134546-phys-spring-energy": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-spring-energy_accepted_01",
+      "file_count": 13,
+      "formula": "0.5*k*x**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134546-phys-spring-energy",
+      "source_manifest_sha256": "7f4da5b3152c151ab7702d8ff11ed20105804058d9ea087a663e0f77085a5594",
+      "source_path": "runs/20261010-134546-phys-spring-energy",
+      "task_id": "phys-spring-energy",
+      "verdict": "accepted"
+    },
+    "20261010-134613-phys-stefan-boltzmann": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-stefan-boltzmann_accepted_01",
+      "file_count": 14,
+      "formula": "sigma*A*T**4",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134613-phys-stefan-boltzmann",
+      "source_manifest_sha256": "14dc6673b041efb6789e0f465e6b5246cc66e1ddccc7d494fa7e81039e383e77",
+      "source_path": "runs/20261010-134613-phys-stefan-boltzmann",
+      "task_id": "phys-stefan-boltzmann",
+      "verdict": "accepted"
+    },
+    "20261010-134634-phys-surface-gravity": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-surface-gravity_accepted_01",
+      "file_count": 13,
+      "formula": "G*M/R**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134634-phys-surface-gravity",
+      "source_manifest_sha256": "2f81bc38531b44bfef8370ff58bf95dfb5529fcd6df04895631911c2248173b9",
+      "source_path": "runs/20261010-134634-phys-surface-gravity",
+      "task_id": "phys-surface-gravity",
+      "verdict": "accepted"
+    },
+    "20261010-134658-phys-transit-depth": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-transit-depth_rejected_01",
+      "file_count": 14,
+      "formula": "Rp**2/Rs**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134658-phys-transit-depth",
+      "source_manifest_sha256": "f6c21b01742912e8bab41745d252f8ee9b07ea32a2e90742ea80f1ab6183f55e",
+      "source_path": "runs/20261010-134658-phys-transit-depth",
+      "task_id": "phys-transit-depth",
+      "verdict": "rejected"
+    },
+    "20261010-134708-phys-transit-depth": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-transit-depth_accepted_01",
+      "file_count": 14,
+      "formula": "A*Rp**2/Rs**2",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134708-phys-transit-depth",
+      "source_manifest_sha256": "0d4e1a05da40868873ae72b7f20af434e745b5a99dcd1274d11753eeb4f58e4c",
+      "source_path": "runs/20261010-134708-phys-transit-depth",
+      "task_id": "phys-transit-depth",
+      "verdict": "accepted"
+    },
+    "20261010-134740-phys-weight": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-weight_accepted_01",
+      "file_count": 13,
+      "formula": "m*g",
+      "hypothesis_source": "agh-llm",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "20261010-134740-phys-weight",
+      "source_manifest_sha256": "64c24c7ac2122077113523e4d32ee1d7dc41c484de3b97527cb18f2d193f26fb",
+      "source_path": "runs/20261010-134740-phys-weight",
+      "task_id": "phys-weight",
+      "verdict": "accepted"
+    },
     "5.67e-8": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_14",
       "file_count": 7,
       "formula": "sigma*A*T**4",
@@ -1527,7 +2563,7 @@
       "verdict": "rejected"
     },
     "8.314462618": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_accepted_01",
       "file_count": 14,
       "formula": "R * n * T / V",
@@ -1541,7 +2577,7 @@
       "verdict": "accepted"
     },
     "R": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_rejected_02",
       "file_count": 7,
       "formula": "y",
@@ -1555,7 +2591,7 @@
       "verdict": "rejected"
     },
     "a": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_07",
       "file_count": 7,
       "formula": "d*(n*sin(theta2) + a*(sin(theta2)**3))",
@@ -1568,8 +2604,22 @@
       "task_id": "phys-snells-law",
       "verdict": "rejected"
     },
+    "c": {
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
+      "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_32",
+      "file_count": 7,
+      "formula": "c*eps0/(me*el**2)*n**(-2)",
+      "hypothesis_source": "cli",
+      "independent_recheck": "agree",
+      "reproducible": true,
+      "run_id": "c",
+      "source_manifest_sha256": "d7d458044799249e7ce16d8cd485680d377baf65b123dbe6194299609e11ccad",
+      "source_path": "runs/c",
+      "task_id": "phys-hydrogen-level",
+      "verdict": "rejected"
+    },
     "d": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_08",
       "file_count": 7,
       "formula": "y",
@@ -1583,7 +2633,7 @@
       "verdict": "rejected"
     },
     "demo-accepted-01": {
-      "archived_at_utc": "2026-10-10T04:48:06+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_mech-gravity_accepted_01",
       "file_count": 2,
       "formula": "G*m1*m2/r**2",
@@ -1591,13 +2641,13 @@
       "independent_recheck": "unresolvable",
       "reproducible": false,
       "run_id": "demo-accepted-01",
-      "source_manifest_sha256": "0a7175b70fac9d27fb0c07c91b80107b2c80c6a2af14eb56d789fe7571bf84ad",
+      "source_manifest_sha256": "37533e73c01dda2f00c4b03c1971e6ed1ae561a999258ddf12e15e4aad5da944",
       "source_path": "runs/demo-accepted-01",
       "task_id": "mech-gravity",
       "verdict": "accepted"
     },
     "discrim-ref-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:18+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_accepted_02",
       "file_count": 16,
       "formula": "rho*V*g",
@@ -1605,13 +2655,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-buoyancy",
-      "source_manifest_sha256": "98a2bbdd90395e7a2b50f56d9375f12a839b7ed09efe536e8366b6707a0c9435",
+      "source_manifest_sha256": "2f0081596b08c1e81ee165d2f13d3dbed2f7afa8d43f4d27c7a2fd83c6169a44",
       "source_path": "runs/discrim-ref-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "accepted"
     },
     "discrim-ref-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:19+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_accepted_02",
       "file_count": 16,
       "formula": "k*q1*q2/r**2",
@@ -1619,13 +2669,13 @@
       "independent_recheck": "stale-metrics",
       "reproducible": true,
       "run_id": "discrim-ref-phys-coulomb",
-      "source_manifest_sha256": "7a9f44b8bf57f0f38505e952d870b8e522165379ce8f797e45671bcab2a0f169",
+      "source_manifest_sha256": "657bcaf6b9a9f3404f9b1f1c4c1906df035ee9b1d005a60f1a3a55df99fa3fbf",
       "source_path": "runs/discrim-ref-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "accepted"
     },
     "discrim-ref-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:19+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_accepted_03",
       "file_count": 16,
       "formula": "q*B/m",
@@ -1633,13 +2683,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-cyclotron",
-      "source_manifest_sha256": "7709d2022bb227f83853ca85fdc4f4c1c0f5f245111febd46c4ea948df5255fa",
+      "source_manifest_sha256": "badf79a13b37e4998dabbc661670eea9f5202965a5625a4a51ac69293b1f8768",
       "source_path": "runs/discrim-ref-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "accepted"
     },
     "discrim-ref-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:19+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_accepted_02",
       "file_count": 15,
       "formula": "c*x**2/2",
@@ -1647,13 +2697,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-elastic-pe",
-      "source_manifest_sha256": "9fb55498d6c28d57c0262e86edf0b4e6478122109f0d93041c7a1a3acbf22f62",
+      "source_manifest_sha256": "84a76f2b8433b67c8ca383fe74c600e23165a7994e90adbe9e69e6fbfac3ca3d",
       "source_path": "runs/discrim-ref-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "accepted"
     },
     "discrim-ref-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:20+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_accepted_02",
       "file_count": 15,
       "formula": "(A-B)/h",
@@ -1661,13 +2711,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-energy-shift",
-      "source_manifest_sha256": "3c5316e768d3440171be4b0383f720caf8fe4a13ee0b22ca55675dec0523bc68",
+      "source_manifest_sha256": "aa91a78cd2181724bcf884ef49295a47fa25d574834881894b36b003bcd25490",
       "source_path": "runs/discrim-ref-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "accepted"
     },
     "discrim-ref-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:20+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_accepted_02",
       "file_count": 15,
       "formula": "-G*m1*m2/r",
@@ -1675,13 +2725,13 @@
       "independent_recheck": "stale-metrics",
       "reproducible": true,
       "run_id": "discrim-ref-phys-grav-potential-energy",
-      "source_manifest_sha256": "dfb5b69f69b03c7a459eebb966ae6b72e573aad7a5e0eb38e0fa2c79e486c8df",
+      "source_manifest_sha256": "79ee35912986ab493e77ab1a3ed74c74e7708c0427f9170493ec357b834b46de",
       "source_path": "runs/discrim-ref-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "accepted"
     },
     "discrim-ref-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:21+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_accepted_02",
       "file_count": 16,
       "formula": "G*m1*m2/r**2",
@@ -1689,13 +2739,13 @@
       "independent_recheck": "stale-metrics",
       "reproducible": true,
       "run_id": "discrim-ref-phys-gravitation",
-      "source_manifest_sha256": "f0e5fa738b178890eb468421803483d6d825bd89b86e2a93ea1929ae8bc33d6b",
+      "source_manifest_sha256": "a101af6f5a8a5f0e7d260b4c011206c433685f455b6b81c47ececccc210d9916",
       "source_path": "runs/discrim-ref-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "accepted"
     },
     "discrim-ref-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:21+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_accepted_01",
       "file_count": 14,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
@@ -1703,13 +2753,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-hydrogen-level",
-      "source_manifest_sha256": "ea9332104dcae4b617533f37f8cf7301c91e9168e3bf8ca1d87d549d1d4ed881",
+      "source_manifest_sha256": "479a27e03546ef3ad378547c0a5fd9fd7a2c40b61b8522f7925973551cdf8d5b",
       "source_path": "runs/discrim-ref-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "accepted"
     },
     "discrim-ref-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:22+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_accepted_02",
       "file_count": 16,
       "formula": "n*R*T/V",
@@ -1717,13 +2767,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-ideal-gas",
-      "source_manifest_sha256": "21e52e9f6666b33726712772372fe9e7103b9d54b53b7311dd01e74115a7fdd1",
+      "source_manifest_sha256": "272abb04b5f829c0c6146553d8eb80cb426d32757998c9c324b4bec1f2a2b621",
       "source_path": "runs/discrim-ref-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "accepted"
     },
     "discrim-ref-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:22+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_accepted_03",
       "file_count": 14,
       "formula": "1/sqrt(eps*mu)",
@@ -1731,13 +2781,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-index-vacuum",
-      "source_manifest_sha256": "8169a2589f35e2fdba638c2a3dfc3ecb8ae516b67ae694b30a095f1f120f4191",
+      "source_manifest_sha256": "eeb107231c73d63dff6d9c26cf7794e1ad2e09385cc45f27e1c7a486ff523642",
       "source_path": "runs/discrim-ref-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "accepted"
     },
     "discrim-ref-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:22+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_accepted_02",
       "file_count": 15,
       "formula": "I**2*R",
@@ -1745,13 +2795,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-joule-heating",
-      "source_manifest_sha256": "5c0d504d4e01acae46486d2b122d30b66f7a997fba86599f84a0520f8e8949a3",
+      "source_manifest_sha256": "15834d07a822f6d9fb482b55d290c1320dcadd42464814757c4d653da6dc7e3a",
       "source_path": "runs/discrim-ref-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "accepted"
     },
     "discrim-ref-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:23+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_accepted_02",
       "file_count": 15,
       "formula": "m*v**2/2",
@@ -1759,13 +2809,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-kinetic-energy",
-      "source_manifest_sha256": "602962e0e79d1e338fe9a6c0020b1d38a586d016a05f5479444bbfd52738d05c",
+      "source_manifest_sha256": "6ff22ed2f39d0e226e2686f79f4c9a39f7475cb0822463ca2ec20464ee8bd873",
       "source_path": "runs/discrim-ref-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "accepted"
     },
     "discrim-ref-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:23+00:00",
       "evidence_path": "runs/20261009_phys-ohm_accepted_02",
       "file_count": 15,
       "formula": "I*R",
@@ -1773,13 +2823,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-ohm",
-      "source_manifest_sha256": "93b9eda717552181bb585e008d45b9c5a97e39a05f10dd36f373163da9fb1089",
+      "source_manifest_sha256": "77ef20ff840bc599de49369a2a643e2a1c73da37dc60608f1e4349a1b5b7ac80",
       "source_path": "runs/discrim-ref-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "accepted"
     },
     "discrim-ref-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:23+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_accepted_02",
       "file_count": 15,
       "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
@@ -1787,13 +2837,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-pendulum-exact",
-      "source_manifest_sha256": "ac9a0f405bba4e4c7a9e4098304e49c8b34c3d8071a981323ded5bc9fa32ee19",
+      "source_manifest_sha256": "5971274f30dabfc61ff924ad79afcee0210ffc54a9fd0a709c47c65943f838c5",
       "source_path": "runs/discrim-ref-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "accepted"
     },
     "discrim-ref-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:24+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_accepted_02",
       "file_count": 15,
       "formula": "2*pi*sqrt(L/g)",
@@ -1801,13 +2851,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-pendulum-period",
-      "source_manifest_sha256": "e6b4eca16e6eb798a1e21e48f0c27ab71ad49da0cba7427543fb404f40a7308a",
+      "source_manifest_sha256": "062f850452f2dae5064f8b5174c48a4c0c4660ea41d929fdd0a9cd675e37af72",
       "source_path": "runs/discrim-ref-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "accepted"
     },
     "discrim-ref-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:24+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_04",
       "file_count": 15,
       "formula": "N0*exp(-t/tau)",
@@ -1815,13 +2865,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-radioactive-decay",
-      "source_manifest_sha256": "3d16877c9eec1d266fe1582489a1d00f21ae06bd2387730745c296657a6d0c20",
+      "source_manifest_sha256": "6bdb2cbec4174da314d2b867cc5871030468ad68bda0007acdc62a0dda7ca93f",
       "source_path": "runs/discrim-ref-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "accepted"
     },
     "discrim-ref-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:25+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_accepted_01",
       "file_count": 15,
       "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
@@ -1829,13 +2879,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-snells-law",
-      "source_manifest_sha256": "93aaf7b4c6c2c1f7d315cc3e04958c6d936c3545d9a9c4a81a064c0e70de64c7",
+      "source_manifest_sha256": "f68f724cf10b0b1a8e92d8f79d52c6d51c541f0c954cbf2273dc5c9564a1fdb0",
       "source_path": "runs/discrim-ref-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "accepted"
     },
     "discrim-ref-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:25+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_accepted_02",
       "file_count": 15,
       "formula": "k*x**2/2",
@@ -1843,13 +2893,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-spring-energy",
-      "source_manifest_sha256": "8b5a9395298da76ee522a1bc2ac71bb6ce8ac930de1b4491cca34992a1ba5b88",
+      "source_manifest_sha256": "2bae180509faa853e02302df807cd1848777986ef7766f5790c25cdcf6627736",
       "source_path": "runs/discrim-ref-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "accepted"
     },
     "discrim-ref-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:26+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_accepted_01",
       "file_count": 16,
       "formula": "sigma*A*T**4",
@@ -1857,13 +2907,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-stefan-boltzmann",
-      "source_manifest_sha256": "69ad7872a829b656e6a47de1a89b6dd1a094527d068fc1c3d63a85fcd18df2cb",
+      "source_manifest_sha256": "a1994c7219a36a2fa1a7ef2f80a0f19449c819c099d12c1fdaf9771cec9dd2cc",
       "source_path": "runs/discrim-ref-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "accepted"
     },
     "discrim-ref-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:26+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_accepted_02",
       "file_count": 15,
       "formula": "G*M/R**2",
@@ -1871,13 +2921,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-surface-gravity",
-      "source_manifest_sha256": "ab9415062c2ac01f4658ddb538a9ff4b91d15f58e632db9c3f6568c6b751e36f",
+      "source_manifest_sha256": "d393d233d74387b03493767df7c3990f5ad339974232cfca70e43ae9d7f2ca15",
       "source_path": "runs/discrim-ref-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "accepted"
     },
     "discrim-ref-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:27+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_accepted_02",
       "file_count": 16,
       "formula": "A*(Rp/Rs)**2",
@@ -1885,13 +2935,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-transit-depth",
-      "source_manifest_sha256": "7b40969ee3cd180ffefdd6cdec5e23e0b6cd589f5da47b1453c89426225bdc30",
+      "source_manifest_sha256": "7b1cf16e85c66acff2112943979e37dd359db3b27a183c31566244d054867863",
       "source_path": "runs/discrim-ref-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "accepted"
     },
     "discrim-ref-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:27+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_03",
       "file_count": 15,
       "formula": "m*g",
@@ -1899,13 +2949,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-ref-phys-weight",
-      "source_manifest_sha256": "94845df5efca2f4980521de2c1bd29e86e775e7c173c4bbc0f1b553276dacb75",
+      "source_manifest_sha256": "59ed968b50da7f9499836dc86c58d28f38d97fb1af3a8ec82ecc5c832ff46f2d",
       "source_path": "runs/discrim-ref-phys-weight",
       "task_id": "phys-weight",
       "verdict": "accepted"
     },
     "discrim-wrong-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:27+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_rejected_01",
       "file_count": 16,
       "formula": "rho*V",
@@ -1913,13 +2963,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-buoyancy",
-      "source_manifest_sha256": "203b7167b1efb40c7fb83391e248ae7371550841071453de4f9b4cf47be066ce",
+      "source_manifest_sha256": "69658f8b20906eea84695f4a54071f6ab5004a167a48d334114dc1339c9fab6f",
       "source_path": "runs/discrim-wrong-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:28+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_rejected_02",
       "file_count": 13,
       "formula": "k*q1*q2/r",
@@ -1927,13 +2977,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-coulomb",
-      "source_manifest_sha256": "06f3dfa6740cf068e72932e53b50dd34b19415911791e04d35f9bd3e270bf11e",
+      "source_manifest_sha256": "191eb41d0c3599490ca0496579fc5be8b9455a05308783bb4fc80d794d35119f",
       "source_path": "runs/discrim-wrong-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:28+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_rejected_01",
       "file_count": 16,
       "formula": "q*B*m",
@@ -1941,13 +2991,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-cyclotron",
-      "source_manifest_sha256": "ead91ac773f227fbcadb1fdeef15476090f2289cc6d6cb531ea3b0e4b28a1b78",
+      "source_manifest_sha256": "bd825f6f77ff367d0d7bfa76b7f846dae6cf51d11770164429bfe94cb4715342",
       "source_path": "runs/discrim-wrong-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:29+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_rejected_02",
       "file_count": 15,
       "formula": "c*x/2",
@@ -1955,13 +3005,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-elastic-pe",
-      "source_manifest_sha256": "672977105ce8795a4148e305031374000a915d40948daa3a0c0590e0ca58e6f6",
+      "source_manifest_sha256": "460e0add6b48563efa2fd9dc3244555769f4bf80692c6fd4893eefe52bb59bc2",
       "source_path": "runs/discrim-wrong-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:29+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_rejected_01",
       "file_count": 12,
       "formula": "A*B/h",
@@ -1969,13 +3019,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-energy-shift",
-      "source_manifest_sha256": "e46c56b5e41a1f5c98516bf1c050c322cd23e4a04c269cd7b40d1a8024e6aad0",
+      "source_manifest_sha256": "9161d06a17037ffbf11bb7a0c811a5672dc93e9a6ad3ef56275c3adfc88c8701",
       "source_path": "runs/discrim-wrong-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:29+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_rejected_02",
       "file_count": 12,
       "formula": "-G*m1*m2/r**2",
@@ -1983,13 +3033,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-grav-potential-energy",
-      "source_manifest_sha256": "982e4ee3fa6cbd70a461539a65cf8deb30d7e6ca6ab258c7ee9b09924394eb72",
+      "source_manifest_sha256": "405454ff4c83d868f538e304c78b6f81477d00b2fdae7dce49beaa868fd17a07",
       "source_path": "runs/discrim-wrong-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:30+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_rejected_01",
       "file_count": 13,
       "formula": "G*m1*m2/r",
@@ -1997,13 +3047,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-gravitation",
-      "source_manifest_sha256": "00a9334d038edc817fef585d0bee2ced0df1c0c9162f5863a98e9398a2179175",
+      "source_manifest_sha256": "0ff46fa7462e38072660f7fb8f69d4222e656a70d2470408ab7b7920532f463f",
       "source_path": "runs/discrim-wrong-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:30+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_02",
       "file_count": 11,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
@@ -2011,13 +3061,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-hydrogen-level",
-      "source_manifest_sha256": "892e7a08f6022f433b7c5f6c5cebf71918e84e9f1f512fc50e63ccb1dda2e394",
+      "source_manifest_sha256": "df58ad275630e701cc8ccc6670f93e3dc75a18bd8ab5ff21da039d2600f8e3c9",
       "source_path": "runs/discrim-wrong-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:31+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_rejected_03",
       "file_count": 13,
       "formula": "R*n*T",
@@ -2025,13 +3075,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-ideal-gas",
-      "source_manifest_sha256": "4653af1d0fb9b84e9188c2fb09197febda656e7e33dedd8c3d923a2c12dd72dc",
+      "source_manifest_sha256": "dc08f904956880be8945e7296bce71d31bfbddd99102e01749397995a44cce2f",
       "source_path": "runs/discrim-wrong-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:31+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_rejected_01",
       "file_count": 14,
       "formula": "eps*mu",
@@ -2039,13 +3089,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-index-vacuum",
-      "source_manifest_sha256": "2d21160bd769a9c5db8498fc2e25da40bfa03a2c27cc87745ad0c6b0b85221a9",
+      "source_manifest_sha256": "1266043e654eea50418b0c1dd6d0ed4b4a017d8ed5f884b8e89d632e9764dac1",
       "source_path": "runs/discrim-wrong-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:32+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_rejected_02",
       "file_count": 15,
       "formula": "I*R",
@@ -2053,13 +3103,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-joule-heating",
-      "source_manifest_sha256": "e3b63cd5c8d8f26805bc28a19f367fd83b2beff6448b972f43209e50fea62cc0",
+      "source_manifest_sha256": "967b2a9df786a367b530f6c2391549fc563255be04161a6fcac716a4faac240d",
       "source_path": "runs/discrim-wrong-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:32+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_rejected_01",
       "file_count": 15,
       "formula": "m*v/2",
@@ -2067,13 +3117,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-kinetic-energy",
-      "source_manifest_sha256": "9c81b4e3acb9abc5f1f18171acb341c8b1b6c9c05a11b16a90f77dcd97caa3b3",
+      "source_manifest_sha256": "a98e9b692926258bafdc160d49d235e7317efc32950f2577f01125b88ff10cb2",
       "source_path": "runs/discrim-wrong-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:33+00:00",
       "evidence_path": "runs/20261009_phys-ohm_rejected_01",
       "file_count": 15,
       "formula": "I/R",
@@ -2081,13 +3131,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-ohm",
-      "source_manifest_sha256": "5bbb3cf7768ba45b6b4144e157e7de806d3b908f4859fa6bd542376bc09435d0",
+      "source_manifest_sha256": "9974d93c601ee8818b8ebe73c16025df2b1f9477679a58d2717873202c0952f6",
       "source_path": "runs/discrim-wrong-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:33+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_rejected_03",
       "file_count": 15,
       "formula": "2*pi*sqrt(L/g)",
@@ -2095,13 +3145,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-pendulum-exact",
-      "source_manifest_sha256": "2edee6cfae6d020ffd884fcd7ba83602e0e3960a8fba520146d5be08ea1de7c7",
+      "source_manifest_sha256": "c23daacba40a71878af77a18f089cab061c2fef150dd66e03736d0c3ba1f1e2c",
       "source_path": "runs/discrim-wrong-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:33+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_rejected_02",
       "file_count": 15,
       "formula": "2*pi*L/g",
@@ -2109,13 +3159,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-pendulum-period",
-      "source_manifest_sha256": "924e890547d260eca40640b7f33476184779b80886e176f8b2cde1867e70c295",
+      "source_manifest_sha256": "2e8401520a08d003ff6ecc70f88d49f9edb603c5f61c11ddae3ec6c7dadae677",
       "source_path": "runs/discrim-wrong-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:34+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_rejected_03",
       "file_count": 15,
       "formula": "N0*(1-t/tau)",
@@ -2123,13 +3173,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-radioactive-decay",
-      "source_manifest_sha256": "2b1c51334888b48ea2ef5edf1217c8ddc448b22a2799c395d1667a0042807708",
+      "source_manifest_sha256": "2664313670d985dc24805013ae40c63c2087dfc18c14b4a08a9b4ef0507984a8",
       "source_path": "runs/discrim-wrong-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:34+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_09",
       "file_count": 12,
       "formula": "d*sin(theta2)*n",
@@ -2137,13 +3187,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-snells-law",
-      "source_manifest_sha256": "b482e94e6b61ee6dc0e49f0b008398a8aecbceb7bc02ac5d83aedeb15d9070e2",
+      "source_manifest_sha256": "4e5d24fdcf5c3aa4b48d56982cd76bc2dcfea534443e725c6f2e1018ad712610",
       "source_path": "runs/discrim-wrong-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:34+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_rejected_01",
       "file_count": 15,
       "formula": "k*x/2",
@@ -2151,13 +3201,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-spring-energy",
-      "source_manifest_sha256": "9c123b8af66153ef6745eb7fca72b1d13963b85d5436e5e87947ffbaa88fd987",
+      "source_manifest_sha256": "eab4723589fe0b7522fe2c2bc1582969fcd33e848241e5f2c6d87d48f61a9deb",
       "source_path": "runs/discrim-wrong-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:35+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_15",
       "file_count": 13,
       "formula": "sigma*A*T**2",
@@ -2165,13 +3215,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-stefan-boltzmann",
-      "source_manifest_sha256": "85159d42f15774c7fe3baf02ec82fd11a458f4e057f96ce5e028e72b68187bda",
+      "source_manifest_sha256": "c0dc19bfbb97682e49e117d56f072ef398d37904d752e5b8941dee5f485d7ef9",
       "source_path": "runs/discrim-wrong-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:35+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_rejected_02",
       "file_count": 12,
       "formula": "G*M/R",
@@ -2179,13 +3229,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-surface-gravity",
-      "source_manifest_sha256": "f743003634e331110e9115bd46d581efa6b6e5de3d4bee1e6a3d6df31fd50ad3",
+      "source_manifest_sha256": "f8e3d3911370e219daeda907582979e4953b3adccab0f50fd4f4e1b0e62c9c20",
       "source_path": "runs/discrim-wrong-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_rejected_02",
       "file_count": 16,
       "formula": "A*(Rp/Rs)",
@@ -2193,13 +3243,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-transit-depth",
-      "source_manifest_sha256": "3cb53ac5c95c9af8435c928af9bf3ce1966d99c465b7036a2022734ca43bce5a",
+      "source_manifest_sha256": "9e4db5aab6a610d0fcec6e22dff976200a67d400fba6729bcb0724297a18f7ed",
       "source_path": "runs/discrim-wrong-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "rejected"
     },
     "discrim-wrong-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261009_phys-weight_rejected_02",
       "file_count": 15,
       "formula": "m/g",
@@ -2207,13 +3257,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "discrim-wrong-phys-weight",
-      "source_manifest_sha256": "9463e2960aaf20a1d6c513fb248279bdfec0118e6f361c515a54a41f158adfac",
+      "source_manifest_sha256": "3cd703bca3fc395436a7f83b5338acd70ade3ef16fdd93ea99706ac190f6b2a9",
       "source_path": "runs/discrim-wrong-phys-weight",
       "task_id": "phys-weight",
       "verdict": "rejected"
     },
     "extrap-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-coulomb_rejected_01",
       "file_count": 9,
       "formula": "k*q1*q2/r",
@@ -2227,7 +3277,7 @@
       "verdict": "rejected"
     },
     "extrap-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-gravitation_rejected_01",
       "file_count": 9,
       "formula": "G*m1*m2/r",
@@ -2241,7 +3291,7 @@
       "verdict": "rejected"
     },
     "extrap-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-hydrogen-level_rejected_01",
       "file_count": 9,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
@@ -2255,7 +3305,7 @@
       "verdict": "rejected"
     },
     "extrap-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-pendulum-exact_accepted_01",
       "file_count": 9,
       "formula": "2*pi*sqrt(L/g)",
@@ -2269,7 +3319,7 @@
       "verdict": "accepted"
     },
     "extrap-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-stefan-boltzmann_rejected_01",
       "file_count": 9,
       "formula": "sigma*A*T**2",
@@ -2283,7 +3333,7 @@
       "verdict": "rejected"
     },
     "extrap-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261010_phys-surface-gravity_rejected_01",
       "file_count": 9,
       "formula": "G*M/R",
@@ -2297,7 +3347,7 @@
       "verdict": "rejected"
     },
     "h": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_rejected_02",
       "file_count": 7,
       "formula": "y",
@@ -2311,21 +3361,21 @@
       "verdict": "rejected"
     },
     "hbar": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_06",
-      "file_count": 7,
-      "formula": "K*me*el**2/(eps0**2*hbar**2*n**2)",
+      "file_count": 8,
+      "formula": "A*me*el**4/(eps0**2*hbar**2*n**2)",
       "hypothesis_source": "agh-llm",
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "hbar",
-      "source_manifest_sha256": "30a485340863187ab0c23adc4ff598c1f308f9727dd26581623cce7208080e4b",
+      "source_manifest_sha256": "b75f1bcfbfe8c5a11498bb1d2045e02b4fbc259a63dd88c2a62cd7da584a31a3",
       "source_path": "runs/hbar",
       "task_id": "phys-hydrogen-level",
       "verdict": "rejected"
     },
     "negctl-summary": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:36+00:00",
       "evidence_path": "runs/20261009_negative-control_accepted_01",
       "file_count": 7,
       "formula": "(纯噪声，正确结论是未发现公式)",
@@ -2333,13 +3383,13 @@
       "independent_recheck": "unresolvable",
       "reproducible": false,
       "run_id": "negctl-summary",
-      "source_manifest_sha256": "207fbea332cc097d04c3811e17d0fb0f194b51b315bcef3b46045ef59a3989b8",
+      "source_manifest_sha256": "8a74eea1a75c28a73136fbd6f210d8fabe2f119f1e06e5cec20d0250e5bc7e13",
       "source_path": "runs/negctl-summary",
       "task_id": "negative-control",
       "verdict": "accepted"
     },
     "phys-gravitation-cand01": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:37+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_accepted_03",
       "file_count": 10,
       "formula": "G*m1*m2/r**2",
@@ -2347,13 +3397,13 @@
       "independent_recheck": "stale-metrics",
       "reproducible": true,
       "run_id": "phys-gravitation-cand01",
-      "source_manifest_sha256": "d96bebc3f6be5e6c3f1d15b19d8bd159c851209b2e0a90b57e1e45bd26ccc8fd",
+      "source_manifest_sha256": "f6737454c88b7a5222f0e04d8930f2aca28d5b1d5ca6f338c327235abc7a455c",
       "source_path": "runs/phys-gravitation-cand01",
       "task_id": "phys-gravitation",
       "verdict": "accepted"
     },
     "phys-gravitation-cand02": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:37+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_rejected_02",
       "file_count": 10,
       "formula": "G*m1*m2/r",
@@ -2361,13 +3411,13 @@
       "independent_recheck": "stale-metrics",
       "reproducible": true,
       "run_id": "phys-gravitation-cand02",
-      "source_manifest_sha256": "f4952efc1d2d3c47f37d34199c551cf33d78a5f46049fdd42387ba31a19069f1",
+      "source_manifest_sha256": "5fc5b921a6d919a70fb4df095eacc753d2089f09eab2c499b75fd0760e9f2d90",
       "source_path": "runs/phys-gravitation-cand02",
       "task_id": "phys-gravitation",
       "verdict": "rejected"
     },
     "refcheck-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:37+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_refcheck_01",
       "file_count": 15,
       "formula": "rho*V*g",
@@ -2375,13 +3425,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-buoyancy",
-      "source_manifest_sha256": "45edf282dc3072619c28b7235965312aad415969fde32e9cde73ae16477287fb",
+      "source_manifest_sha256": "5ff78360e5b8457f99be00c04f1d2088ecd3ff7ef7ecee5b97e13336ead75abb",
       "source_path": "runs/refcheck-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "accepted"
     },
     "refcheck-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:38+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_refcheck_01",
       "file_count": 15,
       "formula": "k*q1*q2/r**2",
@@ -2389,13 +3439,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-coulomb",
-      "source_manifest_sha256": "ae3c104f5572e43623ac42bf530f30258b437a9f2b44ff8bc2cbda4729800352",
+      "source_manifest_sha256": "8bc5567ff46182464cb498238ade6f43e012a68a956cb15500f32403ac6b9f09",
       "source_path": "runs/refcheck-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "accepted"
     },
     "refcheck-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:38+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_refcheck_01",
       "file_count": 15,
       "formula": "q*B/m",
@@ -2403,13 +3453,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-cyclotron",
-      "source_manifest_sha256": "c7ac268dd3d740c629e3b4f42dffe028f52ff71ad1bb9a54aeb4e1adb28c637b",
+      "source_manifest_sha256": "3f02c57a15a72bcce0a47c43979ba78cd9ad6a7584dc7768b7a6b2e109ee0784",
       "source_path": "runs/refcheck-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "accepted"
     },
     "refcheck-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:39+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_refcheck_01",
       "file_count": 14,
       "formula": "c*x**2/2",
@@ -2417,13 +3467,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-elastic-pe",
-      "source_manifest_sha256": "55b1283e7e2600fff79cccd4cc40e5b5039fe9d35dc24c60f6ce93e9595cfb5e",
+      "source_manifest_sha256": "6ad4aae9648a464d0b8dd18bed03930497859ca38435c8e96f7df9adb92dd729",
       "source_path": "runs/refcheck-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "accepted"
     },
     "refcheck-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:39+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_refcheck_01",
       "file_count": 14,
       "formula": "(A-B)/h",
@@ -2431,13 +3481,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-energy-shift",
-      "source_manifest_sha256": "31672c5cf717a641ab01cfff4b78f76587ea2bd46def30fa0f2c1ee9f05e2294",
+      "source_manifest_sha256": "a2d163957a81b39342553fe6a5a98e3d0b0d7ae46c0a2c1eacf75361485562a2",
       "source_path": "runs/refcheck-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "accepted"
     },
     "refcheck-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:40+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_refcheck_01",
       "file_count": 14,
       "formula": "-G*m1*m2/r",
@@ -2445,13 +3495,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-grav-potential-energy",
-      "source_manifest_sha256": "8994864c158a675352a88aff09f4b52e627192e6f768d4095ac185e9d51a6ea2",
+      "source_manifest_sha256": "a11e34c485cf0914c683f516aaaccd6f77cdb2b8490b4645c31f961a2d039f7f",
       "source_path": "runs/refcheck-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "accepted"
     },
     "refcheck-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:40+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_refcheck_01",
       "file_count": 15,
       "formula": "G*m1*m2/r**2",
@@ -2459,13 +3509,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-gravitation",
-      "source_manifest_sha256": "dbf09f0d914bbe8aca13eda6f0a91d00d827d135def28ab441aaade45e3660fc",
+      "source_manifest_sha256": "a572adcc30b92d1c5457ad2eb01448e7f3f8f3bfe6b4d8d690c823dee1e0ebdc",
       "source_path": "runs/refcheck-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "accepted"
     },
     "refcheck-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:40+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_refcheck_01",
       "file_count": 13,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
@@ -2473,13 +3523,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-hydrogen-level",
-      "source_manifest_sha256": "f7c90ad0141b4302ec5c8315c3906b3a1b736c812088548b60ce648dde78f8fb",
+      "source_manifest_sha256": "33124885ab6746d6ebe84ee50cdb70df98c8e4facddba80dcd846d502e13b9f4",
       "source_path": "runs/refcheck-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "accepted"
     },
     "refcheck-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:41+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_refcheck_01",
       "file_count": 15,
       "formula": "n*R*T/V",
@@ -2487,13 +3537,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-ideal-gas",
-      "source_manifest_sha256": "e056f1567b9a0e19e9a15593c8d7b7cf3f4a65c95592c5a48b6d5dca5be9ee11",
+      "source_manifest_sha256": "e6466ff4fc98154ba46d079e099a2448bcc725421edec30b8015fa3ead53dbea",
       "source_path": "runs/refcheck-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "accepted"
     },
     "refcheck-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:41+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_refcheck_01",
       "file_count": 13,
       "formula": "1/sqrt(eps*mu)",
@@ -2501,13 +3551,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-index-vacuum",
-      "source_manifest_sha256": "6b38bd39d4672688114b1989fee31ea006909416c97418aa2fe27516bdf69aac",
+      "source_manifest_sha256": "7294ed507826aa393d69ca29f25a7f8ad1f20b94aafabf229d92f8052b184abd",
       "source_path": "runs/refcheck-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "accepted"
     },
     "refcheck-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:42+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_refcheck_01",
       "file_count": 14,
       "formula": "I**2*R",
@@ -2515,13 +3565,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-joule-heating",
-      "source_manifest_sha256": "42216f33723bdc699c1f5c48628be560f2c5ce4bb0b6572f9df0b4fbe3baa672",
+      "source_manifest_sha256": "575862db8f9560e31e10f6ae084d04709805127a7fa16681680cd53dc6825a8e",
       "source_path": "runs/refcheck-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "accepted"
     },
     "refcheck-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:42+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_refcheck_01",
       "file_count": 14,
       "formula": "m*v**2/2",
@@ -2529,13 +3579,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-kinetic-energy",
-      "source_manifest_sha256": "d279f8e6b30464214bb949e88a13d0598d70c0e68888ea45c36adfa2ce1c04fb",
+      "source_manifest_sha256": "4f9e737c5d6d5e45f5cd750d8cc07a4cf83f3cc55c32a3554162ccd7d98ad7bc",
       "source_path": "runs/refcheck-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "accepted"
     },
     "refcheck-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:43+00:00",
       "evidence_path": "runs/20261009_phys-ohm_refcheck_01",
       "file_count": 14,
       "formula": "I*R",
@@ -2543,13 +3593,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-ohm",
-      "source_manifest_sha256": "f9d074871acd133aa1c43c00cc71ba68dece4b47f5dedd9efa8d8d4f59c0579e",
+      "source_manifest_sha256": "a1f7145c1543a612ef67f9b22348d7fc9ed58d047e6e8f172c0c7f44287c3460",
       "source_path": "runs/refcheck-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "accepted"
     },
     "refcheck-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:43+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_refcheck_01",
       "file_count": 14,
       "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
@@ -2557,13 +3607,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-pendulum-exact",
-      "source_manifest_sha256": "0566d736b7e19c8375ba1a2754b010da017abf3011fe56fe6aca6451028b02d7",
+      "source_manifest_sha256": "62a4d300a1a89a22dd6774baa82de8bb46e040259c0c6941ce6fd1020793ea57",
       "source_path": "runs/refcheck-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "accepted"
     },
     "refcheck-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:43+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_refcheck_01",
       "file_count": 14,
       "formula": "2*pi*sqrt(L/g)",
@@ -2571,13 +3621,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-pendulum-period",
-      "source_manifest_sha256": "a5eb567920e808847c1fd8eaf1baacae035c934f28129cb00eb609207dc36cb1",
+      "source_manifest_sha256": "0b770dac2197fee2d3b0fb6a29188369c02dad025fc93fb3897ec8d0ea9444dd",
       "source_path": "runs/refcheck-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "accepted"
     },
     "refcheck-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:44+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_refcheck_01",
       "file_count": 14,
       "formula": "N0*exp(-t/tau)",
@@ -2585,13 +3635,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-radioactive-decay",
-      "source_manifest_sha256": "a536222cfa0d08d0e54802cf061e0846b452ad0efafd18e04f7b9ee86d7ab507",
+      "source_manifest_sha256": "0adc0aeaeba2d70c002ca1ba945661bdb98c48c1d243a00c00c0f1f76561f191",
       "source_path": "runs/refcheck-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "accepted"
     },
     "refcheck-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:44+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_refcheck_01",
       "file_count": 14,
       "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
@@ -2599,13 +3649,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-snells-law",
-      "source_manifest_sha256": "16d50435b15a7c42a87cd4cf3aac5175fd9ed8c603b0aa985eccafb9e06cdbf5",
+      "source_manifest_sha256": "58c4d871b7ba748cf07dfad9979f78d761cf2880077e5280c42102f78afa17bf",
       "source_path": "runs/refcheck-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "accepted"
     },
     "refcheck-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:45+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_refcheck_01",
       "file_count": 14,
       "formula": "k*x**2/2",
@@ -2613,13 +3663,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-spring-energy",
-      "source_manifest_sha256": "bf718b7a6bd6b96004d719571812b2368d65f44f466028fcca677bef391b53f8",
+      "source_manifest_sha256": "6af66ca61a30cbcf34ce9c1ec0fc8025437813219ab4d86ccf896e4ecb61536d",
       "source_path": "runs/refcheck-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "accepted"
     },
     "refcheck-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:45+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_refcheck_01",
       "file_count": 15,
       "formula": "sigma*A*T**4",
@@ -2627,13 +3677,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-stefan-boltzmann",
-      "source_manifest_sha256": "9a498ff87a4b139be9415e46f2e600bba72bd91b0d47d0f07eb65027459da06c",
+      "source_manifest_sha256": "47bda91bd5a1a17821580a5cd32c69e82ffcfdedd48cf0e1df6d9c785dd4c1a0",
       "source_path": "runs/refcheck-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "accepted"
     },
     "refcheck-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:45+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_refcheck_01",
       "file_count": 14,
       "formula": "G*M/R**2",
@@ -2641,13 +3691,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-surface-gravity",
-      "source_manifest_sha256": "627e7427d21372b9fec04dfc900bb59606aa627a066165b41d95311464824fa9",
+      "source_manifest_sha256": "8528f39308514912ee11ba503c0f3e03a071bb3d672676ff5d1ba172207c5f7f",
       "source_path": "runs/refcheck-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "accepted"
     },
     "refcheck-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:46+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_refcheck_01",
       "file_count": 15,
       "formula": "A*(Rp/Rs)**2",
@@ -2655,13 +3705,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-transit-depth",
-      "source_manifest_sha256": "9758528129aba1f427b24281548c7dd05cecef15aec24e0a4631dd539a0084c4",
+      "source_manifest_sha256": "a51b6abfd18d81cc911804ce260e484e0cd83a1db7f32ef2aa7ce7128d40da6f",
       "source_path": "runs/refcheck-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "accepted"
     },
     "refcheck-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:46+00:00",
       "evidence_path": "runs/20261009_phys-weight_refcheck_01",
       "file_count": 14,
       "formula": "m*g",
@@ -2669,13 +3719,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "refcheck-phys-weight",
-      "source_manifest_sha256": "597c5cbbc854ce56daee206a62496fdc43b24c9d6dad66880b2f8d7c4f67a368",
+      "source_manifest_sha256": "a2ba0fe51523c564a7305d8a562540d707c35362f6f224b99e0f2006a816ca97",
       "source_path": "runs/refcheck-phys-weight",
       "task_id": "phys-weight",
       "verdict": "accepted"
     },
     "scale-ref-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:46+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_accepted_03",
       "file_count": 12,
       "formula": "rho*V*g",
@@ -2683,13 +3733,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-buoyancy",
-      "source_manifest_sha256": "15d33b3d730d0428712b6b317b382de919c156c8a9cc8d072d171c1aa3bafbe0",
+      "source_manifest_sha256": "fa6c840d30c0385ff30c2f16da48a70695ca02f9fa31a90843b0f800dbb70a09",
       "source_path": "runs/scale-ref-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "accepted"
     },
     "scale-ref-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:47+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_accepted_03",
       "file_count": 11,
       "formula": "k*q1*q2/r**2",
@@ -2697,13 +3747,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-coulomb",
-      "source_manifest_sha256": "7eb018f80ac4c84e8563ee41580ff0394b91bf7790496fc87748e886abd7d961",
+      "source_manifest_sha256": "15f6ad02338d933c02b28edc193c0e0f026a1f3b3eaad316f92888712a32ca3d",
       "source_path": "runs/scale-ref-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "accepted"
     },
     "scale-ref-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:47+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_accepted_04",
       "file_count": 12,
       "formula": "q*B/m",
@@ -2711,13 +3761,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-cyclotron",
-      "source_manifest_sha256": "2dcc5ef06a22a10f9aa7f0ecc54475ee10d9cb32fefdf8e03532c1f5355ab74c",
+      "source_manifest_sha256": "42762493a6324e3a249b4038dbae17e70c70a68149912b31e331283e1957027e",
       "source_path": "runs/scale-ref-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "accepted"
     },
     "scale-ref-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:48+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_accepted_03",
       "file_count": 11,
       "formula": "c*x**2/2",
@@ -2725,13 +3775,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-elastic-pe",
-      "source_manifest_sha256": "80195cfbd790a77e85c3ad03550f37527a85d670c0eab86ea5a437d607ff3319",
+      "source_manifest_sha256": "aaed98ce150b1ecf55b1acf52a1eaca0e9d3c016c0ec19c2bdbe9a01fa460313",
       "source_path": "runs/scale-ref-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "accepted"
     },
     "scale-ref-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:48+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_accepted_03",
       "file_count": 10,
       "formula": "(A-B)/h",
@@ -2739,13 +3789,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-energy-shift",
-      "source_manifest_sha256": "e74d4e8743967f9835cf67f2616d2a186c83a8fe8456c24e6d537276268d57e6",
+      "source_manifest_sha256": "1ff8fa2cd56cacdc59585418e3e204ee001367aa42c29ba145f7feb304104bf8",
       "source_path": "runs/scale-ref-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "accepted"
     },
     "scale-ref-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:48+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_accepted_03",
       "file_count": 10,
       "formula": "-G*m1*m2/r",
@@ -2753,13 +3803,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-grav-potential-energy",
-      "source_manifest_sha256": "a322dc05b28ad02967462e6d965eaa349929f1064ff2e4909c370d3944357c43",
+      "source_manifest_sha256": "01cfe583db259db336129adffa76cc829614a9bc7873fdb2ddbfe1a7018aaa2d",
       "source_path": "runs/scale-ref-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "accepted"
     },
     "scale-ref-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:48+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_accepted_04",
       "file_count": 11,
       "formula": "G*m1*m2/r**2",
@@ -2767,13 +3817,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-gravitation",
-      "source_manifest_sha256": "9b256392438f3340ba1ef03b9b5496a03bef1c77fd4cdc9b99b717d1a828ef0b",
+      "source_manifest_sha256": "6e27316456a35a87a5b67d1e4284fc372a6ae6716bcc08a4ca794c4138e28c5b",
       "source_path": "runs/scale-ref-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "accepted"
     },
     "scale-ref-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:49+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_accepted_02",
       "file_count": 9,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2)",
@@ -2781,13 +3831,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-hydrogen-level",
-      "source_manifest_sha256": "b2df14db9faa8874206888b64d7991427a0b4f2e68715fa4d2a964adcff7c2e7",
+      "source_manifest_sha256": "1168fbfd65d9143e8dbec637f58124fe470e5a2b588c55e8b87e403bf8402770",
       "source_path": "runs/scale-ref-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "accepted"
     },
     "scale-ref-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:49+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_accepted_03",
       "file_count": 11,
       "formula": "n*R*T/V",
@@ -2795,13 +3845,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-ideal-gas",
-      "source_manifest_sha256": "56010ea55e9bfd99663e3ca043bbc55365bad0bfafa855bfd895694fd2fe5740",
+      "source_manifest_sha256": "3f6348331f0fff26261f69e9848538c76e49a1cf3b383abccb0d76015cfb538c",
       "source_path": "runs/scale-ref-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "accepted"
     },
     "scale-ref-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:49+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_accepted_04",
       "file_count": 10,
       "formula": "1/sqrt(eps*mu)",
@@ -2809,13 +3859,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-index-vacuum",
-      "source_manifest_sha256": "1d79377347da120cd5e5c012885871e42be4a66727de433b012073fc0d37a368",
+      "source_manifest_sha256": "ca5b9bbeb27c40dc1b1f1e1ad05ef94b0d684100cabcab76d02e92e1e2dabee5",
       "source_path": "runs/scale-ref-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "accepted"
     },
     "scale-ref-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:50+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_accepted_03",
       "file_count": 11,
       "formula": "I**2*R",
@@ -2823,13 +3873,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-joule-heating",
-      "source_manifest_sha256": "b667cd81daf79d49f8996b162f9258b2581a43aac10a6a241ba4d7d364337c47",
+      "source_manifest_sha256": "eb4b4f951f30b50ff7fe63c7186c225e3ffeb7eef68ba0e918b6615696bbd47d",
       "source_path": "runs/scale-ref-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "accepted"
     },
     "scale-ref-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:50+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_accepted_03",
       "file_count": 11,
       "formula": "m*v**2/2",
@@ -2837,13 +3887,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-kinetic-energy",
-      "source_manifest_sha256": "78090edd8671cd8d8c2db977ae9afc34f8e0b156bcbba6968a8c6f2650e8af4b",
+      "source_manifest_sha256": "433f4d0fe28ca168c58a3658279bdf600f06946619c34e1be6f4bda51e3f09ad",
       "source_path": "runs/scale-ref-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "accepted"
     },
     "scale-ref-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:50+00:00",
       "evidence_path": "runs/20261009_phys-ohm_accepted_03",
       "file_count": 11,
       "formula": "I*R",
@@ -2851,13 +3901,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-ohm",
-      "source_manifest_sha256": "caa351b932869ed7b13edab33f3071d507243d30386bf1c779e9301aa35be6e2",
+      "source_manifest_sha256": "c6496c858fc4c535b1d4ec14ca1e02c1b8b80fed4959b2ba8cb94f6aa140ae89",
       "source_path": "runs/scale-ref-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "accepted"
     },
     "scale-ref-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:51+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_accepted_03",
       "file_count": 11,
       "formula": "2*pi*sqrt(L/g)*(1 + theta0**2/16)",
@@ -2865,13 +3915,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-pendulum-exact",
-      "source_manifest_sha256": "44743f5ea98e9ca1e8076b6925693363b76b27d51429a26e2281ae7f995ad9b3",
+      "source_manifest_sha256": "0fefc3cac636e45b6aa1571935dd98900bcb717117103200b4332a09994cac36",
       "source_path": "runs/scale-ref-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "accepted"
     },
     "scale-ref-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:51+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_accepted_03",
       "file_count": 11,
       "formula": "2*pi*sqrt(L/g)",
@@ -2879,13 +3929,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-pendulum-period",
-      "source_manifest_sha256": "6d9d6b52d6315a7ca324f08acc962f3d79798757b04c7703289e99a8bbc49fa5",
+      "source_manifest_sha256": "d5f4814052ebc9173c019754c5b7e4892a8ff7e16a1676132c464035a76d88ce",
       "source_path": "runs/scale-ref-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "accepted"
     },
     "scale-ref-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:51+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_accepted_05",
       "file_count": 11,
       "formula": "N0*exp(-t/tau)",
@@ -2893,13 +3943,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-radioactive-decay",
-      "source_manifest_sha256": "e14c266ce45c73e8be8fed4f058812e5414d6d94c50665e963c48fa6e2d5a043",
+      "source_manifest_sha256": "2e002f2808cc382b281626cbf539fdda8c12e0343f5cf578188582b366f1ad86",
       "source_path": "runs/scale-ref-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "accepted"
     },
     "scale-ref-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:52+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_accepted_02",
       "file_count": 10,
       "formula": "d*sin(theta2)/sqrt(1-(n*sin(theta2))**2)",
@@ -2907,13 +3957,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-snells-law",
-      "source_manifest_sha256": "dca94c3071e7bff232daec9ac516c6472d8564ee1c3fade586003fd0ad0f9e41",
+      "source_manifest_sha256": "a181b1db50e4e9e1ab177385258b3c6d712036ffc98a826235ecadbd4a17c341",
       "source_path": "runs/scale-ref-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "accepted"
     },
     "scale-ref-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:52+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_accepted_03",
       "file_count": 11,
       "formula": "k*x**2/2",
@@ -2921,13 +3971,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-spring-energy",
-      "source_manifest_sha256": "c08ae40d19fad6c175fece0d70595c009c05639bfa91966ffbb485a45bdd351a",
+      "source_manifest_sha256": "2930f1b481ba1ef677d1eb678aaa2abae48a632a19b256d6385be4de7d98f4b2",
       "source_path": "runs/scale-ref-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "accepted"
     },
     "scale-ref-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:52+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_accepted_02",
       "file_count": 11,
       "formula": "sigma*A*T**4",
@@ -2935,13 +3985,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-stefan-boltzmann",
-      "source_manifest_sha256": "6074d5d3bfcb2191b387b29babf66c918678dda419670d9e86632338f1c82e47",
+      "source_manifest_sha256": "9a79400b6b58272616218bcfc07df6c870831832684f208b961a9e0ac23311d6",
       "source_path": "runs/scale-ref-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "accepted"
     },
     "scale-ref-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:52+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_accepted_03",
       "file_count": 10,
       "formula": "G*M/R**2",
@@ -2949,13 +3999,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-surface-gravity",
-      "source_manifest_sha256": "5dd5dcd99461c9b0fb6b6c55ac501cf2d67711e25fe5531a3df903c2fb202f60",
+      "source_manifest_sha256": "59d6fb6c5a065cba12aee94688cb1c1c2593d71a265b44d9d9a1c9fc0bf57cc0",
       "source_path": "runs/scale-ref-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "accepted"
     },
     "scale-ref-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:53+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_accepted_03",
       "file_count": 12,
       "formula": "A*(Rp/Rs)**2",
@@ -2963,13 +4013,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-transit-depth",
-      "source_manifest_sha256": "30913cff467735b8e6f07bee4a87cde5e0776a465566fe6cb6563f238a03cd3b",
+      "source_manifest_sha256": "6de0b42bac694ec06204e31d42bf576d39717eaf8bdedd84249501295b608e41",
       "source_path": "runs/scale-ref-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "accepted"
     },
     "scale-ref-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:53+00:00",
       "evidence_path": "runs/20261009_phys-weight_accepted_04",
       "file_count": 11,
       "formula": "m*g",
@@ -2977,13 +4027,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-ref-phys-weight",
-      "source_manifest_sha256": "90838ccd026278bfedaf0ec569306a8f44781342d0ddf19613e979362f78b635",
+      "source_manifest_sha256": "61150d745f6a40dddc389ca377d8c397d64d2c6573b4c24d40d388bd494d29d5",
       "source_path": "runs/scale-ref-phys-weight",
       "task_id": "phys-weight",
       "verdict": "accepted"
     },
     "scale-variant-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:54+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_rejected_02",
       "file_count": 12,
       "formula": "rho*V",
@@ -2991,13 +4041,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-buoyancy",
-      "source_manifest_sha256": "8638d26e8ae0269649e4ef6f6ceef0d9af4193da70416a0f2bda6af9a377f92e",
+      "source_manifest_sha256": "8bbd9ad08ac8d98ad7002c508f59ff0f22d70cad9d443d72d9035d747566127f",
       "source_path": "runs/scale-variant-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "rejected"
     },
     "scale-variant-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:54+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_rejected_03",
       "file_count": 11,
       "formula": "k*q1*q2/r",
@@ -3005,13 +4055,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-coulomb",
-      "source_manifest_sha256": "2de145503839bf7c86292af66965101564b22a0b96b92700b371015012074555",
+      "source_manifest_sha256": "10278b2f0626a67fdb118a62569eafac5a6a9875e231cc6601072bc454191efa",
       "source_path": "runs/scale-variant-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "rejected"
     },
     "scale-variant-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:54+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_rejected_02",
       "file_count": 12,
       "formula": "q*B*m",
@@ -3019,13 +4069,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-cyclotron",
-      "source_manifest_sha256": "4f969fa98c5e7fe9d71948509f8c84d468e0e647d224e3b1977550ee9c8d851a",
+      "source_manifest_sha256": "7adade48cd4d815a8cd6bd23c380b53c4ca0c00c9a1a63db932f613ad107260d",
       "source_path": "runs/scale-variant-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "rejected"
     },
     "scale-variant-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:55+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_rejected_03",
       "file_count": 11,
       "formula": "c*x/2",
@@ -3033,13 +4083,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-elastic-pe",
-      "source_manifest_sha256": "d806530fc4057dca3d2562a55ac6ec50948d95ccb28638e6285357289c2b91b0",
+      "source_manifest_sha256": "372f8f7cc06c0174bd4fa956ed0abaee452150eeeb22b54aac0515d69d435e78",
       "source_path": "runs/scale-variant-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "rejected"
     },
     "scale-variant-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:55+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_rejected_03",
       "file_count": 10,
       "formula": "A*B/h",
@@ -3047,13 +4097,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-energy-shift",
-      "source_manifest_sha256": "d4f0c200686afd3db0ad2754decefa42ac30a48213fcec3f603a24a07b15712a",
+      "source_manifest_sha256": "4038abd65e81eeca2f61ba8c671c2155d86d117832999bbe39b04fc3041068cc",
       "source_path": "runs/scale-variant-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "rejected"
     },
     "scale-variant-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:55+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_rejected_03",
       "file_count": 10,
       "formula": "-G*m1*m2/r**2",
@@ -3061,13 +4111,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-grav-potential-energy",
-      "source_manifest_sha256": "d01120b274dd0cb045494dcec404507225a58e52c01daf962d377f59520365fd",
+      "source_manifest_sha256": "6ff2456c066f4f4de7b1113d894937a8305fe6d1ed1a7940803da5d32b5319fa",
       "source_path": "runs/scale-variant-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "rejected"
     },
     "scale-variant-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:56+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_rejected_03",
       "file_count": 11,
       "formula": "G*m1*m2/r",
@@ -3075,13 +4125,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-gravitation",
-      "source_manifest_sha256": "63bd6f8e1ab878f349273d7d9538263c53fa171e4559caa2789fcda440fdb603",
+      "source_manifest_sha256": "d461902ada60ac7219b9fdf05fa8f326885e12c9cccaeb5907646ad415a11cf3",
       "source_path": "runs/scale-variant-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "rejected"
     },
     "scale-variant-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:56+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_rejected_03",
       "file_count": 9,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
@@ -3089,13 +4139,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-hydrogen-level",
-      "source_manifest_sha256": "70fc9fc67c21255ffa1712ad1e51b75863bf70ac91401332171852e5ce682998",
+      "source_manifest_sha256": "7a2f61cf0b55bfa7e81ea9c75274a5710d4c468b2e43f5a183ced51bdf056939",
       "source_path": "runs/scale-variant-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "rejected"
     },
     "scale-variant-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:56+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_rejected_04",
       "file_count": 11,
       "formula": "R*n*T",
@@ -3103,13 +4153,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-ideal-gas",
-      "source_manifest_sha256": "be373b6c5ae3d120f062d421a475dfebc65c490bd8d4fad961b7210cc778b44e",
+      "source_manifest_sha256": "675463fd39211628d85f2856960140b70ed7b4285f80030e29852d51886f2d59",
       "source_path": "runs/scale-variant-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "rejected"
     },
     "scale-variant-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:57+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_rejected_02",
       "file_count": 10,
       "formula": "eps*mu",
@@ -3117,13 +4167,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-index-vacuum",
-      "source_manifest_sha256": "55ce3e64efd9900ae457fb83435b16c0398c165b6aca422e9947510f731c1ade",
+      "source_manifest_sha256": "e16db788f81315b443009f733203e532bc39c66ae3a570dab5ca6d2af576956c",
       "source_path": "runs/scale-variant-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "rejected"
     },
     "scale-variant-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:57+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_rejected_03",
       "file_count": 11,
       "formula": "I*R",
@@ -3131,13 +4181,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-joule-heating",
-      "source_manifest_sha256": "794a59d6c429370937b7beb9b962ef255f926379991b8367e9db0a196a78b5c3",
+      "source_manifest_sha256": "6b37dc318b588c59267e7770fe9a9d103816882e66bab55b103d4e6189f9f3f9",
       "source_path": "runs/scale-variant-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "rejected"
     },
     "scale-variant-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:57+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_rejected_02",
       "file_count": 11,
       "formula": "m*v/2",
@@ -3145,13 +4195,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-kinetic-energy",
-      "source_manifest_sha256": "e5a708dc774df936414198bcd25d9ac33d84bd4b1535f7f4deb28a82623a71ca",
+      "source_manifest_sha256": "b52fbb86459f5c8f2d83ba583582661eec2c2af64ea965813e47f40769b0e1a6",
       "source_path": "runs/scale-variant-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "rejected"
     },
     "scale-variant-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:58+00:00",
       "evidence_path": "runs/20261009_phys-ohm_rejected_02",
       "file_count": 11,
       "formula": "I/R",
@@ -3159,13 +4209,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-ohm",
-      "source_manifest_sha256": "d2ef0ab56b9bfd2d5000beb1e05a334b0cc749cbfa335699b0cd6c124185c9f3",
+      "source_manifest_sha256": "8479c0c83bcffb5e755f43ae0ec864eb7bd2cc191da4779397922db215a7b380",
       "source_path": "runs/scale-variant-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "rejected"
     },
     "scale-variant-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:58+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_rejected_04",
       "file_count": 11,
       "formula": "2*pi*sqrt(L/g)",
@@ -3173,13 +4223,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-pendulum-exact",
-      "source_manifest_sha256": "570900d856fc160aa46cbc423ff31af03c53ba35475d1795888c3bbd9a9846d4",
+      "source_manifest_sha256": "2751c357f37f4984490bc2896e7e387885553e009389a50f6698cf33c20042da",
       "source_path": "runs/scale-variant-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "rejected"
     },
     "scale-variant-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:58+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_rejected_03",
       "file_count": 11,
       "formula": "2*pi*L/g",
@@ -3187,13 +4237,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-pendulum-period",
-      "source_manifest_sha256": "b846fafadc72646e923b15ed0824b659d9019a40c4621c132829e04070872d49",
+      "source_manifest_sha256": "827744a8a0f033bb982acc8b2c099453937da34d0a2bb67522e5d8f4258c1fae",
       "source_path": "runs/scale-variant-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "rejected"
     },
     "scale-variant-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:58+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_rejected_04",
       "file_count": 11,
       "formula": "N0*(1-t/tau)",
@@ -3201,13 +4251,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-radioactive-decay",
-      "source_manifest_sha256": "f129b069e52912cc351e3c9a07d95a2716fbe8bc2441ae2fec92a6a382c6aeb3",
+      "source_manifest_sha256": "8cd9e99bac3b210e81891cbd3917b7312bcc6a21706d97a060ac6ae4d50b2cc8",
       "source_path": "runs/scale-variant-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "rejected"
     },
     "scale-variant-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:59+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_rejected_10",
       "file_count": 10,
       "formula": "d*sin(theta2)*n",
@@ -3215,13 +4265,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-snells-law",
-      "source_manifest_sha256": "2db6f42d14b889f12258d8e2eb7b2eaad670d687a398572e37ee3792a8685ab0",
+      "source_manifest_sha256": "4a4f65bd956daac58218e2fb9e6645b1455f53653f5380d3d2346e6e40c52c30",
       "source_path": "runs/scale-variant-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "rejected"
     },
     "scale-variant-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:59+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_rejected_02",
       "file_count": 11,
       "formula": "k*x/2",
@@ -3229,13 +4279,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-spring-energy",
-      "source_manifest_sha256": "75cd58b8313d90e1adc4f206ed4526f9c045b5f45b9f3d0bfa0e1adb1fb069b0",
+      "source_manifest_sha256": "0113f0b5a1212aaf5d2b263ede881a32269f5c3da6be6abda2ffc473a1437815",
       "source_path": "runs/scale-variant-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "rejected"
     },
     "scale-variant-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:59+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_rejected_16",
       "file_count": 11,
       "formula": "sigma*A*T**2",
@@ -3243,13 +4293,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-stefan-boltzmann",
-      "source_manifest_sha256": "085ebb90979f059d9688e039390bfa32fda1bba95d262f15ba7bfafbb7b98fdc",
+      "source_manifest_sha256": "de586a4ea069792a643a436403e901df06d8700d62101eb6c2ae6d023dc40572",
       "source_path": "runs/scale-variant-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "rejected"
     },
     "scale-variant-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:53:59+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_rejected_03",
       "file_count": 10,
       "formula": "G*M/R",
@@ -3257,13 +4307,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-surface-gravity",
-      "source_manifest_sha256": "6ba1dbca74298e011254fc45acc7da0549b4c12c8da2a5a5c02d7104a7b5fb3f",
+      "source_manifest_sha256": "f5d159f9692397308b8031a908f9cb3106053eedf15d0944898f638d39c54e55",
       "source_path": "runs/scale-variant-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "rejected"
     },
     "scale-variant-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:00+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_rejected_03",
       "file_count": 12,
       "formula": "A*(Rp/Rs)",
@@ -3271,13 +4321,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-transit-depth",
-      "source_manifest_sha256": "54d893379bd032c733f236b49a3a111ad1672db2ef6bfd01bf3d35c683884564",
+      "source_manifest_sha256": "8d181f78fa23f78dbe71a7dde763f36c75d61cbe47df88eb10be25c724824d8d",
       "source_path": "runs/scale-variant-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "rejected"
     },
     "scale-variant-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:00+00:00",
       "evidence_path": "runs/20261009_phys-weight_rejected_03",
       "file_count": 11,
       "formula": "m/g",
@@ -3285,13 +4335,13 @@
       "independent_recheck": "out-of-scope",
       "reproducible": false,
       "run_id": "scale-variant-phys-weight",
-      "source_manifest_sha256": "d36255cbe257c690c9d6aa977ed239f7b7d0e6051c3ee4453dcd4a43748eee66",
+      "source_manifest_sha256": "3cdca901e515b6ae08d642b8e3df31f2a506ad8ba430b3b8bc0f427e3c44e780",
       "source_path": "runs/scale-variant-phys-weight",
       "task_id": "phys-weight",
       "verdict": "rejected"
     },
     "variant-phys-buoyancy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:00+00:00",
       "evidence_path": "runs/20261009_phys-buoyancy_variant_01",
       "file_count": 15,
       "formula": "rho*V",
@@ -3299,13 +4349,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-buoyancy",
-      "source_manifest_sha256": "25144304519b54c797e0b8acad5e359dde1b5267bcc880ba9e8bb16aa4e430c7",
+      "source_manifest_sha256": "35015c2f520eb822db4703382e3442fcc9daacd24ccf47e29572972122a41115",
       "source_path": "runs/variant-phys-buoyancy",
       "task_id": "phys-buoyancy",
       "verdict": "rejected"
     },
     "variant-phys-coulomb": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:01+00:00",
       "evidence_path": "runs/20261009_phys-coulomb_variant_01",
       "file_count": 15,
       "formula": "k*q1*q2/r",
@@ -3313,13 +4363,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-coulomb",
-      "source_manifest_sha256": "200bfb5ffc38fc4761cfc383b4fc40fa9b3f62c84ab4a715f2564dfc940e7830",
+      "source_manifest_sha256": "034f418dfc2490cbb081c88f88ecc1de63e987641f527f909936987b4f118eab",
       "source_path": "runs/variant-phys-coulomb",
       "task_id": "phys-coulomb",
       "verdict": "rejected"
     },
     "variant-phys-cyclotron": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:02+00:00",
       "evidence_path": "runs/20261009_phys-cyclotron_variant_01",
       "file_count": 15,
       "formula": "q*B*m",
@@ -3327,13 +4377,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-cyclotron",
-      "source_manifest_sha256": "79eeca67a84d09c6fae0dbe8a023fcec2d15706a25fdd93932949798ddd8509f",
+      "source_manifest_sha256": "7e845ff3a56036218286285c5d8f07fff9e3a945b0559abfa16ff7468975f857",
       "source_path": "runs/variant-phys-cyclotron",
       "task_id": "phys-cyclotron",
       "verdict": "rejected"
     },
     "variant-phys-elastic-pe": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:02+00:00",
       "evidence_path": "runs/20261009_phys-elastic-pe_variant_01",
       "file_count": 14,
       "formula": "c*x/2",
@@ -3341,13 +4391,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-elastic-pe",
-      "source_manifest_sha256": "f4367a22d05cb2e8270eab8519354ba9f1291d574cc7ffa3dee4987f1440f64e",
+      "source_manifest_sha256": "f1757ef6d8e57fc47bcd6c7d58a8c268cf22a1229ba4ca2d05a968f7fe028455",
       "source_path": "runs/variant-phys-elastic-pe",
       "task_id": "phys-elastic-pe",
       "verdict": "rejected"
     },
     "variant-phys-energy-shift": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:02+00:00",
       "evidence_path": "runs/20261009_phys-energy-shift_variant_01",
       "file_count": 8,
       "formula": "A*B/h",
@@ -3355,13 +4405,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-energy-shift",
-      "source_manifest_sha256": "d399b6c223d7aff9dbf5512e2fe625f9a676bd09746584fe62704876cca0e6e9",
+      "source_manifest_sha256": "751c8476673734289cbf0ec6c751b3c648fa13d2a04c287208c081726254a3ba",
       "source_path": "runs/variant-phys-energy-shift",
       "task_id": "phys-energy-shift",
       "verdict": "rejected"
     },
     "variant-phys-grav-potential-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:03+00:00",
       "evidence_path": "runs/20261009_phys-grav-potential-energy_variant_01",
       "file_count": 14,
       "formula": "-G*m1*m2/r**2",
@@ -3369,13 +4419,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-grav-potential-energy",
-      "source_manifest_sha256": "fd82bcc4221d3287790055add3e7c1e8704efde77b93a3cc6624166c7dfb7200",
+      "source_manifest_sha256": "50bd1d8bb22799d2a0c1df10d3c65af531b6167d21878d7b4d68e3002c26e8d8",
       "source_path": "runs/variant-phys-grav-potential-energy",
       "task_id": "phys-grav-potential-energy",
       "verdict": "rejected"
     },
     "variant-phys-gravitation": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:03+00:00",
       "evidence_path": "runs/20261009_phys-gravitation_variant_01",
       "file_count": 15,
       "formula": "G*m1*m2/r",
@@ -3383,13 +4433,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-gravitation",
-      "source_manifest_sha256": "1f35be0f08f0e5e9ce72351d59ed847b184396604263dcea7026c83248678c32",
+      "source_manifest_sha256": "fba49e75616d5d70ca7e56d3d0b2bc44f71c8502f46a7c9eb39bf407209b5910",
       "source_path": "runs/variant-phys-gravitation",
       "task_id": "phys-gravitation",
       "verdict": "rejected"
     },
     "variant-phys-hydrogen-level": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:04+00:00",
       "evidence_path": "runs/20261009_phys-hydrogen-level_variant_01",
       "file_count": 8,
       "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
@@ -3397,13 +4447,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-hydrogen-level",
-      "source_manifest_sha256": "115d78d61f40d3f35d68215448d8a04cdc1c9fe11e3f8b24c945e687f4661d4e",
+      "source_manifest_sha256": "f6c9184b7e71e2d83af313ed85db1f90f306d7be2327f51cd020603d50e1cb3c",
       "source_path": "runs/variant-phys-hydrogen-level",
       "task_id": "phys-hydrogen-level",
       "verdict": "rejected"
     },
     "variant-phys-ideal-gas": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:04+00:00",
       "evidence_path": "runs/20261009_phys-ideal-gas_variant_01",
       "file_count": 8,
       "formula": "R*n*T",
@@ -3411,13 +4461,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-ideal-gas",
-      "source_manifest_sha256": "2a28179d62574e0984a0cf2586f2ea40746b871a1a6fbdbf878e4b9936da62b4",
+      "source_manifest_sha256": "9fb36de4553c174ffb406e74b94d2f6d1fd9d978cff687ecb11bb654650aef24",
       "source_path": "runs/variant-phys-ideal-gas",
       "task_id": "phys-ideal-gas",
       "verdict": "rejected"
     },
     "variant-phys-index-vacuum": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:04+00:00",
       "evidence_path": "runs/20261009_phys-index-vacuum_variant_01",
       "file_count": 13,
       "formula": "eps*mu",
@@ -3425,13 +4475,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-index-vacuum",
-      "source_manifest_sha256": "8a8248fac060126d4ac956af0627b45ef24cf6c7885448967be48e0300e9489e",
+      "source_manifest_sha256": "d8d9a22e94e34133887bc89d4dabed69bffe76d87ab2e65978a292a2fdeffc78",
       "source_path": "runs/variant-phys-index-vacuum",
       "task_id": "phys-index-vacuum",
       "verdict": "rejected"
     },
     "variant-phys-joule-heating": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:04+00:00",
       "evidence_path": "runs/20261009_phys-joule-heating_variant_01",
       "file_count": 14,
       "formula": "I*R",
@@ -3439,13 +4489,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-joule-heating",
-      "source_manifest_sha256": "f763d15283b3b23775c1d71c78d266b3aba81e3448761ec092d297b404cece9c",
+      "source_manifest_sha256": "cd8f8ae699e98ce4fab356564d154b886c9bf1d24b5d1880d886dd81962cc674",
       "source_path": "runs/variant-phys-joule-heating",
       "task_id": "phys-joule-heating",
       "verdict": "rejected"
     },
     "variant-phys-kinetic-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:05+00:00",
       "evidence_path": "runs/20261009_phys-kinetic-energy_variant_01",
       "file_count": 14,
       "formula": "m*v/2",
@@ -3453,13 +4503,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-kinetic-energy",
-      "source_manifest_sha256": "07be986de7426fd7aae4671bd3baa7ade9eec9be43663ddba8b6ec572d96fca4",
+      "source_manifest_sha256": "a174f718d698f0b02a3f1b580dfef03e2c0b7b028e92d9ce520292e4dec1b9fb",
       "source_path": "runs/variant-phys-kinetic-energy",
       "task_id": "phys-kinetic-energy",
       "verdict": "rejected"
     },
     "variant-phys-ohm": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:05+00:00",
       "evidence_path": "runs/20261009_phys-ohm_variant_01",
       "file_count": 14,
       "formula": "I/R",
@@ -3467,13 +4517,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-ohm",
-      "source_manifest_sha256": "0a49dad951f3ff4664f2f3a28d4dcf5f6b0f57ac070769348a5da4997db828bd",
+      "source_manifest_sha256": "bf42778942a97273e12711b94c86c16cef961b470e13ddae887ad8403be6d566",
       "source_path": "runs/variant-phys-ohm",
       "task_id": "phys-ohm",
       "verdict": "rejected"
     },
     "variant-phys-pendulum-exact": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:05+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-exact_variant_01",
       "file_count": 14,
       "formula": "2*pi*sqrt(L/g)",
@@ -3481,13 +4531,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-pendulum-exact",
-      "source_manifest_sha256": "1340999abdbc9bbad63c791a6a50aab7b4737532cf5c97cb610b2559247d125c",
+      "source_manifest_sha256": "4ec0d88a32b43d370e3261be439b4356a31859e2cd51952aa947af909283c1fe",
       "source_path": "runs/variant-phys-pendulum-exact",
       "task_id": "phys-pendulum-exact",
       "verdict": "rejected"
     },
     "variant-phys-pendulum-period": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:06+00:00",
       "evidence_path": "runs/20261009_phys-pendulum-period_variant_01",
       "file_count": 14,
       "formula": "2*pi*L/g",
@@ -3495,13 +4545,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-pendulum-period",
-      "source_manifest_sha256": "d14802e8801a9fe2a200acc7982b2c44b9462754c2875a805753c37a3199c1e7",
+      "source_manifest_sha256": "88b17f8c41b5be358b1e47fa98655cc0d9dfa526cf783c14f0705630d7ff6c94",
       "source_path": "runs/variant-phys-pendulum-period",
       "task_id": "phys-pendulum-period",
       "verdict": "rejected"
     },
     "variant-phys-radioactive-decay": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:06+00:00",
       "evidence_path": "runs/20261009_phys-radioactive-decay_variant_01",
       "file_count": 14,
       "formula": "N0*(1-t/tau)",
@@ -3509,13 +4559,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-radioactive-decay",
-      "source_manifest_sha256": "d5307fafd70091c33e436b8a142dced823e76afdafbcf54df1fc9f120fd4ba18",
+      "source_manifest_sha256": "ae9cb40e5f4ee1e33eadaf4c1eae1ef045f77ed929a5373cddae1e5189ae881e",
       "source_path": "runs/variant-phys-radioactive-decay",
       "task_id": "phys-radioactive-decay",
       "verdict": "rejected"
     },
     "variant-phys-snells-law": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:07+00:00",
       "evidence_path": "runs/20261009_phys-snells-law_variant_01",
       "file_count": 14,
       "formula": "d*sin(theta2)*n",
@@ -3523,13 +4573,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-snells-law",
-      "source_manifest_sha256": "84f0908c29ab14c47b03b1f737864125fe0b0660c2d29d86c0c747d580a78f7c",
+      "source_manifest_sha256": "f13cf02db0a82bfd86ae8d1c2b377b04ff2af1baf7d7e5ced62055e20b6140ab",
       "source_path": "runs/variant-phys-snells-law",
       "task_id": "phys-snells-law",
       "verdict": "rejected"
     },
     "variant-phys-spring-energy": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:07+00:00",
       "evidence_path": "runs/20261009_phys-spring-energy_variant_01",
       "file_count": 14,
       "formula": "k*x/2",
@@ -3537,13 +4587,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-spring-energy",
-      "source_manifest_sha256": "2a7bc9d1759a26a728d0c33e0f05e2d5361caafaf0c6b5c5b21d9693ee75e618",
+      "source_manifest_sha256": "8efd2febb26c2dd4602f1ca6d7e8f8cd6f1e02763666df8304eec6d751ae1ddd",
       "source_path": "runs/variant-phys-spring-energy",
       "task_id": "phys-spring-energy",
       "verdict": "rejected"
     },
     "variant-phys-stefan-boltzmann": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:08+00:00",
       "evidence_path": "runs/20261009_phys-stefan-boltzmann_variant_01",
       "file_count": 15,
       "formula": "sigma*A*T**2",
@@ -3551,13 +4601,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-stefan-boltzmann",
-      "source_manifest_sha256": "9855e2f0d0b4f5fce4c960ffb3c4b2438ddce725beb4c8f8f7b55eea9f83cc7a",
+      "source_manifest_sha256": "ece746b157fc1a81ed0fe258b8caa6e7ee7927dcd47c2638469886ca8a7ecd69",
       "source_path": "runs/variant-phys-stefan-boltzmann",
       "task_id": "phys-stefan-boltzmann",
       "verdict": "rejected"
     },
     "variant-phys-surface-gravity": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:08+00:00",
       "evidence_path": "runs/20261009_phys-surface-gravity_variant_01",
       "file_count": 14,
       "formula": "G*M/R",
@@ -3565,13 +4615,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-surface-gravity",
-      "source_manifest_sha256": "b007d6b49271179120654e0277c4b711aa133094d36e1a4fa0d334aac7db5000",
+      "source_manifest_sha256": "60d3e8f0d403e87efd225a0b5214001dab6058f74ea28964f21fc38a4944ebed",
       "source_path": "runs/variant-phys-surface-gravity",
       "task_id": "phys-surface-gravity",
       "verdict": "rejected"
     },
     "variant-phys-transit-depth": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:09+00:00",
       "evidence_path": "runs/20261009_phys-transit-depth_variant_01",
       "file_count": 15,
       "formula": "A*(Rp/Rs)",
@@ -3579,13 +4629,13 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-transit-depth",
-      "source_manifest_sha256": "da48f21aade71e75fd6319730526607872af28aa72f58296d0c9a7e60abbc6f5",
+      "source_manifest_sha256": "483ee20e38c145d8896cea60bb9d3b5f29988d06a20f24144348fcfade0c0e77",
       "source_path": "runs/variant-phys-transit-depth",
       "task_id": "phys-transit-depth",
       "verdict": "rejected"
     },
     "variant-phys-weight": {
-      "archived_at_utc": "2026-10-10T04:53:17+00:00",
+      "archived_at_utc": "2026-10-10T05:54:09+00:00",
       "evidence_path": "runs/20261009_phys-weight_variant_01",
       "file_count": 14,
       "formula": "m/g",
@@ -3593,7 +4643,7 @@
       "independent_recheck": "agree",
       "reproducible": true,
       "run_id": "variant-phys-weight",
-      "source_manifest_sha256": "25679dce1578dc08884320a23adef3a586cbb9e39c133a8711b54ecb0e83a08e",
+      "source_manifest_sha256": "4179fc8a8013f87aa5785a64a3107debfe1c1c5448ca9d82bdb79db5fb74c843",
       "source_path": "runs/variant-phys-weight",
       "task_id": "phys-weight",
       "verdict": "rejected"
@@ -3601,6 +4651,6 @@
   },
   "naming_rule": "<日期>_<任务编号>_<类型>_<序号>",
   "runs_root": "runs",
-  "updated_at_utc": "2026-10-10T04:53:17+00:00",
+  "updated_at_utc": "2026-10-10T05:54:09+00:00",
   "version": 1
 }

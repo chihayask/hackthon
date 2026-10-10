@@ -1,0 +1,20 @@
+{
+  "name": "extrapolation",
+  "passed": false,
+  "reason": "外推区中位相对误差 0.6818（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.6836、RMSE/中位|y|=0.9227、RMSE/std(y)=1.5152",
+  "metrics": {
+    "relative_error_median": 0.6818036895637108,
+    "relative_error_p75": 0.6824047348257667,
+    "relative_error_p90": 0.6835556293943981,
+    "rmsre": 0.6816107016814128,
+    "max_relative_error": 0.6843310168986756,
+    "rmse": 2.3602908433132113,
+    "relative_rmse": 0.9227057346827632,
+    "normalized_rmse": 1.515241708154043,
+    "nonfinite_ratio": 0.0,
+    "n_finite": 60,
+    "n_relative_points": 60,
+    "threshold": 0.03,
+    "criterion": "relative_error_median"
+  }
+}

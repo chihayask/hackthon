@@ -1,0 +1,13 @@
+{
+  "name": "scale-sign-y",
+  "passed": false,
+  "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒负\"的有 0 点（0%），符号性质被破坏——这是物理上不可接受的候选式（例如\"剩余粒子数为负\"）",
+  "metrics": {
+    "expect": "negative",
+    "satisfied": 0,
+    "evaluated": 65,
+    "ratio": 0.0,
+    "min_value": 3.866415349668939e+67,
+    "max_value": 1.664932362122789e+69
+  }
+}

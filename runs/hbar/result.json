@@ -1,13 +1,13 @@
 {
   "task_id": "phys-hydrogen-level",
-  "formula": "eps0*hbar**2/(me*el**2)*n**(-2)",
+  "formula": "A*me*el**4/(eps0**2*hbar**2*n**2)",
   "parameters": {},
   "verdict": "rejected",
   "checks": [
     {
       "name": "dimension",
       "passed": false,
-      "reason": "表达式不可用: 未知名称: hbar",
+      "reason": "表达式不可用: 未知名称: A",
       "metrics": {
         "mode": "strict",
         "reason_code": "unsafe-expression"
@@ -16,7 +16,7 @@
     {
       "name": "expression",
       "passed": false,
-      "reason": "表达式不可用: 未知名称: hbar",
+      "reason": "表达式不可用: 未知名称: A",
       "metrics": {}
     }
   ],

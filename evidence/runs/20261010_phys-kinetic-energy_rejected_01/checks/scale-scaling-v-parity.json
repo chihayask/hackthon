@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-v-parity",
+  "passed": true,
+  "reason": "缩放 v×-1 倍后 y 变为 1 倍，物理预期 1 倍（相对偏差 0.00e+00，容差 1e-04）",
+  "metrics": {
+    "ratio": 1.0,
+    "expected_ratio": 1.0,
+    "rel_error": 0.0,
+    "lambda": -1.0,
+    "expect_power": 2.0
+  }
+}

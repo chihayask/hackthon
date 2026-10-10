@@ -1,7 +1,7 @@
 {
   "task_id": "phys-hydrogen-level",
   "verdict": "rejected",
-  "formula": "K*me*el**2/(eps0**2*hbar**2*n**2)",
+  "formula": "A*me*el**4/(eps0**2*hbar**2*n**2)",
   "parameters": {},
   "free_parameters": [
     "eps0"
@@ -19,6 +19,9 @@
   "engine_version": "0.1.0",
   "hypothesis_source": "agh-llm",
   "hypothesis_source_note": "假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环）",
+  "session_id": "agnes:local:local-dev:cli:workspace:771ca4ee3c207680",
+  "agent_workspace": "E:\\agh-runs4\\phys-hydrogen-level-20261010-052751",
+  "provenance_bound": true,
   "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
   "inputs": [
     "tasks/phys-hydrogen-level"

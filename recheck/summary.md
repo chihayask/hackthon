@@ -3,12 +3,12 @@
 对 runs/ 下每一次运行，从 data.csv 重新划分、重新拟合、重新判定，
 再与原始 result.json 逐项比对。复算不复用原始拟合值。
 
-- 生成时间（UTC）：2026-10-10T04:48:05+00:00
-- 运行总数：257
-- 判定一致：199
-- 独立复算通过率：97.5%
+- 生成时间（UTC）：2026-10-10T05:53:16+00:00
+- 运行总数：332
+- 判定一致：273
+- 独立复算通过率：98.2%
 
-- 属于标准三重验证、纳入复算统计的运行：204
+- 属于标准三重验证、纳入复算统计的运行：278
 - 由其它判定套件产出、不纳入统计的运行：50
 
 | run_id | 状态 | 原判定 | 复算判定 | manifest | 说明 |
@@ -121,10 +121,85 @@
 | 20261009-230022-phys-surface-gravity | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 20261009-230058-phys-transit-depth | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 20261009-230224-phys-weight | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131214-phys-buoyancy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131321-phys-coulomb | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131349-phys-cyclotron | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131412-phys-elastic-pe | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131446-phys-energy-shift | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131513-phys-grav-potential-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131517-phys-grav-potential-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131537-phys-gravitation | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131558-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131618-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131621-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131629-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131631-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131650-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131653-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131656-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131700-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131702-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131711-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131714-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131725-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131727-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131729-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131732-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131734-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131737-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131739-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131742-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131746-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131749-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131751-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131755-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131815-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131818-phys-hydrogen-level | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131837-phys-ideal-gas | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131918-phys-index-vacuum | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-131939-phys-joule-heating | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132001-phys-kinetic-energy | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132013-phys-kinetic-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132044-phys-ohm | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132107-phys-pendulum-exact | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132142-phys-pendulum-period | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132150-phys-pendulum-period | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132155-phys-pendulum-period | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132203-phys-buoyancy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132233-phys-coulomb | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132259-phys-cyclotron | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132408-phys-elastic-pe | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132425-phys-energy-shift | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132609-phys-grav-potential-energy | missing-formula | rejected | - | ok | run.json 没有公式，无法复算 |
+| 20261010-132702-phys-grav-potential-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-132740-phys-gravitation | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133048-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133154-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133230-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133243-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133249-phys-hydrogen-level | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133323-phys-ideal-gas | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133352-phys-index-vacuum | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133415-phys-joule-heating | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133440-phys-kinetic-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133504-phys-ohm | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133526-phys-pendulum-exact | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133529-phys-pendulum-exact | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133622-phys-pendulum-period | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133630-phys-pendulum-period | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-133950-phys-radioactive-decay | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134503-phys-snells-law | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134546-phys-spring-energy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134613-phys-stefan-boltzmann | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134634-phys-surface-gravity | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134658-phys-transit-depth | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134708-phys-transit-depth | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| 20261010-134740-phys-weight | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 5.67e-8 | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | 8.314462618 | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | R | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | a | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| c | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | d | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | demo-accepted-01 | unresolvable | accepted | - | 缺失/不完整 | 任务目录不存在，本次运行无法被独立复算（历史遗留运行） |
 | discrim-ref-phys-buoyancy | agree | accepted | accepted | ok | 判定与全部检验项逐位一致，独立复算通过 |

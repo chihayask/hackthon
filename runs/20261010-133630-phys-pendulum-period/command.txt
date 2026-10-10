@@ -1,0 +1,1 @@
+python -m formula_agh verify --task tasks/phys-pendulum-period --formula "2 * (L/g)**0.5"

@@ -22,7 +22,7 @@ phys-gravitation,base,wrong-variant,G*m1*m2/r,rejected,,,,G*m1*m2/r**2,
 phys-gravitation,base,agent-candidate,G*m1*m2/r**2,accepted,0.00688375,0.00619655,True,G*m1*m2/r**2,True
 phys-hydrogen-level,challenge,gold-reference,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),accepted,0.00744919,0.00223512,True,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),
 phys-hydrogen-level,challenge,wrong-variant,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n),rejected,,,,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),
-phys-hydrogen-level,challenge,agent-candidate,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),rejected,,,False,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),False
+phys-hydrogen-level,challenge,agent-candidate,A*(-1)*me*el**4/(eps0**2*hbar**2*n**2),rejected,,,False,-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n**2),False
 phys-ideal-gas,base,gold-reference,n*R*T/V,accepted,0.00606509,0.00805481,True,n*R*T/V,
 phys-ideal-gas,base,wrong-variant,R*n*T,rejected,,,,n*R*T/V,
 phys-ideal-gas,base,agent-candidate,R*n*T/V,accepted,0.00606509,0.00805481,True,n*R*T/V,False
@@ -31,25 +31,25 @@ phys-index-vacuum,challenge,wrong-variant,eps*mu,rejected,,,,1/sqrt(eps*mu),
 phys-index-vacuum,challenge,agent-candidate,1/sqrt(eps*mu),accepted,0.0212973,0.0185376,True,1/sqrt(eps*mu),True
 phys-joule-heating,base,gold-reference,I**2*R,accepted,0.00528938,0.00530535,True,I**2*R,
 phys-joule-heating,base,wrong-variant,I*R,rejected,,,,I**2*R,
-phys-joule-heating,base,agent-candidate,I*I*R,accepted,0.00528938,0.00530535,True,I**2*R,True
+phys-joule-heating,base,agent-candidate,I**2*R,accepted,0.00528938,0.00530535,True,I**2*R,True
 phys-kinetic-energy,base,gold-reference,m*v**2/2,accepted,0.00508397,0.0052265,True,m*v**2/2,
 phys-kinetic-energy,base,wrong-variant,m*v/2,rejected,,,,m*v**2/2,
-phys-kinetic-energy,base,agent-candidate,0.5*m*v*v,accepted,0.00508397,0.0052265,True,m*v**2/2,True
+phys-kinetic-energy,base,agent-candidate,0.5*m*v**2,accepted,0.00508397,0.0052265,True,m*v**2/2,True
 phys-ohm,base,gold-reference,I*R,accepted,0.00736598,0.00621277,True,I*R,
 phys-ohm,base,wrong-variant,I/R,rejected,,,,I*R,
 phys-ohm,base,agent-candidate,I*R,accepted,0.00736598,0.00621277,True,I*R,True
 phys-pendulum-exact,challenge,gold-reference,2*pi*sqrt(L/g)*(1 + theta0**2/16),accepted,0.00135393,0.000871652,True,2*pi*sqrt(L/g)*(1 + theta0**2/16),
 phys-pendulum-exact,challenge,wrong-variant,2*pi*sqrt(L/g),rejected,,,,2*pi*sqrt(L/g)*(1 + theta0**2/16),
-phys-pendulum-exact,challenge,agent-candidate,2*pi*sqrt(L/g)*(1+theta0*theta0/16+11*theta0*theta0*theta0*theta0/3072+173*theta0*theta0*theta0*theta0*theta0*theta0/737280),accepted,0.00790674,0.00451454,True,2*pi*sqrt(L/g)*(1 + theta0**2/16),False
+phys-pendulum-exact,challenge,agent-candidate,2*3.141592653589793*sqrt(L/g)*(1+theta0**2/16+11*theta0**4/3072+theta0**2/16*theta0**2),accepted,0.132816,0.0740181,True,2*pi*sqrt(L/g)*(1 + theta0**2/16),False
 phys-pendulum-period,base,gold-reference,2*pi*sqrt(L/g),accepted,0.0118581,0.00998851,True,2*pi*sqrt(L/g),
 phys-pendulum-period,base,wrong-variant,2*pi*L/g,rejected,,,,2*pi*sqrt(L/g),
 phys-pendulum-period,base,agent-candidate,2*3.141592653589793*sqrt(L/g),accepted,0.0118581,0.00998851,True,2*pi*sqrt(L/g),True
 phys-radioactive-decay,challenge,gold-reference,N0*exp(-t/tau),accepted,0.00476177,0.00313099,True,N0*exp(-t/tau),
 phys-radioactive-decay,challenge,wrong-variant,N0*(1-t/tau),rejected,,,,N0*exp(-t/tau),
-phys-radioactive-decay,challenge,agent-candidate,N0*exp(-(t/tau)),accepted,0.00476177,0.00313099,True,N0*exp(-t/tau),True
+phys-radioactive-decay,challenge,agent-candidate,N0*exp(-t/tau),accepted,0.00476177,0.00313099,True,N0*exp(-t/tau),True
 phys-snells-law,challenge,gold-reference,d*sin(theta2)/sqrt(1-(n*sin(theta2))**2),accepted,0.00883373,0.00635928,True,d*sin(theta2)/sqrt(1-(n*sin(theta2))**2),
 phys-snells-law,challenge,wrong-variant,d*sin(theta2)*n,rejected,,,,d*sin(theta2)/sqrt(1-(n*sin(theta2))**2),
-phys-snells-law,challenge,agent-candidate,d*sin(asin(n*sin(theta2))),rejected,,,False,d*sin(theta2)/sqrt(1-(n*sin(theta2))**2),False
+phys-snells-law,challenge,agent-candidate,d*tan(theta2)*(1+(n-1)*theta2),accepted,0.0420306,0.0589524,True,d*sin(theta2)/sqrt(1-(n*sin(theta2))**2),False
 phys-spring-energy,base,gold-reference,k*x**2/2,accepted,0.0057766,0.00579946,True,k*x**2/2,
 phys-spring-energy,base,wrong-variant,k*x/2,rejected,,,,k*x**2/2,
 phys-spring-energy,base,agent-candidate,0.5*k*x**2,accepted,0.0057766,0.00579946,True,k*x**2/2,True
@@ -58,10 +58,10 @@ phys-stefan-boltzmann,base,wrong-variant,sigma*A*T**2,rejected,,,,sigma*A*T**4,
 phys-stefan-boltzmann,base,agent-candidate,sigma*A*T**4,accepted,0.00553959,0.00546602,True,sigma*A*T**4,True
 phys-surface-gravity,base,gold-reference,G*M/R**2,accepted,0.00527124,0.00500282,True,G*M/R**2,
 phys-surface-gravity,base,wrong-variant,G*M/R,rejected,,,,G*M/R**2,
-phys-surface-gravity,base,agent-candidate,G*M/R/R,accepted,0.00527124,0.00500282,True,G*M/R**2,False
+phys-surface-gravity,base,agent-candidate,G*M/R**2,accepted,0.00527124,0.00500282,True,G*M/R**2,True
 phys-transit-depth,challenge,gold-reference,A*(Rp/Rs)**2,accepted,0.00564293,0.00466753,True,A*(Rp/Rs)**2,
 phys-transit-depth,challenge,wrong-variant,A*(Rp/Rs),rejected,,,,A*(Rp/Rs)**2,
-phys-transit-depth,challenge,agent-candidate,A*(Rp/Rs)**2,accepted,0.00564293,0.00466753,True,A*(Rp/Rs)**2,True
+phys-transit-depth,challenge,agent-candidate,A*Rp**2/Rs**2,accepted,0.00564293,0.00466753,True,A*(Rp/Rs)**2,True
 phys-weight,base,gold-reference,m*g,accepted,0.00869578,0.00575099,True,m*g,
 phys-weight,base,wrong-variant,m/g,rejected,,,,m*g,
 phys-weight,base,agent-candidate,m*g,accepted,0.00869578,0.00575099,True,m*g,True

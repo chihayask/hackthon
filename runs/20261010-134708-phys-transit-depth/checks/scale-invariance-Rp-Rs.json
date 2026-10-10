@@ -1,0 +1,12 @@
+{
+  "name": "scale-invariance-Rp-Rs",
+  "passed": true,
+  "reason": "无量纲群不变性成立：同时缩放 Rp×3、Rs×3 后 y 保持不变（相对偏差 1.11e-16），说明公式只通过这些量的无量纲组合依赖它们",
+  "metrics": {
+    "ratio": 0.9999999999999999,
+    "expected_ratio": 1.0,
+    "rel_error": 1.1102230246251565e-16,
+    "lambda": 3.0,
+    "expect_power": 0.0
+  }
+}

@@ -3,18 +3,18 @@
 运行目录 runs/<run_id>/ 一经生成即视为不可变证据；本目录保存其只读副本。
 命名规则：<日期>_<任务编号>_<类型>_<序号>
 
-- 最近更新（UTC）：2026-10-10T04:53:17+00:00
-- 运行总数：256
-- 本次新增归档：0
-- 未变化（幂等跳过）：256
-- 一致性：不通过，见 orphan_report.json
+- 最近更新（UTC）：2026-10-10T05:54:09+00:00
+- 运行总数：332
+- 本次新增归档：135
+- 未变化（幂等跳过）：197
+- 一致性：通过（无孤立文件）
 
 ## 假设来源分布（决定哪些运行能支撑「自主发现」）
 
 | 来源 | 条数 | 含义 |
 |---|---|---|
-| agh-llm | 115 | 假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环） |
-| cli | 2 | 公式由人在命令行给出 |
+| agh-llm | 145 | 假设由 Agnes 模型经 AGH 命令工具提出（可用于支撑自主闭环） |
+| cli | 47 | 公式由人在命令行给出 |
 | fixture-variant | 22 | 人为构造的结构错误候选式（判别力测试） |
 | reference | 22 | 标准答案原样送回引擎（金标准自检） |
 | unclassified | 96 | 未标注来源——不计入任何能力声明，需补齐 |
@@ -152,10 +152,85 @@
 | 20261009-230022-phys-surface-gravity | phys-surface-gravity | accepted | agh-llm | runs/20261009_phys-surface-gravity_accepted_04 | agree |
 | 20261009-230058-phys-transit-depth | phys-transit-depth | accepted | agh-llm | runs/20261009_phys-transit-depth_accepted_04 | agree |
 | 20261009-230224-phys-weight | phys-weight | accepted | agh-llm | runs/20261009_phys-weight_accepted_06 | agree |
+| 20261010-131214-phys-buoyancy | phys-buoyancy | accepted | cli | runs/20261010_phys-buoyancy_accepted_01 | agree |
+| 20261010-131321-phys-coulomb | phys-coulomb | accepted | cli | runs/20261010_phys-coulomb_accepted_01 | agree |
+| 20261010-131349-phys-cyclotron | phys-cyclotron | accepted | cli | runs/20261010_phys-cyclotron_accepted_01 | agree |
+| 20261010-131412-phys-elastic-pe | phys-elastic-pe | accepted | cli | runs/20261010_phys-elastic-pe_accepted_01 | agree |
+| 20261010-131446-phys-energy-shift | phys-energy-shift | accepted | cli | runs/20261010_phys-energy-shift_accepted_01 | agree |
+| 20261010-131513-phys-grav-potential-energy | phys-grav-potential-energy | accepted | cli | runs/20261010_phys-grav-potential-energy_accepted_01 | agree |
+| 20261010-131517-phys-grav-potential-energy | phys-grav-potential-energy | accepted | cli | runs/20261010_phys-grav-potential-energy_accepted_02 | agree |
+| 20261010-131537-phys-gravitation | phys-gravitation | accepted | cli | runs/20261010_phys-gravitation_accepted_01 | agree |
+| 20261010-131558-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_02 | agree |
+| 20261010-131618-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_03 | agree |
+| 20261010-131621-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_04 | agree |
+| 20261010-131629-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_05 | agree |
+| 20261010-131631-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_06 | agree |
+| 20261010-131650-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_07 | agree |
+| 20261010-131653-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_08 | agree |
+| 20261010-131656-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_09 | agree |
+| 20261010-131700-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_10 | agree |
+| 20261010-131702-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_11 | agree |
+| 20261010-131711-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_12 | agree |
+| 20261010-131714-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_13 | agree |
+| 20261010-131725-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_14 | agree |
+| 20261010-131727-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_15 | agree |
+| 20261010-131729-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_16 | agree |
+| 20261010-131732-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_17 | agree |
+| 20261010-131734-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_18 | agree |
+| 20261010-131737-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_19 | agree |
+| 20261010-131739-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_20 | agree |
+| 20261010-131742-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_21 | agree |
+| 20261010-131746-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_22 | agree |
+| 20261010-131749-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_23 | agree |
+| 20261010-131751-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_24 | agree |
+| 20261010-131755-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_25 | agree |
+| 20261010-131815-phys-hydrogen-level | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_26 | agree |
+| 20261010-131818-phys-hydrogen-level | phys-hydrogen-level | accepted | cli | runs/20261010_phys-hydrogen-level_accepted_01 | agree |
+| 20261010-131837-phys-ideal-gas | phys-ideal-gas | accepted | cli | runs/20261010_phys-ideal-gas_accepted_01 | agree |
+| 20261010-131918-phys-index-vacuum | phys-index-vacuum | accepted | cli | runs/20261010_phys-index-vacuum_accepted_01 | agree |
+| 20261010-131939-phys-joule-heating | phys-joule-heating | accepted | cli | runs/20261010_phys-joule-heating_accepted_01 | agree |
+| 20261010-132001-phys-kinetic-energy | phys-kinetic-energy | rejected | cli | runs/20261010_phys-kinetic-energy_rejected_01 | agree |
+| 20261010-132013-phys-kinetic-energy | phys-kinetic-energy | accepted | cli | runs/20261010_phys-kinetic-energy_accepted_01 | agree |
+| 20261010-132044-phys-ohm | phys-ohm | accepted | cli | runs/20261010_phys-ohm_accepted_01 | agree |
+| 20261010-132107-phys-pendulum-exact | phys-pendulum-exact | accepted | cli | runs/20261010_phys-pendulum-exact_accepted_02 | agree |
+| 20261010-132142-phys-pendulum-period | phys-pendulum-period | rejected | cli | runs/20261010_phys-pendulum-period_rejected_01 | agree |
+| 20261010-132150-phys-pendulum-period | phys-pendulum-period | rejected | cli | runs/20261010_phys-pendulum-period_rejected_02 | agree |
+| 20261010-132155-phys-pendulum-period | phys-pendulum-period | accepted | cli | runs/20261010_phys-pendulum-period_accepted_01 | agree |
+| 20261010-132203-phys-buoyancy | phys-buoyancy | accepted | agh-llm | runs/20261010_phys-buoyancy_accepted_02 | agree |
+| 20261010-132233-phys-coulomb | phys-coulomb | accepted | agh-llm | runs/20261010_phys-coulomb_accepted_02 | agree |
+| 20261010-132259-phys-cyclotron | phys-cyclotron | accepted | agh-llm | runs/20261010_phys-cyclotron_accepted_02 | agree |
+| 20261010-132408-phys-elastic-pe | phys-elastic-pe | accepted | agh-llm | runs/20261010_phys-elastic-pe_accepted_02 | agree |
+| 20261010-132425-phys-energy-shift | phys-energy-shift | accepted | agh-llm | runs/20261010_phys-energy-shift_accepted_02 | agree |
+| 20261010-132609-phys-grav-potential-energy | phys-grav-potential-energy | rejected | agh-llm | runs/20261010_phys-grav-potential-energy_rejected_01 | missing-formula |
+| 20261010-132702-phys-grav-potential-energy | phys-grav-potential-energy | accepted | agh-llm | runs/20261010_phys-grav-potential-energy_accepted_03 | agree |
+| 20261010-132740-phys-gravitation | phys-gravitation | accepted | agh-llm | runs/20261010_phys-gravitation_accepted_02 | agree |
+| 20261010-133048-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261010_phys-hydrogen-level_rejected_27 | agree |
+| 20261010-133154-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261010_phys-hydrogen-level_rejected_28 | agree |
+| 20261010-133230-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261010_phys-hydrogen-level_rejected_29 | agree |
+| 20261010-133243-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261010_phys-hydrogen-level_rejected_30 | agree |
+| 20261010-133249-phys-hydrogen-level | phys-hydrogen-level | rejected | agh-llm | runs/20261010_phys-hydrogen-level_rejected_31 | agree |
+| 20261010-133323-phys-ideal-gas | phys-ideal-gas | accepted | agh-llm | runs/20261010_phys-ideal-gas_accepted_02 | agree |
+| 20261010-133352-phys-index-vacuum | phys-index-vacuum | accepted | agh-llm | runs/20261010_phys-index-vacuum_accepted_02 | agree |
+| 20261010-133415-phys-joule-heating | phys-joule-heating | accepted | agh-llm | runs/20261010_phys-joule-heating_accepted_02 | agree |
+| 20261010-133440-phys-kinetic-energy | phys-kinetic-energy | accepted | agh-llm | runs/20261010_phys-kinetic-energy_accepted_02 | agree |
+| 20261010-133504-phys-ohm | phys-ohm | accepted | agh-llm | runs/20261010_phys-ohm_accepted_02 | agree |
+| 20261010-133526-phys-pendulum-exact | phys-pendulum-exact | rejected | agh-llm | runs/20261010_phys-pendulum-exact_rejected_01 | agree |
+| 20261010-133529-phys-pendulum-exact | phys-pendulum-exact | accepted | agh-llm | runs/20261010_phys-pendulum-exact_accepted_03 | agree |
+| 20261010-133622-phys-pendulum-period | phys-pendulum-period | rejected | agh-llm | runs/20261010_phys-pendulum-period_rejected_03 | agree |
+| 20261010-133630-phys-pendulum-period | phys-pendulum-period | rejected | agh-llm | runs/20261010_phys-pendulum-period_rejected_04 | agree |
+| 20261010-133950-phys-radioactive-decay | phys-radioactive-decay | accepted | agh-llm | runs/20261010_phys-radioactive-decay_accepted_01 | agree |
+| 20261010-134503-phys-snells-law | phys-snells-law | accepted | agh-llm | runs/20261010_phys-snells-law_accepted_01 | agree |
+| 20261010-134546-phys-spring-energy | phys-spring-energy | accepted | agh-llm | runs/20261010_phys-spring-energy_accepted_01 | agree |
+| 20261010-134613-phys-stefan-boltzmann | phys-stefan-boltzmann | accepted | agh-llm | runs/20261010_phys-stefan-boltzmann_accepted_01 | agree |
+| 20261010-134634-phys-surface-gravity | phys-surface-gravity | accepted | agh-llm | runs/20261010_phys-surface-gravity_accepted_01 | agree |
+| 20261010-134658-phys-transit-depth | phys-transit-depth | rejected | agh-llm | runs/20261010_phys-transit-depth_rejected_01 | agree |
+| 20261010-134708-phys-transit-depth | phys-transit-depth | accepted | agh-llm | runs/20261010_phys-transit-depth_accepted_01 | agree |
+| 20261010-134740-phys-weight | phys-weight | accepted | agh-llm | runs/20261010_phys-weight_accepted_01 | agree |
 | 5.67e-8 | phys-stefan-boltzmann | rejected | agh-llm | runs/20261009_phys-stefan-boltzmann_rejected_14 | agree |
 | 8.314462618 | phys-ideal-gas | accepted | agh-llm | runs/20261009_phys-ideal-gas_accepted_01 | agree |
 | R | phys-ideal-gas | rejected | agh-llm | runs/20261009_phys-ideal-gas_rejected_02 | agree |
 | a | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_07 | agree |
+| c | phys-hydrogen-level | rejected | cli | runs/20261010_phys-hydrogen-level_rejected_32 | agree |
 | d | phys-snells-law | rejected | agh-llm | runs/20261009_phys-snells-law_rejected_08 | agree |
 | demo-accepted-01 | mech-gravity | accepted | unclassified | runs/20261009_mech-gravity_accepted_01 | unresolvable |
 | discrim-ref-phys-buoyancy | phys-buoyancy | accepted | unclassified | runs/20261009_phys-buoyancy_accepted_02 | agree |

@@ -1,0 +1,12 @@
+{
+  "name": "scale-scaling-A",
+  "passed": true,
+  "reason": "缩放 A×2 倍后 y 变为 2 倍，物理预期 2 倍（相对偏差 0.00e+00，容差 1e-04）",
+  "metrics": {
+    "ratio": 2.0,
+    "expected_ratio": 2.0,
+    "rel_error": 0.0,
+    "lambda": 2.0,
+    "expect_power": 1.0
+  }
+}

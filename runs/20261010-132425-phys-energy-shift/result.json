@@ -1,0 +1,156 @@
+{
+  "task_id": "phys-energy-shift",
+  "formula": "(A-B)/h",
+  "parameters": {
+    "h": 6.632011680055611e-34
+  },
+  "verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "结构一致性通过（模式 structural）；自由参数 h 未声明单位，可吸收单位，严格量纲比对无法进行",
+      "metrics": {
+        "mode": "structural",
+        "free_parameters_without_units": [
+          "h"
+        ],
+        "free_parameters_with_units": []
+      }
+    },
+    {
+      "name": "fit",
+      "passed": true,
+      "reason": "参数拟合收敛（训练集诊断见 metrics）",
+      "metrics": {
+        "h": 6.632011680055611e-34,
+        "train_relative_error_median": 0.0064308617259652145,
+        "train_relative_error_p90": 0.018369378337492102,
+        "train_rmsre": 0.010704067577569589,
+        "train_relative_rmse": 0.01029727920267898,
+        "train_normalized_rmse": 0.061812265895508325
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": true,
+      "reason": "留出集中位相对误差 0.0072（阈值 0.0200）；诊断口径 p90=0.0189、RMSE/中位|y|=0.0105、RMSE/std(y)=0.0641、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.007205996577585742,
+        "relative_error_p75": 0.01169635159302194,
+        "relative_error_p90": 0.018925273217687204,
+        "rmsre": 0.011186616038619175,
+        "max_relative_error": 0.034156127713856226,
+        "rmse": 11955695737846.959,
+        "relative_rmse": 0.010457634013116794,
+        "normalized_rmse": 0.06412224239464638,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": true,
+      "reason": "外推区中位相对误差 0.0067（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.0193、RMSE/中位|y|=0.0094、RMSE/std(y)=0.0310",
+      "metrics": {
+        "relative_error_median": 0.0067075961896112795,
+        "relative_error_p75": 0.01326020830835691,
+        "relative_error_p90": 0.01925808756332139,
+        "rmsre": 0.012061129218241961,
+        "max_relative_error": 0.04246044461197153,
+        "rmse": 10626375623539.064,
+        "relative_rmse": 0.009411358943024382,
+        "normalized_rmse": 0.030972704602809625,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-h",
+      "passed": true,
+      "reason": "缩放 h×2 倍后 y 变为 0.5 倍，物理预期 0.5 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 0.5,
+        "expected_ratio": 0.5,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": -1.0
+      }
+    },
+    {
+      "name": "scale-monotonic-A",
+      "passed": true,
+      "reason": "在 A ∈ [5e-19, 1e-18] 上用等距网格扫描 9 点：整体相对变化 5.016e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.06269826933645391,
+          0.06269826933645382,
+          0.06269826933645391,
+          0.06269826933645382,
+          0.06269826933645399,
+          0.06269826933645382,
+          0.06269826933645382,
+          0.06269826933645399
+        ],
+        "variation": 0.501586154691631,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          5e-19,
+          1e-18
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-B",
+      "passed": true,
+      "reason": "在 B ∈ [1e-21, 1e-20] 上用等比网格扫描 9 点：整体相对变化 1.275e-02；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.00047233852024881396,
+          -0.0006298735399881033,
+          -0.0008399498651266871,
+          -0.001120091147089288,
+          -0.0014936655506199506,
+          -0.0019918350242356135,
+          -0.002656154694151737,
+          -0.0035420392117927802
+        ],
+        "variation": 0.012745947553252973,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          1e-21,
+          1e-20
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 17 点（17 点可求值）：满足\"恒正\"的有 17 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 17,
+        "evaluated": 17,
+        "ratio": 1.0,
+        "min_value": 738840677065712.4,
+        "max_value": 1506330278344177.0
+      }
+    }
+  ],
+  "rounds_hint": "全部检验通过，可进入结果归档；请在结论中说明验证证据的位置。",
+  "free_parameters": [
+    "h"
+  ]
+}

@@ -1,0 +1,1 @@
+{"v":"agnes-cli-result/v1","sessionId":"agnes:local:local-dev:cli:workspace:6f1cb1ec4f12d7c7","reason":"completed","exitCode":0,"lastSeq":156,"credits":{"used":0,"source":"estimated"},"text":"第一轮通过全部检验，最终公式为 1/sqrt(eps*mu)，判定 accepted。我没有推翻过自己，因为没有失败的轮次。"}

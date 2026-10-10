@@ -1,0 +1,160 @@
+{
+  "task_id": "phys-transit-depth",
+  "formula": "Rp**2/Rs**2",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": true,
+      "reason": "量纲一致（严格比对）（模式 strict）",
+      "metrics": {
+        "mode": "strict",
+        "free_parameters_with_units": []
+      }
+    },
+    {
+      "name": "holdout",
+      "passed": false,
+      "reason": "留出集中位相对误差 0.3624（阈值 0.0200）；诊断口径 p90=0.8409、RMSE/中位|y|=0.7418、RMSE/std(y)=0.5611、非有限值比例 0.00%",
+      "metrics": {
+        "relative_error_median": 0.3624237370503933,
+        "relative_error_p75": 0.6854793821633663,
+        "relative_error_p90": 0.8408502790464738,
+        "rmsre": 0.5204367268233335,
+        "max_relative_error": 0.9889460885360567,
+        "rmse": 0.0024417816843842095,
+        "relative_rmse": 0.741755930557959,
+        "normalized_rmse": 0.5611324630156886,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 80,
+        "n_relative_points": 80,
+        "threshold": 0.02,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "外推区中位相对误差 0.3423（阈值 0.0300），非有限值比例 0.00%；诊断口径 p90=0.7238、RMSE/中位|y|=0.7258、RMSE/std(y)=0.5357",
+      "metrics": {
+        "relative_error_median": 0.3423384863324756,
+        "relative_error_p75": 0.5478269025413693,
+        "relative_error_p90": 0.7237686330824191,
+        "rmsre": 0.44824997026346786,
+        "max_relative_error": 0.9185510552684186,
+        "rmse": 0.0027831642611757953,
+        "relative_rmse": 0.7257776911122857,
+        "normalized_rmse": 0.5357099182067226,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 60,
+        "n_relative_points": 60,
+        "threshold": 0.03,
+        "criterion": "relative_error_median"
+      }
+    },
+    {
+      "name": "scale-scaling-A",
+      "passed": false,
+      "reason": "缩放 A×2 倍后 y 变为 1 倍，物理预期 2 倍（相对偏差 5.00e-01，容差 1e-04）；幂律标度不符，属于\"单位对、形状错\"的候选式",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 2.0,
+        "rel_error": 0.5,
+        "lambda": 2.0,
+        "expect_power": 1.0
+      }
+    },
+    {
+      "name": "scale-scaling-Rp",
+      "passed": true,
+      "reason": "缩放 Rp×2 倍后 y 变为 4 倍，物理预期 4 倍（相对偏差 0.00e+00，容差 1e-04）",
+      "metrics": {
+        "ratio": 4.0,
+        "expected_ratio": 4.0,
+        "rel_error": 0.0,
+        "lambda": 2.0,
+        "expect_power": 2.0
+      }
+    },
+    {
+      "name": "scale-invariance-Rp-Rs",
+      "passed": true,
+      "reason": "无量纲群不变性成立：同时缩放 Rp×3、Rs×3 后 y 保持不变（相对偏差 0.00e+00），说明公式只通过这些量的无量纲组合依赖它们",
+      "metrics": {
+        "ratio": 1.0,
+        "expected_ratio": 1.0,
+        "rel_error": 0.0,
+        "lambda": 3.0,
+        "expect_power": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-Rp",
+      "passed": true,
+      "reason": "在 Rp ∈ [6e+06, 9e+07] 上用等比网格扫描 9 点：整体相对变化 9.956e-01；全程递增，单调性成立",
+      "metrics": {
+        "direction": "increasing",
+        "rel_steps": [
+          0.0043021763167352565,
+          0.00846663855529773,
+          0.016662257227163593,
+          0.03279115012302572,
+          0.06453264475102877,
+          0.12699957832946598,
+          0.24993385840745397,
+          0.49186725184538455
+        ],
+        "variation": 0.9955555555555555,
+        "min_variation": 0.001,
+        "grid": "等比",
+        "strict": true,
+        "range": [
+          6000000.0,
+          90000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-monotonic-Rs",
+      "passed": true,
+      "reason": "在 Rs ∈ [6e+08, 7e+08] 上用等距网格扫描 9 点：整体相对变化 2.653e-01；全程递减，单调性成立",
+      "metrics": {
+        "direction": "decreasing",
+        "rel_steps": [
+          -0.04039983340274886,
+          -0.03800016659725117,
+          -0.03578685121107273,
+          -0.03374214287176746,
+          -0.03185028680003634,
+          -0.030097262327000017,
+          -0.028470564228139962,
+          -0.026959015010963115
+        ],
+        "variation": 0.26530612244897966,
+        "min_variation": 0.001,
+        "grid": "等距",
+        "strict": true,
+        "range": [
+          600000000.0,
+          700000000.0
+        ]
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed": true,
+      "reason": "在声明区间上采样 65 点（65 点可求值）：满足\"恒正\"的有 65 点（100%），符号性质成立",
+      "metrics": {
+        "expect": "positive",
+        "satisfied": 65,
+        "evaluated": 65,
+        "ratio": 1.0,
+        "min_value": 7.346938775510205e-05,
+        "max_value": 0.0225
+      }
+    }
+  ],
+  "rounds_hint": "未通过项：holdout、extrapolation、scale-scaling-A。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-A）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "free_parameters": []
+}

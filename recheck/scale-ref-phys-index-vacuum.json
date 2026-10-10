@@ -1,7 +1,7 @@
 {
   "run_id": "scale-ref-phys-index-vacuum",
   "run_dir": "runs/scale-ref-phys-index-vacuum",
-  "checked_at_utc": "2026-10-10T04:48:04+00:00",
+  "checked_at_utc": "2026-10-10T05:53:15+00:00",
   "status": "out-of-scope",
   "agrees": false,
   "task_id": "phys-index-vacuum",

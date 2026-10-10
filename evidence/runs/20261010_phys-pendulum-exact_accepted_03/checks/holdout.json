@@ -1,0 +1,20 @@
+{
+  "name": "holdout",
+  "passed": true,
+  "reason": "留出集中位相对误差 0.0143（阈值 0.0200）；诊断口径 p90=0.0815、RMSE/中位|y|=0.0448、RMSE/std(y)=0.1328、非有限值比例 0.00%",
+  "metrics": {
+    "relative_error_median": 0.014297071994993409,
+    "relative_error_p75": 0.04665144922905194,
+    "relative_error_p90": 0.08145914727105442,
+    "rmsre": 0.043099310892934825,
+    "max_relative_error": 0.12080781283076623,
+    "rmse": 0.11821380785964025,
+    "relative_rmse": 0.04478195808658723,
+    "normalized_rmse": 0.1328164305332337,
+    "nonfinite_ratio": 0.0,
+    "n_finite": 80,
+    "n_relative_points": 80,
+    "threshold": 0.02,
+    "criterion": "relative_error_median"
+  }
+}

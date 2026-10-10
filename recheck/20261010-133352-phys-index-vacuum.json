@@ -1,0 +1,140 @@
+{
+  "run_id": "20261010-133352-phys-index-vacuum",
+  "run_dir": "runs/20261010-133352-phys-index-vacuum",
+  "checked_at_utc": "2026-10-10T05:53:14+00:00",
+  "status": "agree",
+  "agrees": true,
+  "task_id": "phys-index-vacuum",
+  "formula": "1/sqrt(eps*mu)",
+  "original_verdict": "accepted",
+  "manifest_ok": true,
+  "manifest_detail": {
+    "untracked": [],
+    "missing": [],
+    "mismatched": []
+  },
+  "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-index-vacuum",
+  "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-index-vacuum",
+  "settings_source": "cli-override",
+  "settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "params_source": "run.json.free_parameters",
+  "free_parameters": [],
+  "recomputed_verdict": "accepted",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {}
+    },
+    {
+      "name": "holdout",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "relative_error_median": 0.0,
+        "relative_error_p75": 0.0,
+        "relative_error_p90": 0.0,
+        "rmsre": 0.0,
+        "max_relative_error": 0.0,
+        "rmse": 0.0,
+        "relative_rmse": 0.0,
+        "normalized_rmse": 0.0,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 0.0,
+        "n_relative_points": 0.0,
+        "threshold": 0.0
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "relative_error_median": 0.0,
+        "relative_error_p75": 0.0,
+        "relative_error_p90": 0.0,
+        "rmsre": 0.0,
+        "max_relative_error": 0.0,
+        "rmse": 0.0,
+        "relative_rmse": 0.0,
+        "normalized_rmse": 0.0,
+        "nonfinite_ratio": 0.0,
+        "n_finite": 0.0,
+        "n_relative_points": 0.0,
+        "threshold": 0.0
+      }
+    },
+    {
+      "name": "scale-scaling-eps",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "ratio": 0.0,
+        "expected_ratio": 0.0,
+        "rel_error": 0.0,
+        "lambda": 0.0,
+        "expect_power": 0.0
+      }
+    },
+    {
+      "name": "scale-scaling-eps-mu",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "ratio": 0.0,
+        "expected_ratio": 0.0,
+        "rel_error": 0.0,
+        "lambda": 0.0,
+        "expect_power": 0.0
+      }
+    },
+    {
+      "name": "scale-monotonic-eps",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "variation": 0.0,
+        "min_variation": 0.0,
+        "strict": 0.0
+      }
+    },
+    {
+      "name": "scale-sign-y",
+      "passed_original": true,
+      "passed_recomputed": true,
+      "passed_match": true,
+      "metrics_rel_diff": {
+        "satisfied": 0.0,
+        "evaluated": 0.0,
+        "ratio": 0.0,
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    }
+  ],
+  "checks_compared": 7,
+  "parameter_rel_diff": {},
+  "verdict_match": true,
+  "checks_match": true,
+  "max_metric_rel_diff": 0.0,
+  "max_parameter_rel_diff": 0.0,
+  "verdict_reproduced": true,
+  "deterministic": true,
+  "detail": "判定与全部检验项逐位一致，独立复算通过"
+}

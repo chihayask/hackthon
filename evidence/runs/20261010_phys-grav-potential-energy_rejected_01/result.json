@@ -1,0 +1,25 @@
+{
+  "task_id": "phys-grav-potential-energy",
+  "formula": "",
+  "parameters": {},
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "dimension",
+      "passed": false,
+      "reason": "表达式不可用: 公式为空",
+      "metrics": {
+        "mode": "strict",
+        "reason_code": "unsafe-expression"
+      }
+    },
+    {
+      "name": "expression",
+      "passed": false,
+      "reason": "表达式不可用: 公式为空",
+      "metrics": {}
+    }
+  ],
+  "rounds_hint": "表达式本身不合法，请先修正语法或去掉不支持的语法结构。",
+  "free_parameters": []
+}

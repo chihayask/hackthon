@@ -1,6 +1,9 @@
 {
   "name": "dimension",
   "passed": false,
-  "reason": "表达式不可用: 未知名称: K",
-  "metrics": {}
+  "reason": "表达式不可用: 未知名称: A",
+  "metrics": {
+    "mode": "strict",
+    "reason_code": "unsafe-expression"
+  }
 }

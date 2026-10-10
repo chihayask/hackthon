@@ -1,11 +1,11 @@
 {
   "run_id": "hbar",
   "run_dir": "runs/hbar",
-  "checked_at_utc": "2026-10-10T04:48:03+00:00",
+  "checked_at_utc": "2026-10-10T05:53:15+00:00",
   "status": "agree",
   "agrees": true,
   "task_id": "phys-hydrogen-level",
-  "formula": "K*me*el**2/(eps0**2*hbar**2*n**2)",
+  "formula": "A*me*el**4/(eps0**2*hbar**2*n**2)",
   "original_verdict": "rejected",
   "manifest_ok": true,
   "manifest_detail": {

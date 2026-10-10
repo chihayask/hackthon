@@ -1,0 +1,29 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "verdict": "rejected",
+  "formula": "1/(me*el**2)*n**2",
+  "parameters": {},
+  "free_parameters": [],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "cli",
+  "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "未通过项：dimension、holdout、extrapolation、scale-scaling-n、scale-sign-y。请针对失败项提出新的假设。其中尺度/极限行为检验不通过（scale-scaling-n、scale-sign-y）：说明公式的物理形状不对——例如漏掉了某个自变量、或对某个量不是幂律关系。继续调参数不会有改善，必须更换函数族。",
+  "inputs": [
+    "tasks/phys-hydrogen-level"
+  ],
+  "notes": "",
+  "duplicate_check_names": []
+}

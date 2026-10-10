@@ -1,0 +1,31 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "verdict": "rejected",
+  "formula": "eps0*(-1)*me*el*el*el*el/(n*n)",
+  "parameters": {},
+  "free_parameters": [
+    "eps0"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "cli",
+  "hypothesis_source_note": "公式由人在命令行给出",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "拟合阶段失败。若反复不收敛，说明该函数形式与数据不匹配，应更换函数族而不是只调初值。",
+  "inputs": [
+    "tasks/phys-hydrogen-level"
+  ],
+  "notes": "",
+  "duplicate_check_names": []
+}
