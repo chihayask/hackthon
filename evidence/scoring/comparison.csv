@@ -43,7 +43,7 @@ phys-pendulum-exact,challenge,wrong-variant,2*pi*sqrt(L/g),rejected,,,,2*pi*sqrt
 phys-pendulum-exact,challenge,agent-candidate,2*3.141592653589793*sqrt(L/g)*(1+theta0**2/16+11*theta0**4/3072+theta0**2/16*theta0**2),accepted,0.132816,0.0740181,True,2*pi*sqrt(L/g)*(1 + theta0**2/16),False
 phys-pendulum-period,base,gold-reference,2*pi*sqrt(L/g),accepted,0.0118581,0.00998851,True,2*pi*sqrt(L/g),
 phys-pendulum-period,base,wrong-variant,2*pi*L/g,rejected,,,,2*pi*sqrt(L/g),
-phys-pendulum-period,base,agent-candidate,2*3.141592653589793*sqrt(L/g),accepted,0.0118581,0.00998851,True,2*pi*sqrt(L/g),True
+phys-pendulum-period,base,agent-candidate,sqrt(L/g),rejected,2.77444,1.86878,True,2*pi*sqrt(L/g),False
 phys-radioactive-decay,challenge,gold-reference,N0*exp(-t/tau),accepted,0.00476177,0.00313099,True,N0*exp(-t/tau),
 phys-radioactive-decay,challenge,wrong-variant,N0*(1-t/tau),rejected,,,,N0*exp(-t/tau),
 phys-radioactive-decay,challenge,agent-candidate,N0*exp(-t/tau),accepted,0.00476177,0.00313099,True,N0*exp(-t/tau),True

@@ -17,19 +17,19 @@
     "wrong_variant_rate": 1.0,
     "agent_candidates": 22,
     "agent_fixture_tasks": 1,
-    "agent_accepted": 21,
-    "agent_matches_reference": 17,
-    "agent_match_rate": 0.7727272727272727,
-    "agent_candidates_bound": 21,
-    "agent_candidates_unbound": 1,
+    "agent_accepted": 20,
+    "agent_matches_reference": 16,
+    "agent_match_rate": 0.7272727272727273,
+    "agent_candidates_bound": 22,
+    "agent_candidates_unbound": 0,
     "agent_matches_reference_bound": 16,
-    "agent_match_rate_bound": 0.7619047619047619,
+    "agent_match_rate_bound": 0.7272727272727273,
     "by_layer": {
       "base": {
         "tasks": 13,
         "gold_ok": 13,
         "wrong_ok": 13,
-        "agent_match": 11,
+        "agent_match": 10,
         "agent_total": 13
       },
       "challenge": {
@@ -957,14 +957,14 @@
         ]
       },
       "agent": {
-        "run_id": "20261009-220633-phys-pendulum-period",
-        "formula": "2*3.141592653589793*sqrt(L/g)",
-        "verdict": "accepted",
-        "provenance_bound": false,
-        "session_id": "",
+        "run_id": "20261010-133622-phys-pendulum-period",
+        "formula": "sqrt(L/g)",
+        "verdict": "rejected",
+        "provenance_bound": true,
+        "session_id": "agnes:local:local-dev:cli:workspace:b03bf484b9b9a839",
         "parameters": {},
-        "holdout": 0.01185806648136485,
-        "extrapolation": 0.009988505542200342,
+        "holdout": 2.7744398688059113,
+        "extrapolation": 1.86878144311477,
         "dimension": true,
         "candidates_tried": 5,
         "candidates_accepted": 2,
@@ -974,12 +974,12 @@
           "available": true,
           "probe_points": 259,
           "probe_seed": 20261008,
-          "max_scaled_deviation": 0.0,
-          "max_relative_deviation": 0.0,
+          "max_scaled_deviation": 0.8408450569081046,
+          "max_relative_deviation": 0.8408450569081047,
           "all_finite": true,
-          "equivalent": true
+          "equivalent": false
         },
-        "matches_reference": true
+        "matches_reference": false
       },
       "agent_fixture": null
     },
@@ -1423,7 +1423,5 @@
       "agent_fixture": null
     }
   ],
-  "notes": [
-    "有 1 个候选式运行标了 agh-llm 但**没有** AGH 会话号（provenance_bound=false），已单列不计入绑定层：标签是自报的，只有绑定到真实会话才可核对。请让调用方设置 FORMULA_AGH_SESSION_ID（见 harness/run_agent_discovery.ps1）。"
-  ]
+  "notes": []
 }

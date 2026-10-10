@@ -292,8 +292,14 @@ def build_comparison(runs_root: str, tasks_root: str, reference_root: str) -> Di
             # 同一任务在历史上有过"标了 agh-llm 但没有会话号"的运行，按目录名排序
             # 会把那条旧运行选成代表，绑定层于是显示 1/22——而实际上 22 个任务
             # 都已经有绑定过的运行。这里把绑定当作第一权重，accepted 第二，run_id 第三。
-            pool = accepted if accepted else cands
-            best = sorted(pool, key=lambda c: (not c.get("provenance_bound"), c["run_id"]))[0]
+            # 绑定是**第一**优先级：绑定层要回答的是"可核验的运行里有多少命中"。
+            # 只看 accepted 会漏掉这种情况（实测 phys-pendulum-period）：新的绑定运行被判
+            # rejected，而绑定机制之前有一条 accepted 的旧运行，于是代表被选成旧的、任务
+            # 在绑定层显示为命中——那是拿不可核验的旧运行给绑定层充数。
+            bound = [c for c in cands if c.get("provenance_bound")]
+            group = bound if bound else cands
+            accepted_in_group = [c for c in group if c["verdict"] == "accepted"]
+            best = (accepted_in_group or group)[0]
             comparison: Dict[str, object] = {
                 "run_id": best["run_id"],
                 "formula": best["formula"],

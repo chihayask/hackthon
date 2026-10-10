@@ -29,12 +29,17 @@ REM 22 条自主运行被记成了 cli（保守但错误）。改为在工作区
 REM 由驱动脚本写入，本脚本从**当前目录**读。读不到就退回诚实默认（cli、无会话号）。
 set "PROV_FILE=%CD%\_agh_provenance.txt"
 if exist "%PROV_FILE%" (
-  for /f "usebackq tokens=1,2" %%a in ("%PROV_FILE%") do (
+  for /f "usebackq tokens=1,2,3" %%a in ("%PROV_FILE%") do (
     if "%FORMULA_AGH_HYPOTHESIS_SOURCE%"=="" set "FORMULA_AGH_HYPOTHESIS_SOURCE=%%a"
     if "%FORMULA_AGH_SESSION_ID%"=="" set "FORMULA_AGH_SESSION_ID=%%b"
     if "%FORMULA_AGH_AGENT_WORKSPACE%"=="" set "FORMULA_AGH_AGENT_WORKSPACE=%CD%"
+    REM 第三个字段是消融开关：no-scale = 不把尺度检验的结论反馈给模型
+    REM （尺度理由会写出目标幂次，本身也是一种先验）。
+    echo %%c | findstr /I "no-scale" >nul && set "FORMULA_AGH_NO_SCALE=1"
   )
 )
+set "SCALE_ARG="
+if /I "%FORMULA_AGH_NO_SCALE%"=="1" set "SCALE_ARG=--no-scale-check"
 REM 引擎选择：默认用**源码** Python（与仓库一致，不会因为 exe 过期而与源码行为分叉）。
 REM 打包的 exe 需要显式开启：set FORMULA_AGH_USE_EXE=1。
 REM 教训（2026-10-10）：原先无条件优先 exe，结果源码加了 session_id/provenance_bound 后，
@@ -49,19 +54,19 @@ if not defined ENGINE set "ENGINE=python"
 
 if "%~4"=="" (
   if "%ENGINE%"=="%PY%" (
-    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --out "runs"
   ) else if "%ENGINE%"=="python" (
-    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --out "runs"
   ) else (
-    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
+    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --out "runs"
   )
 ) else (
   if "%ENGINE%"=="%PY%" (
-    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+    "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --run-id "%~4" --out "runs"
   ) else if "%ENGINE%"=="python" (
-    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+    python -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --run-id "%~4" --out "runs"
   ) else (
-    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" --run-id "%~4" --out "runs"
+    "%ENGINE%" verify --task "tasks/%~1" --formula "%~2" --params "%~3" %SCALE_ARG% --run-id "%~4" --out "runs"
   )
 )
 set RC=%ERRORLEVEL%

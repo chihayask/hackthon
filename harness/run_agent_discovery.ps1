@@ -22,7 +22,8 @@ param(
   [string]$WorkRoot = '',
   [string]$SessionOut = '',
   [string]$Wrapper = '',
-  [switch]$DryRun = $false
+  [switch]$DryRun = $false,
+  [switch]$NoScale = $false
 )
 
 $ErrorActionPreference = 'Continue'
@@ -156,7 +157,8 @@ foreach ($task in $taskList) {
   }
   # 握手文件（AGH 的 shell 工具不继承环境变量，见 run_verify.cmd 的说明）。
   # 工作区根与任务目录各放一份，因为无法假定 shell 工具的当前目录是哪一个。
-  $provLine = 'agh-llm ' + $sessionId
+  # 第三个字段是消融开关（AGH 不继承环境变量，所以同样走握手文件）。
+  $provLine = 'agh-llm ' + $sessionId + $(if ($NoScale) { ' no-scale' } else { '' })
   foreach ($dir in @($work, $visible)) {
     if (Test-Path -LiteralPath $dir) {
       [System.IO.File]::WriteAllText((Join-Path $dir '_agh_provenance.txt'), $provLine,
