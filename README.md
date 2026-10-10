@@ -77,7 +77,7 @@
     │         ▼                                                                │
     │   harness/run_verify.cmd  ──►  python -m formula_agh verify              │
     └─────────┬────────────────────────────────────────────────────────────────┘
-              │  PYTHONPATH=src, FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm
+              │  PYTHONPATH=src；来源与会话号由 AGH 驱动脚本显式传入
               ▼
     ┌──────────────────────────── validation engine ──────────────────────────┐
     │  safe_eval (AST whitelist) → units → verify (split + fit)                │
@@ -136,7 +136,7 @@
 
 | 项 | 值 |
 |---|---|
-| Python | 3.12 或以上。复现基线为 3.12.14，本机实测 3.13.5 |
+| Python | 3.12 或以上。当前基线记录于 3.13.5 / numpy 2.4.6；环境差异默认只提示、不判失败，加 `--strict-env` 才严格比对 |
 | 依赖 | numpy。参数拟合为自行实现的 Levenberg–Marquardt 算法，不使用 scipy；测试由 `run_tests.py` 驱动，不使用 pytest |
 | 操作系统 | Windows、Linux、macOS。开发与验证在 Windows 完成 |
 
@@ -312,17 +312,20 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     set FORMULA_AGH_AUTOARCHIVE=1
     set FORMULA_AGH_RUNS=runs
     set FORMULA_AGH_EVIDENCE=evidence
-    if "%FORMULA_AGH_HYPOTHESIS_SOURCE%"=="" set FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm
     pushd "%ROOT%"
     "%PY%" -X utf8 -m formula_agh verify --task "tasks/%~1" --formula "%~2" --params "%~3" --out "runs"
     set RC=%ERRORLEVEL%
     popd
     exit /b %RC%
 
-该脚本完成三项设置：模块搜索路径、验证后自动归档、`hypothesis_source` 标注。
+该脚本完成两件事：设置模块搜索路径、验证后自动归档。
 
-人工调试时需先执行 `set FORMULA_AGH_HYPOTHESIS_SOURCE=cli`，
-否则手工验证会被标注为模型自主发现，产生错误的溯源记录。
+**来源标签刻意不设默认值。** 旧版本在这里写死 `FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm`，
+等于把"脚本被调用"当成"模型自主发现"——任何人手工敲一条都会留下 agh-llm 证据。
+现在标签由**调用方**显式声明：`harness/run_agent_discovery.ps1` 会 export
+`FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm` 与 `FORMULA_AGH_SESSION_ID`，
+两者都到位时 `run.json` 的 `provenance_bound` 才为 true。
+手工调用（不设环境变量）默认记为 `cli`，这是诚实的结果。
 
 ### 打包为 Windows 可执行文件
 
@@ -342,8 +345,9 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     dist\formula_agh.exe split --tasks tasks --check
 
 exe 需放在**项目根目录**下运行（验证需要 `tasks/`、`reference/`、`sealed/`、`physics/` 等数据）。
-`harness/run_verify.cmd` 会自动优先使用 exe，找不到再回退到 `python -m formula_agh`，
-因此 AGH 侧无需改动即可在无 Python 环境下运行。
+默认**走源码** Python；要使用打包产物需显式开启：
+`set FORMULA_AGH_USE_EXE=1`。旧版本无条件优先 exe，结果源码更新后包装脚本仍在跑旧 exe、
+新字段根本没写进证据——静默走了一条与源码不同的路径。
 
 已知限制：单文件模式在**本项目自身目录**（USB 盘且路径含空格）下启动时报
 `Could not create temporary directory`，这是 PyInstaller 引导程序创建解压临时目录时的环境问题。
@@ -509,7 +513,7 @@ AGH 自主发现执行统计：
 | 中文输出乱码 | 终端编码非 UTF-8 | 加 `-X utf8`，并设置 `PYTHONIOENCODING=utf-8` |
 | AGH 启动报 `E_PRESET_UNRESOLVED: no-routes` | `AGH_HOME` 指向无 provider 配置的目录 | 移除 `AGH_HOME`，使用默认 `~/.agh` |
 | AGH 返回 `INTERNAL_ERROR (-32603)` 且日志无详细信息 | allow 规则形态不合法。守护进程不记录异常消息，或在修改预设后未重建 | 预设文本在构建期内联，修改 yaml 后需重建；重建前用 `harness/check_agh_command_rule.ts` 校验规则 |
-| 模型提出的假设被记录为 `cli` | 未通过 `run_verify.cmd` 调用，缺少 provenance 标注 | 统一使用包装脚本；人工调试前设置 `FORMULA_AGH_HYPOTHESIS_SOURCE=cli` |
+| 模型提出的假设被记录为 `cli` | 调用方没有声明来源。包装脚本**故意不设默认值**，需由 AGH 驱动脚本 export `FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm` 与 `FORMULA_AGH_SESSION_ID` | 用 `harness/run_agent_discovery.ps1` 驱动；手工调试记 `cli` 是预期行为 |
 | `skill_read` 返回 `NOT_FOUND` | 技能未放入工作区技能根 `<workspace>/.agh/skills/dir/SKILL.md` | 复制技能到该目录。新建工作区的首次调用可能与技能发现存在时序竞争，重试一次即可 |
 | `reproduce.py` 报告新增或缺失条目 | 工作区内存在并发运行 | 使用 `--clean` 在空目录复现 |
 

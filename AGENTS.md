@@ -44,15 +44,15 @@
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
 
 打包（目标机无需 Python）：`packaging\build_exe.cmd` 出单文件 exe，`packaging\build_exe.cmd onedir` 出目录式。
-`harness/run_verify.cmd` 会自动优先用 exe，找不到再回退源码运行。
+`harness/run_verify.cmd` 默认走源码；要跑打包产物需 `set FORMULA_AGH_USE_EXE=1`（无条件优先 exe 曾导致跑旧产物、新字段没写进证据）。
 
 ## 环境
 
 * 本机 `python` = `D:\miniconda3\python.exe`（3.13.5 / numpy 2.4.6）；
-  复现基线固化于 **python 3.12.14 / numpy 2.3.5**。环境差异默认只提示、不判失败，加 `--strict-env` 可严格比对。
+  当前复现基线记录于 **python 3.13.5 / numpy 2.4.6**。环境差异默认只提示、不判失败，加 `--strict-env` 才严格比对。
 * `.env` 存密钥，已 gitignore，且被 `reproduce.py` 的 `EXCLUDE_FILES` 挡在干净目录外——**绝不提交、绝不复制**。
-* 人工调用 `harness/run_verify.cmd` 调试时，先 `set FORMULA_AGH_HYPOTHESIS_SOURCE=cli`，
-  否则会被默认标成 `agh-llm` 造成**假溯源**。
+* `harness/run_verify.cmd` **故意不设来源默认值**（旧版本写死 `agh-llm`，形成可误标的路径）；
+  来源与会话号由 `harness/run_agent_discovery.ps1` 显式 export，人工调用记 `cli` 是预期行为。
 * AGH 侧：用**默认 home**（`~/.agh`），**不要设 `AGH_HOME`** 指向空目录，否则启动即 `E_PRESET_UNRESOLVED: no-routes`。
 
 ## 文档地图
