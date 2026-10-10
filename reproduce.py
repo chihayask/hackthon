@@ -58,23 +58,43 @@ EXCLUDE_DIRS = {"runs", "evidence", "recheck", "sealed", "superseded", "__pycach
 EXCLUDE_FILES = {".env", ".env.local", ".env.production"}
 
 
-def run_step(name, args, cwd, timeout=1800):
+class StepFailed(RuntimeError):
+    """某个步骤以非预期退出码结束——流水线必须立刻停，而不是继续跑完再说。"""
+
+
+def run_step(name, args, cwd, timeout=1800, expect=(0, 1)):
+    """执行一个步骤，并按 expect 校验退出码。
+
+    为什么要有 expect 与 fail-fast（外部审计 2026-10-10 的建议）：
+    原实现对任何非零退出只**记录**不终止，于是某一步崩掉之后，后面所有依赖它的步骤
+    都在残缺输入上继续跑，最后拿一个"指纹不一致"的结论收场——真实原因（哪一步崩了）
+    被埋在一屏日志里。退出码 1 是"检查未通过"的正常语义，所以默认允许 0 与 1；
+    其余（2 及以上、超时、异常）一律立刻终止，并打印非零退出。
+    """
     cmd = [sys.executable, "-X", "utf8"] + args
     env = dict(os.environ)
     env["PYTHONPATH"] = os.path.join(cwd, "src")
     env["PYTHONIOENCODING"] = "utf-8"
-    proc = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True,
-                          encoding="utf-8", errors="replace", timeout=timeout)
+    try:
+        proc = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True,
+                              encoding="utf-8", errors="replace", timeout=timeout)
+    except subprocess.TimeoutExpired:
+        print("  [%s] 超时（%ds）——终止复现" % (name, timeout))
+        raise StepFailed("步骤 %s 超时" % name)
+    except OSError as exc:
+        print("  [%s] 无法启动：%s——终止复现" % (name, exc))
+        raise StepFailed("步骤 %s 无法启动" % name)
     tail = (proc.stdout or "").strip().splitlines()[-3:]
     line = "  [%s] %s (exit=%d)" % (name, " | ".join(tail)[:150], proc.returncode)
     print(line)
-    if proc.returncode not in (0, 1):
-        # 退出码 1 是"检查未通过"的正常语义；其它非零码或异常退出必须把 stderr 抖出来，
-        # 否则复现失败时只看到一行空白，根本不知道该查哪里（这个坑踩过一次）。
-        err = (proc.stderr or "").strip().splitlines()[-8:]
+    if proc.returncode not in expect:
+        err = (proc.stderr or "").strip().splitlines()[-12:]
         for item in err:
             print("        stderr| " + item[:160])
-    elif not tail:
+        print("  [%s] 非预期退出码 %d（期望 %s）——终止复现，后续步骤不再执行"
+              % (name, proc.returncode, "/".join(str(v) for v in expect)))
+        raise StepFailed("步骤 %s 退出码 %d" % (name, proc.returncode))
+    if not tail:
         err = (proc.stderr or "").strip().splitlines()[-8:]
         for item in err:
             print("        stderr| " + item[:160])
@@ -416,4 +436,15 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except StepFailed as exc:
+        # 分步 fail-fast 的终点：把"哪一步崩了"讲清楚，而不是甩一段 traceback。
+        print("")
+        print("=" * 72)
+        print("复现中止：" + str(exc))
+        print("  某一步以非预期退出码结束（或超时/无法启动），后续步骤没有执行，")
+        print("  因此**没有**产生可比对的指纹——不要把它读成'复现结果不一致'。")
+        print("  上面标注 [步骤名] 的那一行是失败点，紧随其后的 stderr| 行是它的错误输出。")
+        print("=" * 72)
+        sys.exit(2)

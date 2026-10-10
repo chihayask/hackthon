@@ -16,6 +16,7 @@ _clean_repro/
 _contract_tmp/
 _isolation_tmp/
 _adversarial_tmp/
+_import_tmp/
 _m3/
 
 # 注意：以下目录**故意不忽略**，它们是提交物的一部分

@@ -1,0 +1,44 @@
+{
+  "task_id": "phys-coulomb",
+  "formula": "k*q1*q2/r",
+  "parameters": {
+    "k": 59077027482.88326
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "narrow_fit",
+      "passed": false,
+      "reason": "窄窗内归一化误差 0.3589（阈值 0.0800）；在窄窗内拟合得到 k=5.9077e+10",
+      "metrics": {
+        "normalized_rmse": 0.3589435802970971,
+        "window": [
+          0.1018868537,
+          0.269051268236
+        ],
+        "samples": 188,
+        "fitted": {
+          "k": 59077027482.88326
+        }
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "窄窗之外归一化误差 2.4416（阈值 0.1500）；剖面最大相对误差 2.29 出现在 r=0.499897",
+      "metrics": {
+        "normalized_rmse": 2.4416123164724506,
+        "peak_relative_error": 2.285928250949169,
+        "peak_at": 0.4998973645,
+        "peak_inside_window": 0.7604921101069031,
+        "samples": 212,
+        "window": [
+          0.1018868537,
+          0.269051268236
+        ]
+      }
+    }
+  ],
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "free_parameters": []
+}

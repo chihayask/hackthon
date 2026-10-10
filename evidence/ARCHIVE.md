@@ -3,9 +3,9 @@
 运行目录 runs/<run_id>/ 一经生成即视为不可变证据；本目录保存其只读副本。
 命名规则：<日期>_<任务编号>_<类型>_<序号>
 
-- 最近更新（UTC）：2026-10-10T03:22:41+00:00
-- 运行总数：251
-- 本次新增归档：135
+- 最近更新（UTC）：2026-10-10T03:29:13+00:00
+- 运行总数：257
+- 本次新增归档：141
 - 未变化（幂等跳过）：116
 - 一致性：通过（无孤立文件）
 
@@ -17,7 +17,7 @@
 | cli | 2 | 公式由人在命令行给出 |
 | fixture-variant | 22 | 人为构造的结构错误候选式（判别力测试） |
 | reference | 22 | 标准答案原样送回引擎（金标准自检） |
-| unclassified | 90 | 未标注来源——不计入任何能力声明，需补齐 |
+| unclassified | 96 | 未标注来源——不计入任何能力声明，需补齐 |
 
 未标注来源的运行（前 20 条，需补齐后才能计入任何能力声明）：
 
@@ -202,6 +202,12 @@
 | discrim-wrong-phys-surface-gravity | phys-surface-gravity | rejected | unclassified | runs/20261009_phys-surface-gravity_rejected_02 | agree |
 | discrim-wrong-phys-transit-depth | phys-transit-depth | rejected | unclassified | runs/20261009_phys-transit-depth_rejected_02 | agree |
 | discrim-wrong-phys-weight | phys-weight | rejected | unclassified | runs/20261009_phys-weight_rejected_02 | agree |
+| extrap-phys-coulomb | phys-coulomb | rejected | unclassified | runs/20261010_phys-coulomb_rejected_01 | out-of-scope |
+| extrap-phys-gravitation | phys-gravitation | rejected | unclassified | runs/20261010_phys-gravitation_rejected_01 | out-of-scope |
+| extrap-phys-hydrogen-level | phys-hydrogen-level | rejected | unclassified | runs/20261010_phys-hydrogen-level_rejected_01 | out-of-scope |
+| extrap-phys-pendulum-exact | phys-pendulum-exact | accepted | unclassified | runs/20261010_phys-pendulum-exact_accepted_01 | out-of-scope |
+| extrap-phys-stefan-boltzmann | phys-stefan-boltzmann | rejected | unclassified | runs/20261010_phys-stefan-boltzmann_rejected_01 | out-of-scope |
+| extrap-phys-surface-gravity | phys-surface-gravity | rejected | unclassified | runs/20261010_phys-surface-gravity_rejected_01 | out-of-scope |
 | h | phys-energy-shift | rejected | agh-llm | runs/20261009_phys-energy-shift_rejected_02 | agree |
 | hbar | phys-hydrogen-level | rejected | agh-llm | runs/20261009_phys-hydrogen-level_rejected_06 | agree |
 | negctl-summary | negative-control | accepted | unclassified | runs/20261009_negative-control_accepted_01 | unresolvable |

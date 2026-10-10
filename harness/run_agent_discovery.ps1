@@ -5,9 +5,12 @@
 # （meta.json 与 data_train.csv），于是「不许看 sealed/ 与 reference/」从纪律变成结构：
 # 那个目录里根本没有别的东西。
 #
-# 验证统一走 E:\fagh\harness\run_verify.cmd —— 它带 provenance（hypothesis_source=agh-llm）
-# 并自动归档。注意 AGH 的审批校验器要求 allow 规则的 argv 以**绝对路径形状**开头，
-# 所以包装脚本必须用绝对路径、不加引号、不加 & 调用；E:\fagh 是无空格的别名目录联接。
+# 验证统一走项目里的 harness/run_verify.cmd（它带溯源标注并自动归档）。注意两点：
+#   * AGH 的审批校验器要求 allow 规则的 argv 以**绝对路径形状**开头，所以包装脚本必须用
+#     绝对路径、不加引号、不加 & 调用；若项目路径含空格，需要先建一个无空格的目录联接别名，
+#     再用 -Wrapper <别名>\harness\run_verify.cmd 指过来（脚本会在检测到空格时明确报错）。
+#   * AGH 入口、工作目录、包装脚本都不写死本机路径：可用 -AghEntry/-WorkRoot/-Wrapper 指定，
+#     或设置环境变量 AGH_ENTRY。找不到时脚本会给出具体该怎么办，而不是静默走错路径。
 #
 # 用法：
 #   powershell -ExecutionPolicy Bypass -File harness\run_agent_discovery.ps1 -Tasks phys-ohm,phys-weight
@@ -15,15 +18,37 @@ param(
   [string]$Tasks = '',
   [int]$MaxRounds = 3,
   [string]$ProjectRoot = '',
-  [string]$AghEntry = 'E:\.dsh\deepseek harness workspace\agnes-harness\packages\cli\dist\local\agnes.mjs',
-  [string]$WorkRoot = 'E:\agh-runs',
+  [string]$AghEntry = '',
+  [string]$WorkRoot = '',
   [string]$SessionOut = '',
-  [string]$Wrapper = 'E:\fagh\harness\run_verify.cmd'
+  [string]$Wrapper = ''
 )
 
 $ErrorActionPreference = 'Continue'
 if ([string]::IsNullOrWhiteSpace($ProjectRoot)) { $ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path }
 if ([string]::IsNullOrWhiteSpace($SessionOut)) { $SessionOut = Join-Path $ProjectRoot 'evidence\agh-sessions' }
+$nl = [Environment]::NewLine
+# AGH 入口：优先 -AghEntry / AGH_ENTRY，其次找仓库同级或仓库内的 agnes-harness 检出。
+if ([string]::IsNullOrWhiteSpace($AghEntry)) {
+  $cand = @()
+  if ($env:AGH_ENTRY) { $cand += $env:AGH_ENTRY }
+  $cand += (Join-Path $ProjectRoot '..\agnes-harness\packages\cli\dist\local\agnes.mjs')
+  $cand += (Join-Path $ProjectRoot 'agnes-harness\packages\cli\dist\local\agnes.mjs')
+  $AghEntry = ($cand | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1)
+}
+if ([string]::IsNullOrWhiteSpace($AghEntry)) {
+  throw ('找不到 AGH 入口。' + $nl + '  请用 -AghEntry <路径> 指定，或设置环境变量 AGH_ENTRY。' + $nl + '  常见位置：<仓库同级>/agnes-harness/packages/cli/dist/local/agnes.mjs' + $nl + '  构建方式见 https://github.com/AgnesAI-Labs/agnes-harness')
+}
+# 工作目录默认放到系统临时目录，避免把中间产物写进仓库，也避免智能体看到项目本体。
+if ([string]::IsNullOrWhiteSpace($WorkRoot)) { $WorkRoot = Join-Path $env:TEMP 'agh-runs' }
+# 包装脚本：默认用项目内的 run_verify.cmd；含空格时必须换无空格别名（AGH 审批规则要求）。
+if ([string]::IsNullOrWhiteSpace($Wrapper)) {
+  $compact = Join-Path $ProjectRoot 'harness\run_verify.cmd'
+  if ($compact -match '\s') {
+    throw ('项目路径含空格：' + $ProjectRoot + $nl + '  AGH 的审批校验器要求包装脚本以无空格绝对路径调用。' + $nl + '  请先建目录联接： cmd /c mklink /J <无空格别名> "' + $ProjectRoot + '"' + $nl + '  再用 -Wrapper <无空格别名>\harness\run_verify.cmd')
+  }
+  $Wrapper = $compact
+}
 New-Item -ItemType Directory -Force -Path $SessionOut | Out-Null
 if (-not (Test-Path -LiteralPath $AghEntry)) { throw "找不到 AGH 入口: $AghEntry" }
 

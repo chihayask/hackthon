@@ -1,0 +1,46 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+  "parameters": {
+    "eps0": 3.387033720155157e-23,
+    "hbar": 3.387033720137998e-23
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "narrow_fit",
+      "passed": false,
+      "reason": "窄窗内归一化误差 0.4937（阈值 0.0800）；在窄窗内拟合得到 eps0=3.38703e-23, hbar=3.38703e-23",
+      "metrics": {
+        "normalized_rmse": 0.4937136520529973,
+        "window": [
+          1.01029391,
+          3.10449715946
+        ],
+        "samples": 153,
+        "fitted": {
+          "eps0": 3.387033720155157e-23,
+          "hbar": 3.387033720137998e-23
+        }
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "窄窗之外归一化误差 4.4320（阈值 0.1500）；剖面最大相对误差 2.97 出现在 n=5.99649",
+      "metrics": {
+        "normalized_rmse": 4.432044131636848,
+        "peak_relative_error": 2.9725462990352387,
+        "peak_at": 5.996492123,
+        "peak_inside_window": 1.0465142926315618,
+        "samples": 247,
+        "window": [
+          1.01029391,
+          3.10449715946
+        ]
+      }
+    }
+  ],
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "free_parameters": []
+}

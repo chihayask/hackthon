@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-10T03:21:34+00:00",
+  "generated_at_utc": "2026-10-10T03:28:22+00:00",
   "runs_root": "runs",
   "tasks_root": "tasks",
-  "total": 251,
+  "total": 257,
   "tally": {
     "agree": 199,
     "missing-formula": 1,
     "unresolvable": 2,
     "stale-metrics": 5,
-    "out-of-scope": 44
+    "out-of-scope": 50
   },
   "in_scope": 204,
   "independent_recompute_rate": 0.9754901960784313,
@@ -22,6 +22,12 @@
     "phys-gravitation-cand02"
   ],
   "out_of_scope": [
+    "extrap-phys-coulomb",
+    "extrap-phys-gravitation",
+    "extrap-phys-hydrogen-level",
+    "extrap-phys-pendulum-exact",
+    "extrap-phys-stefan-boltzmann",
+    "extrap-phys-surface-gravity",
     "scale-ref-phys-buoyancy",
     "scale-ref-phys-coulomb",
     "scale-ref-phys-cyclotron",
@@ -84,7 +90,7 @@
     {
       "run_id": "0",
       "run_dir": "runs/0",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -127,7 +133,7 @@
     {
       "run_id": "20261009-214409-phys-weight",
       "run_dir": "runs/20261009-214409-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -168,7 +174,7 @@
     {
       "run_id": "20261009-214613-phys-weight",
       "run_dir": "runs/20261009-214613-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -209,7 +215,7 @@
     {
       "run_id": "20261009-214719-phys-buoyancy",
       "run_dir": "runs/20261009-214719-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -250,7 +256,7 @@
     {
       "run_id": "20261009-214749-phys-coulomb",
       "run_dir": "runs/20261009-214749-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -293,7 +299,7 @@
     {
       "run_id": "20261009-214756-phys-coulomb",
       "run_dir": "runs/20261009-214756-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -338,7 +344,7 @@
     {
       "run_id": "20261009-214822-phys-cyclotron",
       "run_dir": "runs/20261009-214822-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -379,7 +385,7 @@
     {
       "run_id": "20261009-214857-phys-cyclotron",
       "run_dir": "runs/20261009-214857-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -420,7 +426,7 @@
     {
       "run_id": "20261009-214923-phys-elastic-pe",
       "run_dir": "runs/20261009-214923-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -461,7 +467,7 @@
     {
       "run_id": "20261009-214935-phys-elastic-pe",
       "run_dir": "runs/20261009-214935-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -502,7 +508,7 @@
     {
       "run_id": "20261009-215018-phys-energy-shift",
       "run_dir": "runs/20261009-215018-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -547,7 +553,7 @@
     {
       "run_id": "20261009-220108-phys-grav-potential-energy",
       "run_dir": "runs/20261009-220108-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:29+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -592,7 +598,7 @@
     {
       "run_id": "20261009-220200-phys-grav-potential-energy",
       "run_dir": "runs/20261009-220200-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -637,7 +643,7 @@
     {
       "run_id": "20261009-220218-phys-gravitation",
       "run_dir": "runs/20261009-220218-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -682,7 +688,7 @@
     {
       "run_id": "20261009-220340-phys-index-vacuum",
       "run_dir": "runs/20261009-220340-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -723,7 +729,7 @@
     {
       "run_id": "20261009-220344-phys-index-vacuum",
       "run_dir": "runs/20261009-220344-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -764,7 +770,7 @@
     {
       "run_id": "20261009-220358-phys-joule-heating",
       "run_dir": "runs/20261009-220358-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -805,7 +811,7 @@
     {
       "run_id": "20261009-220404-phys-joule-heating",
       "run_dir": "runs/20261009-220404-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -846,7 +852,7 @@
     {
       "run_id": "20261009-220421-phys-kinetic-energy",
       "run_dir": "runs/20261009-220421-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -887,7 +893,7 @@
     {
       "run_id": "20261009-220450-phys-ohm",
       "run_dir": "runs/20261009-220450-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -928,7 +934,7 @@
     {
       "run_id": "20261009-220517-phys-pendulum-exact",
       "run_dir": "runs/20261009-220517-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -969,7 +975,7 @@
     {
       "run_id": "20261009-220522-phys-pendulum-exact",
       "run_dir": "runs/20261009-220522-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -1010,7 +1016,7 @@
     {
       "run_id": "20261009-220530-phys-pendulum-exact",
       "run_dir": "runs/20261009-220530-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -1051,7 +1057,7 @@
     {
       "run_id": "20261009-220616-phys-pendulum-period",
       "run_dir": "runs/20261009-220616-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -1092,7 +1098,7 @@
     {
       "run_id": "20261009-220633-phys-pendulum-period",
       "run_dir": "runs/20261009-220633-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -1133,7 +1139,7 @@
     {
       "run_id": "20261009-220743-phys-radioactive-decay",
       "run_dir": "runs/20261009-220743-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -1174,7 +1180,7 @@
     {
       "run_id": "20261009-220836-phys-radioactive-decay",
       "run_dir": "runs/20261009-220836-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -1217,7 +1223,7 @@
     {
       "run_id": "20261009-220841-phys-radioactive-decay",
       "run_dir": "runs/20261009-220841-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -1258,7 +1264,7 @@
     {
       "run_id": "20261009-220848-phys-radioactive-decay",
       "run_dir": "runs/20261009-220848-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -1299,7 +1305,7 @@
     {
       "run_id": "20261009-220913-phys-radioactive-decay",
       "run_dir": "runs/20261009-220913-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -1340,7 +1346,7 @@
     {
       "run_id": "20261009-221042-phys-snells-law",
       "run_dir": "runs/20261009-221042-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -1383,7 +1389,7 @@
     {
       "run_id": "20261009-221048-phys-snells-law",
       "run_dir": "runs/20261009-221048-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -1428,7 +1434,7 @@
     {
       "run_id": "20261009-221121-phys-spring-energy",
       "run_dir": "runs/20261009-221121-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -1469,7 +1475,7 @@
     {
       "run_id": "20261009-221200-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221200-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1512,7 +1518,7 @@
     {
       "run_id": "20261009-221203-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221203-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1555,7 +1561,7 @@
     {
       "run_id": "20261009-221205-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221205-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1598,7 +1604,7 @@
     {
       "run_id": "20261009-221207-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221207-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1641,7 +1647,7 @@
     {
       "run_id": "20261009-221209-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221209-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1684,7 +1690,7 @@
     {
       "run_id": "20261009-221220-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221220-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1727,7 +1733,7 @@
     {
       "run_id": "20261009-221223-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221223-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1768,7 +1774,7 @@
     {
       "run_id": "20261009-221231-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221231-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -1811,7 +1817,7 @@
     {
       "run_id": "20261009-221311-phys-surface-gravity",
       "run_dir": "runs/20261009-221311-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -1854,7 +1860,7 @@
     {
       "run_id": "20261009-221314-phys-surface-gravity",
       "run_dir": "runs/20261009-221314-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -1899,7 +1905,7 @@
     {
       "run_id": "20261009-221339-phys-weight",
       "run_dir": "runs/20261009-221339-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -1940,7 +1946,7 @@
     {
       "run_id": "20261009-221447-phys-hydrogen-level",
       "run_dir": "runs/20261009-221447-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "missing-formula",
       "agrees": false,
       "task_id": "phys-hydrogen-level",
@@ -1972,7 +1978,7 @@
     {
       "run_id": "20261009-221613-phys-snells-law",
       "run_dir": "runs/20261009-221613-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2015,7 +2021,7 @@
     {
       "run_id": "20261009-221622-phys-snells-law",
       "run_dir": "runs/20261009-221622-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2060,7 +2066,7 @@
     {
       "run_id": "20261009-221636-phys-snells-law",
       "run_dir": "runs/20261009-221636-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2105,7 +2111,7 @@
     {
       "run_id": "20261009-221649-phys-snells-law",
       "run_dir": "runs/20261009-221649-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2150,7 +2156,7 @@
     {
       "run_id": "20261009-221715-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221715-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2193,7 +2199,7 @@
     {
       "run_id": "20261009-221751-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221751-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2236,7 +2242,7 @@
     {
       "run_id": "20261009-221812-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221812-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2279,7 +2285,7 @@
     {
       "run_id": "20261009-221907-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221907-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2322,7 +2328,7 @@
     {
       "run_id": "20261009-221922-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-221922-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2365,7 +2371,7 @@
     {
       "run_id": "20261009-222001-phys-transit-depth",
       "run_dir": "runs/20261009-222001-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -2406,7 +2412,7 @@
     {
       "run_id": "20261009-222014-phys-transit-depth",
       "run_dir": "runs/20261009-222014-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -2447,7 +2453,7 @@
     {
       "run_id": "20261009-223204-phys-snells-law",
       "run_dir": "runs/20261009-223204-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2490,7 +2496,7 @@
     {
       "run_id": "20261009-223213-phys-snells-law",
       "run_dir": "runs/20261009-223213-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2535,7 +2541,7 @@
     {
       "run_id": "20261009-223219-phys-snells-law",
       "run_dir": "runs/20261009-223219-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2580,7 +2586,7 @@
     {
       "run_id": "20261009-223243-phys-snells-law",
       "run_dir": "runs/20261009-223243-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:17+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2625,7 +2631,7 @@
     {
       "run_id": "20261009-223255-phys-snells-law",
       "run_dir": "runs/20261009-223255-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2670,7 +2676,7 @@
     {
       "run_id": "20261009-223310-phys-snells-law",
       "run_dir": "runs/20261009-223310-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -2715,7 +2721,7 @@
     {
       "run_id": "20261009-223333-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223333-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2758,7 +2764,7 @@
     {
       "run_id": "20261009-223340-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223340-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2801,7 +2807,7 @@
     {
       "run_id": "20261009-223349-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223349-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2844,7 +2850,7 @@
     {
       "run_id": "20261009-223403-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223403-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2887,7 +2893,7 @@
     {
       "run_id": "20261009-223414-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223414-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2930,7 +2936,7 @@
     {
       "run_id": "20261009-223423-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223423-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -2971,7 +2977,7 @@
     {
       "run_id": "20261009-223517-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-223517-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -3016,7 +3022,7 @@
     {
       "run_id": "20261009-223549-phys-snells-law",
       "run_dir": "runs/20261009-223549-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3059,7 +3065,7 @@
     {
       "run_id": "20261009-223609-phys-snells-law",
       "run_dir": "runs/20261009-223609-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3104,7 +3110,7 @@
     {
       "run_id": "20261009-223617-phys-snells-law",
       "run_dir": "runs/20261009-223617-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3149,7 +3155,7 @@
     {
       "run_id": "20261009-223627-phys-snells-law",
       "run_dir": "runs/20261009-223627-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3194,7 +3200,7 @@
     {
       "run_id": "20261009-223639-phys-snells-law",
       "run_dir": "runs/20261009-223639-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3239,7 +3245,7 @@
     {
       "run_id": "20261009-223850-phys-snells-law",
       "run_dir": "runs/20261009-223850-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3284,7 +3290,7 @@
     {
       "run_id": "20261009-223857-phys-snells-law",
       "run_dir": "runs/20261009-223857-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3329,7 +3335,7 @@
     {
       "run_id": "20261009-223905-phys-snells-law",
       "run_dir": "runs/20261009-223905-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3374,7 +3380,7 @@
     {
       "run_id": "20261009-223914-phys-snells-law",
       "run_dir": "runs/20261009-223914-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:30+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3419,7 +3425,7 @@
     {
       "run_id": "20261009-223920-phys-snells-law",
       "run_dir": "runs/20261009-223920-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3464,7 +3470,7 @@
     {
       "run_id": "20261009-223926-phys-snells-law",
       "run_dir": "runs/20261009-223926-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -3509,7 +3515,7 @@
     {
       "run_id": "20261009-225105-phys-weight",
       "run_dir": "runs/20261009-225105-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -3550,7 +3556,7 @@
     {
       "run_id": "20261009-225213-phys-buoyancy",
       "run_dir": "runs/20261009-225213-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -3591,7 +3597,7 @@
     {
       "run_id": "20261009-225239-phys-coulomb",
       "run_dir": "runs/20261009-225239-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -3636,7 +3642,7 @@
     {
       "run_id": "20261009-225303-phys-elastic-pe",
       "run_dir": "runs/20261009-225303-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -3677,7 +3683,7 @@
     {
       "run_id": "20261009-225328-phys-energy-shift",
       "run_dir": "runs/20261009-225328-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -3722,7 +3728,7 @@
     {
       "run_id": "20261009-225332-phys-energy-shift",
       "run_dir": "runs/20261009-225332-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -3767,7 +3773,7 @@
     {
       "run_id": "20261009-225421-phys-grav-potential-energy",
       "run_dir": "runs/20261009-225421-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -3810,7 +3816,7 @@
     {
       "run_id": "20261009-225424-phys-grav-potential-energy",
       "run_dir": "runs/20261009-225424-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -3855,7 +3861,7 @@
     {
       "run_id": "20261009-225452-phys-gravitation",
       "run_dir": "runs/20261009-225452-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -3900,7 +3906,7 @@
     {
       "run_id": "20261009-225535-phys-hydrogen-level",
       "run_dir": "runs/20261009-225535-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -3943,7 +3949,7 @@
     {
       "run_id": "20261009-225546-phys-hydrogen-level",
       "run_dir": "runs/20261009-225546-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -3986,7 +3992,7 @@
     {
       "run_id": "20261009-225604-phys-ideal-gas",
       "run_dir": "runs/20261009-225604-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -4031,7 +4037,7 @@
     {
       "run_id": "20261009-225622-phys-index-vacuum",
       "run_dir": "runs/20261009-225622-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -4072,7 +4078,7 @@
     {
       "run_id": "20261009-225649-phys-joule-heating",
       "run_dir": "runs/20261009-225649-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -4113,7 +4119,7 @@
     {
       "run_id": "20261009-225715-phys-kinetic-energy",
       "run_dir": "runs/20261009-225715-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -4154,7 +4160,7 @@
     {
       "run_id": "20261009-225731-phys-ohm",
       "run_dir": "runs/20261009-225731-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -4195,7 +4201,7 @@
     {
       "run_id": "20261009-225754-phys-pendulum-period",
       "run_dir": "runs/20261009-225754-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -4236,7 +4242,7 @@
     {
       "run_id": "20261009-225824-phys-radioactive-decay",
       "run_dir": "runs/20261009-225824-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -4277,7 +4283,7 @@
     {
       "run_id": "20261009-225845-phys-snells-law",
       "run_dir": "runs/20261009-225845-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4320,7 +4326,7 @@
     {
       "run_id": "20261009-225850-phys-snells-law",
       "run_dir": "runs/20261009-225850-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4365,7 +4371,7 @@
     {
       "run_id": "20261009-225855-phys-snells-law",
       "run_dir": "runs/20261009-225855-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4408,7 +4414,7 @@
     {
       "run_id": "20261009-225901-phys-snells-law",
       "run_dir": "runs/20261009-225901-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4453,7 +4459,7 @@
     {
       "run_id": "20261009-225910-phys-snells-law",
       "run_dir": "runs/20261009-225910-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4498,7 +4504,7 @@
     {
       "run_id": "20261009-225930-phys-spring-energy",
       "run_dir": "runs/20261009-225930-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -4539,7 +4545,7 @@
     {
       "run_id": "20261009-230000-phys-stefan-boltzmann",
       "run_dir": "runs/20261009-230000-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -4584,7 +4590,7 @@
     {
       "run_id": "20261009-230022-phys-surface-gravity",
       "run_dir": "runs/20261009-230022-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -4629,7 +4635,7 @@
     {
       "run_id": "20261009-230058-phys-transit-depth",
       "run_dir": "runs/20261009-230058-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -4670,7 +4676,7 @@
     {
       "run_id": "20261009-230224-phys-weight",
       "run_dir": "runs/20261009-230224-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -4711,7 +4717,7 @@
     {
       "run_id": "5.67e-8",
       "run_dir": "runs/5.67e-8",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -4754,7 +4760,7 @@
     {
       "run_id": "8.314462618",
       "run_dir": "runs/8.314462618",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -4799,7 +4805,7 @@
     {
       "run_id": "R",
       "run_dir": "runs/R",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -4842,7 +4848,7 @@
     {
       "run_id": "a",
       "run_dir": "runs/a",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4885,7 +4891,7 @@
     {
       "run_id": "d",
       "run_dir": "runs/d",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -4928,7 +4934,7 @@
     {
       "run_id": "demo-accepted-01",
       "run_dir": "runs/demo-accepted-01",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "unresolvable",
       "agrees": false,
       "task_id": "mech-gravity",
@@ -4956,7 +4962,7 @@
     {
       "run_id": "discrim-ref-phys-buoyancy",
       "run_dir": "runs/discrim-ref-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -4997,7 +5003,7 @@
     {
       "run_id": "discrim-ref-phys-coulomb",
       "run_dir": "runs/discrim-ref-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "stale-metrics",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -5042,7 +5048,7 @@
     {
       "run_id": "discrim-ref-phys-cyclotron",
       "run_dir": "runs/discrim-ref-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:18+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -5083,7 +5089,7 @@
     {
       "run_id": "discrim-ref-phys-elastic-pe",
       "run_dir": "runs/discrim-ref-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -5124,7 +5130,7 @@
     {
       "run_id": "discrim-ref-phys-energy-shift",
       "run_dir": "runs/discrim-ref-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -5169,7 +5175,7 @@
     {
       "run_id": "discrim-ref-phys-grav-potential-energy",
       "run_dir": "runs/discrim-ref-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "stale-metrics",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -5214,7 +5220,7 @@
     {
       "run_id": "discrim-ref-phys-gravitation",
       "run_dir": "runs/discrim-ref-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "stale-metrics",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -5259,7 +5265,7 @@
     {
       "run_id": "discrim-ref-phys-hydrogen-level",
       "run_dir": "runs/discrim-ref-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -5306,7 +5312,7 @@
     {
       "run_id": "discrim-ref-phys-ideal-gas",
       "run_dir": "runs/discrim-ref-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -5351,7 +5357,7 @@
     {
       "run_id": "discrim-ref-phys-index-vacuum",
       "run_dir": "runs/discrim-ref-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -5392,7 +5398,7 @@
     {
       "run_id": "discrim-ref-phys-joule-heating",
       "run_dir": "runs/discrim-ref-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -5433,7 +5439,7 @@
     {
       "run_id": "discrim-ref-phys-kinetic-energy",
       "run_dir": "runs/discrim-ref-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -5474,7 +5480,7 @@
     {
       "run_id": "discrim-ref-phys-ohm",
       "run_dir": "runs/discrim-ref-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -5515,7 +5521,7 @@
     {
       "run_id": "discrim-ref-phys-pendulum-exact",
       "run_dir": "runs/discrim-ref-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -5556,7 +5562,7 @@
     {
       "run_id": "discrim-ref-phys-pendulum-period",
       "run_dir": "runs/discrim-ref-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -5597,7 +5603,7 @@
     {
       "run_id": "discrim-ref-phys-radioactive-decay",
       "run_dir": "runs/discrim-ref-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -5638,7 +5644,7 @@
     {
       "run_id": "discrim-ref-phys-snells-law",
       "run_dir": "runs/discrim-ref-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -5683,7 +5689,7 @@
     {
       "run_id": "discrim-ref-phys-spring-energy",
       "run_dir": "runs/discrim-ref-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -5724,7 +5730,7 @@
     {
       "run_id": "discrim-ref-phys-stefan-boltzmann",
       "run_dir": "runs/discrim-ref-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -5769,7 +5775,7 @@
     {
       "run_id": "discrim-ref-phys-surface-gravity",
       "run_dir": "runs/discrim-ref-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -5814,7 +5820,7 @@
     {
       "run_id": "discrim-ref-phys-transit-depth",
       "run_dir": "runs/discrim-ref-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:31+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -5855,7 +5861,7 @@
     {
       "run_id": "discrim-ref-phys-weight",
       "run_dir": "runs/discrim-ref-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -5896,7 +5902,7 @@
     {
       "run_id": "discrim-wrong-phys-buoyancy",
       "run_dir": "runs/discrim-wrong-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -5937,7 +5943,7 @@
     {
       "run_id": "discrim-wrong-phys-coulomb",
       "run_dir": "runs/discrim-wrong-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -5978,7 +5984,7 @@
     {
       "run_id": "discrim-wrong-phys-cyclotron",
       "run_dir": "runs/discrim-wrong-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -6019,7 +6025,7 @@
     {
       "run_id": "discrim-wrong-phys-elastic-pe",
       "run_dir": "runs/discrim-wrong-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -6060,7 +6066,7 @@
     {
       "run_id": "discrim-wrong-phys-energy-shift",
       "run_dir": "runs/discrim-wrong-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -6101,7 +6107,7 @@
     {
       "run_id": "discrim-wrong-phys-grav-potential-energy",
       "run_dir": "runs/discrim-wrong-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -6142,7 +6148,7 @@
     {
       "run_id": "discrim-wrong-phys-gravitation",
       "run_dir": "runs/discrim-wrong-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -6183,7 +6189,7 @@
     {
       "run_id": "discrim-wrong-phys-hydrogen-level",
       "run_dir": "runs/discrim-wrong-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -6224,7 +6230,7 @@
     {
       "run_id": "discrim-wrong-phys-ideal-gas",
       "run_dir": "runs/discrim-wrong-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -6265,7 +6271,7 @@
     {
       "run_id": "discrim-wrong-phys-index-vacuum",
       "run_dir": "runs/discrim-wrong-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -6306,7 +6312,7 @@
     {
       "run_id": "discrim-wrong-phys-joule-heating",
       "run_dir": "runs/discrim-wrong-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -6347,7 +6353,7 @@
     {
       "run_id": "discrim-wrong-phys-kinetic-energy",
       "run_dir": "runs/discrim-wrong-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -6388,7 +6394,7 @@
     {
       "run_id": "discrim-wrong-phys-ohm",
       "run_dir": "runs/discrim-wrong-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -6429,7 +6435,7 @@
     {
       "run_id": "discrim-wrong-phys-pendulum-exact",
       "run_dir": "runs/discrim-wrong-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -6470,7 +6476,7 @@
     {
       "run_id": "discrim-wrong-phys-pendulum-period",
       "run_dir": "runs/discrim-wrong-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -6511,7 +6517,7 @@
     {
       "run_id": "discrim-wrong-phys-radioactive-decay",
       "run_dir": "runs/discrim-wrong-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -6552,7 +6558,7 @@
     {
       "run_id": "discrim-wrong-phys-snells-law",
       "run_dir": "runs/discrim-wrong-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -6593,7 +6599,7 @@
     {
       "run_id": "discrim-wrong-phys-spring-energy",
       "run_dir": "runs/discrim-wrong-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -6634,7 +6640,7 @@
     {
       "run_id": "discrim-wrong-phys-stefan-boltzmann",
       "run_dir": "runs/discrim-wrong-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -6675,7 +6681,7 @@
     {
       "run_id": "discrim-wrong-phys-surface-gravity",
       "run_dir": "runs/discrim-wrong-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -6716,7 +6722,7 @@
     {
       "run_id": "discrim-wrong-phys-transit-depth",
       "run_dir": "runs/discrim-wrong-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -6757,7 +6763,7 @@
     {
       "run_id": "discrim-wrong-phys-weight",
       "run_dir": "runs/discrim-wrong-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -6796,9 +6802,260 @@
       "detail": "判定与全部检验项逐位一致，独立复算通过"
     },
     {
+      "run_id": "extrap-phys-coulomb",
+      "run_dir": "runs/extrap-phys-coulomb",
+      "checked_at_utc": "2026-10-10T03:28:19+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-coulomb",
+      "formula": "k*q1*q2/r",
+      "original_verdict": "rejected",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-coulomb",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-coulomb",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [
+        "k"
+      ],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
+      "run_id": "extrap-phys-gravitation",
+      "run_dir": "runs/extrap-phys-gravitation",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-gravitation",
+      "formula": "G*m1*m2/r",
+      "original_verdict": "rejected",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-gravitation",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-gravitation",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [
+        "G"
+      ],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
+      "run_id": "extrap-phys-hydrogen-level",
+      "run_dir": "runs/extrap-phys-hydrogen-level",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-hydrogen-level",
+      "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+      "original_verdict": "rejected",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-hydrogen-level",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-hydrogen-level",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [
+        "eps0",
+        "hbar"
+      ],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
+      "run_id": "extrap-phys-pendulum-exact",
+      "run_dir": "runs/extrap-phys-pendulum-exact",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-pendulum-exact",
+      "formula": "2*pi*sqrt(L/g)",
+      "original_verdict": "accepted",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-pendulum-exact",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-pendulum-exact",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
+      "run_id": "extrap-phys-stefan-boltzmann",
+      "run_dir": "runs/extrap-phys-stefan-boltzmann",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-stefan-boltzmann",
+      "formula": "sigma*A*T**2",
+      "original_verdict": "rejected",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-stefan-boltzmann",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-stefan-boltzmann",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [
+        "sigma"
+      ],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
+      "run_id": "extrap-phys-surface-gravity",
+      "run_dir": "runs/extrap-phys-surface-gravity",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
+      "status": "out-of-scope",
+      "agrees": false,
+      "task_id": "phys-surface-gravity",
+      "formula": "G*M/R",
+      "original_verdict": "rejected",
+      "manifest_ok": true,
+      "manifest_detail": {
+        "untracked": [],
+        "missing": [],
+        "mismatched": []
+      },
+      "task_resolution": "resolved from run.json inputs/task_id: tasks/phys-surface-gravity",
+      "task_dir": "E:/.dsh/deepseek harness workspace/hackathon-2026/tasks/phys-surface-gravity",
+      "settings_source": "cli-override",
+      "settings": {
+        "holdout_ratio": 0.2,
+        "holdout_threshold": 0.02,
+        "extrapolation_ratio": 0.15,
+        "extrapolation_threshold": 0.03,
+        "dimension_check": true,
+        "scale_check": true,
+        "fit_max_residual": 0.5,
+        "seed": 20261008
+      },
+      "params_source": "run.json.free_parameters",
+      "free_parameters": [
+        "G"
+      ],
+      "recomputed_verdict": "rejected",
+      "recorded_checks": [
+        "extrapolation",
+        "narrow_fit"
+      ],
+      "detail": "该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重跑一次。",
+      "foreign_checks": [
+        "narrow_fit"
+      ]
+    },
+    {
       "run_id": "h",
       "run_dir": "runs/h",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -6841,7 +7098,7 @@
     {
       "run_id": "hbar",
       "run_dir": "runs/hbar",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -6884,7 +7141,7 @@
     {
       "run_id": "negctl-summary",
       "run_dir": "runs/negctl-summary",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "unresolvable",
       "agrees": false,
       "task_id": "negative-control",
@@ -6902,7 +7159,7 @@
     {
       "run_id": "phys-gravitation-cand01",
       "run_dir": "runs/phys-gravitation-cand01",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "stale-metrics",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -6947,7 +7204,7 @@
     {
       "run_id": "phys-gravitation-cand02",
       "run_dir": "runs/phys-gravitation-cand02",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "stale-metrics",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -6992,7 +7249,7 @@
     {
       "run_id": "refcheck-phys-buoyancy",
       "run_dir": "runs/refcheck-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -7033,7 +7290,7 @@
     {
       "run_id": "refcheck-phys-coulomb",
       "run_dir": "runs/refcheck-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -7078,7 +7335,7 @@
     {
       "run_id": "refcheck-phys-cyclotron",
       "run_dir": "runs/refcheck-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -7119,7 +7376,7 @@
     {
       "run_id": "refcheck-phys-elastic-pe",
       "run_dir": "runs/refcheck-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -7160,7 +7417,7 @@
     {
       "run_id": "refcheck-phys-energy-shift",
       "run_dir": "runs/refcheck-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -7205,7 +7462,7 @@
     {
       "run_id": "refcheck-phys-grav-potential-energy",
       "run_dir": "runs/refcheck-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -7250,7 +7507,7 @@
     {
       "run_id": "refcheck-phys-gravitation",
       "run_dir": "runs/refcheck-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -7295,7 +7552,7 @@
     {
       "run_id": "refcheck-phys-hydrogen-level",
       "run_dir": "runs/refcheck-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -7342,7 +7599,7 @@
     {
       "run_id": "refcheck-phys-ideal-gas",
       "run_dir": "runs/refcheck-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -7387,7 +7644,7 @@
     {
       "run_id": "refcheck-phys-index-vacuum",
       "run_dir": "runs/refcheck-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -7428,7 +7685,7 @@
     {
       "run_id": "refcheck-phys-joule-heating",
       "run_dir": "runs/refcheck-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -7469,7 +7726,7 @@
     {
       "run_id": "refcheck-phys-kinetic-energy",
       "run_dir": "runs/refcheck-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -7510,7 +7767,7 @@
     {
       "run_id": "refcheck-phys-ohm",
       "run_dir": "runs/refcheck-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -7551,7 +7808,7 @@
     {
       "run_id": "refcheck-phys-pendulum-exact",
       "run_dir": "runs/refcheck-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -7592,7 +7849,7 @@
     {
       "run_id": "refcheck-phys-pendulum-period",
       "run_dir": "runs/refcheck-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -7633,7 +7890,7 @@
     {
       "run_id": "refcheck-phys-radioactive-decay",
       "run_dir": "runs/refcheck-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -7674,7 +7931,7 @@
     {
       "run_id": "refcheck-phys-snells-law",
       "run_dir": "runs/refcheck-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -7719,7 +7976,7 @@
     {
       "run_id": "refcheck-phys-spring-energy",
       "run_dir": "runs/refcheck-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -7760,7 +8017,7 @@
     {
       "run_id": "refcheck-phys-stefan-boltzmann",
       "run_dir": "runs/refcheck-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -7805,7 +8062,7 @@
     {
       "run_id": "refcheck-phys-surface-gravity",
       "run_dir": "runs/refcheck-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -7850,7 +8107,7 @@
     {
       "run_id": "refcheck-phys-transit-depth",
       "run_dir": "runs/refcheck-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -7891,7 +8148,7 @@
     {
       "run_id": "refcheck-phys-weight",
       "run_dir": "runs/refcheck-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",
@@ -7932,7 +8189,7 @@
     {
       "run_id": "scale-ref-phys-buoyancy",
       "run_dir": "runs/scale-ref-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-buoyancy",
@@ -7974,7 +8231,7 @@
     {
       "run_id": "scale-ref-phys-coulomb",
       "run_dir": "runs/scale-ref-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-coulomb",
@@ -8017,7 +8274,7 @@
     {
       "run_id": "scale-ref-phys-cyclotron",
       "run_dir": "runs/scale-ref-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-cyclotron",
@@ -8059,7 +8316,7 @@
     {
       "run_id": "scale-ref-phys-elastic-pe",
       "run_dir": "runs/scale-ref-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-elastic-pe",
@@ -8100,7 +8357,7 @@
     {
       "run_id": "scale-ref-phys-energy-shift",
       "run_dir": "runs/scale-ref-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-energy-shift",
@@ -8142,7 +8399,7 @@
     {
       "run_id": "scale-ref-phys-grav-potential-energy",
       "run_dir": "runs/scale-ref-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-grav-potential-energy",
@@ -8184,7 +8441,7 @@
     {
       "run_id": "scale-ref-phys-gravitation",
       "run_dir": "runs/scale-ref-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-gravitation",
@@ -8227,7 +8484,7 @@
     {
       "run_id": "scale-ref-phys-hydrogen-level",
       "run_dir": "runs/scale-ref-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-hydrogen-level",
@@ -8269,7 +8526,7 @@
     {
       "run_id": "scale-ref-phys-ideal-gas",
       "run_dir": "runs/scale-ref-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:32+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-ideal-gas",
@@ -8312,7 +8569,7 @@
     {
       "run_id": "scale-ref-phys-index-vacuum",
       "run_dir": "runs/scale-ref-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-index-vacuum",
@@ -8352,7 +8609,7 @@
     {
       "run_id": "scale-ref-phys-joule-heating",
       "run_dir": "runs/scale-ref-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-joule-heating",
@@ -8393,7 +8650,7 @@
     {
       "run_id": "scale-ref-phys-kinetic-energy",
       "run_dir": "runs/scale-ref-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-kinetic-energy",
@@ -8434,7 +8691,7 @@
     {
       "run_id": "scale-ref-phys-ohm",
       "run_dir": "runs/scale-ref-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-ohm",
@@ -8475,7 +8732,7 @@
     {
       "run_id": "scale-ref-phys-pendulum-exact",
       "run_dir": "runs/scale-ref-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-pendulum-exact",
@@ -8516,7 +8773,7 @@
     {
       "run_id": "scale-ref-phys-pendulum-period",
       "run_dir": "runs/scale-ref-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:20+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-pendulum-period",
@@ -8557,7 +8814,7 @@
     {
       "run_id": "scale-ref-phys-radioactive-decay",
       "run_dir": "runs/scale-ref-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-radioactive-decay",
@@ -8598,7 +8855,7 @@
     {
       "run_id": "scale-ref-phys-snells-law",
       "run_dir": "runs/scale-ref-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-snells-law",
@@ -8640,7 +8897,7 @@
     {
       "run_id": "scale-ref-phys-spring-energy",
       "run_dir": "runs/scale-ref-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-spring-energy",
@@ -8681,7 +8938,7 @@
     {
       "run_id": "scale-ref-phys-stefan-boltzmann",
       "run_dir": "runs/scale-ref-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-stefan-boltzmann",
@@ -8724,7 +8981,7 @@
     {
       "run_id": "scale-ref-phys-surface-gravity",
       "run_dir": "runs/scale-ref-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-surface-gravity",
@@ -8766,7 +9023,7 @@
     {
       "run_id": "scale-ref-phys-transit-depth",
       "run_dir": "runs/scale-ref-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-transit-depth",
@@ -8808,7 +9065,7 @@
     {
       "run_id": "scale-ref-phys-weight",
       "run_dir": "runs/scale-ref-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-weight",
@@ -8849,7 +9106,7 @@
     {
       "run_id": "scale-variant-phys-buoyancy",
       "run_dir": "runs/scale-variant-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-buoyancy",
@@ -8891,7 +9148,7 @@
     {
       "run_id": "scale-variant-phys-coulomb",
       "run_dir": "runs/scale-variant-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-coulomb",
@@ -8934,7 +9191,7 @@
     {
       "run_id": "scale-variant-phys-cyclotron",
       "run_dir": "runs/scale-variant-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-cyclotron",
@@ -8976,7 +9233,7 @@
     {
       "run_id": "scale-variant-phys-elastic-pe",
       "run_dir": "runs/scale-variant-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-elastic-pe",
@@ -9017,7 +9274,7 @@
     {
       "run_id": "scale-variant-phys-energy-shift",
       "run_dir": "runs/scale-variant-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-energy-shift",
@@ -9059,7 +9316,7 @@
     {
       "run_id": "scale-variant-phys-grav-potential-energy",
       "run_dir": "runs/scale-variant-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-grav-potential-energy",
@@ -9101,7 +9358,7 @@
     {
       "run_id": "scale-variant-phys-gravitation",
       "run_dir": "runs/scale-variant-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-gravitation",
@@ -9144,7 +9401,7 @@
     {
       "run_id": "scale-variant-phys-hydrogen-level",
       "run_dir": "runs/scale-variant-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-hydrogen-level",
@@ -9186,7 +9443,7 @@
     {
       "run_id": "scale-variant-phys-ideal-gas",
       "run_dir": "runs/scale-variant-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-ideal-gas",
@@ -9229,7 +9486,7 @@
     {
       "run_id": "scale-variant-phys-index-vacuum",
       "run_dir": "runs/scale-variant-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-index-vacuum",
@@ -9269,7 +9526,7 @@
     {
       "run_id": "scale-variant-phys-joule-heating",
       "run_dir": "runs/scale-variant-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-joule-heating",
@@ -9310,7 +9567,7 @@
     {
       "run_id": "scale-variant-phys-kinetic-energy",
       "run_dir": "runs/scale-variant-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-kinetic-energy",
@@ -9351,7 +9608,7 @@
     {
       "run_id": "scale-variant-phys-ohm",
       "run_dir": "runs/scale-variant-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-ohm",
@@ -9392,7 +9649,7 @@
     {
       "run_id": "scale-variant-phys-pendulum-exact",
       "run_dir": "runs/scale-variant-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-pendulum-exact",
@@ -9433,7 +9690,7 @@
     {
       "run_id": "scale-variant-phys-pendulum-period",
       "run_dir": "runs/scale-variant-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-pendulum-period",
@@ -9474,7 +9731,7 @@
     {
       "run_id": "scale-variant-phys-radioactive-decay",
       "run_dir": "runs/scale-variant-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-radioactive-decay",
@@ -9515,7 +9772,7 @@
     {
       "run_id": "scale-variant-phys-snells-law",
       "run_dir": "runs/scale-variant-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-snells-law",
@@ -9557,7 +9814,7 @@
     {
       "run_id": "scale-variant-phys-spring-energy",
       "run_dir": "runs/scale-variant-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-spring-energy",
@@ -9598,7 +9855,7 @@
     {
       "run_id": "scale-variant-phys-stefan-boltzmann",
       "run_dir": "runs/scale-variant-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-stefan-boltzmann",
@@ -9641,7 +9898,7 @@
     {
       "run_id": "scale-variant-phys-surface-gravity",
       "run_dir": "runs/scale-variant-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-surface-gravity",
@@ -9683,7 +9940,7 @@
     {
       "run_id": "scale-variant-phys-transit-depth",
       "run_dir": "runs/scale-variant-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-transit-depth",
@@ -9725,7 +9982,7 @@
     {
       "run_id": "scale-variant-phys-weight",
       "run_dir": "runs/scale-variant-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "out-of-scope",
       "agrees": false,
       "task_id": "phys-weight",
@@ -9766,7 +10023,7 @@
     {
       "run_id": "variant-phys-buoyancy",
       "run_dir": "runs/variant-phys-buoyancy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-buoyancy",
@@ -9807,7 +10064,7 @@
     {
       "run_id": "variant-phys-coulomb",
       "run_dir": "runs/variant-phys-coulomb",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-coulomb",
@@ -9852,7 +10109,7 @@
     {
       "run_id": "variant-phys-cyclotron",
       "run_dir": "runs/variant-phys-cyclotron",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-cyclotron",
@@ -9893,7 +10150,7 @@
     {
       "run_id": "variant-phys-elastic-pe",
       "run_dir": "runs/variant-phys-elastic-pe",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-elastic-pe",
@@ -9934,7 +10191,7 @@
     {
       "run_id": "variant-phys-energy-shift",
       "run_dir": "runs/variant-phys-energy-shift",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-energy-shift",
@@ -9977,7 +10234,7 @@
     {
       "run_id": "variant-phys-grav-potential-energy",
       "run_dir": "runs/variant-phys-grav-potential-energy",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-grav-potential-energy",
@@ -10022,7 +10279,7 @@
     {
       "run_id": "variant-phys-gravitation",
       "run_dir": "runs/variant-phys-gravitation",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-gravitation",
@@ -10067,7 +10324,7 @@
     {
       "run_id": "variant-phys-hydrogen-level",
       "run_dir": "runs/variant-phys-hydrogen-level",
-      "checked_at_utc": "2026-10-10T03:21:33+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-hydrogen-level",
@@ -10111,7 +10368,7 @@
     {
       "run_id": "variant-phys-ideal-gas",
       "run_dir": "runs/variant-phys-ideal-gas",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ideal-gas",
@@ -10154,7 +10411,7 @@
     {
       "run_id": "variant-phys-index-vacuum",
       "run_dir": "runs/variant-phys-index-vacuum",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-index-vacuum",
@@ -10195,7 +10452,7 @@
     {
       "run_id": "variant-phys-joule-heating",
       "run_dir": "runs/variant-phys-joule-heating",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-joule-heating",
@@ -10236,7 +10493,7 @@
     {
       "run_id": "variant-phys-kinetic-energy",
       "run_dir": "runs/variant-phys-kinetic-energy",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-kinetic-energy",
@@ -10277,7 +10534,7 @@
     {
       "run_id": "variant-phys-ohm",
       "run_dir": "runs/variant-phys-ohm",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-ohm",
@@ -10318,7 +10575,7 @@
     {
       "run_id": "variant-phys-pendulum-exact",
       "run_dir": "runs/variant-phys-pendulum-exact",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-exact",
@@ -10359,7 +10616,7 @@
     {
       "run_id": "variant-phys-pendulum-period",
       "run_dir": "runs/variant-phys-pendulum-period",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-pendulum-period",
@@ -10400,7 +10657,7 @@
     {
       "run_id": "variant-phys-radioactive-decay",
       "run_dir": "runs/variant-phys-radioactive-decay",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:21+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-radioactive-decay",
@@ -10441,7 +10698,7 @@
     {
       "run_id": "variant-phys-snells-law",
       "run_dir": "runs/variant-phys-snells-law",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-snells-law",
@@ -10486,7 +10743,7 @@
     {
       "run_id": "variant-phys-spring-energy",
       "run_dir": "runs/variant-phys-spring-energy",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-spring-energy",
@@ -10527,7 +10784,7 @@
     {
       "run_id": "variant-phys-stefan-boltzmann",
       "run_dir": "runs/variant-phys-stefan-boltzmann",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-stefan-boltzmann",
@@ -10572,7 +10829,7 @@
     {
       "run_id": "variant-phys-surface-gravity",
       "run_dir": "runs/variant-phys-surface-gravity",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-surface-gravity",
@@ -10617,7 +10874,7 @@
     {
       "run_id": "variant-phys-transit-depth",
       "run_dir": "runs/variant-phys-transit-depth",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-transit-depth",
@@ -10658,7 +10915,7 @@
     {
       "run_id": "variant-phys-weight",
       "run_dir": "runs/variant-phys-weight",
-      "checked_at_utc": "2026-10-10T03:21:34+00:00",
+      "checked_at_utc": "2026-10-10T03:28:22+00:00",
       "status": "agree",
       "agrees": true,
       "task_id": "phys-weight",

@@ -1,0 +1,1 @@
+python examples/extrapolation_experiment.py --task phys-pendulum-exact --candidate "2*pi*sqrt(L/g)" --axis theta0

@@ -1,0 +1,16 @@
+{
+  "name": "extrapolation",
+  "passed": true,
+  "reason": "窄窗之外归一化误差 0.1343（阈值 0.1500）；剖面最大相对误差 0.0823 出现在 theta0=1.19813",
+  "metrics": {
+    "normalized_rmse": 0.13425728242911872,
+    "peak_relative_error": 0.0823328846563339,
+    "peak_at": 1.198130359,
+    "peak_inside_window": 0.01250426465466308,
+    "samples": 259,
+    "window": [
+      0.05093049918,
+      0.452450450117
+    ]
+  }
+}

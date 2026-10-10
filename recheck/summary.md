@@ -3,13 +3,13 @@
 对 runs/ 下每一次运行，从 data.csv 重新划分、重新拟合、重新判定，
 再与原始 result.json 逐项比对。复算不复用原始拟合值。
 
-- 生成时间（UTC）：2026-10-10T03:21:34+00:00
-- 运行总数：251
+- 生成时间（UTC）：2026-10-10T03:28:22+00:00
+- 运行总数：257
 - 判定一致：199
 - 独立复算通过率：97.5%
 
 - 属于标准三重验证、纳入复算统计的运行：204
-- 由其它判定套件产出、不纳入统计的运行：44
+- 由其它判定套件产出、不纳入统计的运行：50
 
 | run_id | 状态 | 原判定 | 复算判定 | manifest | 说明 |
 |---|---|---|---|---|---|
@@ -171,6 +171,12 @@
 | discrim-wrong-phys-surface-gravity | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | discrim-wrong-phys-transit-depth | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | discrim-wrong-phys-weight | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
+| extrap-phys-coulomb | out-of-scope | rejected | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
+| extrap-phys-gravitation | out-of-scope | rejected | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
+| extrap-phys-hydrogen-level | out-of-scope | rejected | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
+| extrap-phys-pendulum-exact | out-of-scope | accepted | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
+| extrap-phys-stefan-boltzmann | out-of-scope | rejected | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
+| extrap-phys-surface-gravity | out-of-scope | rejected | rejected | ok | 该运行由其它判定套件产出（检验项：extrapolation,narrow_fit），没有走标准三重验证，本模块不做一致性断言。若要作为提交证据，请用统一引擎重 |
 | h | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | hbar | agree | rejected | rejected | ok | 判定与全部检验项逐位一致，独立复算通过 |
 | negctl-summary | unresolvable | accepted | - | ok | 任务目录不存在，本次运行无法被独立复算（历史遗留运行） |

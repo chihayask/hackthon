@@ -1,0 +1,34 @@
+{
+  "task_id": "phys-stefan-boltzmann",
+  "verdict": "rejected",
+  "formula": "sigma*A*T**2",
+  "parameters": {
+    "sigma": 0.014915686095796582
+  },
+  "free_parameters": [
+    "sigma"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "unclassified",
+  "hypothesis_source_note": "未标注来源——不计入任何能力声明，需补齐",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "inputs": [
+    "tasks/phys-stefan-boltzmann",
+    "physics/scale_specs.json"
+  ],
+  "notes": "把温度的四次方写成二次方：域内可以凑合，域外高温端迅速崩溃",
+  "duplicate_check_names": []
+}

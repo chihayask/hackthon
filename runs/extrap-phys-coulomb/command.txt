@@ -1,0 +1,1 @@
+python examples/extrapolation_experiment.py --task phys-coulomb --candidate "k*q1*q2/r" --axis r

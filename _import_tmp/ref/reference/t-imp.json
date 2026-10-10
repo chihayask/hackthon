@@ -1,9 +1,0 @@
-{
-  "task_id": "t-imp",
-  "formula": "0.5*k*x**2",
-  "free_parameters": [],
-  "true_constants": {},
-  "source": [
-    "E:\\.dsh\\deepseek harness workspace\\hackathon-2026\\_import_tmp\\ref\\d.csv"
-  ]
-}

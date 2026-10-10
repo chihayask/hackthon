@@ -1,0 +1,16 @@
+{
+  "name": "narrow_fit",
+  "passed": false,
+  "reason": "窄窗内归一化误差 0.3522（阈值 0.0800）；在窄窗内拟合得到 sigma=0.0149157",
+  "metrics": {
+    "normalized_rmse": 0.3522453594040071,
+    "window": [
+      304.7365126,
+      596.686147948
+    ],
+    "samples": 165,
+    "fitted": {
+      "sigma": 0.014915686095796582
+    }
+  }
+}

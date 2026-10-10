@@ -1,0 +1,166 @@
+{
+  "note": "受控外推实验：每个任务只用一段窄窗口的数据拟合候选式的自由参数，再在窗口之外预测，量出误差随自变量的增长。",
+  "experiments": [
+    {
+      "case_index": 1,
+      "task_id": "phys-gravitation",
+      "candidate": "G*m1*m2/r",
+      "axis": "r",
+      "window": [
+        1.007409174,
+        1.84188038598
+      ],
+      "unit": "m",
+      "headline": "把 r 的平方反比写成一次反比：域内靠参数抵消，域外按 r 线性发散",
+      "fitted": {
+        "G": 5.084825907973353e-11
+      },
+      "fit_note": "在窄窗内拟合得到 G=5.08483e-11",
+      "inside_rmse": 0.2364978078274461,
+      "outside_rmse": 1.1555099410291174,
+      "peak_relative_error": 1.2812730819832558,
+      "peak_at": 2.994245393,
+      "peak_inside_window": 0.39865216484332855,
+      "verdict": "rejected",
+      "run_id": "extrap-phys-gravitation",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-gravitation-curve.png",
+        "evidence/figures/fig-extrap-phys-gravitation-error.png"
+      ]
+    },
+    {
+      "case_index": 2,
+      "task_id": "phys-coulomb",
+      "candidate": "k*q1*q2/r",
+      "axis": "r",
+      "window": [
+        0.1018868537,
+        0.269051268236
+      ],
+      "unit": "m",
+      "headline": "库仑定律同样的错误幂次：误差随距离单调放大",
+      "fitted": {
+        "k": 59077027482.88326
+      },
+      "fit_note": "在窄窗内拟合得到 k=5.9077e+10",
+      "inside_rmse": 0.3589435802970971,
+      "outside_rmse": 2.4416123164724506,
+      "peak_relative_error": 2.285928250949169,
+      "peak_at": 0.4998973645,
+      "peak_inside_window": 0.7604921101069031,
+      "verdict": "rejected",
+      "run_id": "extrap-phys-coulomb",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-coulomb-curve.png",
+        "evidence/figures/fig-extrap-phys-coulomb-error.png"
+      ]
+    },
+    {
+      "case_index": 3,
+      "task_id": "phys-surface-gravity",
+      "candidate": "G*M/R",
+      "axis": "R",
+      "window": [
+        1041872.963,
+        4803191.76746
+      ],
+      "unit": "m",
+      "headline": "把 R 的平方反比写成一次反比：半径越大偏差越大",
+      "fitted": {
+        "G": 3.9033643875359945e-17
+      },
+      "fit_note": "在窄窗内拟合得到 G=3.90336e-17",
+      "inside_rmse": 0.44691905971374624,
+      "outside_rmse": 4.597697924029596,
+      "peak_relative_error": 4.847088915031026,
+      "peak_at": 9997393.926,
+      "peak_inside_window": 1.7931101768884534,
+      "verdict": "rejected",
+      "run_id": "extrap-phys-surface-gravity",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-surface-gravity-curve.png",
+        "evidence/figures/fig-extrap-phys-surface-gravity-error.png"
+      ]
+    },
+    {
+      "case_index": 4,
+      "task_id": "phys-stefan-boltzmann",
+      "candidate": "sigma*A*T**2",
+      "axis": "T",
+      "window": [
+        304.7365126,
+        596.686147948
+      ],
+      "unit": "K",
+      "headline": "把温度的四次方写成二次方：域内可以凑合，域外高温端迅速崩溃",
+      "fitted": {
+        "sigma": 0.014915686095796582
+      },
+      "fit_note": "在窄窗内拟合得到 sigma=0.0149157",
+      "inside_rmse": 0.3522453594040071,
+      "outside_rmse": 1.1147755316929546,
+      "peak_relative_error": 0.7368776614146538,
+      "peak_at": 999.854692,
+      "peak_inside_window": 1.8325821364601453,
+      "verdict": "rejected",
+      "run_id": "extrap-phys-stefan-boltzmann",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-stefan-boltzmann-curve.png",
+        "evidence/figures/fig-extrap-phys-stefan-boltzmann-error.png"
+      ]
+    },
+    {
+      "case_index": 5,
+      "task_id": "phys-hydrogen-level",
+      "candidate": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+      "axis": "n",
+      "window": [
+        1.01029391,
+        3.10449715946
+      ],
+      "unit": "",
+      "headline": "把主量子数的 n^-2 写成 n^-1：能级越高偏差越大",
+      "fitted": {
+        "eps0": 3.387033720155157e-23,
+        "hbar": 3.387033720137998e-23
+      },
+      "fit_note": "在窄窗内拟合得到 eps0=3.38703e-23, hbar=3.38703e-23",
+      "inside_rmse": 0.4937136520529973,
+      "outside_rmse": 4.432044131636848,
+      "peak_relative_error": 2.9725462990352387,
+      "peak_at": 5.996492123,
+      "peak_inside_window": 1.0465142926315618,
+      "verdict": "rejected",
+      "run_id": "extrap-phys-hydrogen-level",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-hydrogen-level-curve.png",
+        "evidence/figures/fig-extrap-phys-hydrogen-level-error.png"
+      ]
+    },
+    {
+      "case_index": 6,
+      "task_id": "phys-pendulum-exact",
+      "candidate": "2*pi*sqrt(L/g)",
+      "axis": "theta0",
+      "window": [
+        0.05093049918,
+        0.452450450117
+      ],
+      "unit": "rad",
+      "headline": "小角度近似：它根本没有振幅项，域内几乎无差，大摆角处偏差按 theta0^2 增长",
+      "fitted": {},
+      "fit_note": "该候选式没有自由参数，无需拟合",
+      "inside_rmse": 0.0173208501222716,
+      "outside_rmse": 0.13425728242911872,
+      "peak_relative_error": 0.0823328846563339,
+      "peak_at": 1.198130359,
+      "peak_inside_window": 0.01250426465466308,
+      "verdict": "accepted",
+      "run_id": "extrap-phys-pendulum-exact",
+      "figures": [
+        "evidence/figures/fig-extrap-phys-pendulum-exact-curve.png",
+        "evidence/figures/fig-extrap-phys-pendulum-exact-error.png"
+      ]
+    }
+  ]
+}

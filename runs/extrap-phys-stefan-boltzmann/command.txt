@@ -1,0 +1,1 @@
+python examples/extrapolation_experiment.py --task phys-stefan-boltzmann --candidate "sigma*A*T**2" --axis T

@@ -199,7 +199,11 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
 3. 建立无空格路径别名。AGH 的审批规则校验器要求 allow 规则的 argv 以绝对路径形态起始，
    而本项目路径含空格，因此需要目录联接：
 
-       cmd /c mklink /J E:\fagh "E:\...\hackathon-2026"
+       cmd /c mklink /J C:\fagh "<本项目所在路径>"
+
+   驱动脚本不写死任何本机路径：AGH 入口可用 `-AghEntry` 或环境变量 `AGH_ENTRY` 指定，
+   工作目录默认落在系统临时目录，包装脚本默认取项目内的 `harness/run_verify.cmd`；
+   若项目路径含空格，脚本会**明确报错**并提示改用上面的无空格别名，不会静默走错路径。
 
 4. 审批配置。AGH 的 approval seam 仅在上下文未被工具输出污染时匹配命令表，
    判定条件为 `!req.taint || req.scope.includes('/')`。模型读取任意工具输出后 taint 置位，

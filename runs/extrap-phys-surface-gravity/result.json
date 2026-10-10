@@ -1,0 +1,44 @@
+{
+  "task_id": "phys-surface-gravity",
+  "formula": "G*M/R",
+  "parameters": {
+    "G": 3.9033643875359945e-17
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "narrow_fit",
+      "passed": false,
+      "reason": "窄窗内归一化误差 0.4469（阈值 0.0800）；在窄窗内拟合得到 G=3.90336e-17",
+      "metrics": {
+        "normalized_rmse": 0.44691905971374624,
+        "window": [
+          1041872.963,
+          4803191.76746
+        ],
+        "samples": 193,
+        "fitted": {
+          "G": 3.9033643875359945e-17
+        }
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "窄窗之外归一化误差 4.5977（阈值 0.1500）；剖面最大相对误差 4.85 出现在 R=9.99739e+06",
+      "metrics": {
+        "normalized_rmse": 4.597697924029596,
+        "peak_relative_error": 4.847088915031026,
+        "peak_at": 9997393.926,
+        "peak_inside_window": 1.7931101768884534,
+        "samples": 207,
+        "window": [
+          1041872.963,
+          4803191.76746
+        ]
+      }
+    }
+  ],
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "free_parameters": []
+}

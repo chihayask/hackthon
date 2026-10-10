@@ -1,0 +1,55 @@
+{
+  "note": "阈值敏感性：用已记录的逐项指标重算不同阈值下的判定，回答\"判别力是不是调出来的\"。不重新拟合，结论可精确复算。",
+  "current_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "rows": [
+    {
+      "thresholds": "当前生效（严）",
+      "holdout": 0.02,
+      "extrapolation": 0.03,
+      "wrong_total": 22,
+      "triple_caught": 22,
+      "caught_only_by_scale": 0,
+      "pipeline_caught": 22,
+      "reference_false_alarm": 0
+    },
+    {
+      "thresholds": "中等",
+      "holdout": 0.05,
+      "extrapolation": 0.1,
+      "wrong_total": 22,
+      "triple_caught": 21,
+      "caught_only_by_scale": 1,
+      "pipeline_caught": 22,
+      "reference_false_alarm": 0
+    },
+    {
+      "thresholds": "宽松（历史默认）",
+      "holdout": 0.08,
+      "extrapolation": 0.15,
+      "wrong_total": 22,
+      "triple_caught": 21,
+      "caught_only_by_scale": 1,
+      "pipeline_caught": 22,
+      "reference_false_alarm": 0
+    },
+    {
+      "thresholds": "很宽松",
+      "holdout": 0.15,
+      "extrapolation": 0.3,
+      "wrong_total": 22,
+      "triple_caught": 21,
+      "caught_only_by_scale": 1,
+      "pipeline_caught": 22,
+      "reference_false_alarm": 0
+    }
+  ]
+}

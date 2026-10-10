@@ -1,0 +1,16 @@
+{
+  "name": "extrapolation",
+  "passed": false,
+  "reason": "窄窗之外归一化误差 4.4320（阈值 0.1500）；剖面最大相对误差 2.97 出现在 n=5.99649",
+  "metrics": {
+    "normalized_rmse": 4.432044131636848,
+    "peak_relative_error": 2.9725462990352387,
+    "peak_at": 5.996492123,
+    "peak_inside_window": 1.0465142926315618,
+    "samples": 247,
+    "window": [
+      1.01029391,
+      3.10449715946
+    ]
+  }
+}

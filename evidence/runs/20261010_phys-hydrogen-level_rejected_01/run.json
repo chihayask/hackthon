@@ -1,0 +1,36 @@
+{
+  "task_id": "phys-hydrogen-level",
+  "verdict": "rejected",
+  "formula": "-me*el**4/(2*(4*pi*eps0)**2*hbar**2*n)",
+  "parameters": {
+    "eps0": 3.387033720155157e-23,
+    "hbar": 3.387033720137998e-23
+  },
+  "free_parameters": [
+    "eps0",
+    "hbar"
+  ],
+  "verify_settings": {
+    "holdout_ratio": 0.2,
+    "holdout_threshold": 0.02,
+    "extrapolation_ratio": 0.15,
+    "extrapolation_threshold": 0.03,
+    "dimension_check": true,
+    "scale_check": true,
+    "fit_max_residual": 0.5,
+    "seed": 20261008
+  },
+  "engine_version": "0.1.0",
+  "hypothesis_source": "unclassified",
+  "hypothesis_source_note": "未标注来源——不计入任何能力声明，需补齐",
+  "session_id": "",
+  "agent_workspace": "",
+  "provenance_bound": false,
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "inputs": [
+    "tasks/phys-hydrogen-level",
+    "physics/scale_specs.json"
+  ],
+  "notes": "把主量子数的 n^-2 写成 n^-1：能级越高偏差越大",
+  "duplicate_check_names": []
+}

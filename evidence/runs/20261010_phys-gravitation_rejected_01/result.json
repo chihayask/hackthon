@@ -1,0 +1,44 @@
+{
+  "task_id": "phys-gravitation",
+  "formula": "G*m1*m2/r",
+  "parameters": {
+    "G": 5.084825907973353e-11
+  },
+  "verdict": "rejected",
+  "checks": [
+    {
+      "name": "narrow_fit",
+      "passed": false,
+      "reason": "窄窗内归一化误差 0.2365（阈值 0.0800）；在窄窗内拟合得到 G=5.08483e-11",
+      "metrics": {
+        "normalized_rmse": 0.2364978078274461,
+        "window": [
+          1.007409174,
+          1.84188038598
+        ],
+        "samples": 165,
+        "fitted": {
+          "G": 5.084825907973353e-11
+        }
+      }
+    },
+    {
+      "name": "extrapolation",
+      "passed": false,
+      "reason": "窄窗之外归一化误差 1.1555（阈值 0.1500）；剖面最大相对误差 1.28 出现在 r=2.99425",
+      "metrics": {
+        "normalized_rmse": 1.1555099410291174,
+        "peak_relative_error": 1.2812730819832558,
+        "peak_at": 2.994245393,
+        "peak_inside_window": 0.39865216484332855,
+        "samples": 235,
+        "window": [
+          1.007409174,
+          1.84188038598
+        ]
+      }
+    }
+  ],
+  "rounds_hint": "受控外推实验：只在窄窗内拟合，用于定位公式开始失真的自变量区间。",
+  "free_parameters": []
+}

@@ -1,7 +1,7 @@
 {
   "run_id": "phys-gravitation-cand01",
   "run_dir": "runs/phys-gravitation-cand01",
-  "checked_at_utc": "2026-10-10T03:21:32+00:00",
+  "checked_at_utc": "2026-10-10T03:28:20+00:00",
   "status": "stale-metrics",
   "agrees": true,
   "task_id": "phys-gravitation",
