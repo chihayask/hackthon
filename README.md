@@ -6,7 +6,7 @@
 
 ![python](https://img.shields.io/badge/python-3.12%2B-blue)
 ![deps](https://img.shields.io/badge/dependencies-numpy%20only-green)
-![tests](https://img.shields.io/badge/tests-100%2F100%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-107%2F107%20passing-brightgreen)
 ![reproduce](https://img.shields.io/badge/reproduce-fingerprint%20identical-brightgreen)
 
 > 2026 年江苏省 AI+科学与工程创新实践黑客松（高校组），本科生组。
@@ -152,14 +152,14 @@
 
     python reproduce.py
 
-该脚本依次执行 17 个步骤，并与基线指纹逐字段比对：
+该脚本依次执行 18 个步骤，并与基线指纹逐字段比对：
 
     复现成功：指纹与基线完全一致。
       任务 22 个，本流水线运行 135 条，对抗用例 14 项，全部逐位一致。
 
-17 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
+18 个步骤为：契约校验、三段划分与封印、划分一致性、单元测试、金标准自检、判别力、
 候选批量验证、判别力报告、尺度检验（参考式）、尺度检验（错误式）、负对照、对抗性测试、
-独立复算、评分对照、证据归档、提示泄漏审计、交付报告重建。
+独立复算、评分对照、证据归档、提示泄漏审计、交付报告重建、文档一致性检查。
 
 在空目录中重建全部产物：
 
@@ -291,6 +291,8 @@ python 与 numpy 的版本差异默认输出提示而不判失败。需要严格
     python examples/make_blind_taskset.py --out blind  # 生成盲化派生任务集（去提示消融用）
     python examples/make_delivery_reports.py           # 从现有证据重建四份交付报告
     python examples/model_guard.py                     # 校验模型路由全部为 Agnes（通知五（二））
+    python examples/check_docs.py                      # 文档一致性（路径 / 测试数 / 步数 / 角色字样）
+    python harness/check_agh_command_rule.py           # 校验 AGH allow 规则的绝对路径形状
 
     :: reproduction and tests
     python reproduce.py [--clean <dir>] [--update-baseline] [--strict-env]
@@ -396,8 +398,8 @@ AGH 自主发现执行统计：
 | AGH 工具调用次数 | 241，涉及 shell、read、tool_search、todo、skill_read、tool_describe、ls |
 | 负对照（纯噪声） | 5 组噪声 × 12 函数族 = 80 次尝试，0 次输出表达式 |
 | 对抗性用例 | 14 个用例 / 13 项判定，13 通过，1 项属已知边界 |
-| 一键复现 | 17 步全部通过，指纹与基线逐位一致 |
-| 单元测试 | 100 / 100 |
+| 一键复现 | 18 步全部通过，指纹与基线逐位一致 |
+| 单元测试 | 107 / 107 |
 
 迭代修正示例：
 
@@ -518,7 +520,7 @@ AGH 自主发现执行统计：
 | `ModuleNotFoundError: formula_agh` | 未设置 `PYTHONPATH` | 执行 `set PYTHONPATH=src`，或使用 `harness\*.cmd` |
 | 中文输出乱码 | 终端编码非 UTF-8 | 加 `-X utf8`，并设置 `PYTHONIOENCODING=utf-8` |
 | AGH 启动报 `E_PRESET_UNRESOLVED: no-routes` | `AGH_HOME` 指向无 provider 配置的目录 | 移除 `AGH_HOME`，使用默认 `~/.agh` |
-| AGH 返回 `INTERNAL_ERROR (-32603)` 且日志无详细信息 | allow 规则形态不合法。守护进程不记录异常消息，或在修改预设后未重建 | 预设文本在构建期内联，修改 yaml 后需重建；重建前用 `harness/check_agh_command_rule.ts` 校验规则 |
+| AGH 返回 `INTERNAL_ERROR (-32603)` 且日志无详细信息 | allow 规则形态不合法。守护进程不记录异常消息，或在修改预设后未重建 | 预设文本在构建期内联，修改 yaml 后需重建；重建前用 `harness/check_agh_command_rule.py` 校验规则 |
 | 模型提出的假设被记录为 `cli` | 调用方没有声明来源。包装脚本**故意不设默认值**，需由 AGH 驱动脚本 export `FORMULA_AGH_HYPOTHESIS_SOURCE=agh-llm` 与 `FORMULA_AGH_SESSION_ID` | 用 `harness/run_agent_discovery.ps1` 驱动；手工调试记 `cli` 是预期行为 |
 | `skill_read` 返回 `NOT_FOUND` | 技能未放入工作区技能根 `<workspace>/.agh/skills/dir/SKILL.md` | 复制技能到该目录。新建工作区的首次调用可能与技能发现存在时序竞争，重试一次即可 |
 | `reproduce.py` 报告新增或缺失条目 | 工作区内存在并发运行 | 使用 `--clean` 在空目录复现 |

@@ -7,7 +7,7 @@
     set PYTHONPATH=src
     python reproduce.py
 
-退出码 `0` 且打印「复现成功：指纹与基线完全一致」= 流水线成立（17 步 + 指纹比对）。
+退出码 `0` 且打印「复现成功：指纹与基线完全一致」= 流水线成立（18 步 + 指纹比对）。
 项目总览与操作方式见 [README.md](README.md)。
 
 ## 硬规则（改代码前必须知道）
@@ -28,7 +28,7 @@
 
     python -m formula_agh settings          # 打印当前生效的判据与阈值
     python -m formula_agh import <file> --task-id <id> --target <col>   # 导入自有数据
-    python reproduce.py                     # 17 步全跑 + 指纹比对
+    python reproduce.py                     # 18 步全跑 + 指纹比对
     python run_tests.py                     # 单元测试（不依赖 pytest）
     python -m formula_agh validate-tasks --tasks tasks --reference reference --require-split --strict
     python -m formula_agh split --tasks tasks --sealed sealed
@@ -42,6 +42,8 @@
     python examples/make_blind_taskset.py   # 生成盲化派生任务集（去提示消融的输入）
     python examples/make_delivery_reports.py # 从现有证据重建交付报告（流水线第十七步）
     python examples/model_guard.py          # 校验模型路由全部为 Agnes（通知五（二））
+    python examples/check_docs.py           # 文档一致性（流水线第十八步）
+    python harness/check_agh_command_rule.py # 校验 AGH allow 规则的绝对路径形状
 
 依赖**只有 numpy**。`harness/*.cmd` 是给 AGH 命令工具用的包装脚本（自动设 PYTHONPATH 与自动归档）。
 

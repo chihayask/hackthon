@@ -392,6 +392,10 @@ def main(argv=None):
         # 放进流水线才能保证它们与证据始终一致、不会再次过期。
         print("第十七步：重建交付报告（外推分析 / 判别力与阈值敏感性 / 失败档案 / 答案审查）")
         run_step("delivery-reports", ["examples/make_delivery_reports.py"], root)
+        # 第十八步：文档一致性。文档漂移在本项目反复发生（审计抓到测试数三种写法、
+        # 提交清单标了四份不存在的报告、README 印着已删除的脚本内容），靠人记不住，靠检查器。
+        print("第十八步：文档一致性检查（路径存在性 / 测试数与步数 / 角色字样）")
+        run_step("doc-check", ["examples/check_docs.py"], root)
 
     print("采集指纹 ...")
     actual, other_runs, agent_layer = fingerprint(root)

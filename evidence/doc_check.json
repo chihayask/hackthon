@@ -1,0 +1,14 @@
+{
+  "tests_actual": 107,
+  "steps_actual": 18,
+  "stats": {
+    "docs_scanned": 10,
+    "paths_checked": 163,
+    "numbers_checked": 7,
+    "acknowledged_missing": [
+      "evidence/video"
+    ]
+  },
+  "problems": [],
+  "ok": true
+}
