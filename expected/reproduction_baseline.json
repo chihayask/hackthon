@@ -4910,11 +4910,7 @@
     }
   },
   "scoring": {
-    "agent_candidates_bound": 0,
-    "agent_candidates_unbound": 22,
     "agent_fixture_tasks": 1,
-    "agent_match_rate_bound": null,
-    "agent_matches_reference_bound": 0,
     "by_layer": {
       "base": {
         "gold_ok": 13,

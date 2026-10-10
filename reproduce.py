@@ -202,8 +202,14 @@ def fingerprint(root):
         # 需要 AGH 实例 + 模型凭据 + 会话授权才能复现，而本流水线不含这三样。
         # 把它算进指纹，等于要求"干净目录里也必须有 AGH 运行"，那是另一回事。
         # 它单独记录、单独汇报，见 agent_layer。
+        # 这些字段取决于工作区里有没有 AGH 产生的运行（本机有、干净目录没有），
+        # 因此必须排除出指纹，否则"干净复现"会必然报差异。
+        # 教训（2026-10-10）：新增 agent_candidates_bound / _unbound 等绑定字段时漏加到这里，
+        # 干净 clone 立刻报 /scoring/agent_candidates_unbound: 22 != 0。
         agent_keys = {"agent_candidates", "agent_accepted", "agent_matches_reference",
-                      "agent_match_rate"}
+                      "agent_match_rate",
+                      "agent_candidates_bound", "agent_candidates_unbound",
+                      "agent_matches_reference_bound", "agent_match_rate_bound"}
         fp["scoring"] = {k: _round(v) for k, v in summary.items()
                          if k != "by_layer" and k not in agent_keys}
         by_layer = {}
@@ -214,6 +220,8 @@ def fingerprint(root):
         agent_layer = {
             "candidates": summary.get("agent_candidates"),
             "matches_reference": summary.get("agent_matches_reference"),
+            "bound": summary.get("agent_candidates_bound"),
+            "unbound": summary.get("agent_candidates_unbound"),
             "note": ("由真实 AGH 会话产生，需要 AGH 实例与凭据，不在本流水线复现范围内；"
                      "它的证据是 runs/<run_id>/ 与 AGH 的会话导出"),
         }
