@@ -2,9 +2,9 @@
   "tests_actual": 110,
   "steps_actual": 19,
   "stats": {
-    "docs_scanned": 10,
-    "paths_checked": 172,
-    "numbers_checked": 11,
+    "docs_scanned": 16,
+    "paths_checked": 207,
+    "numbers_checked": 14,
     "acknowledged_missing": [
       "blind/reference",
       "blind/physics/scale_specs.json",
@@ -12,6 +12,7 @@
       "blind",
       "blind",
       "evidence/video",
+      "blind",
       "superseded/runs"
     ]
   },

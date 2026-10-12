@@ -63,6 +63,30 @@ if ([string]::IsNullOrWhiteSpace($Wrapper)) {
   $Wrapper = $compact
 }
 New-Item -ItemType Directory -Force -Path $SessionOut | Out-Null
+# --- 0) 代理自检：环境里的代理若没人监听，就让 AGH 直连 ---
+# 2026-10-12 实测的失败模式：HTTP(S)_PROXY 指向一个已关闭的本地代理时，
+# AGH 的**守护进程**会在带毒环境下启动，此后所有推理都以 TRANSPORT 失败；
+# 而 doctor provider --probe 是**进程内**执行，却显示一切正常——两者矛盾，极难察觉。
+# 这里探测代理端口：不通就清空代理变量（只影响本进程及其子进程，不改系统设置）。
+$proxyVars = @('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy')
+$rawProxy = $env:HTTPS_PROXY
+if (-not [string]::IsNullOrWhiteSpace($rawProxy)) {
+  $alive = $false
+  try {
+    $uri = [System.Uri]$rawProxy
+    $client = New-Object System.Net.Sockets.TcpClient
+    $client.Connect($uri.Host, $uri.Port)
+    $alive = $client.Connected
+    $client.Close()
+  } catch { $alive = $false }
+  if (-not $alive) {
+    Write-Host ("[warn] 代理 " + $rawProxy + " 无人监听，本次 AGH 运行将直连（已清空代理变量）")
+    foreach ($n in $proxyVars) { Remove-Item ("Env:" + $n) -ErrorAction SilentlyContinue }
+    $env:NO_PROXY = '*'
+    # 守护进程若已在带毒环境下启动，必须先停掉，否则它仍会用死代理。
+    try { & node $AghEntry daemon stop 2>&1 | Out-Null; Start-Sleep -Seconds 2 } catch {}
+  }
+}
 if (-not (Test-Path -LiteralPath $AghEntry)) { throw "找不到 AGH 入口: $AghEntry" }
 
 $env:AGNES_PROFILE = 'local-dev'

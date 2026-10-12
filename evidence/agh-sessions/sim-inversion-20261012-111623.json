@@ -1,0 +1,7 @@
+node.exe : local daemon scope resolution failed: The credential store is unavailable.
+At E:\.dsh\deepseek harness workspace\hackathon-2026\sim\run_agent_inversion.ps1:93 char:8
++ $raw = & node $AghEntry -p $prompt --mode json --cwd $work 2>&1 | Out ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (local daemon sc...is unavailable.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

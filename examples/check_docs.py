@@ -26,8 +26,31 @@ BS = chr(92)
 
 REVIEWER_DOCS = ["README.md", "01_项目说明书_定稿.md", "03_运行证据与提交清单_定稿.md",
                  "独立完成声明.md", "docs/数据卡.md", "docs/素材来源清单.md",
-                 "docs/尺度检验说明.md", "docs/判据口径演进.md", "docs/自我怀疑与边界回应.md"]
-SCAN_DOCS = REVIEWER_DOCS + ["AGENTS.md"]
+                 "docs/尺度检验说明.md", "docs/判据口径演进.md", "docs/自我怀疑与边界回应.md",
+                 # 下面三份一直被漏检（2026-10-10 由"未分类文档"自查抓出）：
+                 "docs/去提示消融结果.md", "docs/标准答案物理审查.md", "docs/模型使用登记.md",
+                 "docs/仿真任务线.md"]
+# 不面向评审的内部件（不作为验收入口）：仍需存在，但不做角色字样核查。
+INTERNAL_DOCS = ["docs/AGH启动失败诊断.md", "04_视频脚本与路演提纲_定稿.md"]
+SCAN_DOCS = REVIEWER_DOCS + INTERNAL_DOCS + ["AGENTS.md"]
+
+
+def discover_docs():
+    """仓库里所有 .md（根目录 + docs/），用于"是否有文档没被分类"的自查。
+
+    2026-10-10 加：新增的 docs/模型使用登记.md 起初不在 REVIEWER_DOCS 里，
+    于是检查器压根没扫它——它引用了不存在的文件也没报错。列表式清单会漏，
+    所以这里反过来查：凡是文档既不在 REVIEWER_DOCS 也不在 INTERNAL_DOCS，就是漏网的。"""
+    found = []
+    for name in sorted(os.listdir(ROOT)):
+        if name.endswith(".md"):
+            found.append(name)
+    docs_dir = os.path.join(ROOT, "docs")
+    if os.path.isdir(docs_dir):
+        for name in sorted(os.listdir(docs_dir)):
+            if name.endswith(".md"):
+                found.append("docs/" + name)
+    return found
 ROLE_RE = re.compile(r"\bM[123]\b")
 PATH_RE = re.compile(BT + "([^" + BT + NL + "]+?)" + BT)
 
@@ -204,6 +227,16 @@ def check(scan_docs=None):
         if not acknowledged:
             problems.append({"doc": "(全局)", "kind": "missing-dir",
                              "detail": rel + " 被引用但没有任何一处标注未完成"})
+
+    # 有没有文档没被分类？有的话它完全没被检查，属于虚假信心。
+    known = set(REVIEWER_DOCS) | set(INTERNAL_DOCS) | {"AGENTS.md"}
+    for rel in discover_docs():
+        if rel in known or rel.startswith("superseded/") or rel.startswith("packaging/"):
+            continue
+        if rel in ("01_项目说明书_定稿.md", "03_运行证据与提交清单_定稿.md"):
+            continue
+        problems.append({"doc": rel, "kind": "unclassified-doc",
+                         "detail": "既不在 REVIEWER_DOCS 也不在 INTERNAL_DOCS，未被任何检查覆盖"})
 
     # 带标签的关键数字核对：文档写的必须等于产物算出来的。
     numbers = load_key_numbers()
