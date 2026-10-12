@@ -104,7 +104,10 @@ foreach ($dir in @($work, (Join-Path $work 'sim'))) {
 }
 
 # --- 5) 调用模型 ---
-$outFile = Join-Path $SessionOut ('sim-inversion-' + $stamp + '.json')
+# dry-run 的记录必须与真实会话区分开：同名会让 17 字节的空记录混进证据目录，
+# 被误认成一次真实运行（2026-10-12 已发生，并且已经提交过一次）。
+if ($DryRun) { $outFile = Join-Path $SessionOut ('sim-inversion-' + $stamp + '.dryrun.json') }
+else { $outFile = Join-Path $SessionOut ('sim-inversion-' + $stamp + '.json') }
 if ($DryRun) {
   Write-Host ('[dry ] 工作区 ' + $work)
   Write-Host ('[dry ] 会话 ' + $sessionId)
