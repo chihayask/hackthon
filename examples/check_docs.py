@@ -32,6 +32,11 @@ REVIEWER_DOCS = ["README.md", "01_项目说明书_定稿.md", "03_运行证据�
                  "docs/仿真任务线.md"]
 # 不面向评审的内部件（不作为验收入口）：仍需存在，但不做角色字样核查。
 INTERNAL_DOCS = ["docs/AGH启动失败诊断.md", "04_视频脚本与路演提纲_定稿.md"]
+# 被 .gitignore 排除、只存在于作者本机的文件：存在就扫，不存在不算错。
+# 2026-10-14 加：04_视频脚本与路演提纲_定稿.md 只留本地（团队要求，视频脚本不公开），
+# 但 check() 原先要求 SCAN_DOCS 每一份都存在，于是任何干净克隆跑测试都会失败一项。
+# 这不是"文档丢了"，是"本地件不该被当成必备件"，所以单列一类豁免。
+LOCAL_ONLY_DOCS = ["04_视频脚本与路演提纲_定稿.md"]
 SCAN_DOCS = REVIEWER_DOCS + INTERNAL_DOCS + ["AGENTS.md"]
 
 
@@ -162,6 +167,10 @@ def check(scan_docs=None):
     for rel in (scan_docs or SCAN_DOCS):
         path = os.path.join(ROOT, rel)
         if not os.path.isfile(path):
+            if rel in LOCAL_ONLY_DOCS:
+                # 本地专属件缺失属正常（干净克隆、对外提交包都不含它）
+                stats.setdefault("local_only_absent", []).append(rel)
+                continue
             problems.append({"doc": rel, "kind": "missing-doc", "detail": "文档不存在"})
             continue
         text = _read(rel)

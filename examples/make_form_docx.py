@@ -22,6 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(os.path.dirname(ROOT), "FORMULA-AGH_填表文本.md")
 OUT = os.path.join(os.path.dirname(ROOT), "FORMULA-AGH_填表文本.docx")
+# 可用 --source / --out 覆盖（默认仍是填表文本）
 
 CJK = "宋体"
 MONO = "Consolas"
@@ -61,6 +62,10 @@ def add_code_block(doc, text):
     if longform:
         render_markdown(doc, lines)
         return
+    if len(text) > 160 and not text.lstrip().startswith(("python", ".\\", "powershell", "cd ", "set ")):
+        # 长中文纯文本块：按正文段落排版，等宽字体对中文又难读又容易溢出
+        render_prose(doc, text)
+        return
     table = doc.add_table(rows=1, cols=1)
     table.style = "Table Grid"
     table.autofit = True
@@ -74,6 +79,17 @@ def add_code_block(doc, text):
         set_cjk(run, MONO, ascii_only=True)
         run.font.size = Pt(9.5)
     doc.add_paragraph()
+
+
+def render_prose(doc, text):
+    """把一段长纯文本按空行拆成正文段落。"""
+    for chunk in text.split("\n\n"):
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        for line in chunk.split("\n"):
+            para = doc.add_paragraph()
+            set_cjk(para.add_run(line.strip()))
 
 
 def render_markdown(doc, lines):
@@ -206,6 +222,23 @@ def build(lines):
 
 
 def main():
+    import argparse
+    global SRC, OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--source", default=None)
+    ap.add_argument("--out", default=None)
+    args = ap.parse_args()
+    if args.source:
+        SRC = args.source
+    if args.out:
+        OUT = args.out
+    if not os.path.isfile(SRC):
+        print("未找到源文件：%s" % SRC)
+        return 0
+    return _run()
+
+
+def _run():
     # 源文件是本队的提交表填写文本，属于提交材料而不是作品本身，因此放在仓库外。
     # 仓库里没有它时不要报栈，给出可读提示即可。
     if not os.path.isfile(SRC):
